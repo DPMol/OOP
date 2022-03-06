@@ -1,3 +1,3 @@
-D:/Programming n shit/C C++/Lab3-4/cmake-build-debug/CMakeFiles/Lab3_4.dir
-D:/Programming n shit/C C++/Lab3-4/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/Programming n shit/C C++/Lab3-4/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+D:/Programming/Anul 1/OOP/Lab3-4/cmake-build-debug/CMakeFiles/Lab3_4.dir
+D:/Programming/Anul 1/OOP/Lab3-4/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/Programming/Anul 1/OOP/Lab3-4/cmake-build-debug/CMakeFiles/rebuild_cache.dir
