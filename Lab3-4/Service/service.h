@@ -1,0 +1,4 @@
+#ifndef LAB3_4_SERVICE_H
+#define LAB3_4_SERVICE_H
+
+#endif //LAB3_4_SERVICE_H

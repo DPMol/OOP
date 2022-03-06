@@ -1,0 +1,4 @@
+#ifndef LAB3_4_REPOZITORY_H
+#define LAB3_4_REPOZITORY_H
+
+#endif //LAB3_4_REPOZITORY_H
