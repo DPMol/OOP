@@ -78,7 +78,6 @@ int repo_delete(int id){
     free(array.list[id]);
     for(int i = id; i < array.size; i++){
         array.list[i] = array.list[i+1];}
-    free(array.list[array.size]);
     return 1;
 }
 

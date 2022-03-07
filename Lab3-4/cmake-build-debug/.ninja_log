@@ -1,11 +1,5 @@
 # ninja log v5
-1	422	6682701421727773	build.ninja	a22721c0c76cd154
-0	145	6682701424725160	CMakeFiles/Lab3_4.dir/main.c.obj	758fe7568859b4bc
-4	178	6682701425044227	CMakeFiles/Lab3_4.dir/Interface/interface.c.obj	728db7d7c9b186cf
-179	492	6682701428094228	Lab3_4.exe	745c68afc3315da2
-3	164	6682702703786088	CMakeFiles/Lab3_4.dir/Interface/interface.c.obj	728db7d7c9b186cf
-164	409	6682702706106540	Lab3_4.exe	745c68afc3315da2
-3	177	6682703093324399	CMakeFiles/Lab3_4.dir/Interface/interface.c.obj	728db7d7c9b186cf
-177	392	6682703095353781	Lab3_4.exe	745c68afc3315da2
-6	203	6682709187711322	CMakeFiles/Lab3_4.dir/Interface/interface.c.obj	728db7d7c9b186cf
+1	422	6683535943857372	build.ninja	a22721c0c76cd154
 204	444	6682709190062660	Lab3_4.exe	745c68afc3315da2
+0	145	6682701424725160	CMakeFiles/Lab3_4.dir/main.c.obj	758fe7568859b4bc
+6	203	6682709187711322	CMakeFiles/Lab3_4.dir/Interface/interface.c.obj	728db7d7c9b186cf
