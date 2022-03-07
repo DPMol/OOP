@@ -1,8 +1,8 @@
 #include <stdlib.h>
 #include <string.h>
-
 #include "service.h"
 #include "stdio.h"
+
 
 int service_delete(char *id){
     if(!is_id(id))
@@ -15,7 +15,7 @@ int service_delete(char *id){
 
 char* service_debug(){
     int end = repo_get_size();
-    char *out = (char *) malloc(end*114);
+    char *out = (char *) malloc(end*224);
     char scor[4];
     out[0] = 0;
     type_participant *participant;
@@ -47,11 +47,7 @@ int service_modify(char *id, char *nume, char *prenume, char *scor){
 int service_add(char *nume, char *prenume, char *scor){
     if(!(is_name(nume) && is_name(prenume) && is_score(scor)))
         return 0;
-    printf("%s, %s, %s\n", nume, prenume, scor);
-    type_participant *participant = (type_participant *)malloc(sizeof(type_participant));
-    strcpy(participant->nume, nume);
-    strcpy(participant->prenume, prenume);
-    participant->scor = atoi(scor);
+    type_participant *participant = create_participant(nume, prenume, atoi(scor));
     repo_add(participant);
     return 1;
 }

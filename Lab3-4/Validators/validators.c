@@ -2,10 +2,9 @@
 #include <ctype.h>
 #include <stdlib.h>
 #include "string.h"
-#include <stdio.h>
+
 
 char name_connectors[] = "- '";
-
 int is_id(char *string){
     int index = 0;
     while(string[index] != 0)

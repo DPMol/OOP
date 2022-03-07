@@ -1,6 +1,5 @@
 #include "repozitory.h"
 #include "stdlib.h"
-#include "string.h"
 
 typedef struct{
     void **list;
@@ -12,39 +11,21 @@ typedef struct{
 repo *array;
 
 void repo_default_values(){
-    type_participant *participant = (type_participant *)malloc(sizeof(type_participant));
-    strcpy(participant->nume, "Ciota");
-    strcpy(participant->prenume, "Dragos");
-    participant->scor = 17;
+    type_participant * participant;
 
+    participant = create_participant("Ciota", "Dragos", 17);
     repo_add(participant);
 
-    participant = (type_participant *)malloc(sizeof(type_participant));
-    strcpy(participant->nume, "Mircea");
-    strcpy(participant->prenume, "Gabi");
-    participant->scor = 69;
-
+    participant = create_participant("Mircea", "Gabi", 69);
     repo_add(participant);
 
-    participant = (type_participant *)malloc(sizeof(type_participant));
-    strcpy(participant->nume, "Tzanca");
-    strcpy(participant->prenume, "Uraganu");
-    participant->scor = 99;
-
+    participant = create_participant("Tzanca", "Uraganu", 99);
     repo_add(participant);
 
-    participant = (type_participant *)malloc(sizeof(type_participant));
-    strcpy(participant->nume, "Ciorba");
-    strcpy(participant->prenume, "Sandu");
-    participant->scor = 45;
-
+    participant = create_participant("Ciorba", "Sandu", 45);
     repo_add(participant);
 
-    participant = (type_participant *)malloc(sizeof(type_participant));
-    strcpy(participant->nume, "Moldovan");
-    strcpy(participant->prenume, "Denis-Angel");
-    participant->scor = 10;
-
+    participant = create_participant("Moldovan", "Denis-Angel", 45);
     repo_add(participant);
 }
 
@@ -76,7 +57,7 @@ int repo_delete(int id){
     if(id >= array->size)
         return 0;
     array->size--;
-    free(array->list[id]);
+    destory_participant(array->list[id]);
     for(int i = id; i < array->size; i++){
         array->list[i] = array->list[i+1];}
     return 1;

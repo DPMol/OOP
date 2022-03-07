@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "interface.h"
+#include "../Service/service.h"
 
 char command_sep[] = " ";
 
@@ -104,6 +105,8 @@ short int get_command(){
     else if(!strcmp(command, "delete")){
         interface_delete();
     }
+    else
+        printf("Command doesn't exist\n");
     free(command);
     return 1;
 }

@@ -1,7 +1,7 @@
 #ifndef LAB3_4_REPOZITORY_H
 #define LAB3_4_REPOZITORY_H
-
 #include "../Domain/participant.h"
+
 
 void repo_initialization();
 
