@@ -9,7 +9,7 @@ void repo_destructor();
 
 void repo_add(type_participant *participant);
 
-int repo_delete();
+int repo_delete(int id);
 
 int repo_get_size();
 

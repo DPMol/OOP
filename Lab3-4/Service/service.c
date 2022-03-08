@@ -21,11 +21,11 @@ char* service_debug(){
     type_participant *participant;
     for(int i = 0; i < end; i++){
         participant = repo_get_by_id(i);
-        strcat(out, participant->nume);
+        strcat(out, get_nume(participant));
         strcat(out, " ");
-        strcat(out, participant->prenume);
+        strcat(out, get_prenume(participant));
         strcat(out, " ");
-        sprintf(scor,"%d", participant->scor);
+        sprintf(scor,"%d", get_scor(participant));
         strcat(out, scor);
         strcat(out, "/100\n");
     }
@@ -38,9 +38,10 @@ int service_modify(char *id, char *nume, char *prenume, char *scor){
     type_participant *participant = repo_get_by_id(atoi(id));
     if(participant == NULL)
         return 2;
-    strcpy(participant->nume, nume);
-    strcpy(participant->prenume, prenume);
-    participant->scor = atoi(scor);
+
+    set_nume(participant, nume);
+    set_prenume(participant, prenume);
+    set_scor(participant, atoi(scor));
     return 1;
 }
 
