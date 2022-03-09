@@ -1,0 +1,18 @@
+        -:    0:Source:D:/Programming/Anul 1/OOP/Lab3-4/main.c
+        -:    0:Graph:D:\Programming\Anul 1\OOP\Lab3-4\cmake-build-debug-coverage\CMakeFiles\Lab3_4.dir\main.c.gcno
+        -:    0:Data:D:\Programming\Anul 1\OOP\Lab3-4\cmake-build-debug-coverage\CMakeFiles\Lab3_4.dir\main.c.gcda
+        -:    0:Runs:1
+        -:    1:#include "Interface/interface.h"
+        -:    2:#include "Repozitory/repozitory.h"
+        -:    3:
+function main called 1 returned 100% blocks executed 100%
+        1:    4:int main() {
+        1:    5:    repo_initialization();
+        1:    5-block  0
+call    0 returned 1
+        1:    6:    interface_run();
+call    0 returned 1
+        1:    7:    repo_destructor();
+call    0 returned 1
+        1:    8:    return 0;
+        -:    9:}

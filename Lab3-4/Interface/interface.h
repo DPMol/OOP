@@ -1,7 +1,11 @@
-#ifndef LAB3_4_INTERFACE_H
-#define LAB3_4_INTERFACE_H
+#pragma once
 
+#include "../Service/service.h"
 
-void interface_run();
+typedef struct interface interface;
 
-#endif //LAB3_4_INTERFACE_H
+interface* interface_initialization(service* srv);
+
+void interface_destructor(interface* ui);
+
+void interface_run(interface* ui);

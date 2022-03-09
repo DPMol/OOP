@@ -1,15 +1,20 @@
-#ifndef LAB3_4_SERVICE_H
-#define LAB3_4_SERVICE_H
+#pragma once
 
 #include "../Repozitory/repozitory.h"
 #include "../Domain/participant.h"
 #include "../Validators/validators.h"
 
-int service_add(char *nume, char *prenume, char *scor);
+typedef struct service service;
 
-int service_modify(char *id, char *nume, char *prenume, char *scor);
+service * service_initialization(repo* repo);
 
-int service_delete(char *id);
+void service_destructor(service *srv);
 
-char* service_debug();
-#endif //LAB3_4_SERVICE_H
+int service_add(service* srv, char *nume, char *prenume, char *scor);
+
+int service_modify(service* srv, char *id, char *nume, char *prenume, char *scor);
+
+int service_delete(service* srv, char *id);
+
+char* service_debug(service* srv);
+

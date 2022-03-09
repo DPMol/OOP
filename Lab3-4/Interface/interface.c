@@ -2,11 +2,24 @@
 #include <stdlib.h>
 #include <string.h>
 #include "interface.h"
-#include "../Service/service.h"
+
+struct interface{
+    service* srv;
+};
+
+interface* interface_initialization(service* srv){
+    interface* ui = malloc(sizeof(interface));
+    ui->srv = srv;
+    return ui;
+}
+
+void interface_destructor(interface* ui){
+    free(ui);
+}
 
 char command_sep[] = " ";
 
-void interface_delete(){
+void interface_delete(service* srv){
     char *id;
     id = strtok(NULL, command_sep);
 
@@ -17,7 +30,7 @@ void interface_delete(){
         printf("Too many arguments were give\n");
     }
     else{
-        int p = service_delete(id);
+        int p = service_delete(srv, id);
         if(p == 1){
             printf("Delete was successful\n");
         }
@@ -31,7 +44,7 @@ void interface_delete(){
 
 }
 
-void interface_modify(){
+void interface_modify(service* srv){
     char *id, *nume, *prenume, *scor;
     id = strtok(NULL, command_sep);
     nume = strtok(NULL, command_sep);
@@ -45,7 +58,7 @@ void interface_modify(){
         printf("Too many arguments were give\n");
     }
     else{
-        int p = service_modify(id, nume, prenume, scor);
+        int p = service_modify(srv, id, nume, prenume, scor);
         if(p == 1){
             printf("Modify was successful\n");
         }
@@ -58,7 +71,7 @@ void interface_modify(){
     }
 }
 
-void interface_add(){
+void interface_add(service* srv){
     char *nume, *prenume, *scor;
     nume = strtok(NULL, command_sep);
     prenume = strtok(NULL, command_sep);
@@ -70,7 +83,7 @@ void interface_add(){
     else if(strtok(NULL, command_sep) != NULL){
         printf("Too many arguments were give\n");
     }
-    else if(service_add(nume, prenume, scor)){
+    else if(service_add(srv, nume, prenume, scor)){
         printf("Add was successful\n");
     }
     else{
@@ -78,14 +91,14 @@ void interface_add(){
     }
 }
 
-void interface_debug(){
+void interface_debug(service* srv){
     char *string;
-    string = service_debug();
+    string = service_debug(srv);
     printf("%s", string);
     free(string);
 }
 
-short int get_command(){
+short int get_command(interface* ui){
     char *input = (char *)malloc(500);
     printf("Command:");
     gets(input);
@@ -94,16 +107,16 @@ short int get_command(){
         return 0;
     }
     else if(!strcmp(command, "add")){
-        interface_add();
+        interface_add(ui->srv);
     }
     else if(!strcmp(command, "modify")){
-        interface_modify();
+        interface_modify(ui->srv);
     }
     else if(!strcmp(command, "debug")){
-        interface_debug();
+        interface_debug(ui->srv);
     }
     else if(!strcmp(command, "delete")){
-        interface_delete();
+        interface_delete(ui->srv);
     }
     else
         printf("Command doesn't exist\n");
@@ -111,10 +124,10 @@ short int get_command(){
     return 1;
 }
 
-void interface_run(){
+void interface_run(interface* ui){
     short int Run = 1;
     while(Run){
-        Run = get_command();
+        Run = get_command(ui);
     }
 }
 

@@ -1,5 +1,4 @@
-#ifndef LAB3_4_PARTICIPANT_H
-#define LAB3_4_PARTICIPANT_H
+#pragma once
 
 struct type_participant;
 
@@ -20,5 +19,3 @@ const char* get_nume(type_participant* participant);
 const char* get_prenume(type_participant* participant);
 
 int get_scor(type_participant* participant);
-
-#endif //LAB3_4_PARTICIPANT_H

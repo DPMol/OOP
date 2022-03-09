@@ -1,20 +1,20 @@
-#ifndef LAB3_4_REPOZITORY_H
-#define LAB3_4_REPOZITORY_H
+#pragma once
+
 #include "../Domain/participant.h"
 
+typedef struct repo repo;
 
-void repo_initialization();
+repo* repo_initialization();
 
-void repo_destructor();
+void repo_destructor(repo* array);
 
-void repo_add(type_participant *participant);
+void repo_add(repo* array, type_participant *participant);
 
-int repo_delete(int id);
+int repo_delete(repo* array, int id);
 
-int repo_get_size();
+int repo_get_size(repo* array);
 
-type_participant * repo_get_by_id(int id);
+type_participant * repo_get_by_id(repo* array, int id);
 
-#endif //LAB3_4_REPOZITORY_H
 
 

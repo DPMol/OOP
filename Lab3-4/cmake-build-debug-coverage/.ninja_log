@@ -1,0 +1,17 @@
+# ninja log v5
+27	116	6684578541968031	CMakeFiles/Lab3_4.dir/main.c.obj	82f2748249ea5de7
+1	128	6684578542048099	CMakeFiles/Lab3_4.dir/Domain/participant.c.obj	20a2c28671172be4
+18	142	6684578542218258	CMakeFiles/Lab3_4.dir/Repozitory/repozitory.c.obj	62ad66f5c9545bcc
+21	159	6684578542388418	CMakeFiles/Lab3_4.dir/Service/service.c.obj	596fa3c5d3f9faf6
+13	163	6684578542428452	CMakeFiles/Lab3_4.dir/Interface/interface.c.obj	5a376059a420be80
+15	175	6684578542558572	CMakeFiles/Lab3_4.dir/Validators/validators.c.obj	32490f356f933f79
+176	317	6684578543929822	Lab3_4.exe	709566eb7a1f04cd
+75	523	6684631081554113	CMakeFiles/Lab3_4.dir/main.c.obj	82f2748249ea5de7
+72	525	6684631081554113	CMakeFiles/Lab3_4.dir/Validators/validators.c.obj	32490f356f933f79
+4	526	6684631081554113	CMakeFiles/Lab3_4.dir/Domain/participant.c.obj	20a2c28671172be4
+49	526	6684631081564123	CMakeFiles/Lab3_4.dir/Service/service.c.obj	596fa3c5d3f9faf6
+40	527	6684631081564123	CMakeFiles/Lab3_4.dir/Repozitory/repozitory.c.obj	62ad66f5c9545bcc
+38	527	6684631081574126	CMakeFiles/Lab3_4.dir/Interface/interface.c.obj	5a376059a420be80
+527	1121	6684631087499523	Lab3_4.exe	709566eb7a1f04cd
+3	99	6684638318634858	CMakeFiles/Lab3_4.dir/Repozitory/repozitory.c.obj	62ad66f5c9545bcc
+99	219	6684638319815939	Lab3_4.exe	709566eb7a1f04cd
