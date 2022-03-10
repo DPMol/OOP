@@ -6,7 +6,7 @@ typedef struct type_participant type_participant;
 
 type_participant* create_participant(char* nume, char*prenume, int scor);
 
-void destory_participant(type_participant* participant);
+void destroy_participant(type_participant* participant);
 
 void set_nume(type_participant* participant, char* nume);
 
@@ -19,3 +19,5 @@ const char* get_nume(type_participant* participant);
 const char* get_prenume(type_participant* participant);
 
 int get_scor(type_participant* participant);
+
+void domain_test();

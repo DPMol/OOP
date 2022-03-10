@@ -1,138 +1,375 @@
-        -:    0:Source:D:/Programming/Anul 1/OOP/Lab3-4/Repozitory/repozitory.c
-        -:    0:Graph:D:\Programming\Anul 1\OOP\Lab3-4\cmake-build-debug-coverage\CMakeFiles\Lab3_4.dir\Repozitory\repozitory.c.gcno
-        -:    0:Data:D:\Programming\Anul 1\OOP\Lab3-4\cmake-build-debug-coverage\CMakeFiles\Lab3_4.dir\Repozitory\repozitory.c.gcda
+        -:    0:Source:D:/Programming n shit/UBB/Anul 1/OOP/Lab3-4/Repozitory/repozitory.c
+        -:    0:Graph:D:\Programming n shit\UBB\Anul 1\OOP\Lab3-4\cmake-build-debug-coverage\CMakeFiles\Lab3_4.dir\Repozitory\repozitory.c.gcno
+        -:    0:Data:D:\Programming n shit\UBB\Anul 1\OOP\Lab3-4\cmake-build-debug-coverage\CMakeFiles\Lab3_4.dir\Repozitory\repozitory.c.gcda
         -:    0:Runs:1
         -:    1:#include "repozitory.h"
         -:    2:#include "stdlib.h"
-        -:    3:
-        -:    4:typedef struct{
-        -:    5:    void **list;
-        -:    6:    int size;
-        -:    7:    int capacity;
-        -:    8:
-        -:    9:}repo;
-        -:   10:
-        -:   11:repo *array;
-        -:   12:
-function repo_default_values called 1 returned 100% blocks executed 100%
-        1:   13:void repo_default_values(){
-        -:   14:    type_participant * participant;
-        -:   15:
-        1:   16:    participant = create_participant("Ciota", "Dragos", 17);
-        1:   16-block  0
-call    0 returned 1
-        1:   17:    repo_add(participant);
-call    0 returned 1
-        -:   18:
-        1:   19:    participant = create_participant("Mircea", "Gabi", 69);
-call    0 returned 1
-        1:   20:    repo_add(participant);
-call    0 returned 1
-        -:   21:
-        1:   22:    participant = create_participant("Tzanca", "Uraganu", 99);
-call    0 returned 1
-        1:   23:    repo_add(participant);
-call    0 returned 1
-        -:   24:
-        1:   25:    participant = create_participant("Ciorba", "Sandu", 45);
-call    0 returned 1
-        1:   26:    repo_add(participant);
-call    0 returned 1
-        -:   27:
-        1:   28:    participant = create_participant("Moldovan", "Denis-Angel", 45);
-call    0 returned 1
-        1:   29:    repo_add(participant);
-call    0 returned 1
-        1:   30:}
-        -:   31:
-function repo_initialization called 1 returned 100% blocks executed 100%
-        1:   32:void repo_initialization(){
-        1:   33:    array = (repo *)malloc(sizeof(repo));
-        1:   34:    array->size = 0;
-        1:   35:    array->capacity = 60;
-        1:   36:    array->list = malloc(array->capacity* sizeof(type_participant*));
-        1:   37:    repo_default_values();
-        1:   37-block  0
-call    0 returned 1
-        1:   38:}
-        -:   39:
-function repo_destructor called 1 returned 100% blocks executed 100%
-        1:   40:void repo_destructor(){
-        6:   41:    for(int i = 0; i < array->size; i++)
-        1:   41-block  0
-        6:   41-block  1
+        -:    3:#include <string.h>
+        -:    4:#include <assert.h>
+        -:    5:
+        -:    6:struct repo{
+        -:    7:    void **list;
+        -:    8:    int size;
+        -:    9:    int capacity;
+        -:   10:};
+        -:   11:
+function repo_default_values called 3 returned 100% blocks executed 100%
+        3:   12:void repo_default_values(repo* array){
+        -:   13:    type_participant * participant;
+        -:   14:
+        3:   15:    participant = create_participant("Ciota", "Dragos", 17);
+        3:   15-block  0
+call    0 returned 3
+        3:   16:    repo_add(array, participant);
+call    0 returned 3
+        -:   17:
+        3:   18:    participant = create_participant("Mircea", "Gabi", 69);
+call    0 returned 3
+        3:   19:    repo_add(array, participant);
+call    0 returned 3
+        -:   20:
+        3:   21:    participant = create_participant("Tzanca", "Uraganu", 50);
+call    0 returned 3
+        3:   22:    repo_add(array, participant);
+call    0 returned 3
+        -:   23:
+        3:   24:    participant = create_participant("Neamtu", "Iuli", 99);
+call    0 returned 3
+        3:   25:    repo_add(array, participant);
+call    0 returned 3
+        -:   26:
+        3:   27:    participant = create_participant("Moldovan", "Denis-Angel", 10);
+call    0 returned 3
+        3:   28:    repo_add(array, participant);
+call    0 returned 3
+        3:   29:}
+        -:   30:
+function repo_initialization called 3 returned 100% blocks executed 100%
+        3:   31:repo* repo_initialization(){
+        3:   32:    repo *array = malloc(sizeof(repo));
+        3:   33:    array->size = 0;
+        3:   34:    array->capacity = 60;
+        3:   35:    array->list = malloc(array->capacity* sizeof(type_participant*));
+        3:   36:    repo_default_values(array);
+        3:   36-block  0
+call    0 returned 3
+        -:   37:
+        3:   38:    return array;
+        -:   39:}
+        -:   40:
+function repo_destructor called 3 returned 100% blocks executed 100%
+        3:   41:void repo_destructor(repo* array){
+       17:   42:    for(int i = 0; i < array->size; i++){
+        3:   42-block  0
+       17:   42-block  1
+branch  0 taken 14
+branch  1 taken 3 (fallthrough)
+       14:   43:        destroy_participant(array->list[i]);}
+       14:   43-block  0
+call    0 returned 14
+        3:   44:    free (array->list);
+        3:   45:    free(array);
+        3:   46:}
+        -:   47:
+function repo_realloc called 1 returned 100% blocks executed 100%
+        1:   48:void repo_realloc(repo* array, int newcapacity){
+        1:   49:    void **newlist = malloc(newcapacity* sizeof(type_participant*));
+        6:   50:    for(int i = 0; i < array->size; i++){
+        1:   50-block  0
+        6:   50-block  1
 branch  0 taken 5
 branch  1 taken 1 (fallthrough)
-        5:   42:        free(array->list[i]);
-        5:   42-block  0
-        1:   43:    free (array->list);
-        1:   44:}
-        -:   45:
-function repo_realloc called 0 returned 0% blocks executed 0%
-    #####:   46:void repo_realloc(int newcapacity){
-    #####:   47:    void **newlist = malloc(newcapacity* sizeof(type_participant*));
-    #####:   48:    for(int i = 0; i < array->size; i++){
-    %%%%%:   48-block  0
-    %%%%%:   48-block  1
-branch  0 never executed
-branch  1 never executed
-    #####:   49:        newlist[i] = array->list[i];
-    %%%%%:   49-block  0
-        -:   50:    }
-    #####:   51:    free(array->list);
-    #####:   52:    array->list = newlist;
-    #####:   53:    array->capacity = newcapacity;
-    #####:   54:}
-        -:   55:
-function repo_delete called 0 returned 0% blocks executed 0%
-    #####:   56:int repo_delete(int id){
-    #####:   57:    if(id >= array->size)
-    %%%%%:   57-block  0
-branch  0 never executed
-branch  1 never executed
-    #####:   58:        return 0;
-    %%%%%:   58-block  0
-    #####:   59:    array->size--;
-    #####:   60:    destory_participant(array->list[id]);
-    %%%%%:   60-block  0
-call    0 never executed
-    #####:   61:    for(int i = id; i < array->size; i++){
-    %%%%%:   61-block  0
-branch  0 never executed
-branch  1 never executed
-    #####:   62:        array->list[i] = array->list[i+1];}
-    %%%%%:   62-block  0
-    #####:   63:    return 1;
-    %%%%%:   63-block  0
-        -:   64:}
-        -:   65:
-function repo_add called 5 returned 100% blocks executed 67%
-        5:   66:void repo_add(type_participant *participant){
-        5:   67:    if(array->size >= array->capacity){
-        5:   67-block  0
+        5:   51:        newlist[i] = array->list[i];
+        5:   51-block  0
+        -:   52:    }
+        1:   53:    free(array->list);
+        1:   54:    array->list = newlist;
+        1:   55:    array->capacity = newcapacity;
+        1:   56:}
+        -:   57:
+function repo_delete called 3 returned 100% blocks executed 100%
+        3:   58:int repo_delete(repo* array, int id){
+        3:   59:    if(id >= array->size)
+        3:   59-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 2
+        1:   60:        return 0;
+        1:   60-block  0
+        2:   61:    array->size--;
+        2:   62:    destroy_participant(array->list[id]);
+        2:   62-block  0
+call    0 returned 2
+       11:   63:    for(int i = id; i < array->size; i++){
+       11:   63-block  0
+branch  0 taken 9
+branch  1 taken 2 (fallthrough)
+        9:   64:        array->list[i] = array->list[i+1];}
+        9:   64-block  0
+        2:   65:    return 1;
+        2:   65-block  0
+        -:   66:}
+        -:   67:
+function repo_add called 17 returned 100% blocks executed 67%
+       17:   68:void repo_add(repo* array, type_participant *participant){
+       17:   69:    if(array->size >= array->capacity){
+       17:   69-block  0
 branch  0 taken 0 (fallthrough)
-branch  1 taken 5
-    #####:   68:        repo_realloc(2 * array->size);
-    %%%%%:   68-block  0
+branch  1 taken 17
+    #####:   70:        repo_realloc(array, 2 * array->size);
+    %%%%%:   70-block  0
 call    0 never executed
-        -:   69:    }
-        5:   70:    array->list[array->size++] = participant;
-        5:   71:}
-        -:   72:
-function repo_get_by_id called 5 returned 100% blocks executed 75%
-        5:   73:type_participant * repo_get_by_id(int id){
-        5:   74:    if(id >= array->size)
-        5:   74-block  0
+        -:   71:    }
+       17:   72:    array->list[array->size++] = participant;
+       17:   73:}
+        -:   74:
+function repo_get_by_id called 18 returned 100% blocks executed 100%
+       18:   75:type_participant * repo_get_by_id(repo* array, int id){
+       18:   76:    if(id >= array->size)
+       18:   76-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 17
+        1:   77:        return NULL;
+        1:   77-block  0
+       17:   78:    return array->list[id];
+       17:   78-block  0
+        -:   79:}
+        -:   80:
+function repo_get_size called 5 returned 100% blocks executed 100%
+        5:   81:int repo_get_size(repo* array){
+        5:   82:    return array->size;
+        5:   82-block  0
+        -:   83:}
+        -:   84:
+function repo_scor_sort_increasing called 2 returned 100% blocks executed 100%
+        2:   85:void repo_scor_sort_increasing(repo* array){
+        -:   86:    type_participant* temp;
+       13:   87:    for(int i = 0; i < array->size; i++)
+        2:   87-block  0
+       11:   87-block  1
+       13:   87-block  2
+branch  0 taken 11
+branch  1 taken 2 (fallthrough)
+       72:   88:        for(int j = 0; j< array->size; j++)
+       11:   88-block  0
+       61:   88-block  1
+       72:   88-block  2
+branch  0 taken 61
+branch  1 taken 11 (fallthrough)
+       61:   89:            if(get_scor(array->list[i]) < get_scor(array->list[j])){
+       61:   89-block  0
+call    0 returned 61
+call    1 returned 61
+branch  2 taken 23 (fallthrough)
+branch  3 taken 38
+       23:   90:                temp = array->list[i];
+       23:   91:                array->list[i] = array->list[j];
+       23:   92:                array->list[j] = temp;
+       23:   92-block  0
+        -:   93:            }
+        2:   94:}
+        -:   95:
+function repo_scor_sort_decreasing called 2 returned 100% blocks executed 100%
+        2:   96:void repo_scor_sort_decreasing(repo* array){
+        -:   97:    type_participant* temp;
+       13:   98:    for(int i = 0; i < array->size; i++)
+        2:   98-block  0
+       11:   98-block  1
+       13:   98-block  2
+branch  0 taken 11
+branch  1 taken 2 (fallthrough)
+       72:   99:        for(int j = 0; j< array->size; j++)
+       11:   99-block  0
+       61:   99-block  1
+       72:   99-block  2
+branch  0 taken 61
+branch  1 taken 11 (fallthrough)
+       61:  100:            if(get_scor(array->list[i]) > get_scor(array->list[j])){
+       61:  100-block  0
+call    0 returned 61
+call    1 returned 61
+branch  2 taken 25 (fallthrough)
+branch  3 taken 36
+       25:  101:                temp = array->list[i];
+       25:  102:                array->list[i] = array->list[j];
+       25:  103:                array->list[j] = temp;
+       25:  103-block  0
+        -:  104:            }
+        2:  105:}
+        -:  106:
+function repo_name_sort_increasing called 2 returned 100% blocks executed 100%
+        2:  107:void repo_name_sort_increasing(repo* array){
+        -:  108:    type_participant* temp;
+       13:  109:    for(int i = 0; i < array->size; i++)
+        2:  109-block  0
+       11:  109-block  1
+       13:  109-block  2
+branch  0 taken 11
+branch  1 taken 2 (fallthrough)
+       72:  110:        for(int j = 0; j< array->size; j++)
+       11:  110-block  0
+       61:  110-block  1
+       72:  110-block  2
+branch  0 taken 61
+branch  1 taken 11 (fallthrough)
+       61:  111:            if(strcmp(get_nume(array->list[i]), get_nume(array->list[j])) < 0){
+       61:  111-block  0
+call    0 returned 61
+call    1 returned 61
+branch  2 taken 20 (fallthrough)
+branch  3 taken 41
+       20:  112:                temp = array->list[i];
+       20:  113:                array->list[i] = array->list[j];
+       20:  114:                array->list[j] = temp;
+       20:  114-block  0
+        -:  115:            }
+        2:  116:}
+        -:  117:
+function repo_name_sort_decreasing called 2 returned 100% blocks executed 100%
+        2:  118:void repo_name_sort_decreasing(repo* array){
+        -:  119:    type_participant* temp;
+       13:  120:    for(int i = 0; i < array->size; i++)
+        2:  120-block  0
+       11:  120-block  1
+       13:  120-block  2
+branch  0 taken 11
+branch  1 taken 2 (fallthrough)
+       72:  121:        for(int j = 0; j< array->size; j++)
+       11:  121-block  0
+       61:  121-block  1
+       72:  121-block  2
+branch  0 taken 61
+branch  1 taken 11 (fallthrough)
+       61:  122:            if(strcmp(get_nume(array->list[i]), get_nume(array->list[j])) > 0){
+       61:  122-block  0
+call    0 returned 61
+call    1 returned 61
+branch  2 taken 21 (fallthrough)
+branch  3 taken 40
+       21:  123:                temp = array->list[i];
+       21:  124:                array->list[i] = array->list[j];
+       21:  125:                array->list[j] = temp;
+       21:  125-block  0
+        -:  126:            }
+        2:  127:}
+        -:  128:
+function repo_test called 1 returned 100% blocks executed 66%
+        1:  129:void repo_test(){
+        1:  130:    repo *repo = NULL;
+        1:  131:    repo = repo_initialization();
+        1:  131-block  0
+call    0 returned 1
+       1*:  132:    assert(repo != NULL);
 branch  0 taken 0 (fallthrough)
-branch  1 taken 5
-    #####:   75:        return NULL;
-    %%%%%:   75-block  0
-        5:   76:    return array->list[id];
-        5:   76-block  0
-        -:   77:}
-        -:   78:
-function repo_get_size called 1 returned 100% blocks executed 100%
-        1:   79:int repo_get_size(){
-        1:   80:    return array->size;
-        1:   80-block  0
-        -:   81:}
+branch  1 taken 1
+    %%%%%:  132-block  0
+call    2 never executed
+        1:  132-block  1
+       1*:  133:    assert(repo_get_size(repo) == 5);
+        1:  133-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  133-block  1
+call    3 never executed
+        1:  133-block  2
+        1:  134:    type_participant* participant = repo_get_by_id(repo, 0);
+        1:  134-block  0
+call    0 returned 1
+        -:  135:
+       1*:  136:    assert(get_scor(participant) == 17);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  136-block  0
+call    3 never executed
+        1:  136-block  1
+        -:  137:
+        1:  138:    repo_add(repo, participant);
+        1:  138-block  0
+call    0 returned 1
+       1*:  139:    assert(repo_get_size(repo) == 6);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  139-block  0
+call    3 never executed
+        1:  139-block  1
+       1*:  140:    assert(repo_get_by_id(repo, 5) == participant);
+        1:  140-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  140-block  1
+call    3 never executed
+        1:  140-block  2
+        -:  141:
+        1:  142:    repo_delete(repo, 0);
+        1:  142-block  0
+call    0 returned 1
+       1*:  143:    assert(repo_get_size(repo) == 5);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  143-block  0
+call    3 never executed
+        1:  143-block  1
+        -:  144:
+        1:  145:    repo_realloc(repo, 100);
+        1:  145-block  0
+call    0 returned 1
+       1*:  146:    assert(repo->capacity == 100);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  146-block  0
+call    2 never executed
+        1:  146-block  1
+        -:  147:
+        1:  148:    repo_scor_sort_increasing(repo);
+        1:  148-block  0
+call    0 returned 1
+       1*:  149:    assert(repo_get_by_id(repo, 1) == participant);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  149-block  0
+call    3 never executed
+        1:  149-block  1
+        -:  150:
+        1:  151:    repo_scor_sort_decreasing(repo);
+        1:  151-block  0
+call    0 returned 1
+       1*:  152:    assert(repo_get_by_id(repo, 3) == participant);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  152-block  0
+call    3 never executed
+        1:  152-block  1
+        -:  153:
+        1:  154:    repo_name_sort_decreasing(repo);
+        1:  154-block  0
+call    0 returned 1
+       1*:  155:    assert(repo_get_by_id(repo, 0) == participant);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  155-block  0
+call    3 never executed
+        1:  155-block  1
+        -:  156:
+        1:  157:    repo_name_sort_increasing(repo);
+        1:  157-block  0
+call    0 returned 1
+       1*:  158:    assert(repo_get_by_id(repo, 4) == participant);
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  158-block  0
+call    3 never executed
+        1:  158-block  1
+        1:  159:    repo->size--;
+        -:  160:
+        1:  161:    repo_destructor(repo);
+        1:  161-block  0
+call    0 returned 1
+        1:  162:}

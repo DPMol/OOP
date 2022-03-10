@@ -1,6 +1,7 @@
 #include "participant.h"
 #include "stdlib.h"
 #include "string.h"
+#include <assert.h>
 
 struct type_participant{
     char *nume, *prenume;
@@ -21,7 +22,7 @@ type_participant* create_participant(char* nume, char*prenume, int scor){
     return participant;
 }
 
-void destory_participant(type_participant* participant){
+void destroy_participant(type_participant* participant){
     free(participant->nume);
     free(participant->prenume);
     free(participant);
@@ -55,4 +56,21 @@ const char* get_prenume(type_participant* participant){
 
 int get_scor(type_participant* participant){
     return participant->scor;
+}
+
+void domain_test(){
+    type_participant *participant = create_participant("Morozan", "Dragos", 78);
+    assert(!strcmp(get_nume(participant), "Morozan"));
+    assert(!strcmp(get_prenume(participant), "Dragos"));
+    assert(get_scor(participant) == 78);
+
+    set_nume(participant, "Matei");
+    set_prenume(participant, "Otniel");
+    set_scor(participant, 100);
+
+    assert(!strcmp(get_nume(participant), "Matei"));
+    assert(!strcmp(get_prenume(participant), "Otniel"));
+    assert(get_scor(participant) == 100);
+
+    destroy_participant(participant);
 }

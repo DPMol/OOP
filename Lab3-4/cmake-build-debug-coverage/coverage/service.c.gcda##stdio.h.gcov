@@ -1,6 +1,6 @@
-        -:    0:Source:D:/Programming/IDE/CLion 2021.3.3/bin/mingw/x86_64-w64-mingw32/include/stdio.h
-        -:    0:Graph:D:\Programming\Anul 1\OOP\Lab3-4\cmake-build-debug-coverage\CMakeFiles\Lab3_4.dir\Service\service.c.gcno
-        -:    0:Data:D:\Programming\Anul 1\OOP\Lab3-4\cmake-build-debug-coverage\CMakeFiles\Lab3_4.dir\Service\service.c.gcda
+        -:    0:Source:D:/Programming n shit/CLion 2021.3.3/bin/mingw/x86_64-w64-mingw32/include/stdio.h
+        -:    0:Graph:D:\Programming n shit\UBB\Anul 1\OOP\Lab3-4\cmake-build-debug-coverage\CMakeFiles\Lab3_4.dir\Service\service.c.gcno
+        -:    0:Data:D:\Programming n shit\UBB\Anul 1\OOP\Lab3-4\cmake-build-debug-coverage\CMakeFiles\Lab3_4.dir\Service\service.c.gcda
         -:    0:Runs:1
         -:    1:/**
         -:    2: * This file has no copyright assigned and is placed in the Public Domain.
@@ -397,16 +397,16 @@
         -:  393:
         -:  394:__mingw_ovr
         -:  395:__attribute__((__format__ (gnu_printf, 2, 3))) __MINGW_ATTRIB_NONNULL(2)
-function sprintf called 5 returned 100% blocks executed 100%
-        5:  396:int sprintf (char *__stream, const char *__format, ...)
+function sprintf called 10 returned 100% blocks executed 100%
+       10:  396:int sprintf (char *__stream, const char *__format, ...)
         -:  397:{
         -:  398:  int __retval;
-        5:  399:  __builtin_va_list __local_argv; __builtin_va_start( __local_argv, __format );
-        5:  400:  __retval = __mingw_vsprintf( __stream, __format, __local_argv );
-        5:  400-block  0
-call    0 returned 5
-        5:  401:  __builtin_va_end( __local_argv );
-        5:  402:  return __retval;
+       10:  399:  __builtin_va_list __local_argv; __builtin_va_start( __local_argv, __format );
+       10:  400:  __retval = __mingw_vsprintf( __stream, __format, __local_argv );
+       10:  400-block  0
+call    0 returned 10
+       10:  401:  __builtin_va_end( __local_argv );
+       10:  402:  return __retval;
         -:  403:}
         -:  404:
         -:  405:#endif /* __MINGW_FORTIFY_VA_ARG */

@@ -2,7 +2,7 @@
 #include <ctype.h>
 #include <stdlib.h>
 #include "string.h"
-
+#include <assert.h>
 
 char name_connectors[] = "- '";
 int is_id(char *string){
@@ -13,7 +13,6 @@ int is_id(char *string){
             return 0;
         index++;
     }
-    int number = atoi(string);
     return 1;
 }
 
@@ -47,4 +46,37 @@ int is_name(char *string){
         index++;
     }
     return 1;
+}
+
+int is_key(char* string){
+    if(strcmp(string, "nume") == 0 || strcmp(string, "scor")== 0)
+        return 1;
+    return 0;
+}
+
+int is_order(char* string){
+    if(strcmp(string, "+") == 0 || strcmp(string, "-")== 0)
+        return 1;
+    return 0;
+}
+
+void valid_test(){
+    assert(is_order("d") == 0);
+    assert(is_order("+") == 1);
+
+    assert(is_key("d") == 0);
+    assert(is_key("nume") == 1);
+
+    assert(is_id("1"));
+    assert(!is_id("abc"));
+
+    assert(is_score("1") == 0);
+    assert(is_score("11"));
+    assert(is_score("1a") == 0);
+
+    assert(is_name("ASD"));
+    assert(is_name("1") == 0);
+    assert(is_name("ABA 1") == 0);
+    assert(is_name("ABA 1asddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd") == 0);
+
 }

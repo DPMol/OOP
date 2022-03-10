@@ -39,7 +39,7 @@ include CMakeFiles/rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = D$:/Programming/Anul$ 1/OOP/Lab3-4/cmake-build-debug/
+cmake_ninja_workdir = D$:/Programming$ n$ shit/UBB/Anul$ 1/OOP/Lab3-4/cmake-build-debug/
 # =============================================================================
 # Object build statements for EXECUTABLE target Lab3_4
 
@@ -49,45 +49,45 @@ cmake_ninja_workdir = D$:/Programming/Anul$ 1/OOP/Lab3-4/cmake-build-debug/
 
 build cmake_object_order_depends_target_Lab3_4: phony || CMakeFiles/Lab3_4.dir
 
-build CMakeFiles/Lab3_4.dir/Domain/participant.c.obj: C_COMPILER__Lab3_4_Debug D$:/Programming/Anul$ 1/OOP/Lab3-4/Domain/participant.c || cmake_object_order_depends_target_Lab3_4
+build CMakeFiles/Lab3_4.dir/Domain/participant.c.obj: C_COMPILER__Lab3_4_Debug D$:/Programming$ n$ shit/UBB/Anul$ 1/OOP/Lab3-4/Domain/participant.c || cmake_object_order_depends_target_Lab3_4
   DEP_FILE = CMakeFiles\Lab3_4.dir\Domain\participant.c.obj.d
   FLAGS = -g -std=gnu11
-  INCLUDES = -I"D:/Programming/Anul 1/OOP/Lab3-4/Domain" -I"D:/Programming/Anul 1/OOP/Lab3-4/Interface" -I"D:/Programming/Anul 1/OOP/Lab3-4/Repozitory" -I"D:/Programming/Anul 1/OOP/Lab3-4/Service" -I"D:/Programming/Anul 1/OOP/Lab3-4/Validators"
+  INCLUDES = -I"D:/Programming n shit/UBB/Anul 1/OOP/Lab3-4/Domain" -I"D:/Programming n shit/UBB/Anul 1/OOP/Lab3-4/Interface" -I"D:/Programming n shit/UBB/Anul 1/OOP/Lab3-4/Repozitory" -I"D:/Programming n shit/UBB/Anul 1/OOP/Lab3-4/Service" -I"D:/Programming n shit/UBB/Anul 1/OOP/Lab3-4/Validators"
   OBJECT_DIR = CMakeFiles\Lab3_4.dir
   OBJECT_FILE_DIR = CMakeFiles\Lab3_4.dir\Domain
 
-build CMakeFiles/Lab3_4.dir/Interface/interface.c.obj: C_COMPILER__Lab3_4_Debug D$:/Programming/Anul$ 1/OOP/Lab3-4/Interface/interface.c || cmake_object_order_depends_target_Lab3_4
+build CMakeFiles/Lab3_4.dir/Interface/interface.c.obj: C_COMPILER__Lab3_4_Debug D$:/Programming$ n$ shit/UBB/Anul$ 1/OOP/Lab3-4/Interface/interface.c || cmake_object_order_depends_target_Lab3_4
   DEP_FILE = CMakeFiles\Lab3_4.dir\Interface\interface.c.obj.d
   FLAGS = -g -std=gnu11
-  INCLUDES = -I"D:/Programming/Anul 1/OOP/Lab3-4/Domain" -I"D:/Programming/Anul 1/OOP/Lab3-4/Interface" -I"D:/Programming/Anul 1/OOP/Lab3-4/Repozitory" -I"D:/Programming/Anul 1/OOP/Lab3-4/Service" -I"D:/Programming/Anul 1/OOP/Lab3-4/Validators"
+  INCLUDES = -I"D:/Programming n shit/UBB/Anul 1/OOP/Lab3-4/Domain" -I"D:/Programming n shit/UBB/Anul 1/OOP/Lab3-4/Interface" -I"D:/Programming n shit/UBB/Anul 1/OOP/Lab3-4/Repozitory" -I"D:/Programming n shit/UBB/Anul 1/OOP/Lab3-4/Service" -I"D:/Programming n shit/UBB/Anul 1/OOP/Lab3-4/Validators"
   OBJECT_DIR = CMakeFiles\Lab3_4.dir
   OBJECT_FILE_DIR = CMakeFiles\Lab3_4.dir\Interface
 
-build CMakeFiles/Lab3_4.dir/Repozitory/repozitory.c.obj: C_COMPILER__Lab3_4_Debug D$:/Programming/Anul$ 1/OOP/Lab3-4/Repozitory/repozitory.c || cmake_object_order_depends_target_Lab3_4
+build CMakeFiles/Lab3_4.dir/Repozitory/repozitory.c.obj: C_COMPILER__Lab3_4_Debug D$:/Programming$ n$ shit/UBB/Anul$ 1/OOP/Lab3-4/Repozitory/repozitory.c || cmake_object_order_depends_target_Lab3_4
   DEP_FILE = CMakeFiles\Lab3_4.dir\Repozitory\repozitory.c.obj.d
   FLAGS = -g -std=gnu11
-  INCLUDES = -I"D:/Programming/Anul 1/OOP/Lab3-4/Domain" -I"D:/Programming/Anul 1/OOP/Lab3-4/Interface" -I"D:/Programming/Anul 1/OOP/Lab3-4/Repozitory" -I"D:/Programming/Anul 1/OOP/Lab3-4/Service" -I"D:/Programming/Anul 1/OOP/Lab3-4/Validators"
+  INCLUDES = -I"D:/Programming n shit/UBB/Anul 1/OOP/Lab3-4/Domain" -I"D:/Programming n shit/UBB/Anul 1/OOP/Lab3-4/Interface" -I"D:/Programming n shit/UBB/Anul 1/OOP/Lab3-4/Repozitory" -I"D:/Programming n shit/UBB/Anul 1/OOP/Lab3-4/Service" -I"D:/Programming n shit/UBB/Anul 1/OOP/Lab3-4/Validators"
   OBJECT_DIR = CMakeFiles\Lab3_4.dir
   OBJECT_FILE_DIR = CMakeFiles\Lab3_4.dir\Repozitory
 
-build CMakeFiles/Lab3_4.dir/Service/service.c.obj: C_COMPILER__Lab3_4_Debug D$:/Programming/Anul$ 1/OOP/Lab3-4/Service/service.c || cmake_object_order_depends_target_Lab3_4
+build CMakeFiles/Lab3_4.dir/Service/service.c.obj: C_COMPILER__Lab3_4_Debug D$:/Programming$ n$ shit/UBB/Anul$ 1/OOP/Lab3-4/Service/service.c || cmake_object_order_depends_target_Lab3_4
   DEP_FILE = CMakeFiles\Lab3_4.dir\Service\service.c.obj.d
   FLAGS = -g -std=gnu11
-  INCLUDES = -I"D:/Programming/Anul 1/OOP/Lab3-4/Domain" -I"D:/Programming/Anul 1/OOP/Lab3-4/Interface" -I"D:/Programming/Anul 1/OOP/Lab3-4/Repozitory" -I"D:/Programming/Anul 1/OOP/Lab3-4/Service" -I"D:/Programming/Anul 1/OOP/Lab3-4/Validators"
+  INCLUDES = -I"D:/Programming n shit/UBB/Anul 1/OOP/Lab3-4/Domain" -I"D:/Programming n shit/UBB/Anul 1/OOP/Lab3-4/Interface" -I"D:/Programming n shit/UBB/Anul 1/OOP/Lab3-4/Repozitory" -I"D:/Programming n shit/UBB/Anul 1/OOP/Lab3-4/Service" -I"D:/Programming n shit/UBB/Anul 1/OOP/Lab3-4/Validators"
   OBJECT_DIR = CMakeFiles\Lab3_4.dir
   OBJECT_FILE_DIR = CMakeFiles\Lab3_4.dir\Service
 
-build CMakeFiles/Lab3_4.dir/Validators/validators.c.obj: C_COMPILER__Lab3_4_Debug D$:/Programming/Anul$ 1/OOP/Lab3-4/Validators/validators.c || cmake_object_order_depends_target_Lab3_4
+build CMakeFiles/Lab3_4.dir/Validators/validators.c.obj: C_COMPILER__Lab3_4_Debug D$:/Programming$ n$ shit/UBB/Anul$ 1/OOP/Lab3-4/Validators/validators.c || cmake_object_order_depends_target_Lab3_4
   DEP_FILE = CMakeFiles\Lab3_4.dir\Validators\validators.c.obj.d
   FLAGS = -g -std=gnu11
-  INCLUDES = -I"D:/Programming/Anul 1/OOP/Lab3-4/Domain" -I"D:/Programming/Anul 1/OOP/Lab3-4/Interface" -I"D:/Programming/Anul 1/OOP/Lab3-4/Repozitory" -I"D:/Programming/Anul 1/OOP/Lab3-4/Service" -I"D:/Programming/Anul 1/OOP/Lab3-4/Validators"
+  INCLUDES = -I"D:/Programming n shit/UBB/Anul 1/OOP/Lab3-4/Domain" -I"D:/Programming n shit/UBB/Anul 1/OOP/Lab3-4/Interface" -I"D:/Programming n shit/UBB/Anul 1/OOP/Lab3-4/Repozitory" -I"D:/Programming n shit/UBB/Anul 1/OOP/Lab3-4/Service" -I"D:/Programming n shit/UBB/Anul 1/OOP/Lab3-4/Validators"
   OBJECT_DIR = CMakeFiles\Lab3_4.dir
   OBJECT_FILE_DIR = CMakeFiles\Lab3_4.dir\Validators
 
-build CMakeFiles/Lab3_4.dir/main.c.obj: C_COMPILER__Lab3_4_Debug D$:/Programming/Anul$ 1/OOP/Lab3-4/main.c || cmake_object_order_depends_target_Lab3_4
+build CMakeFiles/Lab3_4.dir/main.c.obj: C_COMPILER__Lab3_4_Debug D$:/Programming$ n$ shit/UBB/Anul$ 1/OOP/Lab3-4/main.c || cmake_object_order_depends_target_Lab3_4
   DEP_FILE = CMakeFiles\Lab3_4.dir\main.c.obj.d
   FLAGS = -g -std=gnu11
-  INCLUDES = -I"D:/Programming/Anul 1/OOP/Lab3-4/Domain" -I"D:/Programming/Anul 1/OOP/Lab3-4/Interface" -I"D:/Programming/Anul 1/OOP/Lab3-4/Repozitory" -I"D:/Programming/Anul 1/OOP/Lab3-4/Service" -I"D:/Programming/Anul 1/OOP/Lab3-4/Validators"
+  INCLUDES = -I"D:/Programming n shit/UBB/Anul 1/OOP/Lab3-4/Domain" -I"D:/Programming n shit/UBB/Anul 1/OOP/Lab3-4/Interface" -I"D:/Programming n shit/UBB/Anul 1/OOP/Lab3-4/Repozitory" -I"D:/Programming n shit/UBB/Anul 1/OOP/Lab3-4/Service" -I"D:/Programming n shit/UBB/Anul 1/OOP/Lab3-4/Validators"
   OBJECT_DIR = CMakeFiles\Lab3_4.dir
   OBJECT_FILE_DIR = CMakeFiles\Lab3_4.dir
 
@@ -114,7 +114,7 @@ build Lab3_4.exe: C_EXECUTABLE_LINKER__Lab3_4_Debug CMakeFiles/Lab3_4.dir/Domain
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D "D:\Programming\Anul 1\OOP\Lab3-4\cmake-build-debug" && "D:\Programming\IDE\CLion 2021.3.3\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  COMMAND = cmd.exe /C "cd /D "D:\Programming n shit\UBB\Anul 1\OOP\Lab3-4\cmake-build-debug" && "D:\Programming n shit\CLion 2021.3.3\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -125,7 +125,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D "D:\Programming\Anul 1\OOP\Lab3-4\cmake-build-debug" && "D:\Programming\IDE\CLion 2021.3.3\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -S"D:\Programming\Anul 1\OOP\Lab3-4" -B"D:\Programming\Anul 1\OOP\Lab3-4\cmake-build-debug""
+  COMMAND = cmd.exe /C "cd /D "D:\Programming n shit\UBB\Anul 1\OOP\Lab3-4\cmake-build-debug" && "D:\Programming n shit\CLion 2021.3.3\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -S"D:\Programming n shit\UBB\Anul 1\OOP\Lab3-4" -B"D:\Programming n shit\UBB\Anul 1\OOP\Lab3-4\cmake-build-debug""
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -143,7 +143,7 @@ build Lab3_4: phony Lab3_4.exe
 # =============================================================================
 
 #############################################
-# Folder: D:/Programming/Anul 1/OOP/Lab3-4/cmake-build-debug
+# Folder: D:/Programming n shit/UBB/Anul 1/OOP/Lab3-4/cmake-build-debug
 
 build all: phony Lab3_4.exe
 
@@ -154,14 +154,14 @@ build all: phony Lab3_4.exe
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | ../CMakeLists.txt CMakeCache.txt CMakeFiles/3.21.1/CMakeCCompiler.cmake CMakeFiles/3.21.1/CMakeRCCompiler.cmake CMakeFiles/3.21.1/CMakeSystem.cmake D$:/Programming/IDE/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeCInformation.cmake D$:/Programming/IDE/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake D$:/Programming/IDE/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeGenericSystem.cmake D$:/Programming/IDE/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake D$:/Programming/IDE/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake D$:/Programming/IDE/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeRCInformation.cmake D$:/Programming/IDE/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeSystemSpecificInformation.cmake D$:/Programming/IDE/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake D$:/Programming/IDE/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake D$:/Programming/IDE/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/GNU-C.cmake D$:/Programming/IDE/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/GNU.cmake D$:/Programming/IDE/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-GNU-C-ABI.cmake D$:/Programming/IDE/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-GNU-C.cmake D$:/Programming/IDE/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-GNU.cmake D$:/Programming/IDE/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-windres.cmake D$:/Programming/IDE/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows.cmake D$:/Programming/IDE/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/Platform/WindowsPaths.cmake
+build build.ninja: RERUN_CMAKE | ../CMakeLists.txt CMakeCache.txt CMakeFiles/3.21.1/CMakeCCompiler.cmake CMakeFiles/3.21.1/CMakeRCCompiler.cmake CMakeFiles/3.21.1/CMakeSystem.cmake D$:/Programming$ n$ shit/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeCInformation.cmake D$:/Programming$ n$ shit/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake D$:/Programming$ n$ shit/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeGenericSystem.cmake D$:/Programming$ n$ shit/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake D$:/Programming$ n$ shit/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake D$:/Programming$ n$ shit/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeRCInformation.cmake D$:/Programming$ n$ shit/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeSystemSpecificInformation.cmake D$:/Programming$ n$ shit/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake D$:/Programming$ n$ shit/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake D$:/Programming$ n$ shit/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/GNU-C.cmake D$:/Programming$ n$ shit/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/GNU.cmake D$:/Programming$ n$ shit/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-GNU-C-ABI.cmake D$:/Programming$ n$ shit/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-GNU-C.cmake D$:/Programming$ n$ shit/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-GNU.cmake D$:/Programming$ n$ shit/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-windres.cmake D$:/Programming$ n$ shit/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows.cmake D$:/Programming$ n$ shit/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/Platform/WindowsPaths.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build ../CMakeLists.txt CMakeCache.txt CMakeFiles/3.21.1/CMakeCCompiler.cmake CMakeFiles/3.21.1/CMakeRCCompiler.cmake CMakeFiles/3.21.1/CMakeSystem.cmake D$:/Programming/IDE/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeCInformation.cmake D$:/Programming/IDE/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake D$:/Programming/IDE/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeGenericSystem.cmake D$:/Programming/IDE/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake D$:/Programming/IDE/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake D$:/Programming/IDE/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeRCInformation.cmake D$:/Programming/IDE/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeSystemSpecificInformation.cmake D$:/Programming/IDE/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake D$:/Programming/IDE/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake D$:/Programming/IDE/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/GNU-C.cmake D$:/Programming/IDE/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/GNU.cmake D$:/Programming/IDE/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-GNU-C-ABI.cmake D$:/Programming/IDE/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-GNU-C.cmake D$:/Programming/IDE/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-GNU.cmake D$:/Programming/IDE/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-windres.cmake D$:/Programming/IDE/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows.cmake D$:/Programming/IDE/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/Platform/WindowsPaths.cmake: phony
+build ../CMakeLists.txt CMakeCache.txt CMakeFiles/3.21.1/CMakeCCompiler.cmake CMakeFiles/3.21.1/CMakeRCCompiler.cmake CMakeFiles/3.21.1/CMakeSystem.cmake D$:/Programming$ n$ shit/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeCInformation.cmake D$:/Programming$ n$ shit/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeCommonLanguageInclude.cmake D$:/Programming$ n$ shit/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeGenericSystem.cmake D$:/Programming$ n$ shit/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeInitializeConfigs.cmake D$:/Programming$ n$ shit/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeLanguageInformation.cmake D$:/Programming$ n$ shit/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeRCInformation.cmake D$:/Programming$ n$ shit/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeSystemSpecificInformation.cmake D$:/Programming$ n$ shit/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/CMakeSystemSpecificInitialize.cmake D$:/Programming$ n$ shit/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/CMakeCommonCompilerMacros.cmake D$:/Programming$ n$ shit/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/GNU-C.cmake D$:/Programming$ n$ shit/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/Compiler/GNU.cmake D$:/Programming$ n$ shit/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-GNU-C-ABI.cmake D$:/Programming$ n$ shit/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-GNU-C.cmake D$:/Programming$ n$ shit/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-GNU.cmake D$:/Programming$ n$ shit/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows-windres.cmake D$:/Programming$ n$ shit/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/Platform/Windows.cmake D$:/Programming$ n$ shit/CLion$ 2021.3.3/bin/cmake/win/share/cmake-3.21/Modules/Platform/WindowsPaths.cmake: phony
 
 
 #############################################

@@ -1,11 +1,12 @@
 #include "repozitory.h"
 #include "stdlib.h"
+#include <string.h>
+#include <assert.h>
 
 struct repo{
     void **list;
     int size;
     int capacity;
-
 };
 
 void repo_default_values(repo* array){
@@ -20,7 +21,7 @@ void repo_default_values(repo* array){
     participant = create_participant("Tzanca", "Uraganu", 50);
     repo_add(array, participant);
 
-    participant = create_participant("Nematu", "Iuli", 100);
+    participant = create_participant("Neamtu", "Iuli", 99);
     repo_add(array, participant);
 
     participant = create_participant("Moldovan", "Denis-Angel", 10);
@@ -38,9 +39,10 @@ repo* repo_initialization(){
 }
 
 void repo_destructor(repo* array){
-    for(int i = 0; i < array->size; i++)
-        free(array->list[i]);
+    for(int i = 0; i < array->size; i++){
+        destroy_participant(array->list[i]);}
     free (array->list);
+    free(array);
 }
 
 void repo_realloc(repo* array, int newcapacity){
@@ -57,7 +59,7 @@ int repo_delete(repo* array, int id){
     if(id >= array->size)
         return 0;
     array->size--;
-    destory_participant(array->list[id]);
+    destroy_participant(array->list[id]);
     for(int i = id; i < array->size; i++){
         array->list[i] = array->list[i+1];}
     return 1;
@@ -78,4 +80,83 @@ type_participant * repo_get_by_id(repo* array, int id){
 
 int repo_get_size(repo* array){
     return array->size;
+}
+
+void repo_scor_sort_increasing(repo* array){
+    type_participant* temp;
+    for(int i = 0; i < array->size; i++)
+        for(int j = 0; j< array->size; j++)
+            if(get_scor(array->list[i]) < get_scor(array->list[j])){
+                temp = array->list[i];
+                array->list[i] = array->list[j];
+                array->list[j] = temp;
+            }
+}
+
+void repo_scor_sort_decreasing(repo* array){
+    type_participant* temp;
+    for(int i = 0; i < array->size; i++)
+        for(int j = 0; j< array->size; j++)
+            if(get_scor(array->list[i]) > get_scor(array->list[j])){
+                temp = array->list[i];
+                array->list[i] = array->list[j];
+                array->list[j] = temp;
+            }
+}
+
+void repo_name_sort_increasing(repo* array){
+    type_participant* temp;
+    for(int i = 0; i < array->size; i++)
+        for(int j = 0; j< array->size; j++)
+            if(strcmp(get_nume(array->list[i]), get_nume(array->list[j])) < 0){
+                temp = array->list[i];
+                array->list[i] = array->list[j];
+                array->list[j] = temp;
+            }
+}
+
+void repo_name_sort_decreasing(repo* array){
+    type_participant* temp;
+    for(int i = 0; i < array->size; i++)
+        for(int j = 0; j< array->size; j++)
+            if(strcmp(get_nume(array->list[i]), get_nume(array->list[j])) > 0){
+                temp = array->list[i];
+                array->list[i] = array->list[j];
+                array->list[j] = temp;
+            }
+}
+
+void repo_test(){
+    repo *repo = NULL;
+    repo = repo_initialization();
+    assert(repo != NULL);
+    assert(repo_get_size(repo) == 5);
+    type_participant* participant = repo_get_by_id(repo, 0);
+
+    assert(get_scor(participant) == 17);
+
+    repo_add(repo, participant);
+    assert(repo_get_size(repo) == 6);
+    assert(repo_get_by_id(repo, 5) == participant);
+
+    repo_delete(repo, 0);
+    assert(repo_get_size(repo) == 5);
+
+    repo_realloc(repo, 100);
+    assert(repo->capacity == 100);
+
+    repo_scor_sort_increasing(repo);
+    assert(repo_get_by_id(repo, 1) == participant);
+
+    repo_scor_sort_decreasing(repo);
+    assert(repo_get_by_id(repo, 3) == participant);
+
+    repo_name_sort_decreasing(repo);
+    assert(repo_get_by_id(repo, 0) == participant);
+
+    repo_name_sort_increasing(repo);
+    assert(repo_get_by_id(repo, 4) == participant);
+    repo->size--;
+
+    repo_destructor(repo);
 }

@@ -1,260 +1,388 @@
-        -:    0:Source:D:/Programming/Anul 1/OOP/Lab3-4/Interface/interface.c
-        -:    0:Graph:D:\Programming\Anul 1\OOP\Lab3-4\cmake-build-debug-coverage\CMakeFiles\Lab3_4.dir\Interface\interface.c.gcno
-        -:    0:Data:D:\Programming\Anul 1\OOP\Lab3-4\cmake-build-debug-coverage\CMakeFiles\Lab3_4.dir\Interface\interface.c.gcda
+        -:    0:Source:D:/Programming n shit/UBB/Anul 1/OOP/Lab3-4/Interface/interface.c
+        -:    0:Graph:D:\Programming n shit\UBB\Anul 1\OOP\Lab3-4\cmake-build-debug-coverage\CMakeFiles\Lab3_4.dir\Interface\interface.c.gcno
+        -:    0:Data:D:\Programming n shit\UBB\Anul 1\OOP\Lab3-4\cmake-build-debug-coverage\CMakeFiles\Lab3_4.dir\Interface\interface.c.gcda
         -:    0:Runs:1
         -:    1:#include <stdio.h>
         -:    2:#include <stdlib.h>
         -:    3:#include <string.h>
         -:    4:#include "interface.h"
-        -:    5:#include "../Service/service.h"
-        -:    6:
-        -:    7:char command_sep[] = " ";
-        -:    8:
+        -:    5:
+        -:    6:struct interface{
+        -:    7:    service* srv;
+        -:    8:};
+        -:    9:
+function interface_initialization called 1 returned 100% blocks executed 100%
+        1:   10:interface* interface_initialization(service* srv){
+        -:   11:    //functie de initializare a obiectului de interfata
+        1:   12:    interface* ui = malloc(sizeof(interface));
+        1:   13:    ui->srv = srv;
+        1:   14:    return ui;
+        1:   14-block  0
+        -:   15:}
+        -:   16:
+function interface_destructor called 1 returned 100% blocks executed 100%
+        1:   17:void interface_destructor(interface* ui){
+        -:   18:    //strica obicectul de interfata
+        1:   19:    free(ui);
+        1:   20:}
+        -:   21:
+        -:   22:char command_sep[] = " ";
+        -:   23:
 function interface_delete called 0 returned 0% blocks executed 0%
-    #####:    9:void interface_delete(){
-        -:   10:    char *id;
-    #####:   11:    id = strtok(NULL, command_sep);
-    %%%%%:   11-block  0
+    #####:   24:void interface_delete(service* srv){
+        -:   25:    //functie de stergere a unui obiect
+        -:   26:    char *id;
+    #####:   27:    id = strtok(NULL, command_sep);
+    %%%%%:   27-block  0
 call    0 never executed
-        -:   12:
-    #####:   13:    if(id == NULL){
+        -:   28:
+    #####:   29:    if(id == NULL){
 branch  0 never executed
 branch  1 never executed
-    #####:   14:        printf("Too few arguments were given\n");
-    %%%%%:   14-block  0
+    #####:   30:        printf("Too few arguments were given\n");
+    %%%%%:   30-block  0
 call    0 never executed
-        -:   15:    }
-    #####:   16:    else if(strtok(NULL, command_sep) != NULL){
-    %%%%%:   16-block  0
+        -:   31:    }
+    #####:   32:    else if(strtok(NULL, command_sep) != NULL){
+    %%%%%:   32-block  0
 call    0 never executed
 branch  1 never executed
 branch  2 never executed
-    #####:   17:        printf("Too many arguments were give\n");
-    %%%%%:   17-block  0
+    #####:   33:        printf("Too many arguments were give\n");
+    %%%%%:   33-block  0
 call    0 never executed
-        -:   18:    }
-        -:   19:    else{
-    #####:   20:        int p = service_delete(id);
-    %%%%%:   20-block  0
-call    0 never executed
-    #####:   21:        if(p == 1){
-branch  0 never executed
-branch  1 never executed
-    #####:   22:            printf("Delete was successful\n");
-    %%%%%:   22-block  0
-call    0 never executed
-        -:   23:        }
-    #####:   24:        else if(p == 2){
-    %%%%%:   24-block  0
-branch  0 never executed
-branch  1 never executed
-    #####:   25:            printf("No participant with given id was found\n");
-    %%%%%:   25-block  0
-call    0 never executed
-        -:   26:        }
-        -:   27:        else{
-    #####:   28:            printf("One or more arguments were incorrect\n");
-    %%%%%:   28-block  0
-call    0 never executed
-        -:   29:        }
-        -:   30:    }
-        -:   31:
-    #####:   32:}
-        -:   33:
-function interface_modify called 0 returned 0% blocks executed 0%
-    #####:   34:void interface_modify(){
-        -:   35:    char *id, *nume, *prenume, *scor;
-    #####:   36:    id = strtok(NULL, command_sep);
+        -:   34:    }
+        -:   35:    else{
+    #####:   36:        int p = service_delete(srv, id);
     %%%%%:   36-block  0
 call    0 never executed
-    #####:   37:    nume = strtok(NULL, command_sep);
-call    0 never executed
-    #####:   38:    prenume = strtok(NULL, command_sep);
-call    0 never executed
-    #####:   39:    scor = strtok(NULL, command_sep);
-call    0 never executed
-        -:   40:
-    #####:   41:    if(id == NULL || nume == NULL || prenume == NULL || scor == NULL){
+    #####:   37:        if(p == 1){
 branch  0 never executed
 branch  1 never executed
-    %%%%%:   41-block  0
-branch  2 never executed
-branch  3 never executed
-    %%%%%:   41-block  1
-branch  4 never executed
-branch  5 never executed
-    %%%%%:   41-block  2
-branch  6 never executed
-branch  7 never executed
-    #####:   42:        printf("Too few arguments were given\n");
-    %%%%%:   42-block  0
+    #####:   38:            printf("Delete was successful\n");
+    %%%%%:   38-block  0
 call    0 never executed
-        -:   43:    }
-    #####:   44:    else if(strtok(NULL, command_sep) != NULL){
+        -:   39:        }
+    #####:   40:        else if(p == 2){
+    %%%%%:   40-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   41:            printf("No participant with given id was found\n");
+    %%%%%:   41-block  0
+call    0 never executed
+        -:   42:        }
+        -:   43:        else{
+    #####:   44:            printf("One or more arguments were incorrect\n");
     %%%%%:   44-block  0
 call    0 never executed
-branch  1 never executed
-branch  2 never executed
-    #####:   45:        printf("Too many arguments were give\n");
-    %%%%%:   45-block  0
-call    0 never executed
+        -:   45:        }
         -:   46:    }
-        -:   47:    else{
-    #####:   48:        int p = service_modify(id, nume, prenume, scor);
-    %%%%%:   48-block  0
-call    0 never executed
-    #####:   49:        if(p == 1){
-branch  0 never executed
-branch  1 never executed
-    #####:   50:            printf("Modify was successful\n");
-    %%%%%:   50-block  0
-call    0 never executed
-        -:   51:        }
-    #####:   52:        else if(p == 2){
-    %%%%%:   52-block  0
-branch  0 never executed
-branch  1 never executed
-    #####:   53:            printf("No participant with given id was found\n");
+        -:   47:
+    #####:   48:}
+        -:   49:
+function interface_modify called 0 returned 0% blocks executed 0%
+    #####:   50:void interface_modify(service* srv){
+        -:   51:    //noo i doent wanna write no more
+        -:   52:    char *id, *nume, *prenume, *scor;
+    #####:   53:    id = strtok(NULL, command_sep);
     %%%%%:   53-block  0
 call    0 never executed
-        -:   54:        }
-        -:   55:        else{
-    #####:   56:        printf("One or more arguments were incorrect\n");
-    %%%%%:   56-block  0
+    #####:   54:    nume = strtok(NULL, command_sep);
 call    0 never executed
-        -:   57:        }
-        -:   58:    }
-    #####:   59:}
-        -:   60:
-function interface_add called 0 returned 0% blocks executed 0%
-    #####:   61:void interface_add(){
-        -:   62:    char *nume, *prenume, *scor;
-    #####:   63:    nume = strtok(NULL, command_sep);
-    %%%%%:   63-block  0
+    #####:   55:    prenume = strtok(NULL, command_sep);
 call    0 never executed
-    #####:   64:    prenume = strtok(NULL, command_sep);
+    #####:   56:    scor = strtok(NULL, command_sep);
 call    0 never executed
-    #####:   65:    scor = strtok(NULL, command_sep);
-call    0 never executed
-        -:   66:
-    #####:   67:    if(nume == NULL || prenume == NULL || scor == NULL){
+        -:   57:
+    #####:   58:    if(id == NULL || nume == NULL || prenume == NULL || scor == NULL){
 branch  0 never executed
 branch  1 never executed
-    %%%%%:   67-block  0
+    %%%%%:   58-block  0
 branch  2 never executed
 branch  3 never executed
-    %%%%%:   67-block  1
+    %%%%%:   58-block  1
 branch  4 never executed
 branch  5 never executed
-    #####:   68:        printf("Too few arguments were given\n");
-    %%%%%:   68-block  0
+    %%%%%:   58-block  2
+branch  6 never executed
+branch  7 never executed
+    #####:   59:        printf("Too few arguments were given\n");
+    %%%%%:   59-block  0
 call    0 never executed
-        -:   69:    }
-    #####:   70:    else if(strtok(NULL, command_sep) != NULL){
-    %%%%%:   70-block  0
-call    0 never executed
-branch  1 never executed
-branch  2 never executed
-    #####:   71:        printf("Too many arguments were give\n");
-    %%%%%:   71-block  0
-call    0 never executed
-        -:   72:    }
-    #####:   73:    else if(service_add(nume, prenume, scor)){
-    %%%%%:   73-block  0
+        -:   60:    }
+    #####:   61:    else if(strtok(NULL, command_sep) != NULL){
+    %%%%%:   61-block  0
 call    0 never executed
 branch  1 never executed
 branch  2 never executed
-    #####:   74:        printf("Add was successful\n");
-    %%%%%:   74-block  0
+    #####:   62:        printf("Too many arguments were give\n");
+    %%%%%:   62-block  0
 call    0 never executed
-        -:   75:    }
-        -:   76:    else{
-    #####:   77:        printf("One or more arguments were incorrect\n");
-    %%%%%:   77-block  0
+        -:   63:    }
+        -:   64:    else{
+    #####:   65:        int p = service_modify(srv, id, nume, prenume, scor);
+    %%%%%:   65-block  0
 call    0 never executed
-        -:   78:    }
-    #####:   79:}
-        -:   80:
-function interface_debug called 1 returned 100% blocks executed 100%
-        1:   81:void interface_debug(){
-        -:   82:    char *string;
-        1:   83:    string = service_debug();
-        1:   83-block  0
-call    0 returned 1
-        1:   84:    printf("%s", string);
-call    0 returned 1
-        1:   85:    free(string);
-        1:   86:}
-        -:   87:
-function get_command called 2 returned 100% blocks executed 69%
-        2:   88:short int get_command(){
-        2:   89:    char *input = (char *)malloc(500);
-        2:   90:    printf("Command:");
-        2:   90-block  0
-call    0 returned 2
-        2:   91:    gets(input);
-call    0 returned 2
-        2:   92:    char *command = strtok(input, command_sep);
-call    0 returned 2
-        2:   93:    if(!strcmp(command, "exit")){
-branch  0 taken 1 (fallthrough)
-branch  1 taken 1
-        1:   94:        return 0;
-        1:   94-block  0
-        -:   95:    }
-        1:   96:    else if(!strcmp(command, "add")){
-        1:   96-block  0
-branch  0 taken 0 (fallthrough)
-branch  1 taken 1
-    #####:   97:        interface_add();
-    %%%%%:   97-block  0
-call    0 never executed
-        -:   98:    }
-        1:   99:    else if(!strcmp(command, "modify")){
-        1:   99-block  0
-branch  0 taken 0 (fallthrough)
-branch  1 taken 1
-    #####:  100:        interface_modify();
-    %%%%%:  100-block  0
-call    0 never executed
-        -:  101:    }
-        1:  102:    else if(!strcmp(command, "debug")){
-        1:  102-block  0
-branch  0 taken 1 (fallthrough)
-branch  1 taken 0
-        1:  103:        interface_debug();
-        1:  103-block  0
-call    0 returned 1
-        -:  104:    }
-    #####:  105:    else if(!strcmp(command, "delete")){
-    %%%%%:  105-block  0
+    #####:   66:        if(p == 1){
 branch  0 never executed
 branch  1 never executed
-    #####:  106:        interface_delete();
-    %%%%%:  106-block  0
+    #####:   67:            printf("Modify was successful\n");
+    %%%%%:   67-block  0
 call    0 never executed
-        -:  107:    }
-        -:  108:    else
-    #####:  109:        printf("Command doesn't exist\n");
+        -:   68:        }
+    #####:   69:        else if(p == 2){
+    %%%%%:   69-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   70:            printf("No participant with given id was found\n");
+    %%%%%:   70-block  0
+call    0 never executed
+        -:   71:        }
+        -:   72:        else{
+    #####:   73:        printf("One or more arguments were incorrect\n");
+    %%%%%:   73-block  0
+call    0 never executed
+        -:   74:        }
+        -:   75:    }
+    #####:   76:}
+        -:   77:
+function interface_filter called 0 returned 0% blocks executed 0%
+    #####:   78:void interface_filter(service* srv){
+        -:   79:    char *scor;
+    #####:   80:    scor = strtok(NULL, command_sep);
+    %%%%%:   80-block  0
+call    0 never executed
+    #####:   81:    if(scor == NULL){
+branch  0 never executed
+branch  1 never executed
+    #####:   82:        printf("Too few arguments were given\n");
+    %%%%%:   82-block  0
+call    0 never executed
+        -:   83:    }
+    #####:   84:    else if(strtok(NULL, command_sep) != NULL){
+    %%%%%:   84-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   85:        printf("Too many arguments were give\n");
+    %%%%%:   85-block  0
+call    0 never executed
+        -:   86:    }
+        -:   87:    else{
+    #####:   88:        char* out = service_show(srv, scor);
+    %%%%%:   88-block  0
+call    0 never executed
+    #####:   89:        if(out == NULL)
+branch  0 never executed
+branch  1 never executed
+    #####:   90:            printf("One or more arguments were incorrect\n");
+    %%%%%:   90-block  0
+call    0 never executed
+    #####:   91:        else if(strlen(out) == 0)
+    %%%%%:   91-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   92:            printf("No students were found\n");
+    %%%%%:   92-block  0
+call    0 never executed
+        -:   93:        else{
+    #####:   94:            printf("%s", out);
+    %%%%%:   94-block  0
+call    0 never executed
+    #####:   95:            free(out);
+        -:   96:        }
+        -:   97:    }
+    #####:   98:}
+        -:   99:
+function interface_add called 0 returned 0% blocks executed 0%
+    #####:  100:void interface_add(service* srv){
+        -:  101:    char *nume, *prenume, *scor;
+    #####:  102:    nume = strtok(NULL, command_sep);
+    %%%%%:  102-block  0
+call    0 never executed
+    #####:  103:    prenume = strtok(NULL, command_sep);
+call    0 never executed
+    #####:  104:    scor = strtok(NULL, command_sep);
+call    0 never executed
+        -:  105:
+    #####:  106:    if(nume == NULL || prenume == NULL || scor == NULL){
+branch  0 never executed
+branch  1 never executed
+    %%%%%:  106-block  0
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  106-block  1
+branch  4 never executed
+branch  5 never executed
+    #####:  107:        printf("Too few arguments were given\n");
+    %%%%%:  107-block  0
+call    0 never executed
+        -:  108:    }
+    #####:  109:    else if(strtok(NULL, command_sep) != NULL){
     %%%%%:  109-block  0
 call    0 never executed
-        1:  110:    free(command);
-        1:  111:    return 1;
-        1:  111-block  0
-        -:  112:}
-        -:  113:
+branch  1 never executed
+branch  2 never executed
+    #####:  110:        printf("Too many arguments were give\n");
+    %%%%%:  110-block  0
+call    0 never executed
+        -:  111:    }
+    #####:  112:    else if(service_add(srv, nume, prenume, scor)){
+    %%%%%:  112-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  113:        printf("Add was successful\n");
+    %%%%%:  113-block  0
+call    0 never executed
+        -:  114:    }
+        -:  115:    else{
+    #####:  116:        printf("One or more arguments were incorrect\n");
+    %%%%%:  116-block  0
+call    0 never executed
+        -:  117:    }
+    #####:  118:}
+        -:  119:
+function interface_debug called 0 returned 0% blocks executed 0%
+    #####:  120:void interface_debug(service* srv){
+        -:  121:    char *string;
+    #####:  122:    string = service_debug(srv);
+    %%%%%:  122-block  0
+call    0 never executed
+    #####:  123:    printf("%s", string);
+call    0 never executed
+    #####:  124:    free(string);
+    #####:  125:}
+        -:  126:
+function interface_sort called 0 returned 0% blocks executed 0%
+    #####:  127:void interface_sort(service* srv){
+        -:  128:    char *key, *order ;
+    #####:  129:    key = strtok(NULL, command_sep);
+    %%%%%:  129-block  0
+call    0 never executed
+    #####:  130:    order = strtok(NULL, command_sep);
+call    0 never executed
+        -:  131:
+    #####:  132:    if(key == NULL || order == NULL){
+branch  0 never executed
+branch  1 never executed
+    %%%%%:  132-block  0
+branch  2 never executed
+branch  3 never executed
+    #####:  133:        printf("Too few arguments were given\n");
+    %%%%%:  133-block  0
+call    0 never executed
+        -:  134:    }
+    #####:  135:    else if(strtok(NULL, command_sep) != NULL){
+    %%%%%:  135-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  136:        printf("Too many arguments were give\n");
+    %%%%%:  136-block  0
+call    0 never executed
+        -:  137:    }
+    #####:  138:    else if(service_sort(srv, key, order)){
+    %%%%%:  138-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  139:        printf("Sort was successful\n");
+    %%%%%:  139-block  0
+call    0 never executed
+        -:  140:    }
+        -:  141:    else{
+    #####:  142:        printf("One or more arguments were incorrect\n");
+    %%%%%:  142-block  0
+call    0 never executed
+        -:  143:    }
+    #####:  144:}
+        -:  145:
+function get_command called 1 returned 100% blocks executed 30%
+        1:  146:short int get_command(interface* ui){
+        1:  147:    char *input = (char *)malloc(500);
+        1:  148:    printf("Command:");
+        1:  148-block  0
+call    0 returned 1
+        1:  149:    gets(input);
+call    0 returned 1
+        1:  150:    char *command = strtok(input, command_sep);
+call    0 returned 1
+        1:  151:    if(!strcmp(command, "exit")){
+branch  0 taken 1 (fallthrough)
+branch  1 taken 0
+        1:  152:        return 0;
+        1:  152-block  0
+        -:  153:    }
+    #####:  154:    else if(!strcmp(command, "add")){
+    %%%%%:  154-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  155:        interface_add(ui->srv);
+    %%%%%:  155-block  0
+call    0 never executed
+        -:  156:    }
+    #####:  157:    else if(!strcmp(command, "modify")){
+    %%%%%:  157-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  158:        interface_modify(ui->srv);
+    %%%%%:  158-block  0
+call    0 never executed
+        -:  159:    }
+    #####:  160:    else if(!strcmp(command, "debug")){
+    %%%%%:  160-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  161:        interface_debug(ui->srv);
+    %%%%%:  161-block  0
+call    0 never executed
+        -:  162:    }
+    #####:  163:    else if(!strcmp(command, "delete")){
+    %%%%%:  163-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  164:        interface_delete(ui->srv);
+    %%%%%:  164-block  0
+call    0 never executed
+        -:  165:    }
+    #####:  166:    else if(!strcmp(command, "filter")){
+    %%%%%:  166-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  167:        interface_filter(ui->srv);
+    %%%%%:  167-block  0
+call    0 never executed
+        -:  168:    }
+    #####:  169:    else if(!strcmp(command, "sort")){
+    %%%%%:  169-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  170:        interface_sort(ui->srv);
+    %%%%%:  170-block  0
+call    0 never executed
+        -:  171:    }
+        -:  172:    else
+    #####:  173:        printf("Command doesn't exist\n");
+    %%%%%:  173-block  0
+call    0 never executed
+    #####:  174:    free(command);
+    #####:  175:    return 1;
+    %%%%%:  175-block  0
+        -:  176:}
+        -:  177:
 function interface_run called 1 returned 100% blocks executed 100%
-        1:  114:void interface_run(){
-        1:  115:    short int Run = 1;
-        3:  116:    while(Run){
-        1:  116-block  0
-        3:  116-block  1
-branch  0 taken 2
+        1:  178:void interface_run(interface* ui){
+        1:  179:    short int Run = 1;
+        2:  180:    while(Run){
+        1:  180-block  0
+        2:  180-block  1
+branch  0 taken 1
 branch  1 taken 1 (fallthrough)
-        2:  117:        Run = get_command();
-        2:  117-block  0
-call    0 returned 2
-        -:  118:    }
-        1:  119:}
-        -:  120:
-        -:  121:
+        1:  181:        Run = get_command(ui);
+        1:  181-block  0
+call    0 returned 1
+        -:  182:    }
+        1:  183:}
+        -:  184:
+        -:  185:
