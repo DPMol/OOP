@@ -8,420 +8,472 @@
         -:    4:#include "stdio.h"
         -:    5:#include "assert.h"
         -:    6:
-        -:    7:
-        -:    8:struct service{
-        -:    9:    repo* repo;
-        -:   10:};
-        -:   11:
+function plus called 36 returned 100% blocks executed 100%
+       36:    7:int plus(int a, int b){
+       36:    8:    if(a<b){
+       36:    8-block  0
+branch  0 taken 20 (fallthrough)
+branch  1 taken 16
+       20:    9:        return 0;
+       20:    9-block  0
+        -:   10:    }
+       16:   11:    return 1;
+       16:   11-block  0
+        -:   12:}
+        -:   13:
+function minus called 36 returned 100% blocks executed 100%
+       36:   14:int minus(int a, int b){
+       36:   15:    if(a<b){
+       36:   15-block  0
+branch  0 taken 20 (fallthrough)
+branch  1 taken 16
+       20:   16:        return 0;
+       20:   16-block  0
+        -:   17:    }
+       16:   18:    return 1;
+       16:   18-block  0
+        -:   19:}
+        -:   20:
+function nplus called 36 returned 100% blocks executed 100%
+       36:   21:int nplus(const char *a, const char* b){
+       36:   22:    if(strcmp(a,b) > 0){
+       36:   22-block  0
+branch  0 taken 19 (fallthrough)
+branch  1 taken 17
+       19:   23:        return 0;
+       19:   23-block  0
+        -:   24:    }
+       17:   25:    return 1;
+       17:   25-block  0
+        -:   26:}
+        -:   27:
+function nminus called 36 returned 100% blocks executed 100%
+       36:   28:int nminus(const char* a, const char* b){
+       36:   29:    if(strcmp(a,b) < 0){
+       36:   29-block  0
+branch  0 taken 15 (fallthrough)
+branch  1 taken 21
+       15:   30:        return 0;
+       15:   30-block  0
+        -:   31:    }
+       21:   32:    return 1;
+       21:   32-block  0
+        -:   33:}
+        -:   34:
+        -:   35:struct service{
+        -:   36:    repo* repo;
+        -:   37:};
+        -:   38:
 function service_initialization called 2 returned 100% blocks executed 100%
-        2:   12:service* service_initialization(repo* repo){
-        2:   13:    service* srv = malloc(sizeof(service));
-        2:   14:    srv->repo = repo;
-        2:   15:    return srv;
-        2:   15-block  0
-        -:   16:}
-        -:   17:
+        2:   39:service* service_initialization(repo* repo){
+        2:   40:    service* srv = malloc(sizeof(service));
+        2:   41:    srv->repo = repo;
+        2:   42:    return srv;
+        2:   42-block  0
+        -:   43:}
+        -:   44:
 function service_destructor called 2 returned 100% blocks executed 100%
-        2:   18:void service_destructor(service *srv){
-        2:   19:    free(srv);
-        2:   20:}
-        -:   21:
+        2:   45:void service_destructor(service *srv){
+        2:   46:    free(srv);
+        2:   47:}
+        -:   48:
 function service_delete called 3 returned 100% blocks executed 100%
-        3:   22:int service_delete(service* srv, char *id){
-        3:   23:    if(!is_id(id))
-        3:   23-block  0
+        3:   49:int service_delete(service* srv, char *id){
+        3:   50:    if(!is_id(id))
+        3:   50-block  0
 call    0 returned 3
 branch  1 taken 1 (fallthrough)
 branch  2 taken 2
-        1:   24:        return 0;
-        1:   24-block  0
-        2:   25:    if(repo_delete(srv->repo, atoi(id)) == 1)
-        2:   25-block  0
+        1:   51:        return 0;
+        1:   51-block  0
+        2:   52:    int numar = strtol(id, NULL, 0);
+        2:   52-block  0
 call    0 returned 2
-call    1 returned 2
-branch  2 taken 1 (fallthrough)
-branch  3 taken 1
-        1:   26:        return 1;
-        1:   26-block  0
-        1:   27:    return 2;
-        1:   27-block  0
-        -:   28:}
-        -:   29:
-function service_show called 2 returned 100% blocks executed 100%
-        2:   30:char* service_show(service* srv, char* scor){
-        2:   31:    if(!is_score(scor))
-        2:   31-block  0
+        2:   53:    if(repo_delete(srv->repo, numar) == 1)
 call    0 returned 2
 branch  1 taken 1 (fallthrough)
 branch  2 taken 1
-        1:   32:        return NULL;
-        1:   32-block  0
-        -:   33:
-        -:   34:    type_participant *participant;
-        1:   35:    int end = repo_get_size(srv->repo);
-        1:   35-block  0
+        1:   54:        return 1;
+        1:   54-block  0
+        1:   55:    return 2;
+        1:   55-block  0
+        -:   56:}
+        -:   57:
+function service_show called 2 returned 100% blocks executed 100%
+        2:   58:char* service_show(service* srv, char* scor){
+        2:   59:    if(!is_score(scor))
+        2:   59-block  0
+call    0 returned 2
+branch  1 taken 1 (fallthrough)
+branch  2 taken 1
+        1:   60:        return NULL;
+        1:   60-block  0
+        -:   61:
+        -:   62:    type_participant *participant;
+        1:   63:    int end = repo_get_size(srv->repo);
+        1:   63-block  0
 call    0 returned 1
-        -:   36:
-        1:   37:    int intscor = atoi(scor);
+        -:   64:
+        1:   65:    int intscor = strtol(scor, NULL, 0);
 call    0 returned 1
-        -:   38:
-        1:   39:    char *out = malloc(end * 300);
-        1:   40:    out[0] = '\0';
-        -:   41:    char cscor[4];
-        6:   42:    for(int i = 0; i < end; i++){
-        5:   42-block  0
-        6:   42-block  1
+        -:   66:
+        1:   67:    char *out = malloc(end * 300);
+        1:   68:    out[0] = '\0';
+        -:   69:    char cscor[4];
+        6:   70:    for(int i = 0; i < end; i++){
+        5:   70-block  0
+        6:   70-block  1
 branch  0 taken 5
 branch  1 taken 1 (fallthrough)
-        -:   43:
-        5:   44:        participant = repo_get_by_id(srv->repo,i);
-        5:   44-block  0
+        -:   71:
+        5:   72:        participant = repo_get_by_id(srv->repo,i);
+        5:   72-block  0
 call    0 returned 5
-        -:   45:
-        5:   46:        if(get_scor(participant) >= intscor) {
+        -:   73:
+        5:   74:        if(get_scor(participant) >= intscor) {
 call    0 returned 5
 branch  1 taken 5 (fallthrough)
 branch  2 taken 0
-        5:   47:            strcat(out, get_nume(participant));
-        5:   47-block  0
+        5:   75:            strcat(out, get_nume(participant));
+        5:   75-block  0
 call    0 returned 5
-        5:   48:            strcat(out, " ");
-        5:   49:            strcat(out, get_prenume(participant));
+        5:   76:            strcat(out, " ");
+        5:   77:            strcat(out, get_prenume(participant));
 call    0 returned 5
-        -:   50:
-        5:   51:            strcat(out, " ");
-        -:   52:
-        5:   53:            sprintf(cscor, "%d", get_scor(participant));
+        -:   78:
+        5:   79:            strcat(out, " ");
+        -:   80:
+        5:   81:            sprintf(cscor, "%d", get_scor(participant));
 call    0 returned 5
 call    1 returned 5
-        -:   54:
-        5:   55:            strcat(out, cscor);
-        5:   56:            strcat(out, "/100\n");
-        -:   57:
-        -:   58:        }
-        -:   59:    }
-        1:   60:    return out;
-        1:   60-block  0
-        -:   61:
-        -:   62:}
-        -:   63:
+        -:   82:
+        5:   83:            strcat(out, cscor);
+        5:   84:            strcat(out, "/100\n");
+        -:   85:
+        -:   86:        }
+        -:   87:    }
+        1:   88:    return out;
+        1:   88-block  0
+        -:   89:}
+        -:   90:
 function service_sort called 7 returned 100% blocks executed 100%
-        7:   64:int service_sort(service* srv, char* key, char* order){
-        7:   65:    if(!(is_key(key) && is_order(order)))
-        7:   65-block  0
+        7:   91:int service_sort(service* srv, char* key, char* order){
+        7:   92:    if(!(is_key(key) && is_order(order)))
+        7:   92-block  0
 call    0 returned 7
 branch  1 taken 6 (fallthrough)
 branch  2 taken 1
-        6:   65-block  1
+        6:   92-block  1
 call    3 returned 6
 branch  4 taken 2 (fallthrough)
 branch  5 taken 4
-        3:   66:        return 0;
-        3:   66-block  0
-        4:   67:    if(!strcmp(key, "scor")) {
-        4:   67-block  0
+        3:   93:        return 0;
+        3:   93-block  0
+        4:   94:    if(!strcmp(key, "scor")) {
+        4:   94-block  0
 branch  0 taken 2 (fallthrough)
 branch  1 taken 2
-        2:   68:        if (!strcmp(order, "+"))
-        2:   68-block  0
+        2:   95:        if (!strcmp(order, "+"))
+        2:   95-block  0
 branch  0 taken 1 (fallthrough)
 branch  1 taken 1
-        1:   69:            repo_scor_sort_increasing(srv->repo);
-        1:   69-block  0
+        1:   96:            repo_scor_sort(srv->repo, &plus);
+        1:   96-block  0
 call    0 returned 1
-        -:   70:        else
-        1:   71:            repo_scor_sort_decreasing(srv->repo);
-        1:   71-block  0
+        -:   97:        else
+        1:   98:            repo_scor_sort(srv->repo, &minus);
+        1:   98-block  0
 call    0 returned 1
-        -:   72:    }
-        -:   73:    else{
-        2:   74:        if (!strcmp(order, "+"))
-        2:   74-block  0
+        -:   99:    }
+        -:  100:    else{
+        2:  101:        if (!strcmp(order, "+"))
+        2:  101-block  0
 branch  0 taken 1 (fallthrough)
 branch  1 taken 1
-        1:   75:            repo_name_sort_increasing(srv->repo);
-        1:   75-block  0
+        1:  102:            repo_nume_sort(srv->repo, &nplus);
+        1:  102-block  0
 call    0 returned 1
-        -:   76:        else
-        1:   77:            repo_name_sort_decreasing(srv->repo);
-        1:   77-block  0
+        -:  103:        else
+        1:  104:            repo_nume_sort(srv->repo, &nminus);
+        1:  104-block  0
 call    0 returned 1
-        -:   78:    }
-        -:   79:
-        4:   80:    return 1;
-        4:   80-block  0
-        -:   81:}
-        -:   82:
+        -:  105:    }
+        -:  106:
+        4:  107:    return 1;
+        4:  107-block  0
+        -:  108:}
+        -:  109:
 function service_debug called 1 returned 100% blocks executed 100%
-        1:   83:char* service_debug(service* srv){
-        1:   84:    int end = repo_get_size(srv->repo);
-        1:   84-block  0
+        1:  110:char* service_debug(service* srv){
+        1:  111:    int end = repo_get_size(srv->repo);
+        1:  111-block  0
 call    0 returned 1
-        1:   85:    char *out = (char *) malloc(end*224);
-        -:   86:    char scor[4];
-        1:   87:    out[0] = 0;
-        -:   88:    type_participant *participant;
-        6:   89:    for(int i = 0; i < end; i++){
-        6:   89-block  0
+        1:  112:    char *out = (char *) malloc(end*224);
+        -:  113:    char scor[4];
+        1:  114:    out[0] = 0;
+        -:  115:    type_participant *participant;
+        6:  116:    for(int i = 0; i < end; i++){
+        6:  116-block  0
 branch  0 taken 5
 branch  1 taken 1 (fallthrough)
-        5:   90:        participant = repo_get_by_id(srv->repo,i);
-        5:   90-block  0
+        5:  117:        participant = repo_get_by_id(srv->repo,i);
+        5:  117-block  0
 call    0 returned 5
-        5:   91:        strcat(out, get_nume(participant));
+        5:  118:        strcat(out, get_nume(participant));
 call    0 returned 5
-        5:   92:        strcat(out, " ");
-        5:   93:        strcat(out, get_prenume(participant));
+        5:  119:        strcat(out, " ");
+        5:  120:        strcat(out, get_prenume(participant));
 call    0 returned 5
-        5:   94:        strcat(out, " ");
-        5:   95:        sprintf(scor,"%d", get_scor(participant));
+        5:  121:        strcat(out, " ");
+        5:  122:        sprintf(scor,"%d", get_scor(participant));
 call    0 returned 5
 call    1 returned 5
-        5:   96:        strcat(out, scor);
-        5:   97:        strcat(out, "/100\n");
-        -:   98:    }
-        1:   99:    return out;
-        1:   99-block  0
-        -:  100:}
-        -:  101:
+        5:  123:        strcat(out, scor);
+        5:  124:        strcat(out, "/100\n");
+        -:  125:    }
+        1:  126:    return out;
+        1:  126-block  0
+        -:  127:}
+        -:  128:
 function service_modify called 3 returned 100% blocks executed 100%
-        3:  102:int service_modify(service* srv, char *id, char *nume, char *prenume, char *scor){
-        3:  103:    if(!(is_name(nume) && is_name(prenume) && is_score(scor) && is_id(id)))
-        3:  103-block  0
+        3:  129:int service_modify(service* srv, char *id, char *nume, char *prenume, char *scor){
+        3:  130:    if(!(is_name(nume) && is_name(prenume) && is_score(scor) && is_id(id)))
+        3:  130-block  0
 call    0 returned 3
 branch  1 taken 3 (fallthrough)
 branch  2 taken 0
-        3:  103-block  1
+        3:  130-block  1
 call    3 returned 3
 branch  4 taken 3 (fallthrough)
 branch  5 taken 0
-        3:  103-block  2
+        3:  130-block  2
 call    6 returned 3
 branch  7 taken 2 (fallthrough)
 branch  8 taken 1
-        2:  103-block  3
+        2:  130-block  3
 call    9 returned 2
 branch 10 taken 0 (fallthrough)
 branch 11 taken 2
-        1:  104:        return 0;
-        1:  104-block  0
-        2:  105:    type_participant *participant = repo_get_by_id(srv->repo,atoi(id));
-        2:  105-block  0
+        1:  131:        return 0;
+        1:  131-block  0
+        2:  132:    int numar = strtol(id, NULL, 0);
+        2:  132-block  0
 call    0 returned 2
-call    1 returned 2
-        2:  106:    if(participant == NULL)
+        2:  133:    type_participant *participant = repo_get_by_id(srv->repo,numar);
+call    0 returned 2
+        2:  134:    if(participant == NULL)
 branch  0 taken 1 (fallthrough)
 branch  1 taken 1
-        1:  107:        return 2;
-        1:  107-block  0
-        -:  108:
-        1:  109:    set_nume(participant, nume);
-        1:  109-block  0
+        1:  135:        return 2;
+        1:  135-block  0
+        1:  136:    numar = strtol(scor, NULL, 0);
+        1:  136-block  0
 call    0 returned 1
-        1:  110:    set_prenume(participant, prenume);
+        1:  137:    set_nume(participant, nume);
 call    0 returned 1
-        1:  111:    set_scor(participant, atoi(scor));
+        1:  138:    set_prenume(participant, prenume);
 call    0 returned 1
-call    1 returned 1
-        1:  112:    return 1;
-        -:  113:}
-        -:  114:
+        1:  139:    set_scor(participant, numar);
+call    0 returned 1
+        1:  140:    return 1;
+        -:  141:}
+        -:  142:
 function service_add called 2 returned 100% blocks executed 100%
-        2:  115:int service_add(service* srv, char *nume, char *prenume, char *scor){
-        2:  116:    if(!(is_name(nume) && is_name(prenume) && is_score(scor)))
-        2:  116-block  0
+        2:  143:int service_add(service* srv, char *nume, char *prenume, char *scor){
+        2:  144:    if(!(is_name(nume) && is_name(prenume) && is_score(scor)))
+        2:  144-block  0
 call    0 returned 2
 branch  1 taken 2 (fallthrough)
 branch  2 taken 0
-        2:  116-block  1
+        2:  144-block  1
 call    3 returned 2
 branch  4 taken 2 (fallthrough)
 branch  5 taken 0
-        2:  116-block  2
+        2:  144-block  2
 call    6 returned 2
 branch  7 taken 1 (fallthrough)
 branch  8 taken 1
-        1:  117:        return 0;
-        1:  117-block  0
-        1:  118:    type_participant *participant = create_participant(nume, prenume, atoi(scor));
-        1:  118-block  0
-call    0 returned 1
-call    1 returned 1
-        1:  119:    repo_add(srv->repo, participant);
-call    0 returned 1
-        1:  120:    return 1;
-        -:  121:}
-        -:  122:
-function service_test called 1 returned 100% blocks executed 62%
-        1:  123:void service_test(){
-        1:  124:    repo* repo = repo_initialization();
-        1:  124-block  0
-call    0 returned 1
-        1:  125:    service* srv = service_initialization(repo);
-call    0 returned 1
-        1:  126:    char* out = service_show(srv, "10");
-call    0 returned 1
-        -:  127:
-       1*:  128:    assert(strlen(out) != 0);
-branch  0 taken 0 (fallthrough)
-branch  1 taken 1
-    %%%%%:  128-block  0
-call    2 never executed
-        1:  128-block  1
-        1:  129:    free(out);
-        1:  130:    out = service_debug(srv);
-        1:  130-block  0
-call    0 returned 1
-       1*:  131:    assert(!strcmp(out, "Ciota Dragos 17/100\n"
-branch  0 taken 0 (fallthrough)
-branch  1 taken 1
-    %%%%%:  131-block  0
-call    2 never executed
-        1:  131-block  1
-        -:  132:                                       "Mircea Gabi 69/100\n"
-        -:  133:                                       "Tzanca Uraganu 50/100\n"
-        -:  134:                                       "Neamtu Iuli 99/100\n"
-        -:  135:                                       "Moldovan Denis-Angel 10/100\n"));
-        -:  136:
-        1:  137:    free(out);
-        -:  138:
-       1*:  139:    assert(service_add(srv, "Oti" ,"Linux", "69") == 1);
-        1:  139-block  0
-call    0 returned 1
-branch  1 taken 0 (fallthrough)
-branch  2 taken 1
-    %%%%%:  139-block  1
-call    3 never executed
-        1:  139-block  2
-       1*:  140:    assert(service_add(srv, "Oti" ,"Linux", "sasenoua") == 0);
-        1:  140-block  0
-call    0 returned 1
-branch  1 taken 0 (fallthrough)
-branch  2 taken 1
-    %%%%%:  140-block  1
-call    3 never executed
-        1:  140-block  2
-        -:  141:
-       1*:  142:    assert(service_modify(srv,"1", "Oti" ,"Linux", "sasenoua") == 0);
-        1:  142-block  0
-call    0 returned 1
-branch  1 taken 0 (fallthrough)
-branch  2 taken 1
-    %%%%%:  142-block  1
-call    3 never executed
-        1:  142-block  2
-       1*:  143:    assert(service_modify(srv,"1", "Oti" ,"Linux", "26") == 1);
-        1:  143-block  0
-call    0 returned 1
-branch  1 taken 0 (fallthrough)
-branch  2 taken 1
-    %%%%%:  143-block  1
-call    3 never executed
-        1:  143-block  2
-       1*:  144:    assert(service_modify(srv,"100", "Oti" ,"Linux", "10") == 2);
-        1:  144-block  0
-call    0 returned 1
-branch  1 taken 0 (fallthrough)
-branch  2 taken 1
-    %%%%%:  144-block  1
-call    3 never executed
-        1:  144-block  2
-        -:  145:
-       1*:  146:    assert(service_sort(srv, "Gabi", "GABITZU") == 0);
+        1:  145:        return 0;
+        1:  145-block  0
+        1:  146:    int numar = strtol(scor, NULL, 0);
         1:  146-block  0
 call    0 returned 1
-branch  1 taken 0 (fallthrough)
-branch  2 taken 1
-    %%%%%:  146-block  1
-call    3 never executed
-        1:  146-block  2
-       1*:  147:    assert(service_sort(srv, "nume", "+"));
-        1:  147-block  0
+        1:  147:    type_participant *participant = create_participant(nume, prenume, numar);
+call    0 returned 1
+        1:  148:    repo_add(srv->repo, participant);
+call    0 returned 1
+        1:  149:    return 1;
+        -:  150:}
+        -:  151:
+function service_test called 1 returned 100% blocks executed 62%
+        1:  152:void service_test(){
+        1:  153:    repo* repo = repo_initialization();
+        1:  153-block  0
+call    0 returned 1
+        1:  154:    service* srv = service_initialization(repo);
+call    0 returned 1
+        1:  155:    char* out = service_show(srv, "10");
+call    0 returned 1
+        -:  156:
+       1*:  157:    assert(strlen(out) != 0);
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  157-block  0
+call    2 never executed
+        1:  157-block  1
+        1:  158:    free(out);
+        1:  159:    out = service_debug(srv);
+        1:  159-block  0
+call    0 returned 1
+       1*:  160:    assert(!strcmp(out, "Ciota Dragos 17/100\n"
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:  160-block  0
+call    2 never executed
+        1:  160-block  1
+        -:  161:                                       "Mircea Gabi 69/100\n"
+        -:  162:                                       "Tzanca Uraganu 50/100\n"
+        -:  163:                                       "Neamtu Iuli 99/100\n"
+        -:  164:                                       "Moldovan Denis-Angel 10/100\n"));
+        -:  165:
+        1:  166:    free(out);
+        -:  167:
+       1*:  168:    assert(service_add(srv, "Oti" ,"Linux", "69") == 1);
+        1:  168-block  0
 call    0 returned 1
 branch  1 taken 0 (fallthrough)
 branch  2 taken 1
-    %%%%%:  147-block  1
+    %%%%%:  168-block  1
 call    3 never executed
-        1:  147-block  2
-       1*:  148:    assert(!service_sort(srv, "nume", "da"));
-        1:  148-block  0
+        1:  168-block  2
+       1*:  169:    assert(service_add(srv, "Oti" ,"Linux", "sasenoua") == 0);
+        1:  169-block  0
 call    0 returned 1
 branch  1 taken 0 (fallthrough)
 branch  2 taken 1
-    %%%%%:  148-block  1
+    %%%%%:  169-block  1
 call    3 never executed
-        1:  148-block  2
-       1*:  149:    assert(service_sort(srv, "nume", "-"));
-        1:  149-block  0
+        1:  169-block  2
+        -:  170:
+       1*:  171:    assert(service_modify(srv,"1", "Oti" ,"Linux", "sasenoua") == 0);
+        1:  171-block  0
 call    0 returned 1
 branch  1 taken 0 (fallthrough)
 branch  2 taken 1
-    %%%%%:  149-block  1
+    %%%%%:  171-block  1
 call    3 never executed
-        1:  149-block  2
-       1*:  150:    assert(!service_sort(srv, "scor", "da"));
-        1:  150-block  0
+        1:  171-block  2
+       1*:  172:    assert(service_modify(srv,"1", "Oti" ,"Linux", "26") == 1);
+        1:  172-block  0
 call    0 returned 1
 branch  1 taken 0 (fallthrough)
 branch  2 taken 1
-    %%%%%:  150-block  1
+    %%%%%:  172-block  1
 call    3 never executed
-        1:  150-block  2
-       1*:  151:    assert(service_sort(srv, "scor", "+"));
-        1:  151-block  0
+        1:  172-block  2
+       1*:  173:    assert(service_modify(srv,"100", "Oti" ,"Linux", "10") == 2);
+        1:  173-block  0
 call    0 returned 1
 branch  1 taken 0 (fallthrough)
 branch  2 taken 1
-    %%%%%:  151-block  1
+    %%%%%:  173-block  1
 call    3 never executed
-        1:  151-block  2
-       1*:  152:    assert(service_sort(srv, "scor", "-"));
-        1:  152-block  0
+        1:  173-block  2
+        -:  174:
+       1*:  175:    assert(service_sort(srv, "Gabi", "GABITZU") == 0);
+        1:  175-block  0
 call    0 returned 1
 branch  1 taken 0 (fallthrough)
 branch  2 taken 1
-    %%%%%:  152-block  1
+    %%%%%:  175-block  1
 call    3 never executed
-        1:  152-block  2
-        -:  153:
-       1*:  154:    assert(service_delete(srv, "1"));
-        1:  154-block  0
+        1:  175-block  2
+       1*:  176:    assert(service_sort(srv, "nume", "+"));
+        1:  176-block  0
 call    0 returned 1
 branch  1 taken 0 (fallthrough)
 branch  2 taken 1
-    %%%%%:  154-block  1
+    %%%%%:  176-block  1
 call    3 never executed
-        1:  154-block  2
-       1*:  155:    assert(service_delete(srv, "100"));
-        1:  155-block  0
+        1:  176-block  2
+       1*:  177:    assert(!service_sort(srv, "nume", "da"));
+        1:  177-block  0
 call    0 returned 1
 branch  1 taken 0 (fallthrough)
 branch  2 taken 1
-    %%%%%:  155-block  1
+    %%%%%:  177-block  1
 call    3 never executed
-        1:  155-block  2
-       1*:  156:    assert(!service_delete(srv, "a1"));
-        1:  156-block  0
+        1:  177-block  2
+       1*:  178:    assert(service_sort(srv, "nume", "-"));
+        1:  178-block  0
 call    0 returned 1
 branch  1 taken 0 (fallthrough)
 branch  2 taken 1
-    %%%%%:  156-block  1
+    %%%%%:  178-block  1
 call    3 never executed
-        1:  156-block  2
-        -:  157:
-       1*:  158:    assert(service_show(srv, "ab") == NULL);
-        1:  158-block  0
+        1:  178-block  2
+       1*:  179:    assert(!service_sort(srv, "scor", "da"));
+        1:  179-block  0
 call    0 returned 1
 branch  1 taken 0 (fallthrough)
 branch  2 taken 1
-    %%%%%:  158-block  1
+    %%%%%:  179-block  1
 call    3 never executed
-        1:  158-block  2
-        -:  159:
-        -:  160:
-        1:  161:    service_destructor(srv);
-        1:  161-block  0
+        1:  179-block  2
+       1*:  180:    assert(service_sort(srv, "scor", "+"));
+        1:  180-block  0
 call    0 returned 1
-        1:  162:    repo_destructor(repo);
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  180-block  1
+call    3 never executed
+        1:  180-block  2
+       1*:  181:    assert(service_sort(srv, "scor", "-"));
+        1:  181-block  0
 call    0 returned 1
-        1:  163:}
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  181-block  1
+call    3 never executed
+        1:  181-block  2
+        -:  182:
+       1*:  183:    assert(service_delete(srv, "1"));
+        1:  183-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  183-block  1
+call    3 never executed
+        1:  183-block  2
+       1*:  184:    assert(service_delete(srv, "100"));
+        1:  184-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  184-block  1
+call    3 never executed
+        1:  184-block  2
+       1*:  185:    assert(!service_delete(srv, "a1"));
+        1:  185-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  185-block  1
+call    3 never executed
+        1:  185-block  2
+        -:  186:
+       1*:  187:    assert(service_show(srv, "ab") == NULL);
+        1:  187-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    %%%%%:  187-block  1
+call    3 never executed
+        1:  187-block  2
+        -:  188:
+        1:  189:    service_destructor(srv);
+        1:  189-block  0
+call    0 returned 1
+        1:  190:    repo_destructor(repo);
+call    0 returned 1
+        1:  191:}

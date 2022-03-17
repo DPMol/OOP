@@ -56,10 +56,10 @@ function set_scor called 2 returned 100% blocks executed 100%
         2:   46:    participant->scor = scor;
         2:   47:}
         -:   48:
-function get_nume called 256 returned 100% blocks executed 100%
-      256:   49:const char* get_nume(type_participant* participant){
-      256:   50:    return participant->nume;
-      256:   50-block  0
+function get_nume called 156 returned 100% blocks executed 100%
+      156:   49:const char* get_nume(type_participant* participant){
+      156:   50:    return participant->nume;
+      156:   50-block  0
         -:   51:}
         -:   52:
 function get_prenume called 12 returned 100% blocks executed 100%
@@ -68,10 +68,10 @@ function get_prenume called 12 returned 100% blocks executed 100%
        12:   54-block  0
         -:   55:}
         -:   56:
-function get_scor called 262 returned 100% blocks executed 100%
-      262:   57:int get_scor(type_participant* participant){
-      262:   58:    return participant->scor;
-      262:   58-block  0
+function get_scor called 162 returned 100% blocks executed 100%
+      162:   57:int get_scor(type_participant* participant){
+      162:   58:    return participant->scor;
+      162:   58-block  0
         -:   59:}
         -:   60:
 function domain_test called 1 returned 100% blocks executed 67%
