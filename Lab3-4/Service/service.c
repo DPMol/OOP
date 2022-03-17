@@ -4,6 +4,33 @@
 #include "stdio.h"
 #include "assert.h"
 
+int plus(int a, int b){
+    if(a<b){
+        return 0;
+    }
+    return 1;
+}
+
+int minus(int a, int b){
+    if(a<b){
+        return 0;
+    }
+    return 1;
+}
+
+int nplus(const char *a, const char* b){
+    if(strcmp(a,b) > 0){
+        return 0;
+    }
+    return 1;
+}
+
+int nminus(const char* a, const char* b){
+    if(strcmp(a,b) < 0){
+        return 0;
+    }
+    return 1;
+}
 
 struct service{
     repo* repo;
@@ -22,7 +49,8 @@ void service_destructor(service *srv){
 int service_delete(service* srv, char *id){
     if(!is_id(id))
         return 0;
-    if(repo_delete(srv->repo, atoi(id)) == 1)
+    int numar = strtol(id, NULL, 0);
+    if(repo_delete(srv->repo, numar) == 1)
         return 1;
     return 2;
 }
@@ -34,7 +62,7 @@ char* service_show(service* srv, char* scor){
     type_participant *participant;
     int end = repo_get_size(srv->repo);
 
-    int intscor = atoi(scor);
+    int intscor = strtol(scor, NULL, 0);
 
     char *out = malloc(end * 300);
     out[0] = '\0';
@@ -58,7 +86,6 @@ char* service_show(service* srv, char* scor){
         }
     }
     return out;
-
 }
 
 int service_sort(service* srv, char* key, char* order){
@@ -66,15 +93,15 @@ int service_sort(service* srv, char* key, char* order){
         return 0;
     if(!strcmp(key, "scor")) {
         if (!strcmp(order, "+"))
-            repo_scor_sort_increasing(srv->repo);
+            repo_scor_sort(srv->repo, &plus);
         else
-            repo_scor_sort_decreasing(srv->repo);
+            repo_scor_sort(srv->repo, &minus);
     }
     else{
         if (!strcmp(order, "+"))
-            repo_name_sort_increasing(srv->repo);
+            repo_nume_sort(srv->repo, &nplus);
         else
-            repo_name_sort_decreasing(srv->repo);
+            repo_nume_sort(srv->repo, &nminus);
     }
 
     return 1;
@@ -102,20 +129,22 @@ char* service_debug(service* srv){
 int service_modify(service* srv, char *id, char *nume, char *prenume, char *scor){
     if(!(is_name(nume) && is_name(prenume) && is_score(scor) && is_id(id)))
         return 0;
-    type_participant *participant = repo_get_by_id(srv->repo,atoi(id));
+    int numar = strtol(id, NULL, 0);
+    type_participant *participant = repo_get_by_id(srv->repo,numar);
     if(participant == NULL)
         return 2;
-
+    numar = strtol(scor, NULL, 0);
     set_nume(participant, nume);
     set_prenume(participant, prenume);
-    set_scor(participant, atoi(scor));
+    set_scor(participant, numar);
     return 1;
 }
 
 int service_add(service* srv, char *nume, char *prenume, char *scor){
     if(!(is_name(nume) && is_name(prenume) && is_score(scor)))
         return 0;
-    type_participant *participant = create_participant(nume, prenume, atoi(scor));
+    int numar = strtol(scor, NULL, 0);
+    type_participant *participant = create_participant(nume, prenume, numar);
     repo_add(srv->repo, participant);
     return 1;
 }
@@ -156,7 +185,6 @@ void service_test(){
     assert(!service_delete(srv, "a1"));
 
     assert(service_show(srv, "ab") == NULL);
-
 
     service_destructor(srv);
     repo_destructor(repo);

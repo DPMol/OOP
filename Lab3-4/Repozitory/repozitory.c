@@ -1,6 +1,5 @@
 #include "repozitory.h"
 #include "stdlib.h"
-#include <string.h>
 #include <assert.h>
 
 struct repo{
@@ -31,7 +30,7 @@ void repo_default_values(repo* array){
 repo* repo_initialization(){
     repo *array = malloc(sizeof(repo));
     array->size = 0;
-    array->capacity = 60;
+    array->capacity = 2;
     array->list = malloc(array->capacity* sizeof(type_participant*));
     repo_default_values(array);
 
@@ -81,7 +80,7 @@ type_participant * repo_get_by_id(repo* array, int id){
 int repo_get_size(repo* array){
     return array->size;
 }
-
+/*
 void repo_scor_sort_increasing(repo* array){
     type_participant* temp;
     for(int i = 0; i < array->size; i++)
@@ -125,10 +124,34 @@ void repo_name_sort_decreasing(repo* array){
                 array->list[j] = temp;
             }
 }
+*/
+
+void repo_scor_sort(repo* array, int(*cmp)(const int, const int)){
+    type_participant* temp;
+    for(int i = 0; i < array->size; i++)
+        for(int j = 0; j< array->size; j++)
+            if(cmp(get_scor(array->list[i]), get_scor(array->list[j]))){
+                temp = array->list[i];
+                array->list[i] = array->list[j];
+                array->list[j] = temp;
+            }
+}
+
+void repo_nume_sort(repo* array, int(*cmp)(const char*, const char*)){
+    type_participant* temp;
+    for(int i = 0; i < array->size; i++)
+        for(int j = 0; j< array->size; j++)
+            if(cmp(get_nume(array->list[i]), get_nume(array->list[j]))){
+                temp = array->list[i];
+                array->list[i] = array->list[j];
+                array->list[j] = temp;
+            }
+}
 
 void repo_test(){
     repo *repo = NULL;
     repo = repo_initialization();
+
     assert(repo != NULL);
     assert(repo_get_size(repo) == 5);
     type_participant* participant = repo_get_by_id(repo, 0);
@@ -145,6 +168,7 @@ void repo_test(){
     repo_realloc(repo, 100);
     assert(repo->capacity == 100);
 
+    /*
     repo_scor_sort_increasing(repo);
     assert(repo_get_by_id(repo, 1) == participant);
 
@@ -156,6 +180,7 @@ void repo_test(){
 
     repo_name_sort_increasing(repo);
     assert(repo_get_by_id(repo, 4) == participant);
+     */
     repo->size--;
 
     repo_destructor(repo);
