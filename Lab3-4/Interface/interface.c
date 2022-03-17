@@ -144,7 +144,7 @@ void interface_sort(service* srv){
 }
 
 short int get_command(interface* ui){
-    char *input = (char *)malloc(500);
+    char input[1000];
     printf("Command:");
     gets(input);
     char *command = strtok(input, command_sep);
@@ -171,7 +171,6 @@ short int get_command(interface* ui){
     }
     else
         printf("Command doesn't exist\n");
-    free(command);
     return 1;
 }
 

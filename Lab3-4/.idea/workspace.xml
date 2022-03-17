@@ -13,23 +13,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="528c4792-2e4a-45fb-8303-0ed525dda5a7" name="Changes" comment="Mersi Leo">
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab3_4.dir/Domain/participant.c.gcda" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab3_4.dir/Domain/participant.c.gcda" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab3_4.dir/Interface/interface.c.gcda" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab3_4.dir/Interface/interface.c.gcda" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab3_4.dir/Interface/interface.c.gcno" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab3_4.dir/Interface/interface.c.gcno" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab3_4.dir/Interface/interface.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab3_4.dir/Interface/interface.c.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab3_4.dir/Repozitory/repozitory.c.gcda" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab3_4.dir/Repozitory/repozitory.c.gcda" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab3_4.dir/Repozitory/repozitory.c.gcno" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab3_4.dir/Repozitory/repozitory.c.gcno" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab3_4.dir/Repozitory/repozitory.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab3_4.dir/Repozitory/repozitory.c.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab3_4.dir/Service/service.c.gcda" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab3_4.dir/Service/service.c.gcda" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab3_4.dir/Service/service.c.gcno" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab3_4.dir/Service/service.c.gcno" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab3_4.dir/Service/service.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab3_4.dir/Service/service.c.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab3_4.dir/Validators/validators.c.gcda" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab3_4.dir/Validators/validators.c.gcda" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab3_4.dir/main.c.gcda" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab3_4.dir/main.c.gcda" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab3_4.dir/main.c.gcno" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab3_4.dir/main.c.gcno" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab3_4.dir/main.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab3_4.dir/main.c.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/coverage/participant.c.gcda##participant.c.gcov" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/coverage/participant.c.gcda##participant.c.gcov" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/coverage/repozitory.c.gcda##repozitory.c.gcov" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/coverage/repozitory.c.gcda##repozitory.c.gcov" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/coverage/service.c.gcda##service.c.gcov" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/coverage/service.c.gcda##service.c.gcov" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Interface/interface.c" beforeDir="false" afterPath="$PROJECT_DIR$/Interface/interface.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/Testing/Temporary/LastTest.log" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +82,8 @@
       <workItem from="1646753301055" duration="6384000" />
       <workItem from="1646905037779" duration="11065000" />
       <workItem from="1646921144433" duration="18000" />
-      <workItem from="1647520927143" duration="4987000" />
+      <workItem from="1647520927143" duration="6084000" />
+      <workItem from="1647544247096" duration="1482000" />
     </task>
     <task id="LOCAL-00001" summary="Gucci">
       <created>1646687354381</created>
@@ -126,7 +113,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647524953734</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Mersi Leo">
+      <created>1647526035382</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1647526035382</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
