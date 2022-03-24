@@ -144,11 +144,13 @@ void interface_sort(service* srv){
 }
 
 short int get_command(interface* ui){
-    char input[1000];
+    char input[1001];
     printf("Command:");
-    gets(input);
-    char *command = strtok(input, command_sep);
-    if(!strcmp(command, "exit")){
+    fgets(input, 1001,stdin);
+    input[strlen(input) - 1] = '\0';
+    char *command;
+    command = strtok(input, command_sep);
+    if(!strcmp(command, "exit\0")){
         return 0;
     }
     else if(!strcmp(command, "add")){

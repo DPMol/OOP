@@ -36,6 +36,6 @@ call    0 returned 1
 call    0 returned 1
         1:   21:    interface_destructor(ui);
 call    0 returned 1
-        -:   22:
+        -:   22:    //bye bye
         1:   23:    return 0;
         -:   24:}
