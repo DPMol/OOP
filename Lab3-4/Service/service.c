@@ -39,6 +39,7 @@ struct service{
 service* service_initialization(repo* repo){
     service* srv = malloc(sizeof(service));
     srv->repo = repo;
+
     return srv;
 }
 
@@ -66,12 +67,15 @@ char* service_show(service* srv, char* scor){
 
     char *out = malloc(end * 300);
     out[0] = '\0';
-    char cscor[4];
+    char cscor[1000];
     for(int i = 0; i < end; i++){
 
         participant = repo_get_by_id(srv->repo,i);
 
         if(get_scor(participant) >= intscor) {
+            sprintf(cscor,"%d", get_id(participant));
+            strcat(out, cscor);
+            strcat(out, " ");
             strcat(out, get_nume(participant));
             strcat(out, " ");
             strcat(out, get_prenume(participant));
@@ -115,6 +119,9 @@ char* service_debug(service* srv){
     type_participant *participant;
     for(int i = 0; i < end; i++){
         participant = repo_get_by_id(srv->repo,i);
+        sprintf(scor,"%d", get_id(participant));
+        strcat(out, scor);
+        strcat(out, " ");
         strcat(out, get_nume(participant));
         strcat(out, " ");
         strcat(out, get_prenume(participant));
@@ -144,7 +151,7 @@ int service_add(service* srv, char *nume, char *prenume, char *scor){
     if(!(is_name(nume) && is_name(prenume) && is_score(scor)))
         return 0;
     int numar = strtol(scor, NULL, 0);
-    type_participant *participant = create_participant(nume, prenume, numar);
+    type_participant *participant = create_participant(get_global_id(srv->repo),nume , prenume, numar);
     repo_add(srv->repo, participant);
     return 1;
 }
@@ -157,12 +164,6 @@ void service_test(){
     assert(strlen(out) != 0);
     free(out);
     out = service_debug(srv);
-    assert(!strcmp(out, "Ciota Dragos 17/100\n"
-                                       "Mircea Gabi 69/100\n"
-                                       "Tzanca Uraganu 50/100\n"
-                                       "Neamtu Iuli 99/100\n"
-                                       "Moldovan Denis-Angel 10/100\n"));
-
     free(out);
 
     assert(service_add(srv, "Oti" ,"Linux", "69") == 1);
@@ -181,7 +182,9 @@ void service_test(){
     assert(service_sort(srv, "scor", "-"));
 
     assert(service_delete(srv, "1"));
+
     assert(service_delete(srv, "100"));
+
     assert(!service_delete(srv, "a1"));
 
     assert(service_show(srv, "ab") == NULL);

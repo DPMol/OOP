@@ -12,17 +12,25 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="528c4792-2e4a-45fb-8303-0ed525dda5a7" name="Changes" comment="Mersi Leo">
+    <list default="true" id="528c4792-2e4a-45fb-8303-0ed525dda5a7" name="Changes" comment="jaja">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/participant.c" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/participant.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/participant.h" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/participant.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Interface/interface.c" beforeDir="false" afterPath="$PROJECT_DIR$/Interface/interface.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/.cmake/api/v1/reply/index-2022-03-10T14-05-51-0452.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Repozitory/repozitory.c" beforeDir="false" afterPath="$PROJECT_DIR$/Repozitory/repozitory.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Repozitory/repozitory.h" beforeDir="false" afterPath="$PROJECT_DIR$/Repozitory/repozitory.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Service/service.c" beforeDir="false" afterPath="$PROJECT_DIR$/Service/service.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/.ninja_deps" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/.ninja_log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab3_4.dir/Domain/participant.c.gcda" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab3_4.dir/Domain/participant.c.gcda" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab3_4.dir/Domain/participant.c.gcno" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab3_4.dir/Domain/participant.c.gcno" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab3_4.dir/Domain/participant.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab3_4.dir/Domain/participant.c.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab3_4.dir/Interface/interface.c.gcda" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab3_4.dir/Interface/interface.c.gcda" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab3_4.dir/Interface/interface.c.gcno" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab3_4.dir/Interface/interface.c.gcno" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab3_4.dir/Interface/interface.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab3_4.dir/Interface/interface.c.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab3_4.dir/Repozitory/repozitory.c.gcda" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab3_4.dir/Repozitory/repozitory.c.gcda" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab3_4.dir/Repozitory/repozitory.c.gcno" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab3_4.dir/Repozitory/repozitory.c.gcno" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab3_4.dir/Repozitory/repozitory.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab3_4.dir/Repozitory/repozitory.c.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab3_4.dir/Service/service.c.gcda" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab3_4.dir/Service/service.c.gcda" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab3_4.dir/Service/service.c.gcno" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab3_4.dir/Service/service.c.gcno" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab3_4.dir/Service/service.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab3_4.dir/Service/service.c.obj" afterDir="false" />
@@ -32,19 +40,6 @@
       <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab3_4.dir/main.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/CMakeFiles/Lab3_4.dir/main.c.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/Lab3_4.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/Lab3_4.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/Testing/Temporary/LastTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/coverage/interface.c.gcda##interface.c.gcov" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/coverage/interface.c.gcda##interface.c.gcov" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug-coverage/coverage/main.c.gcda##main.c.gcov" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug-coverage/coverage/main.c.gcda##main.c.gcov" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.cmake/api/v1/reply/index-2022-03-10T14-05-51-0446.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_deps" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/.ninja_log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab3_4.dir/Domain/participant.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab3_4.dir/Domain/participant.c.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab3_4.dir/Interface/interface.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab3_4.dir/Interface/interface.c.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab3_4.dir/Repozitory/repozitory.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab3_4.dir/Repozitory/repozitory.c.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab3_4.dir/Service/service.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab3_4.dir/Service/service.c.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab3_4.dir/Validators/validators.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab3_4.dir/Validators/validators.c.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab3_4.dir/main.c.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Lab3_4.dir/main.c.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Lab3_4.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Lab3_4.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/main.c" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -119,7 +114,7 @@
       <workItem from="1647693944047" duration="1340000" />
       <workItem from="1647704994699" duration="13000" />
       <workItem from="1648117309024" duration="1295000" />
-      <workItem from="1648126587448" duration="2258000" />
+      <workItem from="1648126587448" duration="3784000" />
     </task>
     <task id="LOCAL-00001" summary="Gucci">
       <created>1646687354381</created>
@@ -163,7 +158,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647545868430</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="jaja">
+      <created>1648129612290</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1648129612290</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -184,7 +186,24 @@
     <MESSAGE value="Gucci" />
     <MESSAGE value="Gucci part 2" />
     <MESSAGE value="Mersi Leo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Mersi Leo" />
+    <MESSAGE value="jaja" />
+    <option name="LAST_COMMIT_MESSAGE" value="jaja" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Domain/participant.c</url>
+          <line>15</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/main.c</url>
+          <line>7</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

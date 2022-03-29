@@ -3,7 +3,7 @@
 #include "Service/service.h"
 #include "Validators/validators.h"
 #include "Domain/participant.h"
-
+#include "stdio.h"
 int main() {
     repo_test();
     valid_test();

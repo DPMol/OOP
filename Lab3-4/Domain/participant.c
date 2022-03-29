@@ -4,13 +4,15 @@
 #include <assert.h>
 
 struct type_participant{
+    int id;
     char *nume, *prenume;
     int scor;
 };
 
-type_participant* create_participant(char* nume, char*prenume, int scor){
+type_participant* create_participant(int id, char* nume, char*prenume, int scor){
     type_participant* participant = malloc(sizeof(type_participant));
 
+    participant->id = id;
     participant->nume = malloc(strlen(nume) + 1);
     strcpy(participant->nume, nume);
 
@@ -20,6 +22,10 @@ type_participant* create_participant(char* nume, char*prenume, int scor){
     participant->scor = scor;
 
     return participant;
+}
+
+int get_id(type_participant* participant){
+    return participant->id;
 }
 
 void destroy_participant(type_participant* participant){
@@ -59,7 +65,7 @@ int get_scor(type_participant* participant){
 }
 
 void domain_test(){
-    type_participant *participant = create_participant("Morozan", "Dragos", 78);
+    type_participant *participant = create_participant(1, "Morozan", "Dragos", 78);
     assert(!strcmp(get_nume(participant), "Morozan"));
     assert(!strcmp(get_prenume(participant), "Dragos"));
     assert(get_scor(participant) == 78);
@@ -68,6 +74,7 @@ void domain_test(){
     set_prenume(participant, "Otniel");
     set_scor(participant, 100);
 
+    get_id(participant);
     assert(!strcmp(get_nume(participant), "Matei"));
     assert(!strcmp(get_prenume(participant), "Otniel"));
     assert(get_scor(participant) == 100);

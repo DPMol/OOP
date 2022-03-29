@@ -1,34 +1,38 @@
 #include "repozitory.h"
 #include "stdlib.h"
 #include <assert.h>
-
+#include <stdio.h>
 struct repo{
     void **list;
     int size;
     int capacity;
+    int globalId;
 };
 
 void repo_default_values(repo* array){
     type_participant * participant;
 
-    participant = create_participant("Ciota", "Dragos", 17);
+    participant = create_participant(get_global_id(array),"Ciota", "Dragos", 17);
     repo_add(array, participant);
 
-    participant = create_participant("Mircea", "Gabi", 69);
+    participant = create_participant(get_global_id(array),"Mircea", "Gabi", 69);
     repo_add(array, participant);
 
-    participant = create_participant("Tzanca", "Uraganu", 50);
+    participant = create_participant(get_global_id(array),"Tzanca", "Uraganu", 50);
     repo_add(array, participant);
 
-    participant = create_participant("Neamtu", "Iuli", 99);
+    participant = create_participant(get_global_id(array),"Neamtu", "Iuli", 99);
     repo_add(array, participant);
 
-    participant = create_participant("Moldovan", "Denis-Angel", 10);
+    participant = create_participant(get_global_id(array),"Moldovan", "Denis-Angel", 10);
     repo_add(array, participant);
+
+
 }
 
 repo* repo_initialization(){
     repo *array = malloc(sizeof(repo));
+    array->globalId = 0;
     array->size = 0;
     array->capacity = 2;
     array->list = malloc(array->capacity* sizeof(type_participant*));
@@ -55,26 +59,37 @@ void repo_realloc(repo* array, int newcapacity){
 }
 
 int repo_delete(repo* array, int id){
-    if(id >= array->size)
+    int i = 0;
+    while(get_id(array->list[i]) != id && i < array->size){
+        i++;
+    }
+    if(i >= array->size)
         return 0;
     array->size--;
-    destroy_participant(array->list[id]);
-    for(int i = id; i < array->size; i++){
-        array->list[i] = array->list[i+1];}
+    destroy_participant(array->list[i]);
+    for(; i < array->size; i++){
+        array->list[i] = array->list[i+1];
+    }
     return 1;
+}
+
+int get_global_id(repo* array){
+    return array->globalId;
 }
 
 void repo_add(repo* array, type_participant *participant){
     if(array->size >= array->capacity){
         repo_realloc(array, 2 * array->size);
     }
+    array->globalId++;
     array->list[array->size++] = participant;
 }
 
 type_participant * repo_get_by_id(repo* array, int id){
-    if(id >= array->size)
-        return NULL;
-    return array->list[id];
+    for(int i = 0; i< array->size; i++)
+        if(get_id(array->list[i])==id)
+            return array->list[i];
+    return NULL;
 }
 
 int repo_get_size(repo* array){
@@ -160,7 +175,6 @@ void repo_test(){
 
     repo_add(repo, participant);
     assert(repo_get_size(repo) == 6);
-    assert(repo_get_by_id(repo, 5) == participant);
 
     repo_delete(repo, 0);
     assert(repo_get_size(repo) == 5);

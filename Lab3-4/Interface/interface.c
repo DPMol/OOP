@@ -9,6 +9,7 @@ struct interface{
 
 interface* interface_initialization(service* srv){
     //functie de initializare a obiectului de interfata
+
     interface* ui = malloc(sizeof(interface));
     ui->srv = srv;
     return ui;

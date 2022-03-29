@@ -10,6 +10,8 @@ void repo_destructor(repo* array);
 
 void repo_nume_sort(repo* array, int(*cmp)(const char*, const char*));
 
+int get_global_id(repo* array);
+
 /*
 void repo_scor_sort_increasing(repo* array);
 
