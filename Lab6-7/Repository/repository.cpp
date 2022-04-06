@@ -1,5 +1,7 @@
 #include "repository.h"
 
+#include <utility>
+
 void repository::add(const tenant& t){
     list.push_back(t);
 }
@@ -14,9 +16,10 @@ void repository::del(const long long poz) {
 }
 
 const array<tenant>& repository::get_list(){
-    return (const array<tenant>&) list;
+    return list;
 }
 
 tenant* repository::get_position(long long poz){
     return &list[poz];
 }
+

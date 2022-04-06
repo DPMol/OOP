@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/Lab6_7.dir/main.cpp.o CMakeFiles/Lab6_7.dir/Domain/tenant.cpp.o CMakeFiles/Lab6_7.dir/Interface/interface.cpp.o CMakeFiles/Lab6_7.dir/Service/service.cpp.o CMakeFiles/Lab6_7.dir/Repository/repository.cpp.o CMakeFiles/Lab6_7.dir/test/test.cpp.o -o Lab6_7 

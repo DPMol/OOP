@@ -1,0 +1,40 @@
+        -:    0:Source:D:/Programming n shit/UBB/Anul 1/OOP/Lab6-7/Repository/repository.cpp
+        -:    0:Graph:D:\Programming n shit\UBB\Anul 1\OOP\Lab6-7\cmake-build-debug-coverage\CMakeFiles\Lab6_7.dir\Repository\repository.cpp.gcno
+        -:    0:Data:D:\Programming n shit\UBB\Anul 1\OOP\Lab6-7\cmake-build-debug-coverage\CMakeFiles\Lab6_7.dir\Repository\repository.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "repository.h"
+        -:    2:
+function _ZN10repository3addERK6tenant called 2 returned 100% blocks executed 100%
+        2:    3:void repository::add(const tenant& t){
+        2:    4:    list.push_back(t);
+        2:    4-block  0
+call    0 returned 2
+        2:    5:}
+        -:    6:
+function _ZN10repository4findERK6tenant called 7 returned 100% blocks executed 100%
+        7:    7:long long repository::find(const tenant& t) {
+        7:    8:    auto temp = list.search(t);
+        7:    8-block  0
+call    0 returned 7
+        7:    9:    return temp;
+        -:   10:}
+        -:   11:
+function _ZN10repository3delEx called 1 returned 100% blocks executed 100%
+        1:   12:void repository::del(const long long poz) {
+        1:   13:    list.pop(poz);
+        1:   13-block  0
+call    0 returned 1
+        1:   14:}
+        -:   15:
+function _ZN10repository8get_listEv called 3 returned 100% blocks executed 100%
+        3:   16:const array<tenant>& repository::get_list(){
+        3:   17:    return list;
+        3:   17-block  0
+        -:   18:}
+        -:   19:
+function _ZN10repository12get_positionEx called 2 returned 100% blocks executed 100%
+        2:   20:tenant* repository::get_position(long long poz){
+        2:   21:    return &list[poz];
+        2:   21-block  0
+call    0 returned 2
+        -:   22:}

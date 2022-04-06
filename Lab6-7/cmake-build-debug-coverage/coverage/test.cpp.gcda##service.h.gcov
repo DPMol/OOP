@@ -1,0 +1,31 @@
+        -:    0:Source:D:/Programming n shit/UBB/Anul 1/OOP/Lab6-7/Service/service.h
+        -:    0:Graph:D:\Programming n shit\UBB\Anul 1\OOP\Lab6-7\cmake-build-debug-coverage\CMakeFiles\Lab6_7.dir\test\test.cpp.gcno
+        -:    0:Data:D:\Programming n shit\UBB\Anul 1\OOP\Lab6-7\cmake-build-debug-coverage\CMakeFiles\Lab6_7.dir\test\test.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#pragma once
+        -:    2:#include "../Repository/repository.h"
+        -:    3:#include "../Domain/tenant.h"
+        -:    4:#include "string"
+        -:    5:
+        -:    6:class service {
+        -:    7:private:
+        -:    8:    repository repo;
+        -:    9:
+        -:   10:public:
+        -:   11:    explicit service(repository& repo);
+        -:   12:
+function _ZN7serviceD1Ev called 0 returned 0% blocks executed 0%
+    #####:   13:    ~service() = default;
+    %%%%%:   13-block  0
+call    0 never executed
+        -:   14:
+        -:   15:    void add(int apartment, std::string& owner, std::string& type, int area);
+        -:   16:
+        -:   17:    void del(int apartment, std::string& owner, std::string& type, int area);
+        -:   18:
+        -:   19:    void modify(int apartment, std::string& owner, std::string& type, int area, int new_apartment, std::string& new_owner, std::string& new_type, int new_area);
+        -:   20:
+        -:   21:    std::string show();
+        -:   22:
+        -:   23:    std::string find(int apartment);
+        -:   24:};

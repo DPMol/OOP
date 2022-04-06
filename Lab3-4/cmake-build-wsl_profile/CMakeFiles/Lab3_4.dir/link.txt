@@ -1,0 +1,1 @@
+/usr/bin/cc -g CMakeFiles/Lab3_4.dir/Domain/participant.c.o CMakeFiles/Lab3_4.dir/Interface/interface.c.o CMakeFiles/Lab3_4.dir/Repozitory/repozitory.c.o CMakeFiles/Lab3_4.dir/Service/service.c.o CMakeFiles/Lab3_4.dir/Validators/validators.c.o CMakeFiles/Lab3_4.dir/main.c.o -o Lab3_4 

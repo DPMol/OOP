@@ -2,7 +2,8 @@
 #include <string>
 #include "../Service/service.h"
 #include <iostream>
-#include "D:/Programming n shit/Utilities/dynamic_array.h"
+//#include "D:/Programming n shit/Utilities/dynamic_array.h"
+#include "../dynamic_array.h"
 
 class interface{
 private:
@@ -18,13 +19,18 @@ public:
 private:
     static void menu();
 
-    void add(array<std::string>& arg);
+    void add();
 
-    void del(array<std::string>& arg);
+    void del();
 
-    void show(array<std::string>& arg);
+    void show();
 
-    void modify(array<std::string>& arg);
+    void modify();
 
-    void find(array<std::string>& arg);
+    void find();
+
+    void filter();
+
+    void sort();
 };
+

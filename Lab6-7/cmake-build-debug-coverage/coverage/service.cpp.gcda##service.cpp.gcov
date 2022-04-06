@@ -1,0 +1,308 @@
+        -:    0:Source:D:/Programming n shit/UBB/Anul 1/OOP/Lab6-7/Service/service.cpp
+        -:    0:Graph:D:\Programming n shit\UBB\Anul 1\OOP\Lab6-7\cmake-build-debug-coverage\CMakeFiles\Lab6_7.dir\Service\service.cpp.gcno
+        -:    0:Data:D:\Programming n shit\UBB\Anul 1\OOP\Lab6-7\cmake-build-debug-coverage\CMakeFiles\Lab6_7.dir\Service\service.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include "service.h"
+        -:    2:#include <iostream>
+function _ZN7serviceC2ER10repository called 2 returned 100% blocks executed 100%
+        2:    3:service::service(repository& repo):repo(repo) {}
+        2:    3-block  0
+call    0 returned 2
+        -:    4:
+function _ZN7service3addEiRNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES6_i called 2 returned 50% blocks executed 73%
+        2:    5:void service::add(int apartment, std::string& owner, std::string& type, int area){
+        4:    6:    tenant t(apartment, owner, type, area);
+        2:    6-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:    6-block  1
+call    3 returned 2
+branch  4 taken 2 (fallthrough)
+branch  5 taken 0 (throw)
+        2:    6-block  2
+call    6 returned 2
+branch  7 taken 2 (fallthrough)
+branch  8 taken 0 (throw)
+call    9 returned 2
+    $$$$$:    6-block  3
+    $$$$$:    6-block  4
+        -:    7:
+        2:    8:    if(repo.find(t) != -1)
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:    8-block  0
+branch  3 taken 1 (fallthrough)
+branch  4 taken 1
+        1:    9:        throw std::exception();
+        1:    9-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+        -:   10:
+        1:   11:    repo.add(t);
+        1:   11-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   12:}
+        1:   12-block  0
+call    0 returned 1
+        1:   12-block  1
+call    1 returned 1
+        -:   13:
+function _ZN7service3delEiRNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES6_i called 2 returned 50% blocks executed 73%
+        2:   14:void service::del(int apartment, std::string& owner, std::string& type, int area){
+        4:   15:    tenant t(apartment, owner, type, area);
+        2:   15-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   15-block  1
+call    3 returned 2
+branch  4 taken 2 (fallthrough)
+branch  5 taken 0 (throw)
+        2:   15-block  2
+call    6 returned 2
+branch  7 taken 2 (fallthrough)
+branch  8 taken 0 (throw)
+call    9 returned 2
+    $$$$$:   15-block  3
+    $$$$$:   15-block  4
+        -:   16:
+        2:   17:    auto temp = repo.find(t);
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   18:
+        2:   19:    if(temp == -1)
+        2:   19-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 1
+        1:   20:        throw std::exception();
+        1:   20-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+        -:   21:
+        1:   22:    repo.del(temp);
+        1:   22-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   23:}
+        1:   23-block  0
+call    0 returned 1
+        1:   23-block  1
+call    1 returned 1
+        -:   24:
+function _ZN7service4showB5cxx11Ev called 1 returned 100% blocks executed 64%
+        1:   25:std::string service::show() {
+        1:   26:    std::string out;
+        1:   26-block  0
+call    0 returned 1
+        1:   27:    auto list = repo.get_list();
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   27-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        -:   28:
+        2:   29:    for(auto i = 0; i<list.size(); i++)
+        1:   29-block  0
+        2:   29-block  1
+call    0 returned 2
+branch  1 taken 1
+branch  2 taken 1 (fallthrough)
+        1:   30:        out += (list[i].str() + "\n");
+        1:   30-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   30-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   30-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   30-block  3
+call    9 returned 1
+branch 10 taken 1 (fallthrough)
+branch 11 taken 0 (throw)
+        1:   30-block  4
+call   12 returned 1
+call   13 returned 1
+    $$$$$:   30-block  5
+call   14 never executed
+    $$$$$:   30-block  6
+    $$$$$:   30-block  7
+call   15 never executed
+    $$$$$:   30-block  8
+        -:   31:
+        -:   32://    for(auto t : list){
+        -:   33://        out += (t.str() + "\n");
+        -:   34://    }
+        -:   35:
+        2:   36:    return out;
+        1:   36-block  0
+        1:   36-block  1
+        1:   37:}
+        1:   37-block  0
+call    0 returned 1
+    $$$$$:   37-block  1
+call    1 never executed
+    $$$$$:   37-block  2
+call    2 never executed
+        -:   38:
+function _ZN7service6modifyEiRNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES6_iiS6_S6_i called 2 returned 50% blocks executed 77%
+        2:   39:void service::modify(int apartment, std::string &owner, std::string &type, int area, int new_apartment,
+        -:   40:                     std::string &new_owner, std::string &new_type, int new_area) {
+        4:   41:    tenant t(apartment, owner, type, area);
+        2:   41-block  0
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   41-block  1
+call    3 returned 2
+branch  4 taken 2 (fallthrough)
+branch  5 taken 0 (throw)
+        2:   41-block  2
+call    6 returned 2
+branch  7 taken 2 (fallthrough)
+branch  8 taken 0 (throw)
+call    9 returned 2
+    $$$$$:   41-block  3
+    $$$$$:   41-block  4
+        -:   42:
+        2:   43:    auto temp = repo.find(t);
+call    0 returned 2
+branch  1 taken 2 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   44:
+        2:   45:    if(temp == -1)
+        2:   45-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 1
+        1:   46:        throw std::exception();
+        1:   46-block  0
+call    0 returned 1
+call    1 returned 1
+call    2 returned 1
+        -:   47:
+        1:   48:    auto t2 = repo.get_position(temp);
+        1:   48-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   49:
+        1:   50:    t2->set_apartment(new_apartment);
+        1:   50-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   51:    t2->set_area(new_area);
+        1:   51-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   52:    t2->set_owner(new_owner);
+        1:   52-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   53:    t2->set_type(new_type);
+        1:   53-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        2:   54:}
+        1:   54-block  0
+call    0 returned 1
+        1:   54-block  1
+call    1 returned 1
+        -:   55:
+function _ZN7service4findB5cxx11Ei called 1 returned 100% blocks executed 66%
+        1:   56:std::string service::find(int apartment){
+        1:   57:    std::string out;
+        1:   57-block  0
+call    0 returned 1
+        1:   58:    auto list = repo.get_list();
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   58-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        -:   59:
+        2:   60:    for(auto t : list){
+        1:   60-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   60-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   60-block  2
+        1:   60-block  3
+call    6 returned 1
+call    7 returned 1
+branch  8 taken 1 (fallthrough)
+branch  9 taken 0 (throw)
+call   10 returned 1
+        2:   60-block  4
+call   11 returned 2
+branch 12 taken 1
+branch 13 taken 1 (fallthrough)
+        1:   61:        if(t.get_apartment() == apartment)
+        1:   61-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   61-block  1
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0
+        1:   62:            out += (t.str() + "\n");
+        1:   62-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   62-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   62-block  2
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   62-block  3
+call    9 returned 1
+call   10 returned 1
+    $$$$$:   62-block  4
+call   11 never executed
+    $$$$$:   62-block  5
+    $$$$$:   62-block  6
+call   12 never executed
+    $$$$$:   62-block  7
+        1:   63:    }
+        1:   63-block  0
+call    0 returned 1
+    $$$$$:   63-block  1
+call    1 never executed
+        -:   64:
+        2:   65:    return out;
+        1:   65-block  0
+        1:   65-block  1
+        1:   66:}
+        1:   66-block  0
+call    0 returned 1
+    $$$$$:   66-block  1
+call    1 never executed
+    $$$$$:   66-block  2
+call    2 never executed

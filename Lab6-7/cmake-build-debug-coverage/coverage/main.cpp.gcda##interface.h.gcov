@@ -1,0 +1,38 @@
+        -:    0:Source:D:/Programming n shit/UBB/Anul 1/OOP/Lab6-7/Interface/interface.h
+        -:    0:Graph:D:\Programming n shit\UBB\Anul 1\OOP\Lab6-7\cmake-build-debug-coverage\CMakeFiles\Lab6_7.dir\main.cpp.gcno
+        -:    0:Data:D:\Programming n shit\UBB\Anul 1\OOP\Lab6-7\cmake-build-debug-coverage\CMakeFiles\Lab6_7.dir\main.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#pragma once
+        -:    2:#include <string>
+        -:    3:#include "../Service/service.h"
+        -:    4:#include <iostream>
+        -:    5://#include "D:/Programming n shit/Utilities/dynamic_array.h"
+        -:    6:#include "../dynamic_array.h"
+        -:    7:
+        -:    8:class interface{
+        -:    9:private:
+        -:   10:    service srv;
+        -:   11:
+        -:   12:public:
+        -:   13:    explicit interface(service& srv);
+        -:   14:
+function _ZN9interfaceD1Ev called 1 returned 100% blocks executed 100%
+        1:   15:    ~interface() = default;
+        1:   15-block  0
+call    0 returned 1
+        -:   16:
+        -:   17:    void run();
+        -:   18:
+        -:   19:private:
+        -:   20:    static void menu();
+        -:   21:
+        -:   22:    void add(array<std::string>& arg);
+        -:   23:
+        -:   24:    void del(array<std::string>& arg);
+        -:   25:
+        -:   26:    void show(array<std::string>& arg);
+        -:   27:
+        -:   28:    void modify(array<std::string>& arg);
+        -:   29:
+        -:   30:    void find(array<std::string>& arg);
+        -:   31:};

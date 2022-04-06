@@ -21,4 +21,14 @@ public:
     std::string show();
 
     std::string find(int apartment);
+
+    std::string filter_type(std::string& type);
+
+    std::string filter_area(int area);
+
+    std::string sort_owner(bool reverse);
+
+    std::string sort_area(bool reverse);
+
+    std::string sort_apartment_area(bool reverse);
 };

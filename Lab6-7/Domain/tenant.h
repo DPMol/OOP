@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include <iostream>
 
 class tenant{
 private:
@@ -18,6 +19,8 @@ public:
      */
     tenant(int apartment, std::string owner, std::string type, int area);
 
+    tenant(const tenant& other);
+
     /**
      * Default destructor.
      */
@@ -27,31 +30,31 @@ public:
      * Returns apartment number.
      * @return Apartment
      */
-    int get_apartment() const;
+    [[nodiscard]] int get_apartment() const;
 
     /**
      * Returns apartment owner.
      * @return Owner
      */
-    std::string get_owner();
+    [[nodiscard]] std::string get_owner() const;
 
     /**
      * Returns apartment type.
      * @return Type
      */
-    std::string get_type();
+    [[nodiscard]] std::string get_type() const;
 
     /**
      * Returns apartment area.
      * @return Area
      */
-    int get_area() const;
+    [[nodiscard]] int get_area() const;
 
     /**
      * Changes aparment value to given parameter.
      * @param new_aparment Apartment
      */
-    void set_apartment(int new_aparment);
+    void set_apartment(int new_apartment);
 
     /**
      * Changes owner value to given parameter.

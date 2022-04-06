@@ -24,9 +24,12 @@ void service::del(int apartment, std::string& owner, std::string& type, int area
 
 std::string service::show() {
     std::string out;
-    auto list = repo.get_list();
+    auto& list = repo.get_list();
 
-    for(auto t : list){
+//    for(auto i = 0; i<list.size(); i++)
+//        out += (list[i].str() + "\n");
+
+    for(auto& t : list){
         out += (t.str() + "\n");
     }
 
@@ -52,12 +55,76 @@ void service::modify(int apartment, std::string &owner, std::string &type, int a
 
 std::string service::find(int apartment){
     std::string out;
-    auto list = repo.get_list();
+    auto& list = repo.get_list();
 
-    for(auto t : list){
+    for(auto& t : list){
         if(t.get_apartment() == apartment)
             out += (t.str() + "\n");
     }
 
+    return out;
+}
+
+std::string service::filter_type(std::string& type){
+    auto list = repo.get_list();
+    list.filter([&type](const tenant& a){return a.get_type() == type;});
+
+    if(list.empty())
+        return "";
+
+    std::string out;
+    for(auto& t : list){
+            out += (t.str() + "\n");
+    }
+    return out;
+}
+
+std::string service::filter_area(int area){
+
+    auto list = repo.get_list();
+    list.filter([&area](const tenant& a){return a.get_area() == area;});
+
+    if(list.empty())
+        return "";
+
+    std::string out;
+    for(auto& t : list){
+        out += (t.str() + "\n");
+    }
+    return out;
+}
+
+std::string service::sort_owner(bool reverse) {
+    auto list = repo.get_list();
+    list.sort(reverse, [](const tenant& a, const tenant&b){return a.get_owner() < b.get_owner();});
+
+    std::string out;
+    for(auto& t : list){
+        out += (t.str() + "\n");
+    }
+    return out;
+}
+
+std::string service::sort_area(bool reverse) {
+
+    auto list = repo.get_list();
+    list.sort(reverse, [](const tenant& a, const tenant&b){return a.get_area() < b.get_area();});
+
+    std::string out;
+    for(auto& t : list){
+        out += (t.str() + "\n");
+    }
+    return out;
+}
+
+std::string service::sort_apartment_area(bool reverse) {
+
+    auto list = repo.get_list();
+    list.sort(reverse, [](const tenant& a, const tenant&b){if(a.get_apartment() == b.get_apartment()){return a.get_area() < b.get_area();}else return a.get_apartment() < b.get_apartment();});
+
+    std::string out;
+    for(auto& t : list){
+        out += (t.str() + "\n");
+    }
     return out;
 }

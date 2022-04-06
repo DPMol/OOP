@@ -1,0 +1,3 @@
+D:/Programming n shit/UBB/Anul 1/OOP/Lab6-7/cmake-build-debug/CMakeFiles/Lab6_7.dir
+D:/Programming n shit/UBB/Anul 1/OOP/Lab6-7/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/Programming n shit/UBB/Anul 1/OOP/Lab6-7/cmake-build-debug/CMakeFiles/rebuild_cache.dir

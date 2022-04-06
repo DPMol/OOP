@@ -1,0 +1,717 @@
+        -:    0:Source:D:/Programming n shit/UBB/Anul 1/OOP/Lab6-7/dynamic_array.h
+        -:    0:Graph:D:\Programming n shit\UBB\Anul 1\OOP\Lab6-7\cmake-build-debug-coverage\CMakeFiles\Lab6_7.dir\test\test.cpp.gcno
+        -:    0:Data:D:\Programming n shit\UBB\Anul 1\OOP\Lab6-7\cmake-build-debug-coverage\CMakeFiles\Lab6_7.dir\test\test.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#pragma once
+        -:    2:#include <functional>
+        -:    3:#include <iostream>
+        -:    4:#include <cstring>
+        -:    5:
+        -:    6://Iterator
+        -:    7:template<typename array>
+        -:    8:class array_iterator{
+        -:    9:public:
+        -:   10:    using value_type = typename array::value_pointer;
+        -:   11:    using value_pointer = value_type*;
+        -:   12:    using value_reference = typename array::value_type&;
+        -:   13:
+        -:   14:private:
+        -:   15:    value_pointer iterator_pointer;
+        -:   16:
+        -:   17:public:
+        -:   18:
+        -:   19:    /**
+        -:   20:     * Constructor for array iterator.
+        -:   21:     * @param ptr Pointer to array.
+        -:   22:     */
+        -:   23:    explicit array_iterator(value_pointer ptr):iterator_pointer(ptr) {}
+        -:   24:
+        -:   25:    /**
+        -:   26:     * Allows use of dereference*  operator.
+        -:   27:     * @return Dereferenced value.
+        -:   28:     */
+        -:   29:    value_reference operator*(){
+        -:   30:        return **iterator_pointer;
+        -:   31:    }
+        -:   32:
+        -:   33:    /**
+        -:   34:     * Alows use of rvalue ++ operator.
+        -:   35:     * @return Returns incremented pointer.
+        -:   36:     */
+        -:   37:    array_iterator& operator++(){
+        -:   38:        iterator_pointer++;
+        -:   39:        return *this;
+        -:   40:    }
+        -:   41:
+        -:   42:    /**
+        -:   43:     * Alows use of lvalue ++ operator.
+        -:   44:     * @return Returns pointer before incrementation.
+        -:   45:     */
+        -:   46:    array_iterator operator++(int){
+        -:   47:        array_iterator temp = *this;
+        -:   48:        ++(*this);
+        -:   49:        return temp;
+        -:   50:    }
+        -:   51:
+        -:   52:    /**
+        -:   53:     * Alows use of rvalue -- operator.
+        -:   54:     * @return Returns decremented pointer.
+        -:   55:     */
+        -:   56:    array_iterator& operator--(){
+        -:   57:        iterator_pointer--;
+        -:   58:        return *this;
+        -:   59:    }
+        -:   60:
+        -:   61:    /**
+        -:   62:     * Alows use of lvalue -- operator.
+        -:   63:     * @return Returns pointer before decrementation.
+        -:   64:     */
+        -:   65:    array_iterator operator--(int){
+        -:   66:        array_iterator temp = *this;
+        -:   67:        --(*this);
+        -:   68:        return temp;
+        -:   69:    }
+        -:   70:
+        -:   71:    /**
+        -:   72:     * Allows subtraction between pointer and integer.
+        -:   73:     * @param int_value Integer to be subtracted.
+        -:   74:     * @return Returns pointer after subtraction.
+        -:   75:     */
+        -:   76:    value_pointer operator-(long long int_value){
+        -:   77:        return iterator_pointer - int_value;
+        -:   78:    }
+        -:   79:
+        -:   80:    /**
+        -:   81:     * Allows addition between pointer and integer.
+        -:   82:     * @param int_value Integer to be added.
+        -:   83:     * @return Returns pointer after addition.
+        -:   84:     */
+        -:   85:    value_pointer operator+(long long int_value){
+        -:   86:        return iterator_pointer + int_value;
+        -:   87:    }
+        -:   88:
+        -:   89:    /**
+        -:   90:     * Allows subtraction between 2 pointers
+        -:   91:     * @param other Pointer to be subtracted
+        -:   92:     * @return Returns pointer after subtraction
+        -:   93:     */
+        -:   94:    int operator-(array_iterator other){
+        -:   95:        return iterator_pointer - other.iterator_pointer;
+        -:   96:    }
+        -:   97:
+        -:   98:    /**
+        -:   99:     * Allows use of operator [] to access iterator elements.
+        -:  100:     * @param index Index at which element is situated.
+        -:  101:     * @return Reference of element at given index.
+        -:  102:     */
+        -:  103:    value_reference operator[](long long index){
+        -:  104:        return **(iterator_pointer+index);
+        -:  105:    }
+        -:  106:
+        -:  107:    /**
+        -:  108:     * Allows use of < operator.
+        -:  109:     * @param other Rvalue iterator.
+        -:  110:     * @return Result of comparison.
+        -:  111:     */
+        -:  112:    bool operator < (const array_iterator& other) const{
+        -:  113:        return iterator_pointer<other.iterator_pointer;
+        -:  114:    }
+        -:  115:
+        -:  116:    /**
+        -:  117:     * Allows use of -> operator.
+        -:  118:     * @return (*iterator).
+        -:  119:     */
+        -:  120:    array_iterator operator->(){
+        -:  121:        return *iterator_pointer;
+        -:  122:    }
+        -:  123:
+        -:  124:    /**
+        -:  125:     * Allows use of += operation.
+        -:  126:     * @param int_value Integer to be added.
+        -:  127:     * @return Iterator pointer after operation.
+        -:  128:     */
+        -:  129:    value_pointer operator+=(long long int_value){
+        -:  130:        iterator_pointer += int_value;
+        -:  131:        return iterator_pointer;
+        -:  132:    }
+        -:  133:
+        -:  134:    /**
+        -:  135:     * Allows use of -= operation.
+        -:  136:     * @param int_value Integer to be subtracted.
+        -:  137:     * @return Iterator pointer after operation.
+        -:  138:     */
+        -:  139:    value_pointer operator-=(long long int_value){
+        -:  140:        iterator_pointer -= int_value;
+        -:  141:        return iterator_pointer;
+        -:  142:    }
+        -:  143:
+        -:  144:    /**
+        -:  145:     * Allows use of -= operation between iterators.
+        -:  146:     * @param other Iterator to be subtracted.
+        -:  147:     * @return Iterator pointer after operation.
+        -:  148:     */
+        -:  149:    value_pointer operator-=(const array_iterator other){
+        -:  150:        iterator_pointer -= other;
+        -:  151:        return iterator_pointer;
+        -:  152:    }
+        -:  153:
+        -:  154:    /**
+        -:  155:     * Allows use of == operator.
+        -:  156:     * @param other Rvalue iterator.
+        -:  157:     * @return Result of comparison.
+        -:  158:     */
+        -:  159:    bool operator == (const array_iterator& other) const{
+        -:  160:        return iterator_pointer==other.iterator_pointer;
+        -:  161:    }
+        -:  162:
+        -:  163:    /**
+        -:  164:     * Allows use of != operator.
+        -:  165:     * @param other Rvalue iterator.
+        -:  166:     * @return Result of comparison.
+        -:  167:     */
+        -:  168:    bool operator != (const array_iterator& other) const{
+        -:  169:        return iterator_pointer!=other.iterator_pointer;
+        -:  170:    }
+        -:  171:
+        -:  172:    /**
+        -:  173:     * Allows use of <= operator.
+        -:  174:     * @param other Rvalue iterator.
+        -:  175:     * @return Result of comparison.
+        -:  176:     */
+        -:  177:    bool operator <= (const array_iterator& other) const{
+        -:  178:        return iterator_pointer<=other.iterator_pointer;
+        -:  179:    }
+        -:  180:
+        -:  181:    /**
+        -:  182:     * Allows use of >= operator.
+        -:  183:     * @param other Rvalue iterator.
+        -:  184:     * @return Result of comparison.
+        -:  185:     */
+        -:  186:    bool operator >= (const array_iterator& other) const{
+        -:  187:        return iterator_pointer>=other.iterator_pointer;
+        -:  188:    }
+        -:  189:
+        -:  190:    /**
+        -:  191:     * Allows use of > operator.
+        -:  192:     * @param other Rvalue iterator.
+        -:  193:     * @return Result of comparison.
+        -:  194:     */
+        -:  195:    bool operator > (const array_iterator& other) const{
+        -:  196:        return iterator_pointer>other.iterator_pointer;
+        -:  197:    }
+        -:  198:};
+        -:  199:
+        -:  200:template <typename T>
+        -:  201:class array {
+        -:  202:public:
+        -:  203:    using value_type = T;
+        -:  204:    using value_pointer = T *;
+        -:  205:    using iterator = array_iterator<array<T>>;
+        -:  206:
+        -:  207:private:
+        -:  208:    //representation
+        -:  209:    value_pointer *list = nullptr;
+        -:  210:    long long list_size;
+        -:  211:    long long list_capacity;
+        -:  212:
+        -:  213://Functions
+        -:  214:private:
+        -:  215:
+        -:  216:    /**
+        -:  217:     * Allocates more space for internal array and copies all elements.
+        -:  218:     * @param new_capacity New maximum size.\n
+        -:  219:     * Must be greater than old capacity.
+        -:  220:     */
+function _ZN5arrayI6tenantE7reallocEx called 0 returned 0% blocks executed 0%
+    #####:  221:    void realloc(const long long new_capacity) {
+    #####:  222:        auto *new_list = (value_pointer *) ::operator new(new_capacity * sizeof(value_pointer));
+    %%%%%:  222-block  0
+call    0 never executed
+        -:  223:
+    #####:  224:        for (auto i = 0; i < list_size; i++)
+    %%%%%:  224-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  225:            new_list[i] = list[i];
+    %%%%%:  225-block  0
+        -:  226:
+    #####:  227:        ::operator delete(list, list_capacity * sizeof(value_pointer));
+    %%%%%:  227-block  0
+call    0 never executed
+    #####:  228:        list = new_list;
+    #####:  229:        list_capacity = new_capacity;
+    #####:  230:    }
+        -:  231:
+        -:  232:    /**
+        -:  233:     * Checks if given index is in the array scope.
+        -:  234:     * @param index Index to be checked.
+        -:  235:     */
+        -:  236:    void index_check(long long index) {
+        -:  237:        //check if index is out of range and throws out_of_range exception as needed
+        -:  238:        if (index < 0 || index >= list_size)
+        -:  239:            throw std::out_of_range("index err");
+        -:  240:    }
+        -:  241:
+        -:  242:    /**
+        -:  243:     * Swaps the values of the two given pointers.
+        -:  244:     * @param a First pointer.
+        -:  245:     * @param b Second pointer.
+        -:  246:     */
+        -:  247:    void swap(value_pointer& a, value_pointer& b){
+        -:  248:        value_pointer temp = a;
+        -:  249:        a = b;
+        -:  250:        b = temp;
+        -:  251:    }
+        -:  252:
+        -:  253:public:
+        -:  254:
+        -:  255:    /**
+        -:  256:     * Creates and returns an object of class array.
+        -:  257:     */
+function _ZN5arrayI6tenantEC1Ev called 0 returned 0% blocks executed 0%
+    #####:  258:    array() {
+    #####:  259:        list_size = 0;
+    #####:  260:        list_capacity = 140;
+    #####:  261:        realloc(list_capacity);
+    %%%%%:  261-block  0
+call    0 never executed
+    #####:  262:    }
+        -:  263:
+        -:  264:    /**
+        -:  265:     * Copy constructor.
+        -:  266:     * @param other Other class to be copied.
+        -:  267:     */
+function _ZN5arrayI6tenantEC1ERKS1_ called 0 returned 0% blocks executed 0%
+    #####:  268:    array(const array<value_type> &other) {
+    #####:  269:        list_size = 0;
+    #####:  270:        list_capacity = other.list_capacity;
+    #####:  271:        realloc(list_capacity);
+    %%%%%:  271-block  0
+call    0 never executed
+    #####:  272:        list_size = other.list_size;
+    #####:  273:        for (auto i = 0; i < list_size; i++) {
+    %%%%%:  273-block  0
+    %%%%%:  273-block  1
+branch  0 never executed
+branch  1 never executed
+    #####:  274:            list[i] = (value_pointer) ::operator new(sizeof(value_type));
+    %%%%%:  274-block  0
+call    0 never executed
+    #####:  275:            new(list[i]) value_type(*other.list[i]);
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    $$$$$:  275-block  0
+call    4 never executed
+        -:  276:        }
+    #####:  277:    }
+    %%%%%:  277-block  0
+        -:  278:
+        -:  279:    /**
+        -:  280:     * Allows use of == operator between arrays.
+        -:  281:     * @param other Array to be compared.
+        -:  282:     * @return True if both arrays contain the same list.\na
+        -:  283:     * False otherwise.
+        -:  284:     */
+function _ZNK5arrayI6tenantEeqERKS1_ called 1 returned 100% blocks executed 80%
+        1:  285:    bool operator==(const array<value_type> &other) const{
+        -:  286:
+        1:  287:        if(list_size!=other.list_size)
+        1:  287-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    #####:  288:            return false;
+    %%%%%:  288-block  0
+        -:  289:
+        2:  290:        for(auto i = 0; i <list_size; i++)
+        1:  290-block  0
+        1:  290-block  1
+        2:  290-block  2
+branch  0 taken 1
+branch  1 taken 1 (fallthrough)
+        1:  291:            if (*list[i] != *other.list[i])
+        1:  291-block  0
+call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1
+    #####:  292:                return false;
+    %%%%%:  292-block  0
+        -:  293:
+        -:  294:
+        1:  295:        return true;
+        1:  295-block  0
+        -:  296:    }
+        -:  297:
+        -:  298:    /**
+        -:  299:     * Copy constructor.
+        -:  300:     * @param other Array to be copied.
+        -:  301:     * @return Returns destination array reference after copy.
+        -:  302:     */
+function _ZN5arrayI6tenantEaSERKS1_ called 1 returned 100% blocks executed 33%
+        1:  303:    array& operator=(const array<value_type> &other){
+        1:  304:        if(this == &other)
+        1:  304-block  0
+branch  0 taken 1 (fallthrough)
+branch  1 taken 0
+        1:  305:            return *this;
+        1:  305-block  0
+    #####:  306:        clear();
+    %%%%%:  306-block  0
+call    0 never executed
+    #####:  307:        for(auto i = 0; i < other.list_size; i++){
+    %%%%%:  307-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  308:            push_back(*other.list[i]);
+    %%%%%:  308-block  0
+call    0 never executed
+        -:  309:        }
+    #####:  310:        list_size = other.list_size;
+    #####:  311:        return *this;
+    %%%%%:  311-block  0
+        -:  312:    }
+        -:  313:
+        -:  314:    /**
+        -:  315:     * Destroys object of class array.
+        -:  316:     */
+function _ZN5arrayI6tenantED1Ev called 0 returned 0% blocks executed 0%
+    #####:  317:    ~array() {
+    #####:  318:        clear();
+    %%%%%:  318-block  0
+call    0 never executed
+    #####:  319:        ::operator delete(list, list_capacity * sizeof(value_pointer));
+call    0 never executed
+        -:  320:        //delete[] list;
+    #####:  321:    }
+        -:  322:
+        -:  323:    /**
+        -:  324:     * Destroys all elements of the array.
+        -:  325:     */
+function _ZN5arrayI6tenantE5clearEv called 0 returned 0% blocks executed 0%
+    #####:  326:    void clear() {
+    #####:  327:        for (auto i = 0; i < list_size; i++) {
+    %%%%%:  327-block  0
+    %%%%%:  327-block  1
+branch  0 never executed
+branch  1 never executed
+    #####:  328:            list[i]->~T();
+    %%%%%:  328-block  0
+call    0 never executed
+    #####:  329:            ::operator delete(list[i], sizeof(value_type));
+call    0 never executed
+        -:  330:        }
+    #####:  331:        list_size = 0;
+    #####:  332:    }
+        -:  333:
+        -:  334:    /**
+        -:  335:     * Returns the number of elements currently in the array.
+        -:  336:     * @return Number of elements.
+        -:  337:     */
+        -:  338:    long long size() {
+        -:  339:        return list_size;
+        -:  340:    }
+        -:  341:
+        -:  342:    /**
+        -:  343:     * Inserts given value as the last element by copying.
+        -:  344:     * @param value Element to be inserted.
+        -:  345:     */
+function _ZN5arrayI6tenantE9push_backERKS0_ called 0 returned 0% blocks executed 0%
+    #####:  346:    void push_back(const value_type &value) {
+        -:  347:
+    #####:  348:        if (list_size >= list_capacity) {
+    %%%%%:  348-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  349:            realloc(2 * list_capacity);
+    %%%%%:  349-block  0
+call    0 never executed
+        -:  350:        }
+    #####:  351:        list[list_size] = (value_pointer) ::operator new(sizeof(value_type));
+    %%%%%:  351-block  0
+call    0 never executed
+    #####:  352:        new(list[list_size++]) value_type(value);
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    $$$$$:  352-block  0
+call    4 never executed
+    #####:  353:    }
+    %%%%%:  353-block  0
+        -:  354:
+        -:  355:    /**
+        -:  356:     * Inserts given value as the last element by moving.
+        -:  357:     * @param value Element to be inserted.
+        -:  358:     */
+        -:  359:    void push_back(value_type &&value) {
+        -:  360:
+        -:  361:        if (list_size >= list_capacity) {
+        -:  362:            realloc(2 * list_capacity);
+        -:  363:        }
+        -:  364:        list[list_size] = (value_pointer) ::operator new(sizeof(value_type));
+        -:  365:        new(list[list_size++]) value_type(std::move(value));
+        -:  366:    }
+        -:  367:
+        -:  368:    template<typename... Args>
+        -:  369:    void emplace_back(Args&&... args){
+        -:  370:        if (list_size >= list_capacity) {
+        -:  371:            realloc(2 * list_capacity);
+        -:  372:        }
+        -:  373:        list[list_size] = (value_pointer) ::operator new(sizeof(value_type));
+        -:  374:        new(list[list_size++]) value_type(value_type(std::forward<Args>(args)...));
+        -:  375:    }
+        -:  376:
+        -:  377:    /**
+        -:  378:     * Destroys last element of the array.
+        -:  379:     */
+        -:  380:    void pop_back() {
+        -:  381:        list[--list_size]->~T();
+        -:  382:        ::operator delete(list[list_size], sizeof(value_type));
+        -:  383:    }
+        -:  384:
+        -:  385:    /**
+        -:  386:     * Destroys element at given position.\n
+        -:  387:     * Shifts other elements to the left to fill the created gap.
+        -:  388:     * @param position Position of element to be destroyed.
+        -:  389:     */
+        -:  390:    void pop(const long long position) {
+        -:  391:        index_check(position);
+        -:  392:        list[position]->~T();
+        -:  393:        ::operator delete(list[position], sizeof(value_type));
+        -:  394:        memmove(list + position, list + position + 1, sizeof(value_pointer) * (list_size-- - position));
+        -:  395:    }
+        -:  396:
+        -:  397:    /**
+        -:  398:     * Inserts given element before the given position.
+        -:  399:     * @param value Element to be inserted.
+        -:  400:     * @param positon Position where element is inserted.
+        -:  401:     */
+        -:  402:    void insert(const value_type &value, const long long position) {
+        -:  403:        if (list_size >= list_capacity) {
+        -:  404:            realloc(2 * list_capacity);
+        -:  405:        }
+        -:  406:
+        -:  407:        memmove(list + position + 1, list + position, sizeof(value_pointer) * (list_size++ - position));
+        -:  408:        /*
+        -:  409:        for(auto i = list_size; i > position; i--)
+        -:  410:            list[i] = list[i - 1];
+        -:  411:        */
+        -:  412:
+        -:  413:        list[position] = new value_type;
+        -:  414:        new(list[position]) value_type(value);
+        -:  415:
+        -:  416:    }
+        -:  417:
+        -:  418:    /**
+        -:  419:     * Return a reference to the first element in array.
+        -:  420:     * @return First element of array.
+        -:  421:     */
+        -:  422:    value_type &front() {
+        -:  423:        return *list[list_size - 1];
+        -:  424:    }
+        -:  425:
+        -:  426:    /**
+        -:  427:     * Return a const reference to the first element in array.
+        -:  428:     * @return First element of array.
+        -:  429:     */
+        -:  430:    const value_type &front() const {
+        -:  431:        return *list[0];
+        -:  432:    }
+        -:  433:
+        -:  434:    /**
+        -:  435:     * Return a reference to the last element in array.
+        -:  436:     * @return Last element of array.
+        -:  437:     */
+        -:  438:    value_type &back() {
+        -:  439:        return *list[list_size - 1];
+        -:  440:    }
+        -:  441:
+        -:  442:    /**
+        -:  443:     * Return a const reference to the last element in array.
+        -:  444:     * @return Last element of array.
+        -:  445:     */
+        -:  446:    const value_type &back() const {
+        -:  447:        return *list[list_size - 1];
+        -:  448:    }
+        -:  449:
+        -:  450:
+        -:  451:    /**
+        -:  452:     * Allows use of operator [] to access array elements.
+        -:  453:     * @param index Index at which element is situated.
+        -:  454:     * @return Reference of element at given index.
+        -:  455:     */
+        -:  456:    value_type &operator[](long long index) {
+        -:  457:        //enables use of [] for normal elements
+        -:  458:        index_check(index);
+        -:  459:        return *list[index];
+        -:  460:    }
+        -:  461:
+        -:  462:    /**
+        -:  463:     * Allows use of operator [] to access array elements.
+        -:  464:     * @param index Index at which element is situated.
+        -:  465:     * @return Const reference of element at given index.
+        -:  466:     */
+        -:  467:    const value_type &operator[](long long index) const {
+        -:  468:        //enables use of [] for const elements
+        -:  469:        index_check(index);
+        -:  470:        return *list[index];
+        -:  471:    }
+        -:  472:
+        -:  473:    /**
+        -:  474:     * Return an iterator at the start of the array.
+        -:  475:     * @return Begin iterator.
+        -:  476:     */
+        -:  477:    iterator begin() {
+        -:  478:        return iterator(list);
+        -:  479:    }
+        -:  480:
+        -:  481:    /**
+        -:  482:     * Return an iterator just outside the end of the array.
+        -:  483:     * @return End iterator.
+        -:  484:     */
+        -:  485:    iterator end() {
+        -:  486:        return iterator(list + list_size);
+        -:  487:    }
+        -:  488:
+        -:  489:    /**
+        -:  490:     * Replaces all current elements with given element.
+        -:  491:     * @param value Element to be put in the array.
+        -:  492:     */
+        -:  493:    void fill(const value_type &value) {
+        -:  494:        for (auto i = 0; i < list_size; i++) {
+        -:  495:            list[i]->~T();
+        -:  496:            new(list[i]) value_type(value);
+        -:  497:        }
+        -:  498:    }
+        -:  499:
+        -:  500:    /**
+        -:  501:     * Return an iterator at the end of the array.
+        -:  502:     * @return Reverse begin iterator.
+        -:  503:     */
+        -:  504:    iterator rbegin() {
+        -:  505:        return iterator(list + list_size - 1);
+        -:  506:    }
+        -:  507:
+        -:  508:    /**
+        -:  509:     * Return an iterator just outside the start of the array.
+        -:  510:     * @return Reverse end iterator.
+        -:  511:     */
+        -:  512:    iterator rend() {
+        -:  513:        return iterator(list - 1);
+        -:  514:    }
+        -:  515:
+        -:  516:    /**
+        -:  517:     * Function that allows std::cout<< for array.
+        -:  518:     * @param out Operator from std::cout.
+        -:  519:     * @param arr Reference to array.
+        -:  520:     * @return Array elements converted to std::cout.
+        -:  521:     */
+        -:  522:    friend std::ostream &operator<<(std::ostream &out, const array &arr) {
+        -:  523:        out << "[";
+        -:  524:        for (long long i = 0; i < arr.list_size - 1; i++)
+        -:  525:            out << *(arr.list[i]) << ", ";
+        -:  526:        if (arr.list_size > 0)
+        -:  527:            out << arr.back();
+        -:  528:        out << "]";
+        -:  529:        return out;
+        -:  530:    }
+        -:  531:
+        -:  532://    /**
+        -:  533://     * Function that allows std::fout<< for array.
+        -:  534://     * @param out Operator from std::fout.
+        -:  535://     * @param arr Reference to array.
+        -:  536://     * @return Array elements converted to std::fout.
+        -:  537://     */
+        -:  538://    friend std::ofstream &operator<<(std::ofstream &out, const array &arr) {
+        -:  539://        out << [;
+        -:  540://        for (long long i = 0; i < arr.list_size - 1; i++)
+        -:  541://            out << *(arr.list[i]) << ", ";
+        -:  542://        if (arr.list_size > 0)
+        -:  543://            out << arr.back();
+        -:  544://        out << "]";
+        -:  545://        return out;
+        -:  546://    }
+        -:  547:
+        -:  548:    /**
+        -:  549:     * Sort function using interchange sort.
+        -:  550:     * @param cmp Optional compare parameter.\n
+        -:  551:     * Must return an integer and contain 2 elements of array type as parameters.
+        -:  552:     */
+        -:  553:    void sort(std::function<int(const value_type , const value_type)> cmp = [](const value_type a, const value_type b){return a < b;}){
+        -:  554:        for(int i = 0; i < list_size; i++)
+        -:  555:            for(int j = 0; j < list_size; j++)
+        -:  556:                if(!cmp(*list[i], *list[j]))
+        -:  557:                    swap(list[i], list[j]);
+        -:  558:    }
+        -:  559:
+        -:  560:    /**
+        -:  561:     * Sort function that also accepts reverse parameter.
+        -:  562:     * @param reverse Reverse parameter.
+        -:  563:     * @param cmp Optional compare parameter.\n
+        -:  564:     * Must return an integer and contain 2 elements of arrays type as parameters.
+        -:  565:     */
+        -:  566:    void sort(bool reverse, std::function<int(const value_type , const value_type)> cmp = [](const value_type a, const value_type b){return a < b;}){
+        -:  567:        for(int i = 0; i < list_size; i++)
+        -:  568:            for(int j = 0; j < list_size; j++)
+        -:  569:                if(cmp(*list[i], *list[j]) == reverse)
+        -:  570:                    swap(list[i], list[j]);
+        -:  571:    }
+        -:  572:
+        -:  573:    /**
+        -:  574:     * Reverse the array.
+        -:  575:     */
+        -:  576:    void reverse(){
+        -:  577:        for(long long i = 0, j = list_size - 1; i < j ; i++, j--)
+        -:  578:            swap(list[i], list[j]);
+        -:  579:    }
+        -:  580:
+        -:  581:    /**
+        -:  582:     * Creates a new array filtered with given function.
+        -:  583:     * @param cmp Filter function.\n
+        -:  584:     * Must return integer and accept 1 element of arrays type as parameter.
+        -:  585:     * @return New filtered list.
+        -:  586:     */
+        -:  587:    array filter(std::function<int(const value_type)> cmp){
+        -:  588:        array<value_type> new_array;
+        -:  589:        for(auto i: *this)
+        -:  590:            if(cmp(i))
+        -:  591:                new_array.push_back(i);
+        -:  592:
+        -:  593:        return new_array;
+        -:  594:    }
+        -:  595:
+        -:  596:    /**
+        -:  597:     * Return position of first instance of given value in array.\n
+        -:  598:     * If no instance is found function will return -1.
+        -:  599:     * @param value Element to be searched.
+        -:  600:     * @return Position of value in array.
+        -:  601:     */
+        -:  602:    long long search(const value_type& value){
+        -:  603:        long long i = 0;
+        -:  604:        while(i < list_size){
+        -:  605:
+        -:  606:            if(*list[i] == value)
+        -:  607:                return i;
+        -:  608:            i++;
+        -:  609:        }
+        -:  610:        return -1;
+        -:  611:    }
+        -:  612:
+        -:  613:    /**
+        -:  614:     * Return position of last instance of given value in array.\n
+        -:  615:     * If no instance is found function will return -1.
+        -:  616:     * @param value Element to be searched.
+        -:  617:     * @return Position of value in array.
+        -:  618:     */
+        -:  619:    long long rsearch(const value_type& value){
+        -:  620:        long long i = list_size - 1;
+        -:  621:        while(i >= 0){
+        -:  622:            if(*list[i] == value)
+        -:  623:                return i;
+        -:  624:        }
+        -:  625:        return -1;
+        -:  626:    }
+        -:  627:};
+        -:  628:
+        -:  629:
