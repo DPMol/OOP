@@ -106,8 +106,8 @@ function _ZN9__gnu_cxx13new_allocatorIcEC2ERKS1_ called 0 returned 0% blocks exe
         -:  100:      // NB: __n is permitted to be 0.  The C++ standard says nothing
         -:  101:      // about what the return value is when __n == 0.
         -:  102:      _GLIBCXX_NODISCARD _Tp*
-function _ZN9__gnu_cxx13new_allocatorIcE8allocateEyPKv called 8 returned 100% blocks executed 83%
-        8:  103:      allocate(size_type __n, const void* = static_cast<const void*>(0))
+function _ZN9__gnu_cxx13new_allocatorIcE8allocateEyPKv called 10 returned 100% blocks executed 83%
+       10:  103:      allocate(size_type __n, const void* = static_cast<const void*>(0))
         -:  104:      {
         -:  105:#if __cplusplus >= 201103L
         -:  106:	 // _GLIBCXX_RESOLVE_LIB_DEFECTS
@@ -115,11 +115,11 @@ function _ZN9__gnu_cxx13new_allocatorIcE8allocateEyPKv called 8 returned 100% bl
         -:  108:	 static_assert(sizeof(_Tp) != 0, "cannot allocate incomplete types");
         -:  109:#endif
         -:  110:
-        8:  111:	if (__builtin_expect(__n > this->_M_max_size(), false))
-        8:  111-block  0
-call    0 returned 8
+       10:  111:	if (__builtin_expect(__n > this->_M_max_size(), false))
+       10:  111-block  0
+call    0 returned 10
 branch  1 taken 0 (fallthrough)
-branch  2 taken 8
+branch  2 taken 10
         -:  112:	  {
         -:  113:	    // _GLIBCXX_RESOLVE_LIB_DEFECTS
         -:  114:	    // 3190. allocator::allocate sometimes returns too little storage
@@ -137,9 +137,9 @@ call    0 never executed
         -:  124:	    return static_cast<_Tp*>(::operator new(__n * sizeof(_Tp), __al));
         -:  125:	  }
         -:  126:#endif
-        8:  127:	return static_cast<_Tp*>(::operator new(__n * sizeof(_Tp)));
-        8:  127-block  0
-call    0 returned 8
+       10:  127:	return static_cast<_Tp*>(::operator new(__n * sizeof(_Tp)));
+       10:  127-block  0
+call    0 returned 10
         -:  128:      }
         -:  129:
         -:  130:      // __p is not permitted to be a null pointer.
@@ -213,12 +213,12 @@ call    0 never executed
         -:  194:
         -:  195:    private:
         -:  196:      _GLIBCXX_CONSTEXPR size_type
-function _ZNK9__gnu_cxx13new_allocatorIcE11_M_max_sizeEv called 8 returned 100% blocks executed 100%
-        8:  197:      _M_max_size() const _GLIBCXX_USE_NOEXCEPT
+function _ZNK9__gnu_cxx13new_allocatorIcE11_M_max_sizeEv called 10 returned 100% blocks executed 100%
+       10:  197:      _M_max_size() const _GLIBCXX_USE_NOEXCEPT
         -:  198:      {
         -:  199:#if __PTRDIFF_MAX__ < __SIZE_MAX__
-        8:  200:	return std::size_t(__PTRDIFF_MAX__) / sizeof(_Tp);
-        8:  200-block  0
+       10:  200:	return std::size_t(__PTRDIFF_MAX__) / sizeof(_Tp);
+       10:  200-block  0
         -:  201:#else
         -:  202:	return std::size_t(-1) / sizeof(_Tp);
         -:  203:#endif

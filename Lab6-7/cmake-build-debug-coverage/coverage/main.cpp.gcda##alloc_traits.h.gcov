@@ -492,11 +492,11 @@
         -:  488:       *  Calls <tt> a.deallocate(p, n) </tt>
         -:  489:      */
         -:  490:      static _GLIBCXX20_CONSTEXPR void
-function _ZNSt16allocator_traitsISaIcEE10deallocateERS0_Pcy called 8 returned 100% blocks executed 67%
-        8:  491:      deallocate(allocator_type& __a, pointer __p, size_type __n)
-        8:  491-block  0
-call    0 returned 8
-        8:  492:      { __a.deallocate(__p, __n); }
+function _ZNSt16allocator_traitsISaIcEE10deallocateERS0_Pcy called 10 returned 100% blocks executed 67%
+       10:  491:      deallocate(allocator_type& __a, pointer __p, size_type __n)
+       10:  491-block  0
+call    0 returned 10
+       10:  492:      { __a.deallocate(__p, __n); }
         -:  493:
         -:  494:      /**
         -:  495:       *  @brief  Construct an object of type `_Up`

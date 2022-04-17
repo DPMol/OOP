@@ -206,11 +206,11 @@
         -:  202:      deallocate(_Tp* __p, size_t __n)
         -:  203:      {
         -:  204:#ifdef __cpp_lib_is_constant_evaluated
-        8:  205:	if (std::is_constant_evaluated())
-        8:  205-block  0
-call    0 returned 8
+       10:  205:	if (std::is_constant_evaluated())
+       10:  205-block  0
+call    0 returned 10
 branch  1 taken 0 (fallthrough)
-branch  2 taken 8
+branch  2 taken 10
         -:  206:	  {
     #####:  207:	    ::operator delete(__p);
     %%%%%:  207-block  0
@@ -218,9 +218,9 @@ call    0 never executed
     #####:  208:	    return;
         -:  209:	  }
         -:  210:#endif
-        8:  211:	  __allocator_base<_Tp>::deallocate(__p, __n);
-        8:  211-block  0
-call    0 returned 8
+       10:  211:	  __allocator_base<_Tp>::deallocate(__p, __n);
+       10:  211-block  0
+call    0 returned 10
         -:  212:      }
         -:  213:#endif // C++20
         -:  214:

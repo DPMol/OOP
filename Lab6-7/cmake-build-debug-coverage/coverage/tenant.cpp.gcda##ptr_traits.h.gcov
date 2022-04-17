@@ -147,8 +147,8 @@
         -:  143:       *  @return @c addressof(__r)
         -:  144:      */
         -:  145:      static _GLIBCXX20_CONSTEXPR pointer
-     123*:  146:      pointer_to(__make_not_void<element_type>& __r) noexcept
-     123*:  147:      { return std::addressof(__r); }
+     102*:  146:      pointer_to(__make_not_void<element_type>& __r) noexcept
+     102*:  147:      { return std::addressof(__r); }
 ------------------
 _ZNSt14pointer_traitsIPKcE10pointer_toERS0_:
 function _ZNSt14pointer_traitsIPKcE10pointer_toERS0_ called 0 returned 0% blocks executed 0%
@@ -158,11 +158,11 @@ function _ZNSt14pointer_traitsIPKcE10pointer_toERS0_ called 0 returned 0% blocks
 call    0 never executed
 ------------------
 _ZNSt14pointer_traitsIPcE10pointer_toERc:
-function _ZNSt14pointer_traitsIPcE10pointer_toERc called 123 returned 100% blocks executed 100%
-      123:  146:      pointer_to(__make_not_void<element_type>& __r) noexcept
-      123:  147:      { return std::addressof(__r); }
-      123:  147-block  0
-call    0 returned 123
+function _ZNSt14pointer_traitsIPcE10pointer_toERc called 102 returned 100% blocks executed 100%
+      102:  146:      pointer_to(__make_not_void<element_type>& __r) noexcept
+      102:  147:      { return std::addressof(__r); }
+      102:  147-block  0
+call    0 returned 102
 ------------------
         -:  148:    };
         -:  149:

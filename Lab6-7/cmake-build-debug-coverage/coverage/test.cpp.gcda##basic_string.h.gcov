@@ -605,32 +605,32 @@ call    0 never executed
         -:  530:      // 3076. basic_string CTAD ambiguity
         -:  531:      template<typename = _RequireAllocator<_Alloc>>
         -:  532:#endif
-function _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1IS3_EEPKcRKS3_ called 8 returned 100% blocks executed 73%
-        8:  533:      basic_string(const _CharT* __s, const _Alloc& __a = _Alloc())
-        8:  534:      : _M_dataplus(_M_local_data(), __a)
-        8:  534-block  0
-call    0 returned 8
-call    1 returned 8
+function _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEC1IS3_EEPKcRKS3_ called 0 returned 0% blocks executed 0%
+    #####:  533:      basic_string(const _CharT* __s, const _Alloc& __a = _Alloc())
+    #####:  534:      : _M_dataplus(_M_local_data(), __a)
+    %%%%%:  534-block  0
+call    0 never executed
+call    1 never executed
         -:  535:      {
-       8*:  536:	const _CharT* __end = __s ? __s + traits_type::length(__s)
-branch  0 taken 8 (fallthrough)
-branch  1 taken 0
-        8:  536-block  0
-call    2 returned 8
-branch  3 taken 8 (fallthrough)
-branch  4 taken 0 (throw)
-        8:  536-block  1
+    #####:  536:	const _CharT* __end = __s ? __s + traits_type::length(__s)
+branch  0 never executed
+branch  1 never executed
+    %%%%%:  536-block  0
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+    %%%%%:  536-block  1
     %%%%%:  536-block  2
         -:  537:	  // We just need a non-null pointer here to get an exception:
         -:  538:	  : reinterpret_cast<const _CharT*>(__alignof__(_CharT));
-        8:  539:	_M_construct(__s, __end, random_access_iterator_tag());
-        8:  539-block  0
-call    0 returned 8
-branch  1 taken 8 (fallthrough)
-branch  2 taken 0 (throw)
+    #####:  539:	_M_construct(__s, __end, random_access_iterator_tag());
+    %%%%%:  539-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
     $$$$$:  539-block  1
-        8:  540:      }
-        8:  540-block  0
+    #####:  540:      }
+    %%%%%:  540-block  0
     $$$$$:  540-block  1
 call    0 never executed
         -:  541:

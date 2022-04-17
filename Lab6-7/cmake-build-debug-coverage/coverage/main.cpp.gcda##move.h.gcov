@@ -50,10 +50,10 @@
         -:   46:   */
         -:   47:  template<typename _Tp>
         -:   48:    inline _GLIBCXX_CONSTEXPR _Tp*
-function _ZSt11__addressofIKcEPT_RS1_ called 190 returned 100% blocks executed 100%
-      190:   49:    __addressof(_Tp& __r) _GLIBCXX_NOEXCEPT
-      190:   50:    { return __builtin_addressof(__r); }
-      190:   50-block  0
+function _ZSt11__addressofIKcEPT_RS1_ called 174 returned 100% blocks executed 100%
+      174:   49:    __addressof(_Tp& __r) _GLIBCXX_NOEXCEPT
+      174:   50:    { return __builtin_addressof(__r); }
+      174:   50-block  0
         -:   51:
         -:   52:#if __cplusplus >= 201103L
         -:   53:
@@ -148,11 +148,11 @@ function _ZSt11__addressofIKcEPT_RS1_ called 190 returned 100% blocks executed 1
         -:  142:  template<typename _Tp>
         -:  143:    _GLIBCXX_NODISCARD
         -:  144:    inline _GLIBCXX17_CONSTEXPR _Tp*
-function _ZSt9addressofIKcEPT_RS1_ called 190 returned 100% blocks executed 100%
-      190:  145:    addressof(_Tp& __r) noexcept
-      190:  146:    { return std::__addressof(__r); }
-      190:  146-block  0
-call    0 returned 190
+function _ZSt9addressofIKcEPT_RS1_ called 174 returned 100% blocks executed 100%
+      174:  145:    addressof(_Tp& __r) noexcept
+      174:  146:    { return std::__addressof(__r); }
+      174:  146-block  0
+call    0 returned 174
         -:  147:
         -:  148:  // _GLIBCXX_RESOLVE_LIB_DEFECTS
         -:  149:  // 2598. addressof works on temporaries

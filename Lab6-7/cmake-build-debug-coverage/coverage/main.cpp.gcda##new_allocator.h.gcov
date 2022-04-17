@@ -133,9 +133,9 @@
         -:  129:
         -:  130:      // __p is not permitted to be a null pointer.
         -:  131:      void
-function _ZN9__gnu_cxx13new_allocatorIcE10deallocateEPcy called 8 returned 100% blocks executed 100%
-        8:  132:      deallocate(_Tp* __p, size_type __t __attribute__ ((__unused__)))
-        8:  132-block  0
+function _ZN9__gnu_cxx13new_allocatorIcE10deallocateEPcy called 10 returned 100% blocks executed 100%
+       10:  132:      deallocate(_Tp* __p, size_type __t __attribute__ ((__unused__)))
+       10:  132-block  0
         -:  133:      {
         -:  134:#if __cpp_aligned_new
         -:  135:	if (alignof(_Tp) > __STDCPP_DEFAULT_NEW_ALIGNMENT__)
@@ -148,9 +148,9 @@ function _ZN9__gnu_cxx13new_allocatorIcE10deallocateEPcy called 8 returned 100% 
         -:  142:	    return;
         -:  143:	  }
         -:  144:#endif
-        8:  145:	::operator delete(__p
-        8:  145-block  0
-call    0 returned 8
+       10:  145:	::operator delete(__p
+       10:  145-block  0
+call    0 returned 10
         -:  146:#if __cpp_sized_deallocation
         -:  147:			  , __t * sizeof(_Tp)
         -:  148:#endif

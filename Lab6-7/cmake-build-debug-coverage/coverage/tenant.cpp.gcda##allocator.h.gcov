@@ -195,18 +195,18 @@
         -:  191:      allocate(size_t __n)
         -:  192:      {
         -:  193:#ifdef __cpp_lib_is_constant_evaluated
-        8:  194:	if (std::is_constant_evaluated())
-        8:  194-block  0
-call    0 returned 8
+       10:  194:	if (std::is_constant_evaluated())
+       10:  194-block  0
+call    0 returned 10
 branch  1 taken 0 (fallthrough)
-branch  2 taken 8
+branch  2 taken 10
     #####:  195:	  return static_cast<_Tp*>(::operator new(__n * sizeof(_Tp)));
     %%%%%:  195-block  0
 call    0 never executed
         -:  196:#endif
-        8:  197:	return __allocator_base<_Tp>::allocate(__n, 0);
-        8:  197-block  0
-call    0 returned 8
+       10:  197:	return __allocator_base<_Tp>::allocate(__n, 0);
+       10:  197-block  0
+call    0 returned 10
         -:  198:      }
         -:  199:
         -:  200:      [[__gnu__::__always_inline__]]

@@ -5,828 +5,1158 @@
         -:    1:#include "interface.h"
         -:    2:
 function _ZN9interfaceC2ER7service called 1 returned 100% blocks executed 100%
-        1:    3:interface::interface(service& srv): srv(srv){}
+        1:    3:interface::interface(service &srv) : srv(srv) {}
         1:    3-block  0
 call    0 returned 1
         -:    4:
-function _ZN9interface3runEv called 1 returned 100% blocks executed 30%
+function _ZN9interface3runEv called 1 returned 100% blocks executed 28%
         1:    5:void interface::run() {
         1:    6:    menu();
         1:    6-block  0
 call    0 returned 1
 branch  1 taken 1 (fallthrough)
 branch  2 taken 0 (throw)
-        1:    7:    std::string input;
+        1:    7:    std::string command;
         1:    7-block  0
 call    0 returned 1
-        1:    8:    array<std::string> arg;
-call    0 returned 1
-branch  1 taken 1 (fallthrough)
-branch  2 taken 0 (throw)
-        -:    9:    size_t poz;
-        1:   10:    std::string command;
+        -:    8:
+        -:    9:    while (true) {
+        1:   10:        command.clear();
         1:   10-block  0
 call    0 returned 1
         -:   11:
-        -:   12:    while(true){
-        1:   13:        input.clear();
+        1:   12:        std::cout << "Command:";
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   13:        std::getline(std::cin, command);
         1:   13-block  0
 call    0 returned 1
-        1:   14:        arg.clear();
-call    0 returned 1
-        -:   15:
-        1:   16:        std::cout<<"Command:";
-call    0 returned 1
 branch  1 taken 1 (fallthrough)
 branch  2 taken 0 (throw)
-        1:   17:        std::getline(std::cin, input);
-        1:   17-block  0
+        -:   14:
+        1:   15:        if (command == "exit")
+        1:   15-block  0
 call    0 returned 1
 branch  1 taken 1 (fallthrough)
-branch  2 taken 0 (throw)
-        -:   18:
-        1:   19:        poz = input.find(' ');
-        1:   19-block  0
-call    0 returned 1
-        1:   20:        if(poz == std::string::npos){
-branch  0 taken 1 (fallthrough)
-branch  1 taken 0
-        1:   21:            command = input;
-        1:   21-block  0
-call    0 returned 1
-branch  1 taken 1 (fallthrough)
-branch  2 taken 0 (throw)
-        -:   22:        }
-        -:   23:        else {
-    #####:   24:            command = input.substr(0, poz);
+branch  2 taken 0
+        1:   16:            break;
+        1:   16-block  0
+    #####:   17:        else if (command == "add") {
+    %%%%%:   17-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   18:            add();
+    %%%%%:   18-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   19:        } else if (command == "delete") {
+    %%%%%:   19-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   20:            del();
+    %%%%%:   20-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   21:        } else if (command == "find") {
+    %%%%%:   21-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   22:            find();
+    %%%%%:   22-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   23:        } else if (command == "show") {
+    %%%%%:   23-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   24:            show();
     %%%%%:   24-block  0
 call    0 never executed
 branch  1 never executed
 branch  2 never executed
-    %%%%%:   24-block  1
-call    3 never executed
-call    4 never executed
-        -:   25:
-    #####:   26:            input.erase(0, input.find(' ') + 1);
-call    0 never executed
-call    1 never executed
-branch  2 never executed
-branch  3 never executed
-        -:   27:
-    #####:   28:            while ((poz = input.find(", ")) != std::string::npos) {
-    %%%%%:   28-block  0
-    %%%%%:   28-block  1
+    #####:   25:        } else if (command == "modify") {
+    %%%%%:   25-block  0
 call    0 never executed
 branch  1 never executed
 branch  2 never executed
-    #####:   29:                arg.push_back(input.substr(0, poz));
+    #####:   26:            modify();
+    %%%%%:   26-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   27:        } else if (command == "filter") {
+    %%%%%:   27-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   28:            filter();
+    %%%%%:   28-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   29:        } else if (command == "sort") {
     %%%%%:   29-block  0
 call    0 never executed
 branch  1 never executed
 branch  2 never executed
-    %%%%%:   29-block  1
-call    3 never executed
-branch  4 never executed
-branch  5 never executed
-    %%%%%:   29-block  2
-call    6 never executed
-    $$$$$:   29-block  3
-call    7 never executed
-    $$$$$:   29-block  4
-    #####:   30:                input.erase(0, poz + 2);
+    #####:   30:            sort();
+    %%%%%:   30-block  0
 call    0 never executed
 branch  1 never executed
 branch  2 never executed
-        -:   31:            }
-    #####:   32:            arg.push_back(input);
+    #####:   31:        } else if (command == "help") {
+    %%%%%:   31-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   32:            menu();
     %%%%%:   32-block  0
 call    0 never executed
 branch  1 never executed
 branch  2 never executed
-        -:   33:        }
-        1:   34:        if(command == "exit")
-        1:   34-block  0
+        -:   33:        } else
+    #####:   34:            std::cout << "Invalid command!\n\n";
+    %%%%%:   34-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   35:    }
+        1:   36:}
+        1:   36-block  0
 call    0 returned 1
-branch  1 taken 1 (fallthrough)
-branch  2 taken 0
-        1:   35:            break;
-        1:   35-block  0
-    #####:   36:        else if(command.empty())
-    %%%%%:   36-block  0
-call    0 never executed
-branch  1 never executed
-branch  2 never executed
-    #####:   37:            continue;
-    %%%%%:   37-block  0
-    #####:   38:        else if(command == "add"){
-    %%%%%:   38-block  0
-call    0 never executed
-branch  1 never executed
-branch  2 never executed
-    #####:   39:            add(arg);
+    $$$$$:   36-block  1
+call    1 never executed
+        -:   37:
+function _ZN9interface6filterEv called 0 returned 0% blocks executed 0%
+    #####:   38:void interface::filter() {
+    #####:   39:    std::string input, out;
     %%%%%:   39-block  0
 call    0 never executed
-branch  1 never executed
-branch  2 never executed
-        -:   40:        }
-    #####:   41:        else if(command == "delete"){
-    %%%%%:   41-block  0
+call    1 never executed
+        -:   40:    std::cout<<"1 for type filter,\n"
+        -:   41:               "2 for area filter\n"
+    #####:   42:               "Input:";
 call    0 never executed
 branch  1 never executed
 branch  2 never executed
-    #####:   42:            del(arg);
-    %%%%%:   42-block  0
+    #####:   43:    std::getline(std::cin, input);
+    %%%%%:   43-block  0
 call    0 never executed
 branch  1 never executed
 branch  2 never executed
-        -:   43:        }
-    #####:   44:        else if(command == "find"){
-    %%%%%:   44-block  0
+        -:   44:
+        -:   45:    try {
+    #####:   46:        if (input == "1") {
+    %%%%%:   46-block  0
 call    0 never executed
 branch  1 never executed
 branch  2 never executed
-    #####:   45:            find(arg);
-    %%%%%:   45-block  0
-call    0 never executed
-branch  1 never executed
-branch  2 never executed
-        -:   46:        }
-    #####:   47:        else if(command == "show"){
+    #####:   47:            std::cout<<"Type:";
     %%%%%:   47-block  0
 call    0 never executed
 branch  1 never executed
 branch  2 never executed
-    #####:   48:            show(arg);
+    #####:   48:            std::string filter;
     %%%%%:   48-block  0
+call    0 never executed
+    #####:   49:            std::getline(std::cin,filter);
 call    0 never executed
 branch  1 never executed
 branch  2 never executed
-        -:   49:        }
-    #####:   50:        else if(command == "modify"){
+    #####:   50:            out = srv.filter_type(filter);
     %%%%%:   50-block  0
 call    0 never executed
 branch  1 never executed
 branch  2 never executed
-    #####:   51:            modify(arg);
-    %%%%%:   51-block  0
+    %%%%%:   50-block  1
+call    3 never executed
+call    4 never executed
+        -:   51:
+    #####:   52:        } else if (input == "2") {
 call    0 never executed
-branch  1 never executed
+    %%%%%:   52-block  0
+call    1 never executed
 branch  2 never executed
-        -:   52:        }
-    #####:   53:        else if(command == "help"){
+branch  3 never executed
+    $$$$$:   52-block  1
+call    4 never executed
+    #####:   53:            std::cout<<"Area:";
     %%%%%:   53-block  0
 call    0 never executed
 branch  1 never executed
 branch  2 never executed
-    #####:   54:            menu();
+    #####:   54:            std::string filter;
     %%%%%:   54-block  0
 call    0 never executed
+    #####:   55:            std::getline(std::cin,filter);
+call    0 never executed
 branch  1 never executed
 branch  2 never executed
-        -:   55:        }
-        -:   56:        else
-    #####:   57:            std::cout<<"Invalid command!\n";
+    #####:   56:            int temp =std::stoi(filter);
+    %%%%%:   56-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   57:            if(temp < 1)
     %%%%%:   57-block  0
-call    0 never executed
+branch  0 never executed
 branch  1 never executed
-branch  2 never executed
-        -:   58:    }
-        1:   59:}
-        1:   59-block  0
-call    0 returned 1
-call    1 returned 1
-call    2 returned 1
-    $$$$$:   59-block  1
-call    3 never executed
-    $$$$$:   59-block  2
-call    4 never executed
-    $$$$$:   59-block  3
-call    5 never executed
-        -:   60:
-function _ZN9interface3addER5arrayINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE called 0 returned 0% blocks executed 0%
-    #####:   61:void interface::add(array<std::string>& arg){
-    #####:   62:      if(arg.size() < 4){
-    %%%%%:   62-block  0
-call    0 never executed
-branch  1 never executed
-branch  2 never executed
-    #####:   63:          std::cout<<"Too few arguments were given!\n";
-    %%%%%:   63-block  0
-call    0 never executed
-        -:   64:      }
-    #####:   65:      else if(arg.size()>4){
-    %%%%%:   65-block  0
-call    0 never executed
-branch  1 never executed
-branch  2 never executed
-    #####:   66:          std::cout<<"Too many arguments were given!\n";
-    %%%%%:   66-block  0
-call    0 never executed
-        -:   67:      }
-        -:   68:      else{
-        -:   69:          int apartment, area;
-    #####:   70:          std::string owner, type;
-    %%%%%:   70-block  0
+    #####:   58:                throw std::exception();
+    %%%%%:   58-block  0
 call    0 never executed
 call    1 never executed
-        -:   71:          try{
-    #####:   72:              apartment = std::stoi(arg[0]);
+call    2 never executed
+    #####:   59:            out = srv.filter_area(temp);
+    %%%%%:   59-block  0
 call    0 never executed
 branch  1 never executed
 branch  2 never executed
-    %%%%%:   72-block  0
+    %%%%%:   59-block  1
 call    3 never executed
-branch  4 never executed
-branch  5 never executed
-    #####:   73:              owner = arg[1];
+call    4 never executed
+        -:   60:
+    #####:   61:        } else {
+call    0 never executed
+    $$$$$:   61-block  0
+call    1 never executed
+    #####:   62:            throw std::exception();
+    %%%%%:   62-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:   63:        }
+        -:   64:    }
+    =====:   65:    catch(...){
+    $$$$$:   65-block  0
+    $$$$$:   65-block  1
+call    0 never executed
+    =====:   66:        std::cout<<"Argument is invalid";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    =====:   67:        std::cout<<std::endl;
+    $$$$$:   67-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    =====:   68:        return;
+    $$$$$:   68-block  0
+    =====:   69:    }
+    $$$$$:   69-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:   69-block  1
+call    3 never executed
+    #####:   70:    if(out.empty())
+    %%%%%:   70-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   71:        std::cout<<"No items were found.\n";
+    %%%%%:   71-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   72:    else
+    #####:   73:        std::cout<<out;
     %%%%%:   73-block  0
 call    0 never executed
 branch  1 never executed
 branch  2 never executed
-    %%%%%:   73-block  1
-call    3 never executed
-branch  4 never executed
-branch  5 never executed
-    #####:   74:              type = arg[2];
+    #####:   74:    std::cout<<std::endl;
     %%%%%:   74-block  0
 call    0 never executed
 branch  1 never executed
 branch  2 never executed
-    %%%%%:   74-block  1
-call    3 never executed
-branch  4 never executed
-branch  5 never executed
-    #####:   75:              area = std::stoi(arg[3]);
+    #####:   75:}
     %%%%%:   75-block  0
+    %%%%%:   75-block  1
 call    0 never executed
 branch  1 never executed
 branch  2 never executed
-    %%%%%:   75-block  1
+    %%%%%:   75-block  2
+    %%%%%:   75-block  3
 call    3 never executed
 branch  4 never executed
 branch  5 never executed
+    $$$$$:   75-block  4
+call    6 never executed
+    $$$$$:   75-block  5
+call    7 never executed
         -:   76:
-    #####:   77:              if(apartment < 1 || area < 1)
-    %%%%%:   77-block  0
-branch  0 never executed
-branch  1 never executed
-    %%%%%:   77-block  1
-branch  2 never executed
-branch  3 never executed
-    #####:   78:                  throw std::exception();
-    %%%%%:   78-block  0
+function _ZN9interface3addEv called 0 returned 0% blocks executed 0%
+    #####:   77:void interface::add() {
+        -:   78:    int apartment, area;
+    #####:   79:    std::string owner, type;
+    %%%%%:   79-block  0
 call    0 never executed
 call    1 never executed
-call    2 never executed
-        -:   79:          }
-    =====:   80:          catch (...){
-    $$$$$:   80-block  0
-    $$$$$:   80-block  1
+        -:   80:
+        -:   81:    try {
+    #####:   82:        std::string input;
 call    0 never executed
-    =====:   81:              std::cout<<"One or more arguments are invalid!\n";
+    #####:   83:        std::cout << "Apartment:";
 call    0 never executed
 branch  1 never executed
 branch  2 never executed
-    =====:   82:              return;
-    =====:   83:          }
-    $$$$$:   83-block  0
+    #####:   84:        std::getline(std::cin, input);
+    %%%%%:   84-block  0
 call    0 never executed
 branch  1 never executed
 branch  2 never executed
-    $$$$$:   83-block  1
-call    3 never executed
-        -:   84:
-        -:   85:          try{
-    #####:   86:              srv.add(apartment, owner, type, area);
-    %%%%%:   86-block  0
+    #####:   85:        apartment = std::stoi(input);
+    %%%%%:   85-block  0
 call    0 never executed
 branch  1 never executed
 branch  2 never executed
-        -:   87:          }
-    =====:   88:          catch (...){
-    $$$$$:   88-block  0
-    $$$$$:   88-block  1
-call    0 never executed
-    =====:   89:              std::cout<<"Tenant already exists!\n";
+        -:   86:
+    #####:   87:        std::cout << "Owner:";
+    %%%%%:   87-block  0
 call    0 never executed
 branch  1 never executed
 branch  2 never executed
-    =====:   90:              return;
-    =====:   91:          }
-    $$$$$:   91-block  0
+    #####:   88:        std::getline(std::cin, input);
+    %%%%%:   88-block  0
 call    0 never executed
 branch  1 never executed
 branch  2 never executed
-    $$$$$:   91-block  1
-call    3 never executed
-    #####:   92:          std::cout<<"Tenant added.\n";
+    #####:   89:        owner = input;
+    %%%%%:   89-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   90:
+    #####:   91:        std::cout << "Type:";
+    %%%%%:   91-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   92:        std::getline(std::cin, input);
     %%%%%:   92-block  0
 call    0 never executed
 branch  1 never executed
 branch  2 never executed
-    #####:   93:      }
+    #####:   93:        type = input;
     %%%%%:   93-block  0
-    %%%%%:   93-block  1
 call    0 never executed
 branch  1 never executed
 branch  2 never executed
-    %%%%%:   93-block  2
-    %%%%%:   93-block  3
-call    3 never executed
-branch  4 never executed
-branch  5 never executed
-    $$$$$:   93-block  4
-call    6 never executed
-    $$$$$:   93-block  5
-call    7 never executed
-        -:   94:}
-        -:   95:
-function _ZN9interface4showER5arrayINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE called 0 returned 0% blocks executed 0%
-    #####:   96:void interface::show(array<std::string> &arg) {
-    #####:   97:    if(arg.size() > 0){
+        -:   94:
+    #####:   95:        std::cout << "Area:";
+    %%%%%:   95-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   96:        std::getline(std::cin, input);
+    %%%%%:   96-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   97:        area = std::stoi(input);
     %%%%%:   97-block  0
 call    0 never executed
 branch  1 never executed
 branch  2 never executed
-    #####:   98:        std::cout<<"Too many arguments were given!\n";
-    %%%%%:   98-block  0
+        -:   98:
+    #####:   99:        if (apartment < 1 || area < 1)
+    %%%%%:   99-block  0
+branch  0 never executed
+branch  1 never executed
+    %%%%%:   99-block  1
+branch  2 never executed
+branch  3 never executed
+    #####:  100:            throw std::exception();
+    %%%%%:  100-block  0
 call    0 never executed
-        -:   99:    }
-        -:  100:    else{
-    #####:  101:        auto out = srv.show();
+call    1 never executed
+call    2 never executed
+    #####:  101:    }
     %%%%%:  101-block  0
 call    0 never executed
-branch  1 never executed
-branch  2 never executed
-    #####:  102:        if(out.empty())
-    %%%%%:  102-block  0
+    $$$$$:  101-block  1
+call    1 never executed
+    =====:  102:    catch (...) {
+    $$$$$:  102-block  0
+    $$$$$:  102-block  1
+call    0 never executed
+    =====:  103:        std::cout << "One or more arguments are invalid!\n";
 call    0 never executed
 branch  1 never executed
 branch  2 never executed
-    #####:  103:            std::cout<<"No tenant was found.\n";
-    %%%%%:  103-block  0
+    =====:  104:        std::cout<<std::endl;
+    $$$$$:  104-block  0
 call    0 never executed
 branch  1 never executed
 branch  2 never executed
-        -:  104:        else
-    #####:  105:            std::cout<<out;
-    %%%%%:  105-block  0
+    =====:  105:        return;
+    $$$$$:  105-block  0
+    =====:  106:    }
+    $$$$$:  106-block  0
 call    0 never executed
 branch  1 never executed
 branch  2 never executed
-    #####:  106:    }
-    %%%%%:  106-block  0
-call    0 never executed
     $$$$$:  106-block  1
-call    1 never executed
+call    3 never executed
         -:  107:
-    #####:  108:}
-    %%%%%:  108-block  0
-        -:  109:
-function _ZN9interface3delER5arrayINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE called 0 returned 0% blocks executed 0%
-    #####:  110:void interface::del(array<std::string>& arg){
-    #####:  111:    if(arg.size() < 4){
-    %%%%%:  111-block  0
+        -:  108:    try {
+    #####:  109:        srv.add(apartment, owner, type, area);
 call    0 never executed
 branch  1 never executed
 branch  2 never executed
-    #####:  112:        std::cout<<"Too few arguments were given!\n";
-    %%%%%:  112-block  0
+        -:  110:    }
+    =====:  111:    catch (...) {
+    $$$$$:  111-block  0
+    $$$$$:  111-block  1
 call    0 never executed
-        -:  113:    }
-    #####:  114:    else if(arg.size()>4){
-    %%%%%:  114-block  0
-call    0 never executed
-branch  1 never executed
-branch  2 never executed
-    #####:  115:        std::cout<<"Too many arguments were given!\n";
-    %%%%%:  115-block  0
-call    0 never executed
-        -:  116:    }
-        -:  117:    else{
-        -:  118:        int apartment, area;
-    #####:  119:        std::string owner, type;
-    %%%%%:  119-block  0
-call    0 never executed
-call    1 never executed
-        -:  120:        try{
-    #####:  121:            apartment = std::stoi(arg[0]);
+    =====:  112:        std::cout << "Tenant already exists!\n";
 call    0 never executed
 branch  1 never executed
 branch  2 never executed
-    %%%%%:  121-block  0
+    =====:  113:        std::cout<<std::endl;
+    $$$$$:  113-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    =====:  114:        return;
+    $$$$$:  114-block  0
+    =====:  115:    }
+    $$$$$:  115-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:  115-block  1
+call    3 never executed
+    #####:  116:    std::cout << "Tenant added.\n";
+    %%%%%:  116-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  117:    std::cout<<std::endl;
+    %%%%%:  117-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  118:}
+    %%%%%:  118-block  0
+    %%%%%:  118-block  1
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  118-block  2
+    %%%%%:  118-block  3
 call    3 never executed
 branch  4 never executed
 branch  5 never executed
-    #####:  122:            owner = arg[1];
+    $$$$$:  118-block  4
+call    6 never executed
+    $$$$$:  118-block  5
+call    7 never executed
+        -:  119:
+function _ZN9interface4showEv called 0 returned 0% blocks executed 0%
+    #####:  120:void interface::show() {
+        -:  121:
+    #####:  122:    auto out = srv.show();
     %%%%%:  122-block  0
 call    0 never executed
 branch  1 never executed
 branch  2 never executed
-    %%%%%:  122-block  1
-call    3 never executed
-branch  4 never executed
-branch  5 never executed
-    #####:  123:            type = arg[2];
+    #####:  123:    if (out.empty())
     %%%%%:  123-block  0
 call    0 never executed
 branch  1 never executed
 branch  2 never executed
-    %%%%%:  123-block  1
-call    3 never executed
-branch  4 never executed
-branch  5 never executed
-    #####:  124:            area = std::stoi(arg[3]);
+    #####:  124:        std::cout << "No tenant was found.\n";
     %%%%%:  124-block  0
 call    0 never executed
 branch  1 never executed
 branch  2 never executed
-    %%%%%:  124-block  1
-call    3 never executed
-branch  4 never executed
-branch  5 never executed
-    #####:  125:            if(apartment < 1 || area < 1)
-    %%%%%:  125-block  0
-branch  0 never executed
-branch  1 never executed
-    %%%%%:  125-block  1
-branch  2 never executed
-branch  3 never executed
-    #####:  126:                throw std::exception();
+        -:  125:    else
+    #####:  126:        std::cout << out;
     %%%%%:  126-block  0
 call    0 never executed
-call    1 never executed
-call    2 never executed
-        -:  127:        }
-    =====:  128:        catch (...){
-    $$$$$:  128-block  0
-    $$$$$:  128-block  1
-call    0 never executed
-    =====:  129:            std::cout<<"One or more arguments are invalid!\n";
+branch  1 never executed
+branch  2 never executed
+        -:  127:
+    #####:  128:    std::cout<<std::endl;
+    %%%%%:  128-block  0
 call    0 never executed
 branch  1 never executed
 branch  2 never executed
-    =====:  130:            return;
-    =====:  131:        }
-    $$$$$:  131-block  0
+        -:  129:
+        -:  130:
+    #####:  131:}
+    %%%%%:  131-block  0
 call    0 never executed
-branch  1 never executed
-branch  2 never executed
     $$$$$:  131-block  1
-call    3 never executed
+call    1 never executed
         -:  132:
-        -:  133:        try{
-    #####:  134:            srv.del(apartment, owner, type, area);
-    %%%%%:  134-block  0
+function _ZN9interface3delEv called 0 returned 0% blocks executed 0%
+    #####:  133:void interface::del() {
+        -:  134:
+        -:  135:
+        -:  136:    int apartment;
+        -:  137:
+        -:  138:    try {
+    #####:  139:        std::string input;
+    %%%%%:  139-block  0
+call    0 never executed
+    #####:  140:        std::cout << "Apartment:";
 call    0 never executed
 branch  1 never executed
 branch  2 never executed
-        -:  135:        }
-    =====:  136:        catch (...){
-    $$$$$:  136-block  0
-    $$$$$:  136-block  1
-call    0 never executed
-    =====:  137:            std::cout<<"Tenant doesn't exists!\n";
-call    0 never executed
-branch  1 never executed
-branch  2 never executed
-    =====:  138:            return;
-    =====:  139:        }
-    $$$$$:  139-block  0
-call    0 never executed
-branch  1 never executed
-branch  2 never executed
-    $$$$$:  139-block  1
-call    3 never executed
-    #####:  140:        std::cout<<"Tenant deleted.\n";
-    %%%%%:  140-block  0
-call    0 never executed
-branch  1 never executed
-branch  2 never executed
-    #####:  141:    }
+    #####:  141:        std::getline(std::cin, input);
     %%%%%:  141-block  0
-    %%%%%:  141-block  1
 call    0 never executed
 branch  1 never executed
 branch  2 never executed
-    %%%%%:  141-block  2
-    %%%%%:  141-block  3
-call    3 never executed
-branch  4 never executed
-branch  5 never executed
-    $$$$$:  141-block  4
-call    6 never executed
-    $$$$$:  141-block  5
-call    7 never executed
-        -:  142:}
+    #####:  142:        apartment = std::stoi(input);
+    %%%%%:  142-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
         -:  143:
-function _ZN9interface4findER5arrayINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE called 0 returned 0% blocks executed 0%
-    #####:  144:void interface::find(array<std::string>& arg){
-    #####:  145:    if(arg.size() < 1){
-    %%%%%:  145-block  0
-call    0 never executed
-branch  1 never executed
-branch  2 never executed
-    #####:  146:        std::cout<<"Too few arguments were given!\n";
-    %%%%%:  146-block  0
-call    0 never executed
-        -:  147:    }
-    #####:  148:    else if(arg.size()>1){
-    %%%%%:  148-block  0
-call    0 never executed
-branch  1 never executed
-branch  2 never executed
-    #####:  149:        std::cout<<"Too many arguments were given!\n";
-    %%%%%:  149-block  0
-call    0 never executed
-        -:  150:    }
-        -:  151:    else{
-        -:  152:        int apartment;
-        -:  153:        try{
-    #####:  154:            apartment = std::stoi(arg[0]);
-    %%%%%:  154-block  0
-call    0 never executed
-branch  1 never executed
-branch  2 never executed
-    %%%%%:  154-block  1
-call    3 never executed
-branch  4 never executed
-branch  5 never executed
-    #####:  155:            if(apartment < 1)
-    %%%%%:  155-block  0
+    #####:  144:        if (apartment < 1)
+    %%%%%:  144-block  0
 branch  0 never executed
 branch  1 never executed
-    #####:  156:                throw std::exception();
-    %%%%%:  156-block  0
+    #####:  145:            throw std::exception();
+    %%%%%:  145-block  0
 call    0 never executed
 call    1 never executed
 call    2 never executed
-        -:  157:        }
-    =====:  158:        catch (...){
+    #####:  146:    }
+    %%%%%:  146-block  0
+call    0 never executed
+    $$$$$:  146-block  1
+call    1 never executed
+    =====:  147:    catch (...) {
+    $$$$$:  147-block  0
+    $$$$$:  147-block  1
+call    0 never executed
+    =====:  148:        std::cout << "One or more arguments are invalid!\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    =====:  149:        std::cout<<std::endl;
+    $$$$$:  149-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    =====:  150:        return;
+    $$$$$:  150-block  0
+    =====:  151:    }
+    $$$$$:  151-block  0
+call    0 never executed
+    $$$$$:  151-block  1
+call    1 never executed
+        -:  152:
+        -:  153:    try {
+    #####:  154:        srv.del(apartment);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  155:    }
+    =====:  156:    catch (...) {
+    $$$$$:  156-block  0
+    $$$$$:  156-block  1
+call    0 never executed
+    =====:  157:        std::cout << "Tenant doesn't exists!\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    =====:  158:        std::cout<<std::endl;
     $$$$$:  158-block  0
-    $$$$$:  158-block  1
-call    0 never executed
-    =====:  159:            std::cout<<"One or more arguments are invalid!\n";
 call    0 never executed
 branch  1 never executed
 branch  2 never executed
-    =====:  160:            return;
-    =====:  161:        }
-    $$$$$:  161-block  0
+    =====:  159:        return;
+    $$$$$:  159-block  0
+    =====:  160:    }
+    $$$$$:  160-block  0
 call    0 never executed
-    $$$$$:  161-block  1
+    $$$$$:  160-block  1
 call    1 never executed
-        -:  162:
-        -:  163:        try{
-    #####:  164:            auto out = srv.find(apartment);
-    %%%%%:  164-block  0
+    #####:  161:    std::cout << "Tenant deleted.\n";
+    %%%%%:  161-block  0
+call    0 never executed
+    #####:  162:    std::cout<<std::endl;
+call    0 never executed
+        -:  163:}
+        -:  164:
+function _ZN9interface4findEv called 0 returned 0% blocks executed 0%
+    #####:  165:void interface::find() {
+        -:  166:
+        -:  167:    int apartment;
+        -:  168:
+        -:  169:    try {
+        -:  170:
+    #####:  171:        std::string input;
+    %%%%%:  171-block  0
+call    0 never executed
+    #####:  172:        std::cout << "Apartment:";
 call    0 never executed
 branch  1 never executed
 branch  2 never executed
-        -:  165:
-    #####:  166:            if(out.empty())
-    %%%%%:  166-block  0
+    #####:  173:        std::getline(std::cin, input);
+    %%%%%:  173-block  0
 call    0 never executed
 branch  1 never executed
 branch  2 never executed
-    #####:  167:                std::cout<<"No tenant was found.\n";
-    %%%%%:  167-block  0
+    #####:  174:        apartment = std::stoi(input);
+    %%%%%:  174-block  0
 call    0 never executed
 branch  1 never executed
 branch  2 never executed
-        -:  168:            else
-    #####:  169:                std::cout<<out;
-    %%%%%:  169-block  0
-call    0 never executed
+        -:  175:
+    #####:  176:        if (apartment < 1)
+    %%%%%:  176-block  0
+branch  0 never executed
 branch  1 never executed
-branch  2 never executed
-    #####:  170:        }
-    %%%%%:  170-block  0
-call    0 never executed
-    $$$$$:  170-block  1
-call    1 never executed
-    =====:  171:        catch (...){
-    $$$$$:  171-block  0
-    $$$$$:  171-block  1
-call    0 never executed
-    =====:  172:            std::cout<<"No tenant was found!\n";
-call    0 never executed
-branch  1 never executed
-branch  2 never executed
-    =====:  173:            return;
-    =====:  174:        }
-    $$$$$:  174-block  0
-call    0 never executed
-    $$$$$:  174-block  1
-call    1 never executed
-        -:  175:    }
-        -:  176:}
-        -:  177:
-function _ZN9interface6modifyER5arrayINSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEE called 0 returned 0% blocks executed 0%
-    #####:  178:void interface::modify(array<std::string>& arg){
-    #####:  179:    if(arg.size() < 8){
-    %%%%%:  179-block  0
-call    0 never executed
-branch  1 never executed
-branch  2 never executed
-    #####:  180:        std::cout<<"Too few arguments were given!\n";
-    %%%%%:  180-block  0
-call    0 never executed
-        -:  181:    }
-    #####:  182:    else if(arg.size()>8){
-    %%%%%:  182-block  0
-call    0 never executed
-branch  1 never executed
-branch  2 never executed
-    #####:  183:        std::cout<<"Too many arguments were given!\n";
-    %%%%%:  183-block  0
-call    0 never executed
-        -:  184:    }
-        -:  185:    else{
-        -:  186:        int apartment, area, new_apartment, new_area;
-    #####:  187:        std::string owner, type, new_owner, new_type;
-    %%%%%:  187-block  0
+    #####:  177:            throw std::exception();
+    %%%%%:  177-block  0
 call    0 never executed
 call    1 never executed
 call    2 never executed
-call    3 never executed
-        -:  188:        try{
-    #####:  189:            apartment = std::stoi(arg[0]);
+    #####:  178:    }
+    %%%%%:  178-block  0
+call    0 never executed
+    $$$$$:  178-block  1
+call    1 never executed
+    =====:  179:    catch (...) {
+    $$$$$:  179-block  0
+    $$$$$:  179-block  1
+call    0 never executed
+    =====:  180:        std::cout << "One or more arguments are invalid!\n";
 call    0 never executed
 branch  1 never executed
 branch  2 never executed
+    =====:  181:        std::cout<<std::endl;
+    $$$$$:  181-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    =====:  182:        return;
+    $$$$$:  182-block  0
+    =====:  183:    }
+    $$$$$:  183-block  0
+call    0 never executed
+    $$$$$:  183-block  1
+call    1 never executed
+        -:  184:
+        -:  185:    try {
+    #####:  186:        auto out = srv.find(apartment);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  187:
+    #####:  188:        if (out.empty())
+    %%%%%:  188-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  189:            std::cout << "No tenant was found.\n";
     %%%%%:  189-block  0
-call    3 never executed
-branch  4 never executed
-branch  5 never executed
-    #####:  190:            owner = arg[1];
-    %%%%%:  190-block  0
 call    0 never executed
 branch  1 never executed
 branch  2 never executed
-    %%%%%:  190-block  1
-call    3 never executed
-branch  4 never executed
-branch  5 never executed
-    #####:  191:            type = arg[2];
+        -:  190:        else
+    #####:  191:            std::cout << out;
     %%%%%:  191-block  0
 call    0 never executed
 branch  1 never executed
 branch  2 never executed
-    %%%%%:  191-block  1
-call    3 never executed
-branch  4 never executed
-branch  5 never executed
-    #####:  192:            area = std::stoi(arg[3]);
+    #####:  192:        std::cout<<std::endl;
     %%%%%:  192-block  0
 call    0 never executed
 branch  1 never executed
 branch  2 never executed
-    %%%%%:  192-block  1
-call    3 never executed
-branch  4 never executed
-branch  5 never executed
-    #####:  193:            new_apartment = std::stoi(arg[4]);
+    #####:  193:    }
     %%%%%:  193-block  0
 call    0 never executed
-branch  1 never executed
-branch  2 never executed
-    %%%%%:  193-block  1
-call    3 never executed
-branch  4 never executed
-branch  5 never executed
-    #####:  194:            new_owner = arg[5];
-    %%%%%:  194-block  0
+    $$$$$:  193-block  1
+call    1 never executed
+    =====:  194:    catch (...) {
+    $$$$$:  194-block  0
+    $$$$$:  194-block  1
+call    0 never executed
+    =====:  195:        std::cout << "No tenant was found!\n";
 call    0 never executed
 branch  1 never executed
 branch  2 never executed
-    %%%%%:  194-block  1
-call    3 never executed
-branch  4 never executed
-branch  5 never executed
-    #####:  195:            new_type = arg[6];
-    %%%%%:  195-block  0
+    =====:  196:        std::cout<<std::endl;
+    $$$$$:  196-block  0
 call    0 never executed
 branch  1 never executed
 branch  2 never executed
-    %%%%%:  195-block  1
-call    3 never executed
-branch  4 never executed
-branch  5 never executed
-    #####:  196:            new_area = std::stoi(arg[7]);
-    %%%%%:  196-block  0
+    =====:  197:        return;
+    $$$$$:  197-block  0
+    =====:  198:    }
+    $$$$$:  198-block  0
 call    0 never executed
-branch  1 never executed
-branch  2 never executed
-    %%%%%:  196-block  1
-call    3 never executed
-branch  4 never executed
-branch  5 never executed
-        -:  197:
-    #####:  198:            if(apartment < 1 || area < 1 || new_apartment < 1 || new_area < 1)
-    %%%%%:  198-block  0
-branch  0 never executed
-branch  1 never executed
-    %%%%%:  198-block  1
-branch  2 never executed
-branch  3 never executed
-    %%%%%:  198-block  2
-branch  4 never executed
-branch  5 never executed
-    %%%%%:  198-block  3
-branch  6 never executed
-branch  7 never executed
-    #####:  199:                throw std::exception();
-    %%%%%:  199-block  0
+    $$$$$:  198-block  1
+call    1 never executed
+        -:  199:}
+        -:  200:
+function _ZN9interface6modifyEv called 0 returned 0% blocks executed 0%
+    #####:  201:void interface::modify() {
+        -:  202:
+        -:  203:    int apartment, new_apartment, new_area;
+    #####:  204:    std::string new_owner, new_type;
+    %%%%%:  204-block  0
 call    0 never executed
 call    1 never executed
-call    2 never executed
-        -:  200:        }
-    =====:  201:        catch (...){
-    $$$$$:  201-block  0
-    $$$$$:  201-block  1
-call    0 never executed
-    =====:  202:            std::cout<<"One or more arguments are invalid!\n";
-call    0 never executed
-branch  1 never executed
-branch  2 never executed
-    =====:  203:            return;
-    =====:  204:        }
-    $$$$$:  204-block  0
-call    0 never executed
-branch  1 never executed
-branch  2 never executed
-    $$$$$:  204-block  1
-call    3 never executed
         -:  205:
-        -:  206:        try{
-    #####:  207:            srv.modify(apartment, owner, type, area, new_apartment, new_owner, new_type, new_area);
-    %%%%%:  207-block  0
+        -:  206:
+        -:  207:    try {
+    #####:  208:        std::string input;
+call    0 never executed
+    #####:  209:        std::cout << "Apartment:";
 call    0 never executed
 branch  1 never executed
 branch  2 never executed
-        -:  208:        }
-    =====:  209:        catch (...){
-    $$$$$:  209-block  0
-    $$$$$:  209-block  1
-call    0 never executed
-    =====:  210:            std::cout<<"Tenant doesn't exists!\n";
+    #####:  210:        std::getline(std::cin, input);
+    %%%%%:  210-block  0
 call    0 never executed
 branch  1 never executed
 branch  2 never executed
-    =====:  211:            return;
-    =====:  212:        }
-    $$$$$:  212-block  0
+    #####:  211:        apartment = std::stoi(input);
+    %%%%%:  211-block  0
 call    0 never executed
 branch  1 never executed
 branch  2 never executed
-    $$$$$:  212-block  1
-call    3 never executed
-    #####:  213:        std::cout<<"Tenant modified.\n";
+        -:  212:
+    #####:  213:        std::cout << "New Apartment:";
     %%%%%:  213-block  0
 call    0 never executed
 branch  1 never executed
 branch  2 never executed
-    #####:  214:    }
+    #####:  214:        std::getline(std::cin, input);
     %%%%%:  214-block  0
-    %%%%%:  214-block  1
 call    0 never executed
 branch  1 never executed
 branch  2 never executed
-    %%%%%:  214-block  2
-    %%%%%:  214-block  3
+    #####:  215:        new_apartment = std::stoi(input);
+    %%%%%:  215-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  216:
+    #####:  217:        std::cout << "New Owner:";
+    %%%%%:  217-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  218:        std::getline(std::cin, input);
+    %%%%%:  218-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  219:        new_owner = input;
+    %%%%%:  219-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  220:
+    #####:  221:        std::cout << "New Type:";
+    %%%%%:  221-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  222:        std::getline(std::cin, input);
+    %%%%%:  222-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  223:        new_type = input;
+    %%%%%:  223-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  224:
+    #####:  225:        std::cout << "New Area:";
+    %%%%%:  225-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  226:        std::getline(std::cin, input);
+    %%%%%:  226-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  227:        new_area = std::stoi(input);
+    %%%%%:  227-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  228:
+    #####:  229:        if (apartment < 1 || new_apartment < 1 || new_area < 1)
+    %%%%%:  229-block  0
+branch  0 never executed
+branch  1 never executed
+    %%%%%:  229-block  1
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  229-block  2
+branch  4 never executed
+branch  5 never executed
+    #####:  230:            throw std::exception();
+    %%%%%:  230-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:  231:    }
+    %%%%%:  231-block  0
+call    0 never executed
+    $$$$$:  231-block  1
+call    1 never executed
+    =====:  232:    catch (...) {
+    $$$$$:  232-block  0
+    $$$$$:  232-block  1
+call    0 never executed
+    =====:  233:        std::cout << "One or more arguments are invalid!\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    =====:  234:        std::cout<<std::endl;
+    $$$$$:  234-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    =====:  235:        return;
+    $$$$$:  235-block  0
+    =====:  236:    }
+    $$$$$:  236-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:  236-block  1
+call    3 never executed
+        -:  237:
+        -:  238:    try {
+    #####:  239:        srv.modify(apartment, new_apartment, new_owner, new_type, new_area);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  240:    }
+    =====:  241:    catch (...) {
+    $$$$$:  241-block  0
+    $$$$$:  241-block  1
+call    0 never executed
+    =====:  242:        std::cout << "Tenant doesn't exists!\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    =====:  243:        std::cout<<std::endl;
+    $$$$$:  243-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    =====:  244:        return;
+    $$$$$:  244-block  0
+    =====:  245:    }
+    $$$$$:  245-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:  245-block  1
+call    3 never executed
+    #####:  246:    std::cout << "Tenant modified.\n";
+    %%%%%:  246-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  247:    std::cout<<std::endl;
+    %%%%%:  247-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  248:}
+    %%%%%:  248-block  0
+    %%%%%:  248-block  1
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  248-block  2
+    %%%%%:  248-block  3
 call    3 never executed
 branch  4 never executed
 branch  5 never executed
-    %%%%%:  214-block  4
-    %%%%%:  214-block  5
+    $$$$$:  248-block  4
 call    6 never executed
-branch  7 never executed
-branch  8 never executed
-    %%%%%:  214-block  6
-    %%%%%:  214-block  7
-call    9 never executed
-branch 10 never executed
-branch 11 never executed
-    $$$$$:  214-block  8
-call   12 never executed
-    $$$$$:  214-block  9
-call   13 never executed
-    $$$$$:  214-block 10
-call   14 never executed
-    $$$$$:  214-block 11
-call   15 never executed
-        -:  215:}
-        -:  216:
+    $$$$$:  248-block  5
+call    7 never executed
+        -:  249:
 function _ZN9interface4menuEv called 1 returned 100% blocks executed 100%
-        1:  217:void interface::menu() {
-        -:  218:    std::cout<<"Menu:\n"
-        -:  219:               "* add (int)apartment, (alpha)owner, (alpha)type, (int)area\n"
-        -:  220:               "* del (int)apartment, (alpha)owner, (alpha)type, (int)area\n"
-        -:  221:               "* modify (int)apartment, (alpha)owner, (alpha)type, (int)area,\n  (int)new_apartment, (alpha)new_owner, (alpha)new_type, (int)new_area\n"
-        -:  222:               "* show\n"
-        1:  223:               "* find (int)apartment\n"
-        1:  223-block  0
+        1:  250:void interface::menu() {
+        -:  251:    std::cout << "* Menu:\n"
+        -:  252:                 "  - add\n"
+        -:  253:                 "  - delete\n"
+        -:  254:                 "  - modify\n"
+        -:  255:                 "  - show\n"
+        -:  256:                 "  - find\n"
+        -:  257:                 "  - sort\n"
+        -:  258:                 "  - filter\n"
+        -:  259:                 "  - help\n"
+        1:  260:                 "  - exit\n\n";
+        1:  260-block  0
 call    0 returned 1
-        -:  224:               ;
-        1:  225:}
+        -:  261:
+        1:  262:}
+        -:  263:
+function _ZN9interface4sortEv called 0 returned 0% blocks executed 0%
+    #####:  264:void interface::sort() {
+    #####:  265:    std::string input, out;
+    %%%%%:  265-block  0
+call    0 never executed
+call    1 never executed
+        -:  266:    std::cout<<"1 for owner sort,\n"
+        -:  267:               "2 for area sort,\n"
+        -:  268:               "3 for apartment + area sort\n"
+    #####:  269:               "Input:";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  270:    std::getline(std::cin, input);
+    %%%%%:  270-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  271:
+        -:  272:    try {
+    #####:  273:        if (input == "1") {
+    %%%%%:  273-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  274:            std::cout<<"Reverse(y/n):";
+    %%%%%:  274-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  275:            std::string sort;
+    %%%%%:  275-block  0
+call    0 never executed
+    #####:  276:            std::getline(std::cin,sort);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  277:            if(sort == "y")
+    %%%%%:  277-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  278:                out = srv.sort_owner(true);
+    %%%%%:  278-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  278-block  1
+call    3 never executed
+call    4 never executed
+    #####:  279:            else if(sort == "n")
+    %%%%%:  279-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  280:                out = srv.sort_owner(false);
+    %%%%%:  280-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  280-block  1
+call    3 never executed
+call    4 never executed
+        -:  281:            else
+    #####:  282:                throw std::exception();
+    %%%%%:  282-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:  283:
+    #####:  284:        } else if (input == "2") {
+    %%%%%:  284-block  0
+call    0 never executed
+    %%%%%:  284-block  1
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    $$$$$:  284-block  2
+call    4 never executed
+    #####:  285:            std::cout<<"Reverse(y/n):";
+    %%%%%:  285-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  286:            std::string sort;
+    %%%%%:  286-block  0
+call    0 never executed
+    #####:  287:            std::getline(std::cin,sort);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  288:            if(sort == "y")
+    %%%%%:  288-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  289:                out =srv.sort_area(true);
+    %%%%%:  289-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  289-block  1
+call    3 never executed
+call    4 never executed
+    #####:  290:            else if(sort == "n")
+    %%%%%:  290-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  291:                out =srv.sort_area(false);
+    %%%%%:  291-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  291-block  1
+call    3 never executed
+call    4 never executed
+        -:  292:            else
+    #####:  293:                throw std::exception();
+    %%%%%:  293-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:  294:
+    #####:  295:        } else if (input == "3") {
+    %%%%%:  295-block  0
+call    0 never executed
+    %%%%%:  295-block  1
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    $$$$$:  295-block  2
+call    4 never executed
+    #####:  296:            std::cout<<"Reverse(y/n):";
+    %%%%%:  296-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  297:            std::string sort;
+    %%%%%:  297-block  0
+call    0 never executed
+    #####:  298:            std::getline(std::cin,sort);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  299:            if(sort == "y")
+    %%%%%:  299-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  300:                out = srv.sort_apartment_area(true);
+    %%%%%:  300-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  300-block  1
+call    3 never executed
+call    4 never executed
+    #####:  301:            else if(sort == "n")
+    %%%%%:  301-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  302:                out = srv.sort_apartment_area(false);
+    %%%%%:  302-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  302-block  1
+call    3 never executed
+call    4 never executed
+        -:  303:            else
+    #####:  304:                throw std::exception();
+    %%%%%:  304-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:  305:
+    #####:  306:        } else {
+    %%%%%:  306-block  0
+call    0 never executed
+    $$$$$:  306-block  1
+call    1 never executed
+    #####:  307:            throw std::exception();
+    %%%%%:  307-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:  308:        }
+        -:  309:    }
+    =====:  310:    catch(...){
+    $$$$$:  310-block  0
+    $$$$$:  310-block  1
+call    0 never executed
+    =====:  311:        std::cout<<"Argument is invalid";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    =====:  312:        std::cout<<std::endl;
+    $$$$$:  312-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    =====:  313:        return;
+    $$$$$:  313-block  0
+    =====:  314:    }
+    $$$$$:  314-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:  314-block  1
+call    3 never executed
+    #####:  315:    if(out.empty())
+    %%%%%:  315-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  316:        std::cout<<"List is empty.\n";
+    %%%%%:  316-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  317:    else
+    #####:  318:        std::cout<<out;
+    %%%%%:  318-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  319:    std::cout<<std::endl;
+    %%%%%:  319-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  320:}
+    %%%%%:  320-block  0
+    %%%%%:  320-block  1
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  320-block  2
+    %%%%%:  320-block  3
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:  320-block  4
+call    6 never executed
+    $$$$$:  320-block  5
+call    7 never executed

@@ -758,20 +758,13 @@ call    2 never executed
         -:  694:      template<typename _BI1, typename _BI2>
         -:  695:	_GLIBCXX20_CONSTEXPR
         -:  696:	static _BI2
-function _ZNSt20__copy_move_backwardILb0ELb0ESt26random_access_iterator_tagE13__copy_move_bIPKcPcEET0_T_S7_S6_ called 0 returned 0% blocks executed 0%
-    #####:  697:	__copy_move_b(_BI1 __first, _BI1 __last, _BI2 __result)
+        -:  697:	__copy_move_b(_BI1 __first, _BI1 __last, _BI2 __result)
         -:  698:	{
         -:  699:	  typename iterator_traits<_BI1>::difference_type
-    #####:  700:	    __n = __last - __first;
-    #####:  701:	  for (; __n > 0; --__n)
-    %%%%%:  701-block  0
-    %%%%%:  701-block  1
-branch  0 never executed
-branch  1 never executed
-    #####:  702:	    *--__result = *--__last;
-    %%%%%:  702-block  0
-    #####:  703:	  return __result;
-    %%%%%:  703-block  0
+        -:  700:	    __n = __last - __first;
+        -:  701:	  for (; __n > 0; --__n)
+        -:  702:	    *--__result = *--__last;
+        -:  703:	  return __result;
         -:  704:	}
         -:  705:    };
         -:  706:
@@ -799,8 +792,7 @@ branch  1 never executed
         -:  728:      template<typename _Tp>
         -:  729:	_GLIBCXX20_CONSTEXPR
         -:  730:	static _Tp*
-function _ZNSt20__copy_move_backwardILb0ELb1ESt26random_access_iterator_tagE13__copy_move_bIcEEPT_PKS3_S6_S4_ called 0 returned 0% blocks executed 0%
-    #####:  731:	__copy_move_b(const _Tp* __first, const _Tp* __last, _Tp* __result)
+        -:  731:	__copy_move_b(const _Tp* __first, const _Tp* __last, _Tp* __result)
         -:  732:	{
         -:  733:#if __cplusplus >= 201103L
         -:  734:	  using __assignable = conditional<_IsMove,
@@ -809,53 +801,36 @@ function _ZNSt20__copy_move_backwardILb0ELb1ESt26random_access_iterator_tagE13__
         -:  737:	  // trivial types can have deleted assignment
         -:  738:	  static_assert( __assignable::type::value, "type is not assignable" );
         -:  739:#endif
-    #####:  740:	  const ptrdiff_t _Num = __last - __first;
-    #####:  741:	  if (_Num)
-    %%%%%:  741-block  0
-branch  0 never executed
-branch  1 never executed
-    #####:  742:	    __builtin_memmove(__result - _Num, __first, sizeof(_Tp) * _Num);
-    %%%%%:  742-block  0
-    #####:  743:	  return __result - _Num;
-    %%%%%:  743-block  0
+        -:  740:	  const ptrdiff_t _Num = __last - __first;
+        -:  741:	  if (_Num)
+        -:  742:	    __builtin_memmove(__result - _Num, __first, sizeof(_Tp) * _Num);
+        -:  743:	  return __result - _Num;
         -:  744:	}
         -:  745:    };
         -:  746:
         -:  747:  template<bool _IsMove, typename _BI1, typename _BI2>
         -:  748:    _GLIBCXX20_CONSTEXPR
         -:  749:    inline _BI2
-function _ZSt23__copy_move_backward_a2ILb0EPKcPcET1_T0_S4_S3_ called 0 returned 0% blocks executed 0%
-    #####:  750:    __copy_move_backward_a2(_BI1 __first, _BI1 __last, _BI2 __result)
+        -:  750:    __copy_move_backward_a2(_BI1 __first, _BI1 __last, _BI2 __result)
         -:  751:    {
         -:  752:      typedef typename iterator_traits<_BI1>::iterator_category _Category;
         -:  753:#ifdef __cpp_lib_is_constant_evaluated
-    #####:  754:      if (std::is_constant_evaluated())
-    %%%%%:  754-block  0
-call    0 never executed
-branch  1 never executed
-branch  2 never executed
+        -:  754:      if (std::is_constant_evaluated())
         -:  755:	return std::__copy_move_backward<_IsMove, false, _Category>::
-    #####:  756:	  __copy_move_b(__first, __last, __result);
-    %%%%%:  756-block  0
-call    0 never executed
+        -:  756:	  __copy_move_b(__first, __last, __result);
         -:  757:#endif
         -:  758:      return std::__copy_move_backward<_IsMove,
         -:  759:				       __memcpyable<_BI2, _BI1>::__value,
-    #####:  760:				       _Category>::__copy_move_b(__first,
-    %%%%%:  760-block  0
-call    0 never executed
+        -:  760:				       _Category>::__copy_move_b(__first,
         -:  761:								 __last,
-    #####:  762:								 __result);
+        -:  762:								 __result);
         -:  763:    }
         -:  764:
         -:  765:  template<bool _IsMove, typename _BI1, typename _BI2>
         -:  766:    _GLIBCXX20_CONSTEXPR
         -:  767:    inline _BI2
-function _ZSt23__copy_move_backward_a1ILb0EPKcPcET1_T0_S4_S3_ called 0 returned 0% blocks executed 0%
-    #####:  768:    __copy_move_backward_a1(_BI1 __first, _BI1 __last, _BI2 __result)
-    #####:  769:    { return std::__copy_move_backward_a2<_IsMove>(__first, __last, __result); }
-    %%%%%:  769-block  0
-call    0 never executed
+        -:  768:    __copy_move_backward_a1(_BI1 __first, _BI1 __last, _BI2 __result)
+        -:  769:    { return std::__copy_move_backward_a2<_IsMove>(__first, __last, __result); }
         -:  770:
         -:  771:  template<bool _IsMove,
         -:  772:	   typename _Tp, typename _Ref, typename _Ptr, typename _OI>
@@ -882,19 +857,12 @@ call    0 never executed
         -:  793:  template<bool _IsMove, typename _II, typename _OI>
         -:  794:    _GLIBCXX20_CONSTEXPR
         -:  795:    inline _OI
-function _ZSt22__copy_move_backward_aILb0EPKcPcET1_T0_S4_S3_ called 0 returned 0% blocks executed 0%
-    #####:  796:    __copy_move_backward_a(_II __first, _II __last, _OI __result)
+        -:  796:    __copy_move_backward_a(_II __first, _II __last, _OI __result)
         -:  797:    {
-    #####:  798:      return std::__niter_wrap(__result,
-    %%%%%:  798-block  0
-call    0 never executed
-call    1 never executed
-call    2 never executed
-call    3 never executed
-call    4 never executed
+        -:  798:      return std::__niter_wrap(__result,
         -:  799:		std::__copy_move_backward_a1<_IsMove>
         -:  800:		  (std::__niter_base(__first), std::__niter_base(__last),
-    #####:  801:		   std::__niter_base(__result)));
+        -:  801:		   std::__niter_base(__result)));
         -:  802:    }
         -:  803:
         -:  804:  template<bool _IsMove,
@@ -941,8 +909,7 @@ call    4 never executed
         -:  845:  template<typename _BI1, typename _BI2>
         -:  846:    _GLIBCXX20_CONSTEXPR
         -:  847:    inline _BI2
-function _ZSt13copy_backwardIPKcPcET0_T_S4_S3_ called 0 returned 0% blocks executed 0%
-    #####:  848:    copy_backward(_BI1 __first, _BI1 __last, _BI2 __result)
+        -:  848:    copy_backward(_BI1 __first, _BI1 __last, _BI2 __result)
         -:  849:    {
         -:  850:      // concept requirements
         -:  851:      __glibcxx_function_requires(_BidirectionalIteratorConcept<_BI1>)
@@ -953,11 +920,7 @@ function _ZSt13copy_backwardIPKcPcET0_T_S4_S3_ called 0 returned 0% blocks execu
         -:  856:      __glibcxx_requires_can_decrement_range(__first, __last, __result);
         -:  857:
         -:  858:      return std::__copy_move_backward_a<__is_move_iterator<_BI1>::__value>
-    #####:  859:	     (std::__miter_base(__first), std::__miter_base(__last), __result);
-    %%%%%:  859-block  0
-call    0 never executed
-call    1 never executed
-call    2 never executed
+        -:  859:	     (std::__miter_base(__first), std::__miter_base(__last), __result);
         -:  860:    }
         -:  861:
         -:  862:#if __cplusplus >= 201103L

@@ -4,37 +4,92 @@
         -:    0:Runs:1
         -:    1:#include "repository.h"
         -:    2:
+        -:    3:#include <utility>
+        -:    4:
 function _ZN10repository3addERK6tenant called 2 returned 100% blocks executed 100%
-        2:    3:void repository::add(const tenant& t){
-        2:    4:    list.push_back(t);
-        2:    4-block  0
+        2:    5:void repository::add(const tenant& t){
+        2:    6:    list.push_back(t);
+        2:    6-block  0
 call    0 returned 2
-        2:    5:}
-        -:    6:
-function _ZN10repository4findERK6tenant called 7 returned 100% blocks executed 100%
-        7:    7:long long repository::find(const tenant& t) {
-        7:    8:    auto temp = list.search(t);
-        7:    8-block  0
+        2:    7:}
+        -:    8:
+function _ZNK10repository4findEi called 7 returned 100% blocks executed 96%
+        7:    9:long long repository::find(const int apartment) const{
+        7:   10:    auto iterator = list.begin();
+        7:   10-block  0
 call    0 returned 7
-        7:    9:    return temp;
-        -:   10:}
-        -:   11:
-function _ZN10repository3delEx called 1 returned 100% blocks executed 100%
-        1:   12:void repository::del(const long long poz) {
-        1:   13:    list.pop(poz);
-        1:   13-block  0
+branch  1 taken 7 (fallthrough)
+branch  2 taken 0 (throw)
+        8:   11:    while(iterator < list.end() && iterator->get_apartment() != apartment) {
+        7:   11-block  0
+        8:   11-block  1
+call    0 returned 8
+branch  1 taken 8 (fallthrough)
+branch  2 taken 0 (throw)
+        8:   11-block  2
+call    3 returned 8
+branch  4 taken 5 (fallthrough)
+branch  5 taken 3
+        5:   11-block  3
+call    6 returned 5
+call    7 returned 5
+branch  8 taken 5 (fallthrough)
+branch  9 taken 0 (throw)
+        5:   11-block  4
+branch 10 taken 1 (fallthrough)
+branch 11 taken 4
+        1:   11-block  5
+        7:   11-block  6
+        8:   11-block  7
+branch 12 taken 1
+branch 13 taken 7 (fallthrough)
+    $$$$$:   11-block  8
+        1:   12:        iterator++;
+        1:   12-block  0
 call    0 returned 1
-        1:   14:}
-        -:   15:
-function _ZN10repository8get_listEv called 3 returned 100% blocks executed 100%
-        3:   16:const array<tenant>& repository::get_list(){
-        3:   17:    return list;
-        3:   17-block  0
-        -:   18:}
-        -:   19:
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   13:    }
+        -:   14:
+        7:   15:    if(iterator == list.end()){
+        7:   15-block  0
+call    0 returned 7
+branch  1 taken 7 (fallthrough)
+branch  2 taken 0 (throw)
+        7:   15-block  1
+call    3 returned 7
+branch  4 taken 3 (fallthrough)
+branch  5 taken 4
+        3:   16:        return -1;
+        3:   16-block  0
+        -:   17:    }
+        -:   18:
+        4:   19:    return iterator - list.begin();
+        4:   19-block  0
+call    0 returned 4
+branch  1 taken 4 (fallthrough)
+branch  2 taken 0 (throw)
+        4:   19-block  1
+call    3 returned 4
+        -:   20:}
+        -:   21:
+function _ZNK10repository8get_listEv called 3 returned 100% blocks executed 100%
+        3:   22:const array<tenant>& repository::get_list() const{
+        3:   23:    return list;
+        3:   23-block  0
+        -:   24:}
+        -:   25:
+function _ZN10repository3delEx called 1 returned 100% blocks executed 100%
+        1:   26:void repository::del(const long long poz) {
+        1:   27:    list.pop(poz);
+        1:   27-block  0
+call    0 returned 1
+        1:   28:}
+        -:   29:
 function _ZN10repository12get_positionEx called 2 returned 100% blocks executed 100%
-        2:   20:tenant* repository::get_position(long long poz){
-        2:   21:    return &list[poz];
-        2:   21-block  0
+        2:   30:tenant& repository::get_position(long long poz){
+        2:   31:    return list[poz];
+        2:   31-block  0
 call    0 returned 2
-        -:   22:}
+        -:   32:}
+        -:   33:

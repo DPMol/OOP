@@ -4,8 +4,6 @@ interface::interface(service &srv) : srv(srv) {}
 
 void interface::run() {
     menu();
-    //std::string input;
-//    size_t poz;
     std::string command;
 
     while (true) {
@@ -14,21 +12,6 @@ void interface::run() {
         std::cout << "Command:";
         std::getline(std::cin, command);
 
-//        poz = input.find(' ');
-//        if(poz == std::string::npos){
-//            command = input;
-//        }
-//        else {
-//            command = input.substr(0, poz);
-//
-//            input.erase(0, input.find(' ') + 1);
-//
-//            while ((poz = input.find(", ")) != std::string::npos) {
-//                arg.push_back(input.substr(0, poz));
-//                input.erase(0, poz + 2);
-//            }
-//            arg.push_back(input);
-//        }
         if (command == "exit")
             break;
         else if (command == "add") {
@@ -44,11 +27,11 @@ void interface::run() {
         } else if (command == "filter") {
             filter();
         } else if (command == "sort") {
-                sort();
+            sort();
         } else if (command == "help") {
             menu();
         } else
-            std::cout << "Invalid command!\n";
+            std::cout << "Invalid command!\n\n";
     }
 }
 
@@ -81,22 +64,17 @@ void interface::filter() {
     }
     catch(...){
         std::cout<<"Argument is invalid";
+        std::cout<<std::endl;
         return;
     }
     if(out.empty())
         std::cout<<"No items were found.\n";
     else
         std::cout<<out;
+    std::cout<<std::endl;
 }
 
 void interface::add() {
-//      if(arg.size() < 4){
-//          std::cout<<"Too few arguments were given!\n";
-//      }
-//      else if(arg.size()>4){
-//          std::cout<<"Too many arguments were given!\n";
-//      }
-//      else{
     int apartment, area;
     std::string owner, type;
 
@@ -118,16 +96,12 @@ void interface::add() {
         std::getline(std::cin, input);
         area = std::stoi(input);
 
-//              apartment = std::stoi(arg[0]);
-//              owner = arg[1];
-//              type = arg[2];
-//              area = std::stoi(arg[3]);
-
         if (apartment < 1 || area < 1)
             throw std::exception();
     }
     catch (...) {
         std::cout << "One or more arguments are invalid!\n";
+        std::cout<<std::endl;
         return;
     }
 
@@ -136,10 +110,11 @@ void interface::add() {
     }
     catch (...) {
         std::cout << "Tenant already exists!\n";
+        std::cout<<std::endl;
         return;
     }
     std::cout << "Tenant added.\n";
-//      }
+    std::cout<<std::endl;
 }
 
 void interface::show() {
@@ -150,15 +125,15 @@ void interface::show() {
     else
         std::cout << out;
 
+    std::cout<<std::endl;
+
 
 }
 
 void interface::del() {
 
 
-    int apartment, area;
-    std::string owner, type;
-
+    int apartment;
 
     try {
         std::string input;
@@ -166,49 +141,29 @@ void interface::del() {
         std::getline(std::cin, input);
         apartment = std::stoi(input);
 
-        std::cout << "Owner:";
-        std::getline(std::cin, input);
-        owner = input;
-
-        std::cout << "Type:";
-        std::getline(std::cin, input);
-        type = input;
-
-        std::cout << "Area:";
-        std::getline(std::cin, input);
-        area = std::stoi(input);
-
-//            apartment = std::stoi(arg[0]);
-//            owner = arg[1];
-//            type = arg[2];
-//            area = std::stoi(arg[3]);
-        if (apartment < 1 || area < 1)
+        if (apartment < 1)
             throw std::exception();
     }
     catch (...) {
         std::cout << "One or more arguments are invalid!\n";
+        std::cout<<std::endl;
         return;
     }
 
     try {
-        srv.del(apartment, owner, type, area);
+        srv.del(apartment);
     }
     catch (...) {
         std::cout << "Tenant doesn't exists!\n";
+        std::cout<<std::endl;
         return;
     }
     std::cout << "Tenant deleted.\n";
-    //  }
+    std::cout<<std::endl;
 }
 
 void interface::find() {
-//    if(arg.size() < 1){
-//        std::cout<<"Too few arguments were given!\n";
-//    }
-//    else if(arg.size()>1){
-//        std::cout<<"Too many arguments were given!\n";
-//    }
-//    else{
+
     int apartment;
 
     try {
@@ -218,12 +173,12 @@ void interface::find() {
         std::getline(std::cin, input);
         apartment = std::stoi(input);
 
-//            apartment = std::stoi(arg[0]);
         if (apartment < 1)
             throw std::exception();
     }
     catch (...) {
         std::cout << "One or more arguments are invalid!\n";
+        std::cout<<std::endl;
         return;
     }
 
@@ -234,24 +189,19 @@ void interface::find() {
             std::cout << "No tenant was found.\n";
         else
             std::cout << out;
+        std::cout<<std::endl;
     }
     catch (...) {
         std::cout << "No tenant was found!\n";
+        std::cout<<std::endl;
         return;
     }
-    //  }
 }
 
 void interface::modify() {
-//    if(arg.size() < 8){
-//        std::cout<<"Too few arguments were given!\n";
-//    }
-//    else if(arg.size()>8){
-//        std::cout<<"Too many arguments were given!\n";
-//    }
-//    else{
-    int apartment, area, new_apartment, new_area;
-    std::string owner, type, new_owner, new_type;
+
+    int apartment, new_apartment, new_area;
+    std::string new_owner, new_type;
 
 
     try {
@@ -259,18 +209,6 @@ void interface::modify() {
         std::cout << "Apartment:";
         std::getline(std::cin, input);
         apartment = std::stoi(input);
-
-        std::cout << "Owner:";
-        std::getline(std::cin, input);
-        owner = input;
-
-        std::cout << "Type:";
-        std::getline(std::cin, input);
-        type = input;
-
-        std::cout << "Area:";
-        std::getline(std::cin, input);
-        area = std::stoi(input);
 
         std::cout << "New Apartment:";
         std::getline(std::cin, input);
@@ -288,41 +226,39 @@ void interface::modify() {
         std::getline(std::cin, input);
         new_area = std::stoi(input);
 
-//            apartment = std::stoi(arg[0]);
-//            owner = arg[1];
-//            type = arg[2];
-//            area = std::stoi(arg[3]);
-//            new_apartment = std::stoi(arg[4]);
-//            new_owner = arg[5];
-//            new_type = arg[6];
-//            new_area = std::stoi(arg[7]);
-
-        if (apartment < 1 || area < 1 || new_apartment < 1 || new_area < 1)
+        if (apartment < 1 || new_apartment < 1 || new_area < 1)
             throw std::exception();
     }
     catch (...) {
         std::cout << "One or more arguments are invalid!\n";
+        std::cout<<std::endl;
         return;
     }
 
     try {
-        srv.modify(apartment, owner, type, area, new_apartment, new_owner, new_type, new_area);
+        srv.modify(apartment, new_apartment, new_owner, new_type, new_area);
     }
     catch (...) {
         std::cout << "Tenant doesn't exists!\n";
+        std::cout<<std::endl;
         return;
     }
     std::cout << "Tenant modified.\n";
-//    }
+    std::cout<<std::endl;
 }
 
 void interface::menu() {
-    std::cout << "Menu:\n"
-                 "* add (int)apartment, (alpha)owner, (alpha)type, (int)area\n"
-                 "* del (int)apartment, (alpha)owner, (alpha)type, (int)area\n"
-                 "* modify (int)apartment, (alpha)owner, (alpha)type, (int)area,\n  (int)new_apartment, (alpha)new_owner, (alpha)new_type, (int)new_area\n"
-                 "* show\n"
-                 "* find (int)apartment\n";
+    std::cout << "* Menu:\n"
+                 "  - add\n"
+                 "  - delete\n"
+                 "  - modify\n"
+                 "  - show\n"
+                 "  - find\n"
+                 "  - sort\n"
+                 "  - filter\n"
+                 "  - help\n"
+                 "  - exit\n\n";
+
 }
 
 void interface::sort() {
@@ -373,10 +309,12 @@ void interface::sort() {
     }
     catch(...){
         std::cout<<"Argument is invalid";
+        std::cout<<std::endl;
         return;
     }
     if(out.empty())
         std::cout<<"List is empty.\n";
     else
         std::cout<<out;
+    std::cout<<std::endl;
 }

@@ -351,32 +351,59 @@ function _ZNSt11char_traitsIcE6assignERcRKc called 0 returned 0% blocks executed
         -:  333:      { return __c1 == __c2; }
         -:  334:
         -:  335:      static _GLIBCXX_CONSTEXPR bool
-        -:  336:      lt(const char_type& __c1, const char_type& __c2) _GLIBCXX_NOEXCEPT
+function _ZNSt11char_traitsIcE2ltERKcS2_ called 0 returned 0% blocks executed 0%
+    #####:  336:      lt(const char_type& __c1, const char_type& __c2) _GLIBCXX_NOEXCEPT
         -:  337:      {
         -:  338:	// LWG 467.
-        -:  339:	return (static_cast<unsigned char>(__c1)
-        -:  340:		< static_cast<unsigned char>(__c2));
+    #####:  339:	return (static_cast<unsigned char>(__c1)
+    #####:  340:		< static_cast<unsigned char>(__c2));
+    %%%%%:  340-block  0
         -:  341:      }
         -:  342:
         -:  343:      static _GLIBCXX17_CONSTEXPR int
-        -:  344:      compare(const char_type* __s1, const char_type* __s2, size_t __n)
+function _ZNSt11char_traitsIcE7compareEPKcS2_y called 0 returned 0% blocks executed 0%
+    #####:  344:      compare(const char_type* __s1, const char_type* __s2, size_t __n)
         -:  345:      {
-        -:  346:	if (__n == 0)
-        -:  347:	  return 0;
+    #####:  346:	if (__n == 0)
+    %%%%%:  346-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  347:	  return 0;
+    %%%%%:  347-block  0
         -:  348:#if __cplusplus >= 201703L
-        -:  349:	if (__builtin_constant_p(__n)
+    #####:  349:	if (__builtin_constant_p(__n)
         -:  350:	    && __constant_char_array_p(__s1, __n)
-        -:  351:	    && __constant_char_array_p(__s2, __n))
+    #####:  351:	    && __constant_char_array_p(__s2, __n))
+    %%%%%:  351-block  0
+branch  0 never executed
+branch  1 never executed
         -:  352:	  {
-        -:  353:	    for (size_t __i = 0; __i < __n; ++__i)
-        -:  354:	      if (lt(__s1[__i], __s2[__i]))
-        -:  355:		return -1;
-        -:  356:	      else if (lt(__s2[__i], __s1[__i]))
-        -:  357:		return 1;
-        -:  358:	    return 0;
+    #####:  353:	    for (size_t __i = 0; __i < __n; ++__i)
+    %%%%%:  353-block  0
+    %%%%%:  353-block  1
+    %%%%%:  353-block  2
+branch  0 never executed
+branch  1 never executed
+    #####:  354:	      if (lt(__s1[__i], __s2[__i]))
+    %%%%%:  354-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  355:		return -1;
+    %%%%%:  355-block  0
+    #####:  356:	      else if (lt(__s2[__i], __s1[__i]))
+    %%%%%:  356-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  357:		return 1;
+    %%%%%:  357-block  0
+    #####:  358:	    return 0;
+    %%%%%:  358-block  0
         -:  359:	  }
         -:  360:#endif
-        -:  361:	return __builtin_memcmp(__s1, __s2, __n);
+    #####:  361:	return __builtin_memcmp(__s1, __s2, __n);
+    %%%%%:  361-block  0
         -:  362:      }
         -:  363:
         -:  364:      static _GLIBCXX17_CONSTEXPR size_t
@@ -973,13 +1000,23 @@ call    0 never executed
         -:  935:  {
         -:  936:    template<typename _ChTraits>
         -:  937:      constexpr auto
-        -:  938:      __char_traits_cmp_cat(int __cmp) noexcept
+function _ZNSt8__detail21__char_traits_cmp_catISt11char_traitsIcEEEDai called 0 returned 0% blocks executed 0%
+    #####:  938:      __char_traits_cmp_cat(int __cmp) noexcept
         -:  939:      {
         -:  940:	if constexpr (requires { typename _ChTraits::comparison_category; })
         -:  941:	  {
         -:  942:	    using _Cat = typename _ChTraits::comparison_category;
         -:  943:	    static_assert( !is_void_v<common_comparison_category_t<_Cat>> );
-        -:  944:	    return static_cast<_Cat>(__cmp <=> 0);
+    #####:  944:	    return static_cast<_Cat>(__cmp <=> 0);
+    %%%%%:  944-block  0
+branch  0 never executed
+branch  1 never executed
+    %%%%%:  944-block  1
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  944-block  2
+    %%%%%:  944-block  3
+    %%%%%:  944-block  4
         -:  945:	  }
         -:  946:	else
         -:  947:	  return static_cast<weak_ordering>(__cmp <=> 0);

@@ -2,11 +2,8 @@
 
 void test::run() {
     domain_test();
-    std::cout<<1;
     service_test();
-    std::cout<<2;
     repository_test();
-    std::cout<<3;
 }
 
 void test::domain_test() {
@@ -36,7 +33,9 @@ void test::service_test() {
     repository repo;
     service srv(repo);
     std::string name = "alin", type = "big";
+
     srv.add(1, name, type, 1);
+
 
     try{
         srv.add(1, name, type, 1);
@@ -45,10 +44,10 @@ void test::service_test() {
     catch(...){
     }
 
-    srv.modify(1, name, type, 1, 10, name, type, 1);
+    srv.modify(1, 10, name, type, 1);
 
     try{
-        srv.modify(1, name, type, 1, 10, name, type, 1);
+        srv.modify(103211, 10, name, type, 1);
         assert(false);
     }
     catch(...){
@@ -62,10 +61,10 @@ void test::service_test() {
     s = srv.find(10);
     s.clear();
 
-    srv.del( 10, name, type, 1);
+    srv.del( 10);
 
     try{
-        srv.del( 10, name, type, 1);
+        srv.del( 10);
         assert(false);
     }
     catch(...){
@@ -78,15 +77,15 @@ void test::repository_test() {
 
     repo.add(t);
 
-    auto i = repo.find(t);
+    auto i = repo.find(t.get_apartment());
 
     assert(i == 0);
 
     auto& l = repo.get_list();
 
-
     auto p = repo.get_position(0);
-    p->str();
+    auto temp = p.str();
+    temp.clear();
 
-    assert(*p == t);
+    assert(p == t);
 }

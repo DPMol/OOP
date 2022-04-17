@@ -9,300 +9,709 @@ function _ZN7serviceC2ER10repository called 2 returned 100% blocks executed 100%
         2:    3-block  0
 call    0 returned 2
         -:    4:
-function _ZN7service3addEiRNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES6_i called 2 returned 50% blocks executed 73%
+function _ZN7service3addEiRNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES6_i called 2 returned 50% blocks executed 58%
         2:    5:void service::add(int apartment, std::string& owner, std::string& type, int area){
-        4:    6:    tenant t(apartment, owner, type, area);
+        2:    6:    if(repo.find(apartment) != -1)
         2:    6-block  0
 call    0 returned 2
 branch  1 taken 2 (fallthrough)
 branch  2 taken 0 (throw)
         2:    6-block  1
-call    3 returned 2
-branch  4 taken 2 (fallthrough)
-branch  5 taken 0 (throw)
-        2:    6-block  2
-call    6 returned 2
-branch  7 taken 2 (fallthrough)
-branch  8 taken 0 (throw)
-call    9 returned 2
-    $$$$$:    6-block  3
-    $$$$$:    6-block  4
-        -:    7:
-        2:    8:    if(repo.find(t) != -1)
-call    0 returned 2
-branch  1 taken 2 (fallthrough)
-branch  2 taken 0 (throw)
-        2:    8-block  0
 branch  3 taken 1 (fallthrough)
 branch  4 taken 1
-        1:    9:        throw std::exception();
+        1:    7:        throw std::invalid_argument("ADD ERROR");
+        1:    7-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:    7-block  1
+call    4 returned 1
+    $$$$$:    7-block  2
+call    5 never executed
+        -:    8:
+        2:    9:    tenant t(apartment, owner, type, area);
         1:    9-block  0
 call    0 returned 1
-call    1 returned 1
-call    2 returned 1
-        -:   10:
-        1:   11:    repo.add(t);
-        1:   11-block  0
-call    0 returned 1
 branch  1 taken 1 (fallthrough)
 branch  2 taken 0 (throw)
-        2:   12:}
-        1:   12-block  0
-call    0 returned 1
-        1:   12-block  1
-call    1 returned 1
-        -:   13:
-function _ZN7service3delEiRNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES6_i called 2 returned 50% blocks executed 73%
-        2:   14:void service::del(int apartment, std::string& owner, std::string& type, int area){
-        4:   15:    tenant t(apartment, owner, type, area);
-        2:   15-block  0
-call    0 returned 2
-branch  1 taken 2 (fallthrough)
-branch  2 taken 0 (throw)
-        2:   15-block  1
-call    3 returned 2
-branch  4 taken 2 (fallthrough)
-branch  5 taken 0 (throw)
-        2:   15-block  2
-call    6 returned 2
-branch  7 taken 2 (fallthrough)
-branch  8 taken 0 (throw)
-call    9 returned 2
-    $$$$$:   15-block  3
-    $$$$$:   15-block  4
-        -:   16:
-        2:   17:    auto temp = repo.find(t);
-call    0 returned 2
-branch  1 taken 2 (fallthrough)
-branch  2 taken 0 (throw)
-        -:   18:
-        2:   19:    if(temp == -1)
-        2:   19-block  0
-branch  0 taken 1 (fallthrough)
-branch  1 taken 1
-        1:   20:        throw std::exception();
-        1:   20-block  0
-call    0 returned 1
-call    1 returned 1
-call    2 returned 1
-        -:   21:
-        1:   22:    repo.del(temp);
-        1:   22-block  0
-call    0 returned 1
-branch  1 taken 1 (fallthrough)
-branch  2 taken 0 (throw)
-        2:   23:}
-        1:   23-block  0
-call    0 returned 1
-        1:   23-block  1
-call    1 returned 1
-        -:   24:
-function _ZN7service4showB5cxx11Ev called 1 returned 100% blocks executed 64%
-        1:   25:std::string service::show() {
-        1:   26:    std::string out;
-        1:   26-block  0
-call    0 returned 1
-        1:   27:    auto list = repo.get_list();
-call    0 returned 1
-branch  1 taken 1 (fallthrough)
-branch  2 taken 0 (throw)
-        1:   27-block  0
+        1:    9-block  1
 call    3 returned 1
 branch  4 taken 1 (fallthrough)
 branch  5 taken 0 (throw)
-        -:   28:
-        2:   29:    for(auto i = 0; i<list.size(); i++)
-        1:   29-block  0
-        2:   29-block  1
-call    0 returned 2
-branch  1 taken 1
-branch  2 taken 1 (fallthrough)
-        1:   30:        out += (list[i].str() + "\n");
-        1:   30-block  0
-call    0 returned 1
-branch  1 taken 1 (fallthrough)
-branch  2 taken 0 (throw)
-        1:   30-block  1
-call    3 returned 1
-branch  4 taken 1 (fallthrough)
-branch  5 taken 0 (throw)
-        1:   30-block  2
+        1:    9-block  2
 call    6 returned 1
 branch  7 taken 1 (fallthrough)
 branch  8 taken 0 (throw)
-        1:   30-block  3
 call    9 returned 1
-branch 10 taken 1 (fallthrough)
-branch 11 taken 0 (throw)
-        1:   30-block  4
-call   12 returned 1
-call   13 returned 1
-    $$$$$:   30-block  5
-call   14 never executed
-    $$$$$:   30-block  6
-    $$$$$:   30-block  7
-call   15 never executed
-    $$$$$:   30-block  8
-        -:   31:
-        -:   32://    for(auto t : list){
-        -:   33://        out += (t.str() + "\n");
-        -:   34://    }
-        -:   35:
-        2:   36:    return out;
-        1:   36-block  0
-        1:   36-block  1
-        1:   37:}
-        1:   37-block  0
+    $$$$$:    9-block  3
+    $$$$$:    9-block  4
+        1:   10:    repo.add(t);
 call    0 returned 1
-    $$$$$:   37-block  1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   11:}
+        1:   11-block  0
+call    0 returned 1
+    $$$$$:   11-block  1
 call    1 never executed
-    $$$$$:   37-block  2
-call    2 never executed
-        -:   38:
-function _ZN7service6modifyEiRNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES6_iiS6_S6_i called 2 returned 50% blocks executed 77%
-        2:   39:void service::modify(int apartment, std::string &owner, std::string &type, int area, int new_apartment,
-        -:   40:                     std::string &new_owner, std::string &new_type, int new_area) {
-        4:   41:    tenant t(apartment, owner, type, area);
-        2:   41-block  0
+        -:   12:
+function _ZN7service3delEi called 2 returned 50% blocks executed 89%
+        2:   13:void service::del(int apartment){
+        -:   14:
+        2:   15:    auto poz = repo.find(apartment);
+        2:   15-block  0
 call    0 returned 2
-branch  1 taken 2 (fallthrough)
-branch  2 taken 0 (throw)
-        2:   41-block  1
-call    3 returned 2
-branch  4 taken 2 (fallthrough)
-branch  5 taken 0 (throw)
-        2:   41-block  2
-call    6 returned 2
-branch  7 taken 2 (fallthrough)
-branch  8 taken 0 (throw)
-call    9 returned 2
-    $$$$$:   41-block  3
-    $$$$$:   41-block  4
-        -:   42:
-        2:   43:    auto temp = repo.find(t);
-call    0 returned 2
-branch  1 taken 2 (fallthrough)
-branch  2 taken 0 (throw)
-        -:   44:
-        2:   45:    if(temp == -1)
-        2:   45-block  0
+        -:   16:
+        2:   17:    if(poz == -1){
 branch  0 taken 1 (fallthrough)
 branch  1 taken 1
-        1:   46:        throw std::exception();
-        1:   46-block  0
+        1:   18:        throw std::invalid_argument("DELETE ERROR");
+        1:   18-block  0
 call    0 returned 1
 call    1 returned 1
-call    2 returned 1
-        -:   47:
-        1:   48:    auto t2 = repo.get_position(temp);
-        1:   48-block  0
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   18-block  1
+call    4 returned 0
+    $$$$$:   18-block  2
+call    5 never executed
+        -:   19:    }
+        -:   20:
+        1:   21:    repo.del(poz);
+        1:   21-block  0
+call    0 returned 1
+        1:   22:}
+        -:   23:
+function _ZN7service4showB5cxx11Ev called 1 returned 100% blocks executed 68%
+        1:   24:std::string service::show() {
+        1:   25:    std::string out;
+        1:   25-block  0
+call    0 returned 1
+        1:   26:    auto& list = repo.get_list();
 call    0 returned 1
 branch  1 taken 1 (fallthrough)
 branch  2 taken 0 (throw)
-        -:   49:
-        1:   50:    t2->set_apartment(new_apartment);
-        1:   50-block  0
+        -:   27:
+        -:   28://    for(auto i = 0; i<list.size(); i++)
+        -:   29://        out += (list[i].str() + "\n");
+        -:   30:
+        2:   31:    for(auto& t : list){
+        1:   31-block  0
 call    0 returned 1
 branch  1 taken 1 (fallthrough)
 branch  2 taken 0 (throw)
-        1:   51:    t2->set_area(new_area);
-        1:   51-block  0
-call    0 returned 1
-branch  1 taken 1 (fallthrough)
-branch  2 taken 0 (throw)
-        1:   52:    t2->set_owner(new_owner);
-        1:   52-block  0
-call    0 returned 1
-branch  1 taken 1 (fallthrough)
-branch  2 taken 0 (throw)
-        1:   53:    t2->set_type(new_type);
-        1:   53-block  0
-call    0 returned 1
-branch  1 taken 1 (fallthrough)
-branch  2 taken 0 (throw)
-        2:   54:}
-        1:   54-block  0
-call    0 returned 1
-        1:   54-block  1
-call    1 returned 1
-        -:   55:
-function _ZN7service4findB5cxx11Ei called 1 returned 100% blocks executed 66%
-        1:   56:std::string service::find(int apartment){
-        1:   57:    std::string out;
-        1:   57-block  0
-call    0 returned 1
-        1:   58:    auto list = repo.get_list();
-call    0 returned 1
-branch  1 taken 1 (fallthrough)
-branch  2 taken 0 (throw)
-        1:   58-block  0
+        1:   31-block  1
 call    3 returned 1
 branch  4 taken 1 (fallthrough)
 branch  5 taken 0 (throw)
-        -:   59:
-        2:   60:    for(auto t : list){
-        1:   60-block  0
-call    0 returned 1
-branch  1 taken 1 (fallthrough)
-branch  2 taken 0 (throw)
-        1:   60-block  1
-call    3 returned 1
-branch  4 taken 1 (fallthrough)
-branch  5 taken 0 (throw)
-        1:   60-block  2
-        1:   60-block  3
+        1:   31-block  2
+        1:   31-block  3
 call    6 returned 1
-call    7 returned 1
-branch  8 taken 1 (fallthrough)
-branch  9 taken 0 (throw)
+        2:   31-block  4
+call    7 returned 2
+branch  8 taken 1
+branch  9 taken 1 (fallthrough)
+        1:   32:        out += (t.str() + "\n");
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   32-block  0
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   32-block  1
+call    6 returned 1
+branch  7 taken 1 (fallthrough)
+branch  8 taken 0 (throw)
+        1:   32-block  2
+call    9 returned 1
 call   10 returned 1
-        2:   60-block  4
-call   11 returned 2
-branch 12 taken 1
-branch 13 taken 1 (fallthrough)
-        1:   61:        if(t.get_apartment() == apartment)
+call   11 returned 1
+    $$$$$:   32-block  3
+call   12 never executed
+    $$$$$:   32-block  4
+    $$$$$:   32-block  5
+call   13 never executed
+    $$$$$:   32-block  6
+        -:   33:    }
+        -:   34:
+        1:   35:    return out;
+        1:   35-block  0
+        1:   35-block  1
+    =====:   36:}
+    $$$$$:   36-block  0
+call    0 never executed
+        -:   37:
+function _ZN7service6modifyEiiRNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEES6_i called 2 returned 50% blocks executed 92%
+        2:   38:void service::modify(int apartment, int new_apartment,
+        -:   39:                     std::string &new_owner, std::string &new_type, int new_area) {
+        -:   40:
+        2:   41:    auto poz = repo.find(apartment);
+        2:   41-block  0
+call    0 returned 2
+        -:   42:
+        2:   43:    if(poz == -1){
+branch  0 taken 1 (fallthrough)
+branch  1 taken 1
+        1:   44:        throw std::invalid_argument("MODIFY ERROR");
+        1:   44-block  0
+call    0 returned 1
+call    1 returned 1
+branch  2 taken 1 (fallthrough)
+branch  3 taken 0 (throw)
+        1:   44-block  1
+call    4 returned 0
+    $$$$$:   44-block  2
+call    5 never executed
+        -:   45:    }
+        -:   46:
+        1:   47:    auto& t2 = repo.get_position(poz);
+        1:   47-block  0
+call    0 returned 1
+        -:   48:
+        1:   49:    t2.set_apartment(new_apartment);
+call    0 returned 1
+        1:   50:    t2.set_area(new_area);
+call    0 returned 1
+        1:   51:    t2.set_owner(new_owner);
+call    0 returned 1
+        1:   52:    t2.set_type(new_type);
+call    0 returned 1
+        1:   53:}
+        -:   54:
+function _ZN7service4findB5cxx11Ei called 1 returned 100% blocks executed 71%
+        1:   55:std::string service::find(int apartment){
+        1:   56:    std::string out;
+        1:   56-block  0
+call    0 returned 1
+        1:   57:    auto& list = repo.get_list();
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   58:
+        2:   59:    for(auto& t : list){
+        1:   59-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   59-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   59-block  2
+        1:   59-block  3
+call    6 returned 1
+        1:   59-block  4
+call    7 returned 1
+        2:   59-block  5
+call    8 returned 2
+branch  9 taken 1
+branch 10 taken 1 (fallthrough)
+        1:   60:        if(t.get_apartment() == apartment){
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   60-block  0
+branch  3 taken 1 (fallthrough)
+branch  4 taken 0
+        1:   61:            out += (t.str() + "\n");
         1:   61-block  0
 call    0 returned 1
 branch  1 taken 1 (fallthrough)
 branch  2 taken 0 (throw)
         1:   61-block  1
-branch  3 taken 1 (fallthrough)
-branch  4 taken 0
-        1:   62:            out += (t.str() + "\n");
-        1:   62-block  0
-call    0 returned 1
-branch  1 taken 1 (fallthrough)
-branch  2 taken 0 (throw)
-        1:   62-block  1
 call    3 returned 1
 branch  4 taken 1 (fallthrough)
 branch  5 taken 0 (throw)
-        1:   62-block  2
+        1:   61-block  2
 call    6 returned 1
 branch  7 taken 1 (fallthrough)
 branch  8 taken 0 (throw)
-        1:   62-block  3
+        1:   61-block  3
 call    9 returned 1
 call   10 returned 1
-    $$$$$:   62-block  4
+    $$$$$:   61-block  4
 call   11 never executed
-    $$$$$:   62-block  5
-    $$$$$:   62-block  6
+    $$$$$:   61-block  5
+    $$$$$:   61-block  6
 call   12 never executed
-    $$$$$:   62-block  7
-        1:   63:    }
-        1:   63-block  0
-call    0 returned 1
-    $$$$$:   63-block  1
-call    1 never executed
+    $$$$$:   61-block  7
+        -:   62:        }
+        -:   63:    }
         -:   64:
-        2:   65:    return out;
+        1:   65:    return out;
         1:   65-block  0
         1:   65-block  1
-        1:   66:}
-        1:   66-block  0
-call    0 returned 1
-    $$$$$:   66-block  1
+    =====:   66:}
+    $$$$$:   66-block  0
+call    0 never executed
+        -:   67:
+function _ZN7service11filter_typeERNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 0 returned 0% blocks executed 0%
+    #####:   68:std::string service::filter_type(std::string& type){
+    #####:   69:    auto list = repo.get_list();
+    %%%%%:   69-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   69-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+function _ZZN7service11filter_typeERNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEENKUlRK6tenantE_clES9_ called 0 returned 0% blocks executed 0%
+    #####:   70:    list.filter([&type](const tenant& a){return a.get_type() == type;});
+    %%%%%:   70-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   70-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:   70-block  2
+call    6 never executed
+    $$$$$:   70-block  3
+call    7 never executed
+    $$$$$:   70-block  4
+    %%%%%:   70-block  5
+call    8 never executed
+call    9 never executed
+call   10 never executed
+        -:   71:
+    #####:   72:    if(list.empty()){
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   73:        return "";
+    %%%%%:   73-block  0
+call    0 never executed
 call    1 never executed
-    $$$$$:   66-block  2
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   73-block  1
+call    4 never executed
+    $$$$$:   73-block  2
+call    5 never executed
+    $$$$$:   73-block  3
+        -:   74:    }
+        -:   75:
+    #####:   76:    std::string out;
+    %%%%%:   76-block  0
+call    0 never executed
+    #####:   77:    for(auto& t : list){
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   77-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:   77-block  1
+    %%%%%:   77-block  2
+call    6 never executed
+    %%%%%:   77-block  3
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    #####:   78:            out += (t.str() + "\n");
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   78-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:   78-block  1
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:   78-block  2
+call    9 never executed
+call   10 never executed
+call   11 never executed
+    $$$$$:   78-block  3
+call   12 never executed
+    $$$$$:   78-block  4
+    $$$$$:   78-block  5
+call   13 never executed
+    $$$$$:   78-block  6
+        -:   79:    }
+    #####:   80:    return out;
+    %%%%%:   80-block  0
+call    0 never executed
+    #####:   81:}
+call    0 never executed
+    %%%%%:   81-block  0
+call    1 never executed
+    $$$$$:   81-block  1
+call    2 never executed
+    $$$$$:   81-block  2
+call    3 never executed
+        -:   82:
+function _ZN7service11filter_areaB5cxx11Ei called 0 returned 0% blocks executed 0%
+    #####:   83:std::string service::filter_area(int area){
+        -:   84:
+    #####:   85:    auto list = repo.get_list();
+    %%%%%:   85-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   85-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+function _ZZN7service11filter_areaB5cxx11EiENKUlRK6tenantE_clES2_ called 0 returned 0% blocks executed 0%
+    #####:   86:    list.filter([&area](const tenant& a){return a.get_area() == area;});
+    %%%%%:   86-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   86-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:   86-block  2
+call    6 never executed
+    $$$$$:   86-block  3
+call    7 never executed
+    $$$$$:   86-block  4
+    %%%%%:   86-block  5
+call    8 never executed
+        -:   87:
+    #####:   88:    if(list.empty()){
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   89:        return "";
+    %%%%%:   89-block  0
+call    0 never executed
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    %%%%%:   89-block  1
+call    4 never executed
+    $$$$$:   89-block  2
+call    5 never executed
+    $$$$$:   89-block  3
+        -:   90:    }
+        -:   91:
+    #####:   92:    std::string out;
+    %%%%%:   92-block  0
+call    0 never executed
+    #####:   93:    for(auto& t : list){
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   93-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:   93-block  1
+    %%%%%:   93-block  2
+call    6 never executed
+    %%%%%:   93-block  3
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    #####:   94:        out += (t.str() + "\n");
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   94-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:   94-block  1
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:   94-block  2
+call    9 never executed
+call   10 never executed
+call   11 never executed
+    $$$$$:   94-block  3
+call   12 never executed
+    $$$$$:   94-block  4
+    $$$$$:   94-block  5
+call   13 never executed
+    $$$$$:   94-block  6
+        -:   95:    }
+    #####:   96:    return out;
+    %%%%%:   96-block  0
+call    0 never executed
+    #####:   97:}
+call    0 never executed
+    %%%%%:   97-block  0
+call    1 never executed
+    $$$$$:   97-block  1
+call    2 never executed
+    $$$$$:   97-block  2
+call    3 never executed
+        -:   98:
+function _ZN7service10sort_ownerB5cxx11Eb called 0 returned 0% blocks executed 0%
+    #####:   99:std::string service::sort_owner(bool reverse) {
+    #####:  100:    auto list = repo.get_list();
+    %%%%%:  100-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  100-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+function _ZZN7service10sort_ownerB5cxx11EbENKUlRK6tenantS2_E_clES2_S2_ called 0 returned 0% blocks executed 0%
+    #####:  101:    list.sort(reverse, [](const tenant& a, const tenant&b){return a.get_owner() < b.get_owner();});
+    %%%%%:  101-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  101-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  101-block  2
+call    6 never executed
+    $$$$$:  101-block  3
+call    7 never executed
+    $$$$$:  101-block  4
+    %%%%%:  101-block  5
+call    8 never executed
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+    %%%%%:  101-block  6
+call   12 never executed
+branch 13 never executed
+branch 14 never executed
+    %%%%%:  101-block  7
+call   15 never executed
+call   16 never executed
+call   17 never executed
+call   18 never executed
+    %%%%%:  101-block  8
+    $$$$$:  101-block  9
+call   19 never executed
+    $$$$$:  101-block 10
+        -:  102:
+    #####:  103:    std::string out;
+call    0 never executed
+    #####:  104:    for(auto& t : list){
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  104-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  104-block  1
+    %%%%%:  104-block  2
+call    6 never executed
+    %%%%%:  104-block  3
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    #####:  105:        out += (t.str() + "\n");
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  105-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  105-block  1
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:  105-block  2
+call    9 never executed
+call   10 never executed
+call   11 never executed
+    $$$$$:  105-block  3
+call   12 never executed
+    $$$$$:  105-block  4
+    $$$$$:  105-block  5
+call   13 never executed
+    $$$$$:  105-block  6
+        -:  106:    }
+    #####:  107:    return out;
+    %%%%%:  107-block  0
+    %%%%%:  107-block  1
+    #####:  108:}
+    %%%%%:  108-block  0
+call    0 never executed
+    $$$$$:  108-block  1
+call    1 never executed
+    $$$$$:  108-block  2
+call    2 never executed
+        -:  109:
+function _ZN7service9sort_areaB5cxx11Eb called 0 returned 0% blocks executed 0%
+    #####:  110:std::string service::sort_area(bool reverse) {
+        -:  111:
+    #####:  112:    auto list = repo.get_list();
+    %%%%%:  112-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  112-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+function _ZZN7service9sort_areaB5cxx11EbENKUlRK6tenantS2_E_clES2_S2_ called 0 returned 0% blocks executed 0%
+    #####:  113:    list.sort(reverse, [](const tenant& a, const tenant&b){return a.get_area() < b.get_area();});
+    %%%%%:  113-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  113-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  113-block  2
+call    6 never executed
+    $$$$$:  113-block  3
+call    7 never executed
+    $$$$$:  113-block  4
+    %%%%%:  113-block  5
+call    8 never executed
+call    9 never executed
+        -:  114:
+    #####:  115:    std::string out;
+call    0 never executed
+    #####:  116:    for(auto& t : list){
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  116-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  116-block  1
+    %%%%%:  116-block  2
+call    6 never executed
+    %%%%%:  116-block  3
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    #####:  117:        out += (t.str() + "\n");
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  117-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  117-block  1
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:  117-block  2
+call    9 never executed
+call   10 never executed
+call   11 never executed
+    $$$$$:  117-block  3
+call   12 never executed
+    $$$$$:  117-block  4
+    $$$$$:  117-block  5
+call   13 never executed
+    $$$$$:  117-block  6
+        -:  118:    }
+    #####:  119:    return out;
+    %%%%%:  119-block  0
+    %%%%%:  119-block  1
+    #####:  120:}
+    %%%%%:  120-block  0
+call    0 never executed
+    $$$$$:  120-block  1
+call    1 never executed
+    $$$$$:  120-block  2
+call    2 never executed
+        -:  121:
+function _ZN7service19sort_apartment_areaB5cxx11Eb called 0 returned 0% blocks executed 0%
+    #####:  122:std::string service::sort_apartment_area(bool reverse) {
+        -:  123:
+    #####:  124:    auto list = repo.get_list();
+    %%%%%:  124-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  124-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+function _ZZN7service19sort_apartment_areaB5cxx11EbENKUlRK6tenantS2_E_clES2_S2_ called 0 returned 0% blocks executed 0%
+    #####:  125:    list.sort(reverse, [](const tenant& a, const tenant&b){if(a.get_apartment() == b.get_apartment()){return a.get_area() < b.get_area();}else {return a.get_apartment() < b.get_apartment();}});
+    %%%%%:  125-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  125-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  125-block  2
+call    6 never executed
+    $$$$$:  125-block  3
+call    7 never executed
+    $$$$$:  125-block  4
+    %%%%%:  125-block  5
+call    8 never executed
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+    %%%%%:  125-block  6
+call   12 never executed
+call   13 never executed
+    %%%%%:  125-block  7
+call   14 never executed
+call   15 never executed
+        -:  126:
+    #####:  127:    std::string out;
+call    0 never executed
+    #####:  128:    for(auto& t : list){
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  128-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  128-block  1
+    %%%%%:  128-block  2
+call    6 never executed
+    %%%%%:  128-block  3
+call    7 never executed
+branch  8 never executed
+branch  9 never executed
+    #####:  129:        out += (t.str() + "\n");
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  129-block  0
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  129-block  1
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:  129-block  2
+call    9 never executed
+call   10 never executed
+call   11 never executed
+    $$$$$:  129-block  3
+call   12 never executed
+    $$$$$:  129-block  4
+    $$$$$:  129-block  5
+call   13 never executed
+    $$$$$:  129-block  6
+        -:  130:    }
+    #####:  131:    return out;
+    %%%%%:  131-block  0
+    %%%%%:  131-block  1
+    #####:  132:}
+    %%%%%:  132-block  0
+call    0 never executed
+    $$$$$:  132-block  1
+call    1 never executed
+    $$$$$:  132-block  2
 call    2 never executed

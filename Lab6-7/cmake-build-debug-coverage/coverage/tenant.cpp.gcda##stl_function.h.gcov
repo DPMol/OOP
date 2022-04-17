@@ -434,9 +434,9 @@
         -:  430:    struct less<_Tp*> : public binary_function<_Tp*, _Tp*, bool>
         -:  431:    {
         -:  432:      _GLIBCXX14_CONSTEXPR bool
-function _ZNKSt4lessIPKcEclES1_S1_ called 6 returned 100% blocks executed 100%
-        6:  433:      operator()(_Tp* __x, _Tp* __y) const _GLIBCXX_NOTHROW
-        6:  433-block  0
+function _ZNKSt4lessIPKcEclES1_S1_ called 8 returned 100% blocks executed 100%
+        8:  433:      operator()(_Tp* __x, _Tp* __y) const _GLIBCXX_NOTHROW
+        8:  433-block  0
         -:  434:      {
         -:  435:#if __cplusplus >= 201402L
         -:  436:#ifdef _GLIBCXX_HAVE_BUILTIN_IS_CONSTANT_EVALUATED
@@ -446,8 +446,8 @@ function _ZNKSt4lessIPKcEclES1_S1_ called 6 returned 100% blocks executed 100%
         -:  440:#endif
         -:  441:	  return __x < __y;
         -:  442:#endif
-        6:  443:	return (__UINTPTR_TYPE__)__x < (__UINTPTR_TYPE__)__y;
-        6:  443-block  0
+        8:  443:	return (__UINTPTR_TYPE__)__x < (__UINTPTR_TYPE__)__y;
+        8:  443-block  0
         -:  444:      }
         -:  445:    };
         -:  446:

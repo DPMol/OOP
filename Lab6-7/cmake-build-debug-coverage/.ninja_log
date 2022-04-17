@@ -62,3 +62,10 @@
 33	2458	6704322786899041	CMakeFiles/Lab6_7.dir/Interface/interface.cpp.obj	f41f19f677673016
 43	2736	6704322789716119	CMakeFiles/Lab6_7.dir/test/test.cpp.obj	3de3f7963d015b88
 2737	2996	6704322792130730	Lab6_7.exe	b50d9173ab5030c1
+44	6796	6710375005924353	CMakeFiles/Lab6_7.dir/main.cpp.obj	27bb995231a1fb92
+69	7088	6710375008838955	CMakeFiles/Lab6_7.dir/Repository/repository.cpp.obj	5896d85fa0549ca0
+9	7156	6710375009007764	CMakeFiles/Lab6_7.dir/Domain/tenant.cpp.obj	9106ceb4c599718
+56	9026	6710375021618845	CMakeFiles/Lab6_7.dir/Interface/interface.cpp.obj	f41f19f677673016
+50	9248	6710375027480637	CMakeFiles/Lab6_7.dir/test/test.cpp.obj	3de3f7963d015b88
+63	9389	6710375029846423	CMakeFiles/Lab6_7.dir/Service/service.cpp.obj	c82fc86306417163
+9389	9984	6710375036347083	Lab6_7.exe	b50d9173ab5030c1

@@ -98,19 +98,19 @@
         -:   94:      noexcept(noexcept(_Base_type::destroy(__a, std::__to_address(__p))))
         -:   95:      { _Base_type::destroy(__a, std::__to_address(__p)); }
         -:   96:
-function _ZN9__gnu_cxx14__alloc_traitsISaIcEcE17_S_select_on_copyERKS1_ called 14 returned 100% blocks executed 100%
-       14:   97:    static constexpr _Alloc _S_select_on_copy(const _Alloc& __a)
-       14:   98:    { return _Base_type::select_on_container_copy_construction(__a); }
-       14:   98-block  0
-call    0 returned 14
+function _ZN9__gnu_cxx14__alloc_traitsISaIcEcE17_S_select_on_copyERKS1_ called 4 returned 100% blocks executed 100%
+        4:   97:    static constexpr _Alloc _S_select_on_copy(const _Alloc& __a)
+        4:   98:    { return _Base_type::select_on_container_copy_construction(__a); }
+        4:   98-block  0
+call    0 returned 4
         -:   99:
         -:  100:    static _GLIBCXX14_CONSTEXPR void _S_on_swap(_Alloc& __a, _Alloc& __b)
         -:  101:    { std::__alloc_on_swap(__a, __b); }
         -:  102:
-function _ZN9__gnu_cxx14__alloc_traitsISaIcEcE27_S_propagate_on_copy_assignEv called 17 returned 100% blocks executed 100%
-       17:  103:    static constexpr bool _S_propagate_on_copy_assign()
-       17:  104:    { return _Base_type::propagate_on_container_copy_assignment::value; }
-       17:  104-block  0
+function _ZN9__gnu_cxx14__alloc_traitsISaIcEcE27_S_propagate_on_copy_assignEv called 10 returned 100% blocks executed 100%
+       10:  103:    static constexpr bool _S_propagate_on_copy_assign()
+       10:  104:    { return _Base_type::propagate_on_container_copy_assignment::value; }
+       10:  104-block  0
         -:  105:
         -:  106:    static constexpr bool _S_propagate_on_move_assign()
         -:  107:    { return _Base_type::propagate_on_container_move_assignment::value; }

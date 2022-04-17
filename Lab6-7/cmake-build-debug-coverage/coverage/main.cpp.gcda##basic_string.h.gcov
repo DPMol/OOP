@@ -195,10 +195,10 @@
         -:  191:      { _M_string_length = __length; }
         -:  192:
         -:  193:      pointer
-function _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE7_M_dataEv called 524 returned 100% blocks executed 100%
-      524:  194:      _M_data() const
-      524:  195:      { return _M_dataplus._M_p; }
-      524:  195-block  0
+function _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE7_M_dataEv called 450 returned 100% blocks executed 100%
+      450:  194:      _M_data() const
+      450:  195:      { return _M_dataplus._M_p; }
+      450:  195-block  0
         -:  196:
         -:  197:      pointer
         -:  198:      _M_local_data()
@@ -211,13 +211,13 @@ function _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE7_M_dataEv called
         -:  205:      }
         -:  206:
         -:  207:      const_pointer
-function _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_M_local_dataEv called 190 returned 100% blocks executed 100%
-      190:  208:      _M_local_data() const
+function _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE13_M_local_dataEv called 174 returned 100% blocks executed 100%
+      174:  208:      _M_local_data() const
         -:  209:      {
         -:  210:#if __cplusplus >= 201103L
-      190:  211:	return std::pointer_traits<const_pointer>::pointer_to(*_M_local_buf);
-      190:  211-block  0
-call    0 returned 190
+      174:  211:	return std::pointer_traits<const_pointer>::pointer_to(*_M_local_buf);
+      174:  211-block  0
+call    0 returned 174
         -:  212:#else
         -:  213:	return const_pointer(_M_local_buf);
         -:  214:#endif
@@ -235,39 +235,39 @@ call    0 returned 190
         -:  226:      }
         -:  227:
         -:  228:      bool
-function _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE11_M_is_localEv called 190 returned 100% blocks executed 100%
-      190:  229:      _M_is_local() const
-      190:  230:      { return _M_data() == _M_local_data(); }
-      190:  230-block  0
-call    0 returned 190
-call    1 returned 190
+function _ZNKSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE11_M_is_localEv called 174 returned 100% blocks executed 100%
+      174:  229:      _M_is_local() const
+      174:  230:      { return _M_data() == _M_local_data(); }
+      174:  230-block  0
+call    0 returned 174
+call    1 returned 174
         -:  231:
         -:  232:      // Create & Destroy
         -:  233:      pointer
         -:  234:      _M_create(size_type&, size_type);
         -:  235:
         -:  236:      void
-function _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE10_M_disposeEv called 92 returned 100% blocks executed 100%
-       92:  237:      _M_dispose()
+function _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE10_M_disposeEv called 76 returned 100% blocks executed 100%
+       76:  237:      _M_dispose()
         -:  238:      {
-       92:  239:	if (!_M_is_local())
-       92:  239-block  0
-call    0 returned 92
-branch  1 taken 8 (fallthrough)
-branch  2 taken 84
-        8:  240:	  _M_destroy(_M_allocated_capacity);
-        8:  240-block  0
-call    0 returned 8
-       92:  241:      }
+       76:  239:	if (!_M_is_local())
+       76:  239-block  0
+call    0 returned 76
+branch  1 taken 10 (fallthrough)
+branch  2 taken 66
+       10:  240:	  _M_destroy(_M_allocated_capacity);
+       10:  240-block  0
+call    0 returned 10
+       76:  241:      }
         -:  242:
         -:  243:      void
-function _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE10_M_destroyEy called 8 returned 100% blocks executed 100%
-        8:  244:      _M_destroy(size_type __size) throw()
-        8:  245:      { _Alloc_traits::deallocate(_M_get_allocator(), _M_data(), __size + 1); }
-        8:  245-block  0
-call    0 returned 8
-call    1 returned 8
-call    2 returned 8
+function _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE10_M_destroyEy called 10 returned 100% blocks executed 100%
+       10:  244:      _M_destroy(size_type __size) throw()
+       10:  245:      { _Alloc_traits::deallocate(_M_get_allocator(), _M_data(), __size + 1); }
+       10:  245-block  0
+call    0 returned 10
+call    1 returned 10
+call    2 returned 10
         -:  246:
         -:  247:      // _M_construct_aux is used to implement the 21.3.1 para 15 which
         -:  248:      // requires special behaviour if _InIterator is an integral type
@@ -316,10 +316,10 @@ call    2 returned 8
         -:  291:      _M_construct(size_type __req, _CharT __c);
         -:  292:
         -:  293:      allocator_type&
-function _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE16_M_get_allocatorEv called 59 returned 100% blocks executed 100%
-       59:  294:      _M_get_allocator()
-       59:  295:      { return _M_dataplus; }
-       59:  295-block  0
+function _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE16_M_get_allocatorEv called 60 returned 100% blocks executed 100%
+       60:  294:      _M_get_allocator()
+       60:  295:      { return _M_dataplus; }
+       60:  295-block  0
         -:  296:
         -:  297:      const allocator_type&
         -:  298:      _M_get_allocator() const
@@ -694,12 +694,12 @@ function _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEE16_M_get_allocator
         -:  667:      /**
         -:  668:       *  @brief  Destroy the string instance.
         -:  669:       */
-function _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev called 84 returned 100% blocks executed 100%
-       84:  670:      ~basic_string()
-       84:  671:      { _M_dispose(); }
-       84:  671-block  0
-call    0 returned 84
-call    1 returned 84
+function _ZNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEED1Ev called 66 returned 100% blocks executed 100%
+       66:  670:      ~basic_string()
+       66:  671:      { _M_dispose(); }
+       66:  671-block  0
+call    0 returned 66
+call    1 returned 66
         -:  672:
         -:  673:      /**
         -:  674:       *  @brief  Assign the value of @a str to this string.

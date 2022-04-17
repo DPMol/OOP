@@ -147,11 +147,11 @@
         -:  143:       *  @return @c addressof(__r)
         -:  144:      */
         -:  145:      static _GLIBCXX20_CONSTEXPR pointer
-function _ZNSt14pointer_traitsIPKcE10pointer_toERS0_ called 190 returned 100% blocks executed 100%
-      190:  146:      pointer_to(__make_not_void<element_type>& __r) noexcept
-      190:  147:      { return std::addressof(__r); }
-      190:  147-block  0
-call    0 returned 190
+function _ZNSt14pointer_traitsIPKcE10pointer_toERS0_ called 174 returned 100% blocks executed 100%
+      174:  146:      pointer_to(__make_not_void<element_type>& __r) noexcept
+      174:  147:      { return std::addressof(__r); }
+      174:  147-block  0
+call    0 returned 174
         -:  148:    };
         -:  149:
         -:  150:  /// Convenience alias for rebinding pointers.

@@ -1,0 +1,19 @@
+# ninja log v5
+9	3387	6716331125313576	CMakeFiles/Lab8_9.dir/Domain/tenant.cpp.obj	4d4a0e993ca32462
+197	4476	6716331136803391	CMakeFiles/Lab8_9.dir/Repository/repository.cpp.obj	5577a35a8bf762d4
+227	3513	6716331126720767	CMakeFiles/Lab8_9.dir/Exception/my_exception.cpp.obj	c05a464494aa7094
+210	5328	6716331145435750	CMakeFiles/Lab8_9.dir/main.cpp.obj	ed7bdf1d4c3526e7
+2808	3197	6716338091531641	Lab8_9.exe	8eccfabfaf9aa945
+8	2807	6716338087624930	CMakeFiles/Lab8_9.dir/Interface/interface.cpp.obj	7c1d17863e00cf78
+8	4800	6716336017706754	CMakeFiles/Lab8_9.dir/Service/service.cpp.obj	31544ac948ad2228
+203	5368	6716331146098457	CMakeFiles/Lab8_9.dir/test/test.cpp.obj	d5882d517f091fd3
+220	5343	6716331145035506	CMakeFiles/Lab8_9.dir/Cart/cart.cpp.obj	da2ac27cc4d85211
+33	2904	6716447626072871	CMakeFiles/Lab8_9.dir/main.cpp.obj	ed7bdf1d4c3526e7
+9	2919	6716447626235185	CMakeFiles/Lab8_9.dir/Interface/interface.cpp.obj	7c1d17863e00cf78
+2919	3257	6716447629500185	Lab8_9.exe	8eccfabfaf9aa945
+6	4246	6716448308485288	CMakeFiles/Lab8_9.dir/Interface/interface.cpp.obj	7c1d17863e00cf78
+4247	4683	6716448312855989	Lab8_9.exe	8eccfabfaf9aa945
+30	3682	6716448670194638	CMakeFiles/Lab8_9.dir/Interface/interface.cpp.obj	7c1d17863e00cf78
+3683	4194	6716448675288598	Lab8_9.exe	8eccfabfaf9aa945
+7	2707	6716448919775579	CMakeFiles/Lab8_9.dir/Interface/interface.cpp.obj	7c1d17863e00cf78
+2707	3135	6716448924007048	Lab8_9.exe	8eccfabfaf9aa945

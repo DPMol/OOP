@@ -26,13 +26,18 @@ call    0 returned 1
         -:   19:private:
         -:   20:    static void menu();
         -:   21:
-        -:   22:    void add(array<std::string>& arg);
+        -:   22:    void add();
         -:   23:
-        -:   24:    void del(array<std::string>& arg);
+        -:   24:    void del();
         -:   25:
-        -:   26:    void show(array<std::string>& arg);
+        -:   26:    void show();
         -:   27:
-        -:   28:    void modify(array<std::string>& arg);
+        -:   28:    void modify();
         -:   29:
-        -:   30:    void find(array<std::string>& arg);
-        -:   31:};
+        -:   30:    void find();
+        -:   31:
+        -:   32:    void filter();
+        -:   33:
+        -:   34:    void sort();
+        -:   35:};
+        -:   36:

@@ -238,237 +238,232 @@ branch  6 taken 1 (fallthrough)
 branch  7 taken 0 (throw)
     $$$$$:   35-block  1
     $$$$$:   35-block  2
-        1:   36:    srv.add(1, name, type, 1);
+        -:   36:
+        1:   37:    srv.add(1, name, type, 1);
 call    0 returned 1
 branch  1 taken 1 (fallthrough)
 branch  2 taken 0 (throw)
-        -:   37:
-        -:   38:    try{
-        1:   39:        srv.add(1, name, type, 1);
-        1:   39-block  0
+        -:   38:
+        -:   39:
+        -:   40:    try{
+        1:   41:        srv.add(1, name, type, 1);
+        1:   41-block  0
 call    0 returned 1
 branch  1 taken 0 (fallthrough)
 branch  2 taken 1 (throw)
-    #####:   40:        assert(false);
-    %%%%%:   40-block  0
+    #####:   42:        assert(false);
+    %%%%%:   42-block  0
 call    0 never executed
 branch  1 never executed
 branch  2 never executed
-        -:   41:    }
-        1:   42:    catch(...){
-        1:   42-block  0
-        1:   42-block  1
+        -:   43:    }
+        1:   44:    catch(...){
+        1:   44-block  0
+        1:   44-block  1
 call    0 returned 1
-        1:   43:    }
-call    0 returned 1
-branch  1 taken 1 (fallthrough)
-branch  2 taken 0 (throw)
-        -:   44:
-        1:   45:    srv.modify(1, name, type, 1, 10, name, type, 1);
-        1:   45-block  0
+        1:   45:    }
 call    0 returned 1
 branch  1 taken 1 (fallthrough)
 branch  2 taken 0 (throw)
         -:   46:
-        -:   47:    try{
-        1:   48:        srv.modify(1, name, type, 1, 10, name, type, 1);
-        1:   48-block  0
-call    0 returned 1
-branch  1 taken 0 (fallthrough)
-branch  2 taken 1 (throw)
-    #####:   49:        assert(false);
-    %%%%%:   49-block  0
-call    0 never executed
-branch  1 never executed
-branch  2 never executed
-        -:   50:    }
-        1:   51:    catch(...){
-        1:   51-block  0
-        1:   51-block  1
-call    0 returned 1
-        1:   52:    }
+        1:   47:    srv.modify(1, 10, name, type, 1);
+        1:   47-block  0
 call    0 returned 1
 branch  1 taken 1 (fallthrough)
 branch  2 taken 0 (throw)
-        -:   53:
-        1:   54:    std::string s;
-        1:   54-block  0
+        -:   48:
+        -:   49:    try{
+        1:   50:        srv.modify(103211, 10, name, type, 1);
+        1:   50-block  0
 call    0 returned 1
+branch  1 taken 0 (fallthrough)
+branch  2 taken 1 (throw)
+    #####:   51:        assert(false);
+    %%%%%:   51-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   52:    }
+        1:   53:    catch(...){
+        1:   53-block  0
+        1:   53-block  1
+call    0 returned 1
+        1:   54:    }
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
         -:   55:
-        1:   56:    s = srv.show();
-call    0 returned 1
-branch  1 taken 1 (fallthrough)
-branch  2 taken 0 (throw)
+        1:   56:    std::string s;
         1:   56-block  0
-call    3 returned 1
-call    4 returned 1
-        1:   57:    s.clear();
 call    0 returned 1
-        -:   58:
-        1:   59:    s = srv.find(10);
+        -:   57:
+        1:   58:    s = srv.show();
 call    0 returned 1
 branch  1 taken 1 (fallthrough)
 branch  2 taken 0 (throw)
-        1:   59-block  0
+        1:   58-block  0
 call    3 returned 1
 call    4 returned 1
-        1:   60:    s.clear();
+        1:   59:    s.clear();
 call    0 returned 1
-        -:   61:
-        1:   62:    srv.del( 10, name, type, 1);
+        -:   60:
+        1:   61:    s = srv.find(10);
 call    0 returned 1
 branch  1 taken 1 (fallthrough)
 branch  2 taken 0 (throw)
+        1:   61-block  0
+call    3 returned 1
+call    4 returned 1
+        1:   62:    s.clear();
+call    0 returned 1
         -:   63:
-        -:   64:    try{
-        1:   65:        srv.del( 10, name, type, 1);
-        1:   65-block  0
+        1:   64:    srv.del( 10);
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   65:
+        -:   66:    try{
+        1:   67:        srv.del( 10);
+        1:   67-block  0
 call    0 returned 1
 branch  1 taken 0 (fallthrough)
 branch  2 taken 1 (throw)
-    #####:   66:        assert(false);
-    %%%%%:   66-block  0
+    #####:   68:        assert(false);
+    %%%%%:   68-block  0
 call    0 never executed
 branch  1 never executed
 branch  2 never executed
-        -:   67:    }
-        1:   68:    catch(...){
-        1:   68-block  0
-        1:   68-block  1
+        -:   69:    }
+        1:   70:    catch(...){
+        1:   70-block  0
+        1:   70-block  1
 call    0 returned 1
-        1:   69:    }
+        1:   71:    }
 call    0 returned 1
 branch  1 taken 1 (fallthrough)
 branch  2 taken 0 (throw)
-        1:   70:}
-        1:   70-block  0
+        1:   72:}
+        1:   72-block  0
 call    0 returned 1
 call    1 returned 1
 call    2 returned 1
 call    3 returned 1
 call    4 returned 1
-    $$$$$:   70-block  1
+    $$$$$:   72-block  1
 call    5 never executed
-    $$$$$:   70-block  2
+    $$$$$:   72-block  2
 call    6 never executed
-    $$$$$:   70-block  3
+    $$$$$:   72-block  3
 call    7 never executed
-    $$$$$:   70-block  4
+    $$$$$:   72-block  4
 call    8 never executed
-    $$$$$:   70-block  5
+    $$$$$:   72-block  5
 call    9 never executed
-        -:   71:
+        -:   73:
 function _ZN4test15repository_testEv called 1 returned 100% blocks executed 55%
-        1:   72:void test::repository_test() {
-        2:   73:    tenant t(1, "Alin", "big", 1);
-        1:   73-block  0
+        1:   74:void test::repository_test() {
+        2:   75:    tenant t(1, "Alin", "big", 1);
+        1:   75-block  0
 call    0 returned 1
 call    1 returned 1
 branch  2 taken 1 (fallthrough)
 branch  3 taken 0 (throw)
-        1:   73-block  1
+        1:   75-block  1
 call    4 returned 1
 call    5 returned 1
 branch  6 taken 1 (fallthrough)
 branch  7 taken 0 (throw)
-        1:   73-block  2
+        1:   75-block  2
 call    8 returned 1
 branch  9 taken 1 (fallthrough)
 branch 10 taken 0 (throw)
 call   11 returned 1
 call   12 returned 1
 call   13 returned 1
-    $$$$$:   73-block  3
-    $$$$$:   73-block  4
-    $$$$$:   73-block  5
-    $$$$$:   73-block  6
-        1:   74:    repository repo;
-call    0 returned 1
-branch  1 taken 1 (fallthrough)
-branch  2 taken 0 (throw)
-        -:   75:
-        1:   76:    repo.add(t);
-        1:   76-block  0
+    $$$$$:   75-block  3
+    $$$$$:   75-block  4
+    $$$$$:   75-block  5
+    $$$$$:   75-block  6
+        1:   76:    repository repo;
 call    0 returned 1
 branch  1 taken 1 (fallthrough)
 branch  2 taken 0 (throw)
         -:   77:
-        1:   78:    auto i = repo.find(t);
+        1:   78:    repo.add(t);
         1:   78-block  0
 call    0 returned 1
 branch  1 taken 1 (fallthrough)
 branch  2 taken 0 (throw)
         -:   79:
-       1*:   80:    assert(i == 0);
+        1:   80:    auto i = repo.find(t.get_apartment());
         1:   80-block  0
-branch  0 taken 0 (fallthrough)
-branch  1 taken 1
-    %%%%%:   80-block  1
-call    2 never executed
-branch  3 never executed
-branch  4 never executed
-        1:   80-block  2
-    %%%%%:   80-block  3
-        -:   81:
-        1:   82:    auto l = repo.get_list();
-        1:   82-block  0
 call    0 returned 1
 branch  1 taken 1 (fallthrough)
 branch  2 taken 0 (throw)
-        1:   82-block  1
+        1:   80-block  1
 call    3 returned 1
 branch  4 taken 1 (fallthrough)
 branch  5 taken 0 (throw)
+        -:   81:
+       1*:   82:    assert(i == 0);
+        1:   82-block  0
+branch  0 taken 0 (fallthrough)
+branch  1 taken 1
+    %%%%%:   82-block  1
+call    2 never executed
+branch  3 never executed
+branch  4 never executed
+        1:   82-block  2
+    %%%%%:   82-block  3
         -:   83:
-        -:   84:
-        1:   85:    l=l;
-        1:   85-block  0
+        1:   84:    auto& l = repo.get_list();
+        1:   84-block  0
 call    0 returned 1
 branch  1 taken 1 (fallthrough)
 branch  2 taken 0 (throw)
-       1*:   86:    assert(l == l);
+        -:   85:
+        1:   86:    auto p = repo.get_position(0);
         1:   86-block  0
 call    0 returned 1
 branch  1 taken 1 (fallthrough)
 branch  2 taken 0 (throw)
         1:   86-block  1
-branch  3 taken 0 (fallthrough)
-branch  4 taken 1
-    %%%%%:   86-block  2
-call    5 never executed
-branch  6 never executed
-branch  7 never executed
-        1:   86-block  3
-    %%%%%:   86-block  4
-        -:   87:
-        1:   88:    auto p = repo.get_position(0);
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   87:    auto temp = p.str();
+        1:   87-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   88:    temp.clear();
         1:   88-block  0
 call    0 returned 1
-branch  1 taken 1 (fallthrough)
-branch  2 taken 0 (throw)
         -:   89:
-       1*:   90:    assert(*p == t);
-        1:   90-block  0
+       1*:   90:    assert(p == t);
 call    0 returned 1
 branch  1 taken 1 (fallthrough)
 branch  2 taken 0 (throw)
-        1:   90-block  1
+        1:   90-block  0
 branch  3 taken 0 (fallthrough)
 branch  4 taken 1
-    %%%%%:   90-block  2
+    %%%%%:   90-block  1
 call    5 never executed
 branch  6 never executed
 branch  7 never executed
-        1:   90-block  3
-    %%%%%:   90-block  4
+        1:   90-block  2
+    %%%%%:   90-block  3
         1:   91:}
         1:   91-block  0
 call    0 returned 1
 call    1 returned 1
 call    2 returned 1
+call    3 returned 1
     $$$$$:   91-block  1
-call    3 never executed
-    $$$$$:   91-block  2
 call    4 never executed
-    $$$$$:   91-block  3
+    $$$$$:   91-block  2
 call    5 never executed
+    $$$$$:   91-block  3
+call    6 never executed
+    $$$$$:   91-block  4
+call    7 never executed

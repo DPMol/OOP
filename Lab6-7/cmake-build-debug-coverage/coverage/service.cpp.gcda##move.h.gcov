@@ -65,6 +65,36 @@ function _ZSt11__addressofIcEPT_RS0_ called 0 returned 0% blocks executed 0%
     #####:   50:    { return __builtin_addressof(__r); }
     %%%%%:   50-block  0
 ------------------
+_ZSt11__addressofIKZN7service19sort_apartment_areaB5cxx11EbEUlRK6tenantS3_E_EPT_RS6_:
+function _ZSt11__addressofIKZN7service19sort_apartment_areaB5cxx11EbEUlRK6tenantS3_E_EPT_RS6_ called 0 returned 0% blocks executed 0%
+    #####:   49:    __addressof(_Tp& __r) _GLIBCXX_NOEXCEPT
+    #####:   50:    { return __builtin_addressof(__r); }
+    %%%%%:   50-block  0
+------------------
+_ZSt11__addressofIKZN7service9sort_areaB5cxx11EbEUlRK6tenantS3_E_EPT_RS6_:
+function _ZSt11__addressofIKZN7service9sort_areaB5cxx11EbEUlRK6tenantS3_E_EPT_RS6_ called 0 returned 0% blocks executed 0%
+    #####:   49:    __addressof(_Tp& __r) _GLIBCXX_NOEXCEPT
+    #####:   50:    { return __builtin_addressof(__r); }
+    %%%%%:   50-block  0
+------------------
+_ZSt11__addressofIKZN7service10sort_ownerB5cxx11EbEUlRK6tenantS3_E_EPT_RS6_:
+function _ZSt11__addressofIKZN7service10sort_ownerB5cxx11EbEUlRK6tenantS3_E_EPT_RS6_ called 0 returned 0% blocks executed 0%
+    #####:   49:    __addressof(_Tp& __r) _GLIBCXX_NOEXCEPT
+    #####:   50:    { return __builtin_addressof(__r); }
+    %%%%%:   50-block  0
+------------------
+_ZSt11__addressofIKZN7service11filter_areaB5cxx11EiEUlRK6tenantE_EPT_RS6_:
+function _ZSt11__addressofIKZN7service11filter_areaB5cxx11EiEUlRK6tenantE_EPT_RS6_ called 0 returned 0% blocks executed 0%
+    #####:   49:    __addressof(_Tp& __r) _GLIBCXX_NOEXCEPT
+    #####:   50:    { return __builtin_addressof(__r); }
+    %%%%%:   50-block  0
+------------------
+_ZSt11__addressofIKZN7service11filter_typeERNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEUlRK6tenantE_EPT_RSD_:
+function _ZSt11__addressofIKZN7service11filter_typeERNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEUlRK6tenantE_EPT_RSD_ called 0 returned 0% blocks executed 0%
+    #####:   49:    __addressof(_Tp& __r) _GLIBCXX_NOEXCEPT
+    #####:   50:    { return __builtin_addressof(__r); }
+    %%%%%:   50-block  0
+------------------
         -:   51:
         -:   52:#if __cplusplus >= 201103L
         -:   53:
@@ -91,8 +121,51 @@ function _ZSt11__addressofIcEPT_RS0_ called 0 returned 0% blocks executed 0%
         -:   74:  template<typename _Tp>
         -:   75:    _GLIBCXX_NODISCARD
         -:   76:    constexpr _Tp&&
-        -:   77:    forward(typename std::remove_reference<_Tp>::type& __t) noexcept
-        -:   78:    { return static_cast<_Tp&&>(__t); }
+    #####:   77:    forward(typename std::remove_reference<_Tp>::type& __t) noexcept
+    #####:   78:    { return static_cast<_Tp&&>(__t); }
+------------------
+_ZSt7forwardIRZN7service19sort_apartment_areaB5cxx11EbEUlRK6tenantS3_E_EOT_RNSt16remove_referenceIS6_E4typeE:
+function _ZSt7forwardIRZN7service19sort_apartment_areaB5cxx11EbEUlRK6tenantS3_E_EOT_RNSt16remove_referenceIS6_E4typeE called 0 returned 0% blocks executed 0%
+    #####:   77:    forward(typename std::remove_reference<_Tp>::type& __t) noexcept
+    #####:   78:    { return static_cast<_Tp&&>(__t); }
+    %%%%%:   78-block  0
+------------------
+_ZSt7forwardIRZN7service9sort_areaB5cxx11EbEUlRK6tenantS3_E_EOT_RNSt16remove_referenceIS6_E4typeE:
+function _ZSt7forwardIRZN7service9sort_areaB5cxx11EbEUlRK6tenantS3_E_EOT_RNSt16remove_referenceIS6_E4typeE called 0 returned 0% blocks executed 0%
+    #####:   77:    forward(typename std::remove_reference<_Tp>::type& __t) noexcept
+    #####:   78:    { return static_cast<_Tp&&>(__t); }
+    %%%%%:   78-block  0
+------------------
+_ZSt7forwardIRZN7service10sort_ownerB5cxx11EbEUlRK6tenantS3_E_EOT_RNSt16remove_referenceIS6_E4typeE:
+function _ZSt7forwardIRZN7service10sort_ownerB5cxx11EbEUlRK6tenantS3_E_EOT_RNSt16remove_referenceIS6_E4typeE called 0 returned 0% blocks executed 0%
+    #####:   77:    forward(typename std::remove_reference<_Tp>::type& __t) noexcept
+    #####:   78:    { return static_cast<_Tp&&>(__t); }
+    %%%%%:   78-block  0
+------------------
+_ZSt7forwardIRK6tenantEOT_RNSt16remove_referenceIS3_E4typeE:
+function _ZSt7forwardIRK6tenantEOT_RNSt16remove_referenceIS3_E4typeE called 0 returned 0% blocks executed 0%
+    #####:   77:    forward(typename std::remove_reference<_Tp>::type& __t) noexcept
+    #####:   78:    { return static_cast<_Tp&&>(__t); }
+    %%%%%:   78-block  0
+------------------
+_ZSt7forwardIRZN7service11filter_areaB5cxx11EiEUlRK6tenantE_EOT_RNSt16remove_referenceIS6_E4typeE:
+function _ZSt7forwardIRZN7service11filter_areaB5cxx11EiEUlRK6tenantE_EOT_RNSt16remove_referenceIS6_E4typeE called 0 returned 0% blocks executed 0%
+    #####:   77:    forward(typename std::remove_reference<_Tp>::type& __t) noexcept
+    #####:   78:    { return static_cast<_Tp&&>(__t); }
+    %%%%%:   78-block  0
+------------------
+_ZSt7forwardIRZN7service11filter_typeERNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEUlRK6tenantE_EOT_RNSt16remove_referenceISD_E4typeE:
+function _ZSt7forwardIRZN7service11filter_typeERNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEUlRK6tenantE_EOT_RNSt16remove_referenceISD_E4typeE called 0 returned 0% blocks executed 0%
+    #####:   77:    forward(typename std::remove_reference<_Tp>::type& __t) noexcept
+    #####:   78:    { return static_cast<_Tp&&>(__t); }
+    %%%%%:   78-block  0
+------------------
+_ZSt7forwardI6tenantEOT_RNSt16remove_referenceIS1_E4typeE:
+function _ZSt7forwardI6tenantEOT_RNSt16remove_referenceIS1_E4typeE called 0 returned 0% blocks executed 0%
+    #####:   77:    forward(typename std::remove_reference<_Tp>::type& __t) noexcept
+    #####:   78:    { return static_cast<_Tp&&>(__t); }
+    %%%%%:   78-block  0
+------------------
         -:   79:
         -:   80:  /**
         -:   81:   *  @brief  Forward an rvalue.
@@ -120,6 +193,36 @@ function _ZSt11__addressofIcEPT_RS0_ called 0 returned 0% blocks executed 0%
         -:  103:    constexpr typename std::remove_reference<_Tp>::type&&
     #####:  104:    move(_Tp&& __t) noexcept
     #####:  105:    { return static_cast<typename std::remove_reference<_Tp>::type&&>(__t); }
+------------------
+_ZSt4moveIRZN7service19sort_apartment_areaB5cxx11EbEUlRK6tenantS3_E_EONSt16remove_referenceIT_E4typeEOS7_:
+function _ZSt4moveIRZN7service19sort_apartment_areaB5cxx11EbEUlRK6tenantS3_E_EONSt16remove_referenceIT_E4typeEOS7_ called 0 returned 0% blocks executed 0%
+    #####:  104:    move(_Tp&& __t) noexcept
+    #####:  105:    { return static_cast<typename std::remove_reference<_Tp>::type&&>(__t); }
+    %%%%%:  105-block  0
+------------------
+_ZSt4moveIRZN7service9sort_areaB5cxx11EbEUlRK6tenantS3_E_EONSt16remove_referenceIT_E4typeEOS7_:
+function _ZSt4moveIRZN7service9sort_areaB5cxx11EbEUlRK6tenantS3_E_EONSt16remove_referenceIT_E4typeEOS7_ called 0 returned 0% blocks executed 0%
+    #####:  104:    move(_Tp&& __t) noexcept
+    #####:  105:    { return static_cast<typename std::remove_reference<_Tp>::type&&>(__t); }
+    %%%%%:  105-block  0
+------------------
+_ZSt4moveIRZN7service10sort_ownerB5cxx11EbEUlRK6tenantS3_E_EONSt16remove_referenceIT_E4typeEOS7_:
+function _ZSt4moveIRZN7service10sort_ownerB5cxx11EbEUlRK6tenantS3_E_EONSt16remove_referenceIT_E4typeEOS7_ called 0 returned 0% blocks executed 0%
+    #####:  104:    move(_Tp&& __t) noexcept
+    #####:  105:    { return static_cast<typename std::remove_reference<_Tp>::type&&>(__t); }
+    %%%%%:  105-block  0
+------------------
+_ZSt4moveIRZN7service11filter_areaB5cxx11EiEUlRK6tenantE_EONSt16remove_referenceIT_E4typeEOS7_:
+function _ZSt4moveIRZN7service11filter_areaB5cxx11EiEUlRK6tenantE_EONSt16remove_referenceIT_E4typeEOS7_ called 0 returned 0% blocks executed 0%
+    #####:  104:    move(_Tp&& __t) noexcept
+    #####:  105:    { return static_cast<typename std::remove_reference<_Tp>::type&&>(__t); }
+    %%%%%:  105-block  0
+------------------
+_ZSt4moveIRZN7service11filter_typeERNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEUlRK6tenantE_EONSt16remove_referenceIT_E4typeEOSE_:
+function _ZSt4moveIRZN7service11filter_typeERNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEUlRK6tenantE_EONSt16remove_referenceIT_E4typeEOSE_ called 0 returned 0% blocks executed 0%
+    #####:  104:    move(_Tp&& __t) noexcept
+    #####:  105:    { return static_cast<typename std::remove_reference<_Tp>::type&&>(__t); }
+    %%%%%:  105-block  0
 ------------------
 _ZSt4moveIRNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEONSt16remove_referenceIT_E4typeEOS8_:
 function _ZSt4moveIRNSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEEEONSt16remove_referenceIT_E4typeEOS8_ called 0 returned 0% blocks executed 0%

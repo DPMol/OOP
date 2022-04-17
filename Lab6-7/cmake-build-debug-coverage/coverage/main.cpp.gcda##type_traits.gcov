@@ -3325,10 +3325,10 @@
         -: 3321:#define __cpp_lib_is_constant_evaluated 201811L
         -: 3322:
         -: 3323:  constexpr inline bool
-function _ZSt21is_constant_evaluatedv called 106 returned 100% blocks executed 100%
-      106: 3324:  is_constant_evaluated() noexcept
-      106: 3325:  { return __builtin_is_constant_evaluated(); }
-      106: 3325-block  0
+function _ZSt21is_constant_evaluatedv called 92 returned 100% blocks executed 100%
+       92: 3324:  is_constant_evaluated() noexcept
+       92: 3325:  { return __builtin_is_constant_evaluated(); }
+       92: 3325-block  0
         -: 3326:#endif
         -: 3327:
         -: 3328:  template<typename _From, typename _To>

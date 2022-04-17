@@ -17,6 +17,7 @@ public:
      * @param type Apartment type
      * @param area Apartment area
      */
+
     tenant(int apartment, std::string owner, std::string type, int area);
 
     tenant(const tenant& other);

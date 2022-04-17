@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/Lab8_9.dir/Domain/tenant.cpp.o CMakeFiles/Lab8_9.dir/Interface/interface.cpp.o CMakeFiles/Lab8_9.dir/Repository/repository.cpp.o CMakeFiles/Lab8_9.dir/Service/service.cpp.o CMakeFiles/Lab8_9.dir/test/test.cpp.o CMakeFiles/Lab8_9.dir/main.cpp.o CMakeFiles/Lab8_9.dir/Cart/cart.cpp.o CMakeFiles/Lab8_9.dir/Exception/my_exception.cpp.o -o Lab8_9 
