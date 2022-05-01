@@ -30,7 +30,7 @@ void test::domain_test() {
 }
 
 void test::service_test() {
-    repository repo;
+    newrepository repo;
     service srv(repo);
     std::string name = "alin", type = "big";
 
@@ -68,6 +68,20 @@ void test::service_test() {
         assert(false);
     }
     catch(...){
+    }
+
+    srv.add(1, name, type, 1);
+
+    srv.modify(1, 2 , name, type, 1);
+
+    srv.del(2);
+
+    srv.undo();srv.undo();srv.undo();
+
+    try{
+        srv.undo();
+    }
+    catch (...){
     }
 }
 

@@ -3,22 +3,29 @@
 #include "../Domain/tenant.h"
 #include "../Cart/cart.h"
 #include "string"
+#include <fstream>
+#include <memory>
 #include <vector>
 #include <../Exception/my_exception.h>
 #include <iostream>
 #include <random>
 #include <algorithm>
 #include <chrono>
+#include <map>
+#include "../Undo/UndoClass.h"
+#include "../AbstractRepo/AbstractRepo.h"
 
 
 class service {
 private:
     std::string extension = ".html";
-    repository repo;
+    AbstractRepo& repo;
     cart temp_cart;
 
+    std::vector<std::unique_ptr<doUndo>> undo_list;
+
 public:
-    explicit service(repository& repo);
+    explicit service(AbstractRepo& repo);
 
     ~service() = default;
 
@@ -49,4 +56,6 @@ public:
     void random_cart(int num);
 
     void export_cart(const std::string& file);
+
+    void undo();
 };

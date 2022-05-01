@@ -1,0 +1,92 @@
+        -:    0:Source:D:/Programming n shit/UBB/Anul 1/OOP/Lab8-9/Domain/tenant.h
+        -:    0:Graph:D:\Programming n shit\UBB\Anul 1\OOP\Lab8-9\cmake-build-debug-coverage\CMakeFiles\Lab8_9.dir\test\test.cpp.gcno
+        -:    0:Data:D:\Programming n shit\UBB\Anul 1\OOP\Lab8-9\cmake-build-debug-coverage\CMakeFiles\Lab8_9.dir\test\test.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#pragma once
+        -:    2:#include <string>
+        -:    3:#include <iostream>
+        -:    4:
+        -:    5:class tenant{
+        -:    6:private:
+        -:    7:    int apartment;
+        -:    8:    std::string owner;
+        -:    9:    std::string type;
+        -:   10:    int area;
+        -:   11:
+        -:   12:public:
+        -:   13:    /**
+        -:   14:     * Creates a tenant object with given parameters.
+        -:   15:     * @param apartment Apartment number
+        -:   16:     * @param owner Apartment owner
+        -:   17:     * @param type Apartment type
+        -:   18:     * @param area Apartment area
+        -:   19:     */
+        -:   20:
+        -:   21:    tenant(int apartment, std::string owner, std::string type, int area);
+        -:   22:
+        -:   23:    tenant(const tenant& other);
+        -:   24:
+        -:   25:    /**
+        -:   26:     * Default destructor.
+        -:   27:     */
+function _ZN6tenantD1Ev called 0 returned 0% blocks executed 0%
+    #####:   28:    ~tenant()= default;
+    %%%%%:   28-block  0
+call    0 never executed
+call    1 never executed
+        -:   29:
+        -:   30:    /**
+        -:   31:     * Returns apartment number.
+        -:   32:     * @return Apartment
+        -:   33:     */
+        -:   34:    [[nodiscard]] int get_apartment() const;
+        -:   35:
+        -:   36:    /**
+        -:   37:     * Returns apartment owner.
+        -:   38:     * @return Owner
+        -:   39:     */
+        -:   40:    [[nodiscard]] std::string get_owner() const;
+        -:   41:
+        -:   42:    /**
+        -:   43:     * Returns apartment type.
+        -:   44:     * @return Type
+        -:   45:     */
+        -:   46:    [[nodiscard]] std::string get_type() const;
+        -:   47:
+        -:   48:    /**
+        -:   49:     * Returns apartment area.
+        -:   50:     * @return Area
+        -:   51:     */
+        -:   52:    [[nodiscard]] int get_area() const;
+        -:   53:
+        -:   54:    /**
+        -:   55:     * Changes aparment value to given parameter.
+        -:   56:     * @param new_aparment Apartment
+        -:   57:     */
+        -:   58:    void set_apartment(int new_apartment);
+        -:   59:
+        -:   60:    /**
+        -:   61:     * Changes owner value to given parameter.
+        -:   62:     * @param new_owner Owner
+        -:   63:     */
+        -:   64:    void set_owner(const std::string& new_owner);
+        -:   65:
+        -:   66:    /**
+        -:   67:     * Changes type value to given parameter.
+        -:   68:     * @param new_type Type
+        -:   69:     */
+        -:   70:    void set_type(const std::string& new_type);
+        -:   71:
+        -:   72:    /**
+        -:   73:     * Changes area value to given parameter.
+        -:   74:     * @param new_area Area
+        -:   75:     */
+        -:   76:    void set_area(int new_area);
+        -:   77:
+        -:   78:    bool operator!= (const tenant& other) const;
+        -:   79:
+        -:   80:    bool operator == (const tenant& other) const;
+        -:   81:
+        -:   82:    [[nodiscard]] std::string str() const;
+        -:   83:};
+        -:   84:

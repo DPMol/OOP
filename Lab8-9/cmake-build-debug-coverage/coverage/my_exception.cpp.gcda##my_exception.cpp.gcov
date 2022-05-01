@@ -1,0 +1,25 @@
+        -:    0:Source:D:/Programming n shit/UBB/Anul 1/OOP/Lab8-9/Exception/my_exception.cpp
+        -:    0:Graph:D:\Programming n shit\UBB\Anul 1\OOP\Lab8-9\cmake-build-debug-coverage\CMakeFiles\Lab8_9.dir\Exception\my_exception.cpp.gcno
+        -:    0:Data:D:\Programming n shit\UBB\Anul 1\OOP\Lab8-9\cmake-build-debug-coverage\CMakeFiles\Lab8_9.dir\Exception\my_exception.cpp.gcda
+        -:    0:Runs:1
+        -:    1://
+        -:    2:// Created by 12den on 14-Apr-22.
+        -:    3://
+        -:    4:
+        -:    5:#include "my_exception.h"
+        -:    6:
+        -:    7:#include <utility>
+        -:    8:
+function _ZN12my_exceptionC2ENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE called 0 returned 0% blocks executed 0%
+    #####:    9:my_exception::my_exception(std::string  msg):error(std::move(msg)) {}
+    %%%%%:    9-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:   10:
+function _ZN12my_exception9get_errorB5cxx11Ev called 0 returned 0% blocks executed 0%
+    #####:   11:std::string my_exception::get_error() {
+    #####:   12:    return error;
+    %%%%%:   12-block  0
+call    0 never executed
+        -:   13:}

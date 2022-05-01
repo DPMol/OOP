@@ -10,7 +10,7 @@
 
 class interface{
 private:
-    service srv;
+    service& srv;
 
 public:
     explicit interface(service& srv);
@@ -26,6 +26,8 @@ private:
 
     void add(std::istringstream* in = nullptr);
 
+    void undo();
+
     void del(std::istringstream* in = nullptr);
 
     void show();
@@ -34,9 +36,9 @@ private:
 
     void find(std::istringstream* in = nullptr);
 
-    void filter(std::istringstream* in = nullptr);
+    void filter(std::istringstream* in = nullptr){std::cout<<"NEIN\n\n";}
 
-    void sort(std::istringstream* in = nullptr);
+    void sort(std::istringstream* in = nullptr){std::cout<<"NEIN\n\n";}
 
     void cart(std::istringstream* in = nullptr);
 

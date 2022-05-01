@@ -1,0 +1,29 @@
+        -:    0:Source:D:/Programming n shit/UBB/Anul 1/OOP/Lab8-9/Cart/cart.cpp
+        -:    0:Graph:D:\Programming n shit\UBB\Anul 1\OOP\Lab8-9\cmake-build-debug-coverage\CMakeFiles\Lab8_9.dir\Cart\cart.cpp.gcno
+        -:    0:Data:D:\Programming n shit\UBB\Anul 1\OOP\Lab8-9\cmake-build-debug-coverage\CMakeFiles\Lab8_9.dir\Cart\cart.cpp.gcda
+        -:    0:Runs:1
+        -:    1://
+        -:    2:// Created by 12den on 10-Apr-22.
+        -:    3://
+        -:    4:
+        -:    5:#include "cart.h"
+        -:    6:
+function _ZN4cart3addERK6tenant called 0 returned 0% blocks executed 0%
+    #####:    7:void cart::add(const tenant &t) {
+    #####:    8:    list.push_back(t);
+    %%%%%:    8-block  0
+call    0 never executed
+    #####:    9:}
+        -:   10:
+function _ZNK4cart8get_listEv called 0 returned 0% blocks executed 0%
+    #####:   11:const std::vector<tenant> &cart::get_list() const {
+    #####:   12:    return list;
+    %%%%%:   12-block  0
+        -:   13:}
+        -:   14:
+function _ZN4cart5emptyEv called 0 returned 0% blocks executed 0%
+    #####:   15:void cart::empty() {
+    #####:   16:    list.clear();
+    %%%%%:   16-block  0
+call    0 never executed
+    #####:   17:}

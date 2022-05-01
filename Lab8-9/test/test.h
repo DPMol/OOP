@@ -4,6 +4,7 @@
 #include "../Domain/tenant.h"
 #include "../Repository/repository.h"
 #include "../Service/service.h"
+#include "../NewRepository/newrepository.h"
 
 class test{
 public:

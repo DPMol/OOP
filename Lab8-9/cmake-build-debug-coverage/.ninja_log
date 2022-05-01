@@ -1,0 +1,11 @@
+# ninja log v5
+64	2414	6722433387616630	CMakeFiles/Lab8_9.dir/Exception/my_exception.cpp.obj	26c54730a8268386
+3	2764	6722433391419980	CMakeFiles/Lab8_9.dir/Domain/tenant.cpp.obj	3cd3fc9eac31b8d8
+72	3131	6722433395188486	CMakeFiles/Lab8_9.dir/Undo/UndoClass.cpp.obj	908ec152a3211050
+40	3352	6722433397409297	CMakeFiles/Lab8_9.dir/Repository/repository.cpp.obj	1479bbda13e5fe70
+58	3508	6722433398991323	CMakeFiles/Lab8_9.dir/Cart/cart.cpp.obj	2935d4d1404a7e86
+34	4614	6722433410209850	CMakeFiles/Lab8_9.dir/Interface/interface.cpp.obj	de37b515fe9bb422
+52	4755	6722433411689430	CMakeFiles/Lab8_9.dir/test/test.cpp.obj	fc141e54b43689b
+46	4787	6722433412019718	CMakeFiles/Lab8_9.dir/main.cpp.obj	d42b36c980f794e9
+28	8623	6722433450283534	CMakeFiles/Lab8_9.dir/Service/service.cpp.obj	d3e52872275cca9f
+8624	9064	6722433454647160	Lab8_9.exe	a19208c094f35922

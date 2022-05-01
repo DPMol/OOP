@@ -181,6 +181,48 @@ CMakeFiles/Lab8_9.dir/Exception/my_exception.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lab8_9.dir/Exception/my_exception.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/mnt/d/Programming n shit/UBB/Anul 1/OOP/Lab8-9/Exception/my_exception.cpp" -o CMakeFiles/Lab8_9.dir/Exception/my_exception.cpp.s
 
+CMakeFiles/Lab8_9.dir/Undo/UndoClass.cpp.o: CMakeFiles/Lab8_9.dir/flags.make
+CMakeFiles/Lab8_9.dir/Undo/UndoClass.cpp.o: ../Undo/UndoClass.cpp
+CMakeFiles/Lab8_9.dir/Undo/UndoClass.cpp.o: CMakeFiles/Lab8_9.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/mnt/d/Programming n shit/UBB/Anul 1/OOP/Lab8-9/cmake-build-wsl_profile/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Lab8_9.dir/Undo/UndoClass.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Lab8_9.dir/Undo/UndoClass.cpp.o -MF CMakeFiles/Lab8_9.dir/Undo/UndoClass.cpp.o.d -o CMakeFiles/Lab8_9.dir/Undo/UndoClass.cpp.o -c "/mnt/d/Programming n shit/UBB/Anul 1/OOP/Lab8-9/Undo/UndoClass.cpp"
+
+CMakeFiles/Lab8_9.dir/Undo/UndoClass.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lab8_9.dir/Undo/UndoClass.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/mnt/d/Programming n shit/UBB/Anul 1/OOP/Lab8-9/Undo/UndoClass.cpp" > CMakeFiles/Lab8_9.dir/Undo/UndoClass.cpp.i
+
+CMakeFiles/Lab8_9.dir/Undo/UndoClass.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lab8_9.dir/Undo/UndoClass.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/mnt/d/Programming n shit/UBB/Anul 1/OOP/Lab8-9/Undo/UndoClass.cpp" -o CMakeFiles/Lab8_9.dir/Undo/UndoClass.cpp.s
+
+CMakeFiles/Lab8_9.dir/AbstractRepo/AbstractRepo.cpp.o: CMakeFiles/Lab8_9.dir/flags.make
+CMakeFiles/Lab8_9.dir/AbstractRepo/AbstractRepo.cpp.o: ../AbstractRepo/AbstractRepo.cpp
+CMakeFiles/Lab8_9.dir/AbstractRepo/AbstractRepo.cpp.o: CMakeFiles/Lab8_9.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/mnt/d/Programming n shit/UBB/Anul 1/OOP/Lab8-9/cmake-build-wsl_profile/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Lab8_9.dir/AbstractRepo/AbstractRepo.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Lab8_9.dir/AbstractRepo/AbstractRepo.cpp.o -MF CMakeFiles/Lab8_9.dir/AbstractRepo/AbstractRepo.cpp.o.d -o CMakeFiles/Lab8_9.dir/AbstractRepo/AbstractRepo.cpp.o -c "/mnt/d/Programming n shit/UBB/Anul 1/OOP/Lab8-9/AbstractRepo/AbstractRepo.cpp"
+
+CMakeFiles/Lab8_9.dir/AbstractRepo/AbstractRepo.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lab8_9.dir/AbstractRepo/AbstractRepo.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/mnt/d/Programming n shit/UBB/Anul 1/OOP/Lab8-9/AbstractRepo/AbstractRepo.cpp" > CMakeFiles/Lab8_9.dir/AbstractRepo/AbstractRepo.cpp.i
+
+CMakeFiles/Lab8_9.dir/AbstractRepo/AbstractRepo.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lab8_9.dir/AbstractRepo/AbstractRepo.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/mnt/d/Programming n shit/UBB/Anul 1/OOP/Lab8-9/AbstractRepo/AbstractRepo.cpp" -o CMakeFiles/Lab8_9.dir/AbstractRepo/AbstractRepo.cpp.s
+
+CMakeFiles/Lab8_9.dir/NewRepository/newrepository.cpp.o: CMakeFiles/Lab8_9.dir/flags.make
+CMakeFiles/Lab8_9.dir/NewRepository/newrepository.cpp.o: ../NewRepository/newrepository.cpp
+CMakeFiles/Lab8_9.dir/NewRepository/newrepository.cpp.o: CMakeFiles/Lab8_9.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/mnt/d/Programming n shit/UBB/Anul 1/OOP/Lab8-9/cmake-build-wsl_profile/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Lab8_9.dir/NewRepository/newrepository.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Lab8_9.dir/NewRepository/newrepository.cpp.o -MF CMakeFiles/Lab8_9.dir/NewRepository/newrepository.cpp.o.d -o CMakeFiles/Lab8_9.dir/NewRepository/newrepository.cpp.o -c "/mnt/d/Programming n shit/UBB/Anul 1/OOP/Lab8-9/NewRepository/newrepository.cpp"
+
+CMakeFiles/Lab8_9.dir/NewRepository/newrepository.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Lab8_9.dir/NewRepository/newrepository.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/mnt/d/Programming n shit/UBB/Anul 1/OOP/Lab8-9/NewRepository/newrepository.cpp" > CMakeFiles/Lab8_9.dir/NewRepository/newrepository.cpp.i
+
+CMakeFiles/Lab8_9.dir/NewRepository/newrepository.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Lab8_9.dir/NewRepository/newrepository.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/mnt/d/Programming n shit/UBB/Anul 1/OOP/Lab8-9/NewRepository/newrepository.cpp" -o CMakeFiles/Lab8_9.dir/NewRepository/newrepository.cpp.s
+
 # Object files for target Lab8_9
 Lab8_9_OBJECTS = \
 "CMakeFiles/Lab8_9.dir/Domain/tenant.cpp.o" \
@@ -190,7 +232,10 @@ Lab8_9_OBJECTS = \
 "CMakeFiles/Lab8_9.dir/test/test.cpp.o" \
 "CMakeFiles/Lab8_9.dir/main.cpp.o" \
 "CMakeFiles/Lab8_9.dir/Cart/cart.cpp.o" \
-"CMakeFiles/Lab8_9.dir/Exception/my_exception.cpp.o"
+"CMakeFiles/Lab8_9.dir/Exception/my_exception.cpp.o" \
+"CMakeFiles/Lab8_9.dir/Undo/UndoClass.cpp.o" \
+"CMakeFiles/Lab8_9.dir/AbstractRepo/AbstractRepo.cpp.o" \
+"CMakeFiles/Lab8_9.dir/NewRepository/newrepository.cpp.o"
 
 # External object files for target Lab8_9
 Lab8_9_EXTERNAL_OBJECTS =
@@ -203,9 +248,12 @@ Lab8_9: CMakeFiles/Lab8_9.dir/test/test.cpp.o
 Lab8_9: CMakeFiles/Lab8_9.dir/main.cpp.o
 Lab8_9: CMakeFiles/Lab8_9.dir/Cart/cart.cpp.o
 Lab8_9: CMakeFiles/Lab8_9.dir/Exception/my_exception.cpp.o
+Lab8_9: CMakeFiles/Lab8_9.dir/Undo/UndoClass.cpp.o
+Lab8_9: CMakeFiles/Lab8_9.dir/AbstractRepo/AbstractRepo.cpp.o
+Lab8_9: CMakeFiles/Lab8_9.dir/NewRepository/newrepository.cpp.o
 Lab8_9: CMakeFiles/Lab8_9.dir/build.make
 Lab8_9: CMakeFiles/Lab8_9.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/mnt/d/Programming n shit/UBB/Anul 1/OOP/Lab8-9/cmake-build-wsl_profile/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable Lab8_9"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/mnt/d/Programming n shit/UBB/Anul 1/OOP/Lab8-9/cmake-build-wsl_profile/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable Lab8_9"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Lab8_9.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

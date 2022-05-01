@@ -116,6 +116,27 @@ build CMakeFiles/Lab8_9.dir/Exception/my_exception.cpp.obj: CXX_COMPILER__Lab8_9
   OBJECT_DIR = CMakeFiles\Lab8_9.dir
   OBJECT_FILE_DIR = CMakeFiles\Lab8_9.dir\Exception
 
+build CMakeFiles/Lab8_9.dir/Undo/UndoClass.cpp.obj: CXX_COMPILER__Lab8_9_Debug D$:/Programming$ n$ shit/UBB/Anul$ 1/OOP/Lab8-9/Undo/UndoClass.cpp || cmake_object_order_depends_target_Lab8_9
+  DEP_FILE = CMakeFiles\Lab8_9.dir\Undo\UndoClass.cpp.obj.d
+  FLAGS = -g -std=gnu++17
+  INCLUDES = -I"D:/Programming n shit/UBB/Anul 1/OOP/Lab8-9/." -I"D:/Programming n shit/UBB/Anul 1/OOP/Lab8-9/Domain" -I"D:/Programming n shit/UBB/Anul 1/OOP/Lab8-9/Interface" -I"D:/Programming n shit/UBB/Anul 1/OOP/Lab8-9/Repository" -I"D:/Programming n shit/UBB/Anul 1/OOP/Lab8-9/Service" -I"D:/Programming n shit/UBB/Anul 1/OOP/Lab8-9/test"
+  OBJECT_DIR = CMakeFiles\Lab8_9.dir
+  OBJECT_FILE_DIR = CMakeFiles\Lab8_9.dir\Undo
+
+build CMakeFiles/Lab8_9.dir/AbstractRepo/AbstractRepo.cpp.obj: CXX_COMPILER__Lab8_9_Debug D$:/Programming$ n$ shit/UBB/Anul$ 1/OOP/Lab8-9/AbstractRepo/AbstractRepo.cpp || cmake_object_order_depends_target_Lab8_9
+  DEP_FILE = CMakeFiles\Lab8_9.dir\AbstractRepo\AbstractRepo.cpp.obj.d
+  FLAGS = -g -std=gnu++17
+  INCLUDES = -I"D:/Programming n shit/UBB/Anul 1/OOP/Lab8-9/." -I"D:/Programming n shit/UBB/Anul 1/OOP/Lab8-9/Domain" -I"D:/Programming n shit/UBB/Anul 1/OOP/Lab8-9/Interface" -I"D:/Programming n shit/UBB/Anul 1/OOP/Lab8-9/Repository" -I"D:/Programming n shit/UBB/Anul 1/OOP/Lab8-9/Service" -I"D:/Programming n shit/UBB/Anul 1/OOP/Lab8-9/test"
+  OBJECT_DIR = CMakeFiles\Lab8_9.dir
+  OBJECT_FILE_DIR = CMakeFiles\Lab8_9.dir\AbstractRepo
+
+build CMakeFiles/Lab8_9.dir/NewRepository/newrepository.cpp.obj: CXX_COMPILER__Lab8_9_Debug D$:/Programming$ n$ shit/UBB/Anul$ 1/OOP/Lab8-9/NewRepository/newrepository.cpp || cmake_object_order_depends_target_Lab8_9
+  DEP_FILE = CMakeFiles\Lab8_9.dir\NewRepository\newrepository.cpp.obj.d
+  FLAGS = -g -std=gnu++17
+  INCLUDES = -I"D:/Programming n shit/UBB/Anul 1/OOP/Lab8-9/." -I"D:/Programming n shit/UBB/Anul 1/OOP/Lab8-9/Domain" -I"D:/Programming n shit/UBB/Anul 1/OOP/Lab8-9/Interface" -I"D:/Programming n shit/UBB/Anul 1/OOP/Lab8-9/Repository" -I"D:/Programming n shit/UBB/Anul 1/OOP/Lab8-9/Service" -I"D:/Programming n shit/UBB/Anul 1/OOP/Lab8-9/test"
+  OBJECT_DIR = CMakeFiles\Lab8_9.dir
+  OBJECT_FILE_DIR = CMakeFiles\Lab8_9.dir\NewRepository
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Lab8_9
@@ -124,7 +145,7 @@ build CMakeFiles/Lab8_9.dir/Exception/my_exception.cpp.obj: CXX_COMPILER__Lab8_9
 #############################################
 # Link the executable Lab8_9.exe
 
-build Lab8_9.exe: CXX_EXECUTABLE_LINKER__Lab8_9_Debug CMakeFiles/Lab8_9.dir/Domain/tenant.cpp.obj CMakeFiles/Lab8_9.dir/Interface/interface.cpp.obj CMakeFiles/Lab8_9.dir/Repository/repository.cpp.obj CMakeFiles/Lab8_9.dir/Service/service.cpp.obj CMakeFiles/Lab8_9.dir/test/test.cpp.obj CMakeFiles/Lab8_9.dir/main.cpp.obj CMakeFiles/Lab8_9.dir/Cart/cart.cpp.obj CMakeFiles/Lab8_9.dir/Exception/my_exception.cpp.obj
+build Lab8_9.exe: CXX_EXECUTABLE_LINKER__Lab8_9_Debug CMakeFiles/Lab8_9.dir/Domain/tenant.cpp.obj CMakeFiles/Lab8_9.dir/Interface/interface.cpp.obj CMakeFiles/Lab8_9.dir/Repository/repository.cpp.obj CMakeFiles/Lab8_9.dir/Service/service.cpp.obj CMakeFiles/Lab8_9.dir/test/test.cpp.obj CMakeFiles/Lab8_9.dir/main.cpp.obj CMakeFiles/Lab8_9.dir/Cart/cart.cpp.obj CMakeFiles/Lab8_9.dir/Exception/my_exception.cpp.obj CMakeFiles/Lab8_9.dir/Undo/UndoClass.cpp.obj CMakeFiles/Lab8_9.dir/AbstractRepo/AbstractRepo.cpp.obj CMakeFiles/Lab8_9.dir/NewRepository/newrepository.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Lab8_9.dir

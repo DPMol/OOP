@@ -7,7 +7,7 @@
 
 class repository {
 private:
-    std::vector<tenant> list;
+    std::vector<tenant>     list;
 
 public:
     void add(const tenant& t);

@@ -22,4 +22,4 @@ add_executable(Lab8_9
         test/test.cpp
         test/test.h
         dynamic_array.h
-        main.cpp Cart/cart.cpp Cart/cart.h Exception/my_exception.cpp Exception/my_exception.h)
+        main.cpp Cart/cart.cpp Cart/cart.h Exception/my_exception.cpp Exception/my_exception.h Undo/UndoClass.cpp Undo/UndoClass.h AbstractRepo/AbstractRepo.cpp AbstractRepo/AbstractRepo.h NewRepository/newrepository.cpp NewRepository/newrepository.h)

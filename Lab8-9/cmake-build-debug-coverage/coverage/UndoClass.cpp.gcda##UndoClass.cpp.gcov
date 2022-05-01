@@ -1,0 +1,97 @@
+        -:    0:Source:D:/Programming n shit/UBB/Anul 1/OOP/Lab8-9/Undo/UndoClass.cpp
+        -:    0:Graph:D:\Programming n shit\UBB\Anul 1\OOP\Lab8-9\cmake-build-debug-coverage\CMakeFiles\Lab8_9.dir\Undo\UndoClass.cpp.gcno
+        -:    0:Data:D:\Programming n shit\UBB\Anul 1\OOP\Lab8-9\cmake-build-debug-coverage\CMakeFiles\Lab8_9.dir\Undo\UndoClass.cpp.gcda
+        -:    0:Runs:1
+        -:    0:Source is newer than graph
+        -:    1:#include "UndoClass.h"
+        -:    2:
+        -:    3:#include <utility>
+        -:    4:
+        -:    5:
+        -:    6://template<typename... Args>
+        -:    7://doUndo::doUndo(service& srv, Args&&... args) :srv(srv){
+        -:    8://    arg = std::make_tuple( std::move(args)...);
+        -:    9://}
+        -:   10:
+function _ZN7UndoAdd4undoEv called 1 returned 100% blocks executed 100%
+        1:   11:void UndoAdd::undo() {
+        1:   12:    auto element = repo.find(ap);
+        1:   12-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   13:    repo.del(element.value());
+        1:   13-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   13-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        1:   14:}
+        1:   14-block  0
+        -:   15:
+function _ZN7UndoAddC2ER10repositoryi called 2 returned 100% blocks executed 100%
+        2:   16:UndoAdd::UndoAdd(AbstractRepo& repo, int ap): repo(repo), ap(ap) {
+        2:   16-block  0
+call    0 returned 2
+        -:   17:
+        2:   18:}
+        -:   19:
+        -:   20:
+function _ZN7UndoDelC2ER10repository6tenant called 2 returned 100% blocks executed 80%
+        2:   21:UndoDel::UndoDel(AbstractRepo& repo, tenant t)
+        2:   22:: repo(repo), t(t) {}
+        2:   22-block  0
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 2 (fallthrough)
+branch  3 taken 0 (throw)
+        2:   22-block  1
+    $$$$$:   22-block  2
+call    4 never executed
+        -:   23:
+function _ZN7UndoDel4undoEv called 2 returned 100% blocks executed 100%
+        2:   24:void UndoDel::undo() {
+        2:   25:    repo.add(t);
+        2:   25-block  0
+call    0 returned 2
+        2:   26:}
+        -:   27:
+function _ZN7UndoModC2ER10repositoryi6tenant called 2 returned 100% blocks executed 80%
+        2:   28:UndoMod::UndoMod(AbstractRepo& repo, int old_ap, tenant t)
+        2:   29:: repo(repo), t(t), old_ap(old_ap) {}
+        2:   29-block  0
+call    0 returned 2
+call    1 returned 2
+branch  2 taken 2 (fallthrough)
+branch  3 taken 0 (throw)
+        2:   29-block  1
+    $$$$$:   29-block  2
+call    4 never executed
+        -:   30:
+function _ZN7UndoMod4undoEv called 1 returned 100% blocks executed 100%
+        1:   31:void UndoMod::undo() {
+        1:   32:    auto element = repo.find(old_ap);
+        1:   32-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   33:    repo.del(element.value());
+        1:   33-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   33-block  1
+call    3 returned 1
+branch  4 taken 1 (fallthrough)
+branch  5 taken 0 (throw)
+        -:   34:
+        1:   35:    repo.add(t);
+        1:   35-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   36:}
+        1:   36-block  0

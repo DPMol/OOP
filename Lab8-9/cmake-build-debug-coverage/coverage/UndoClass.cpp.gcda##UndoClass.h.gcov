@@ -1,0 +1,59 @@
+        -:    0:Source:D:/Programming n shit/UBB/Anul 1/OOP/Lab8-9/Undo/UndoClass.h
+        -:    0:Graph:D:\Programming n shit\UBB\Anul 1\OOP\Lab8-9\cmake-build-debug-coverage\CMakeFiles\Lab8_9.dir\Undo\UndoClass.cpp.gcno
+        -:    0:Data:D:\Programming n shit\UBB\Anul 1\OOP\Lab8-9\cmake-build-debug-coverage\CMakeFiles\Lab8_9.dir\Undo\UndoClass.cpp.gcda
+        -:    0:Runs:1
+        -:    0:Source is newer than graph
+        -:    1:#pragma once
+        -:    2:#include <tuple>
+        -:    3:#include <string>
+        -:    4:#include "../Repository/repository.h"
+        -:    5:#include "../Domain/tenant.h"
+        -:    6:
+        -:    7:class doUndo {
+        -:    8://    std::tuple<> arg;
+        -:    9://    service srv;
+        -:   10:
+        -:   11:public:
+        -:   12://    template <typename... Args>
+        -:   13://    explicit doUndo(service& srv, Args&&... args);
+        -:   14:
+        -:   15:    virtual void undo() = 0;
+function _ZN6doUndoD2Ev called 6 returned 100% blocks executed 100%
+        6:   16:    virtual ~doUndo() = default;
+        -:   17:
+        -:   18:};
+        -:   19:
+        -:   20:class UndoAdd: public doUndo {
+        -:   21:private:
+        -:   22:    AbstractRepo& repo;
+        -:   23:    int ap;
+        -:   24:
+        -:   25:public:
+        -:   26:    void undo() override;
+        -:   27:
+        -:   28:
+        -:   29:    UndoAdd(AbstractRepo& repo, int ap);
+        -:   30:};
+        -:   31:
+        -:   32:class UndoDel: public doUndo {
+        -:   33:private:
+        -:   34:    AbstractRepo& repo;
+        -:   35:    tenant t;
+        -:   36:
+        -:   37:public:
+        -:   38:    UndoDel(AbstractRepo&, tenant);
+        -:   39:    void undo() override;
+        -:   40:};
+        -:   41:
+        -:   42:
+        -:   43:class UndoMod: public doUndo {
+        -:   44:private:
+        -:   45:    AbstractRepo& repo;
+        -:   46:    int old_ap;
+        -:   47:    tenant t;
+        -:   48:public:
+        -:   49:    UndoMod(AbstractRepo&, int, tenant);
+        -:   50:    void undo() override;
+        -:   51:};
+        -:   52:
+        -:   53:

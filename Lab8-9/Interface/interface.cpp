@@ -16,7 +16,9 @@ void interface::run() {
         if (command == "exit")
             break;
         else if (command == "add") {
-            add();
+            add();}
+        else if (command == "undo") {
+                undo();
         } else if (command == "delete") {
             del();
         } else if (command == "find") {
@@ -40,55 +42,55 @@ void interface::run() {
     }
 }
 
-void interface::filter(std::istringstream* in) {
-
-    std::string input, out;
-    std::cout<<"1 for type filter,\n"
-               "2 for area filter\n"
-               "Input:";
-
-    if(in == nullptr)
-        std::getline(std::cin, input);
-    else
-        std::getline(*in, input);
-
-    try {
-        if (input == "1") {
-            std::cout<<"Type:";
-            std::string filter;
-            if(in == nullptr)
-                std::getline(std::cin, filter);
-            else
-                std::getline(*in, filter);
-            out = srv.filter_type(filter);
-
-        } else if (input == "2") {
-            std::cout<<"Area:";
-            std::string filter;
-            if(in == nullptr)
-                std::getline(std::cin, filter);
-            else
-                std::getline(*in, filter);
-            int temp =std::stoi(filter);
-            if(temp < 1)
-                throw std::exception();
-            out = srv.filter_area(temp);
-
-        } else {
-            throw std::exception();
-        }
-    }
-    catch(...){
-        std::cout<<"Argument is invalid";
-        std::cout<<std::endl;
-        return;
-    }
-    if(out.empty())
-        std::cout<<"No items were found.\n";
-    else
-        std::cout<<out;
-    std::cout<<std::endl;
-}
+//void interface::filter(std::istringstream* in) {
+//
+//    std::string input, out;
+//    std::cout<<"1 for type filter,\n"
+//               "2 for area filter\n"
+//               "Input:";
+//
+//    if(in == nullptr)
+//        std::getline(std::cin, input);
+//    else
+//        std::getline(*in, input);
+//
+//    try {
+//        if (input == "1") {
+//            std::cout<<"Type:";
+//            std::string filter;
+//            if(in == nullptr)
+//                std::getline(std::cin, filter);
+//            else
+//                std::getline(*in, filter);
+//            out = srv.filter_type(filter);
+//
+//        } else if (input == "2") {
+//            std::cout<<"Area:";
+//            std::string filter;
+//            if(in == nullptr)
+//                std::getline(std::cin, filter);
+//            else
+//                std::getline(*in, filter);
+//            int temp =std::stoi(filter);
+//            if(temp < 1)
+//                throw std::exception();
+//            out = srv.filter_area(temp);
+//
+//        } else {
+//            throw std::exception();
+//        }
+//    }
+//    catch(...){
+//        std::cout<<"Argument is invalid";
+//        std::cout<<std::endl;
+//        return;
+//    }
+//    if(out.empty())
+//        std::cout<<"No items were found.\n";
+//    else
+//        std::cout<<out;
+//    std::cout<<std::endl;
+//}
 
 void interface::add(std::istringstream* in) {
     int apartment, area;
@@ -146,15 +148,18 @@ void interface::add(std::istringstream* in) {
 }
 
 void interface::show() {
+    try {
+        auto out = srv.show();
+        if (out.empty())
+            std::cout << "No tenant was found.\n";
+        else
+            std::cout << out;
 
-    auto out = srv.show();
-    if (out.empty())
-        std::cout << "No tenant was found.\n";
-    else
-        std::cout << out;
-
-    std::cout<<std::endl;
-
+        std::cout << std::endl;
+    }
+    catch(...){
+        std::cout<<"Nasol\n";
+    }
 
 }
 
@@ -310,75 +315,75 @@ void interface::menu() {
 
 }
 
-void interface::sort(std::istringstream* in){
-    std::string input, out;
-    std::cout<<"1 for owner sort,\n"
-               "2 for area sort,\n"
-               "3 for apartment + area sort\n"
-               "Input:";
-    if(in == nullptr)
-        std::getline(std::cin, input);
-    else
-        std::getline(*in, input);
-
-    try {
-        if (input == "1") {
-            std::cout<<"Reverse(y/n):";
-            std::string sort;
-            if(in == nullptr)
-                std::getline(std::cin, sort);
-            else
-                std::getline(*in, sort);
-            if(sort == "y")
-                out = srv.sort_owner(true);
-            else if(sort == "n")
-                out = srv.sort_owner(false);
-            else
-                throw std::exception();
-
-        } else if (input == "2") {
-            std::cout<<"Reverse(y/n):";
-            std::string sort;
-            if(in == nullptr)
-                std::getline(std::cin, sort);
-            else
-                std::getline(*in, sort);
-            if(sort == "y")
-                out =srv.sort_area(true);
-            else if(sort == "n")
-                out =srv.sort_area(false);
-            else
-                throw std::exception();
-
-        } else if (input == "3") {
-            std::cout<<"Reverse(y/n):";
-            std::string sort;
-            if(in == nullptr)
-                std::getline(std::cin, sort);
-            else
-                std::getline(*in, sort);
-            if(sort == "y")
-                out = srv.sort_apartment_area(true);
-            else if(sort == "n")
-                out = srv.sort_apartment_area(false);
-            else
-                throw std::exception();
-
-        } else {
-            throw std::exception();
-        }
-    }
-    catch(...){
-        std::cout<<"Argument is invalid";
-        std::cout<<std::endl;
-        return;
-    }
-    if(out.empty())
-        std::cout<<"List is empty.\n";
-    else
-        std::cout<<out;
-    std::cout<<std::endl;
-}
+//void interface::sort(std::istringstream* in){
+//    std::string input, out;
+//    std::cout<<"1 for owner sort,\n"
+//               "2 for area sort,\n"
+//               "3 for apartment + area sort\n"
+//               "Input:";
+//    if(in == nullptr)
+//        std::getline(std::cin, input);
+//    else
+//        std::getline(*in, input);
+//
+//    try {
+//        if (input == "1") {
+//            std::cout<<"Reverse(y/n):";
+//            std::string sort;
+//            if(in == nullptr)
+//                std::getline(std::cin, sort);
+//            else
+//                std::getline(*in, sort);
+//            if(sort == "y")
+//                out = srv.sort_owner(true);
+//            else if(sort == "n")
+//                out = srv.sort_owner(false);
+//            else
+//                throw std::exception();
+//
+//        } else if (input == "2") {
+//            std::cout<<"Reverse(y/n):";
+//            std::string sort;
+//            if(in == nullptr)
+//                std::getline(std::cin, sort);
+//            else
+//                std::getline(*in, sort);
+//            if(sort == "y")
+//                out =srv.sort_area(true);
+//            else if(sort == "n")
+//                out =srv.sort_area(false);
+//            else
+//                throw std::exception();
+//
+//        } else if (input == "3") {
+//            std::cout<<"Reverse(y/n):";
+//            std::string sort;
+//            if(in == nullptr)
+//                std::getline(std::cin, sort);
+//            else
+//                std::getline(*in, sort);
+//            if(sort == "y")
+//                out = srv.sort_apartment_area(true);
+//            else if(sort == "n")
+//                out = srv.sort_apartment_area(false);
+//            else
+//                throw std::exception();
+//
+//        } else {
+//            throw std::exception();
+//        }
+//    }
+//    catch(...){
+//        std::cout<<"Argument is invalid";
+//        std::cout<<std::endl;
+//        return;
+//    }
+//    if(out.empty())
+//        std::cout<<"List is empty.\n";
+//    else
+//        std::cout<<out;
+//    std::cout<<std::endl;
+//}
 
 void interface::cart(std::istringstream* in) {
     menu_cart();
@@ -590,4 +595,16 @@ void interface::bash() {
         } else
             std::cout << "Invalid command!\n\n";
     }
+}
+
+void interface::undo() {
+    try{
+        srv.undo();
+    }
+    catch(...){
+        std::cout<<"No actions to undo\n";
+        return;
+    }
+
+    std::cout<<"Undo successful\n\n";
 }

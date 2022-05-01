@@ -1,0 +1,2148 @@
+        -:    0:Source:D:/Programming n shit/UBB/Anul 1/OOP/Lab8-9/Interface/interface.cpp
+        -:    0:Graph:D:\Programming n shit\UBB\Anul 1\OOP\Lab8-9\cmake-build-debug-coverage\CMakeFiles\Lab8_9.dir\Interface\interface.cpp.gcno
+        -:    0:Data:D:\Programming n shit\UBB\Anul 1\OOP\Lab8-9\cmake-build-debug-coverage\CMakeFiles\Lab8_9.dir\Interface\interface.cpp.gcda
+        -:    0:Runs:1
+        -:    0:Source is newer than graph
+        -:    1:#include <fstream>
+        -:    2:#include "interface.h"
+        -:    3:
+function _ZN9interfaceC2ER7service called 1 returned 100% blocks executed 100%
+        1:    4:interface::interface(service &srv) : srv(srv) {}
+        -:    5:
+function _ZN9interface3runEv called 1 returned 100% blocks executed 23%
+        1:    6:void interface::run() {
+        1:    7:    menu();
+        1:    7-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:    8:    std::string command;
+        1:    8-block  0
+call    0 returned 1
+        -:    9:
+        -:   10:    while (true) {
+        1:   11:        command.clear();
+        1:   11-block  0
+call    0 returned 1
+        -:   12:
+        1:   13:        std::cout << "Command:";
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        1:   14:        std::getline(std::cin, command);
+        1:   14-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0 (throw)
+        -:   15:
+        1:   16:        if (command == "exit")
+        1:   16-block  0
+call    0 returned 1
+branch  1 taken 1 (fallthrough)
+branch  2 taken 0
+        1:   17:            break;
+        1:   17-block  0
+    #####:   18:        else if (command == "add") {
+    %%%%%:   18-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   19:            add();}
+    %%%%%:   19-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   20:        else if (command == "undo") {
+    %%%%%:   20-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   21:                undo();
+    %%%%%:   21-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   22:        } else if (command == "delete") {
+    %%%%%:   22-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   23:            del();
+    %%%%%:   23-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   24:        } else if (command == "find") {
+    %%%%%:   24-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   25:            find();
+    %%%%%:   25-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   26:        } else if (command == "show") {
+    %%%%%:   26-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   27:            show();
+    %%%%%:   27-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   28:        } else if (command == "modify") {
+    %%%%%:   28-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   29:            modify();
+    %%%%%:   29-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   30:        } else if (command == "filter") {
+    %%%%%:   30-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   31:            filter();
+    %%%%%:   31-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   32:        } else if (command == "sort") {
+    %%%%%:   32-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   33:            sort();
+    %%%%%:   33-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   34:        } else if (command == "help") {
+    %%%%%:   34-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   35:            menu();
+    %%%%%:   35-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   36:        } else if (command == "cart") {
+    %%%%%:   36-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   37:            cart();
+    %%%%%:   37-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   38:        } else if (command == "bash") {
+    %%%%%:   38-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   39:            bash();
+    %%%%%:   39-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   40:        } else
+    #####:   41:            std::cout << "Invalid command!\n\n";
+    %%%%%:   41-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   42:    }
+        1:   43:}
+        1:   43-block  0
+call    0 returned 1
+    $$$$$:   43-block  1
+call    1 never executed
+        -:   44:
+function _ZN9interface6filterEPNSt7__cxx1119basic_istringstreamIcSt11char_traitsIcESaIcEEE called 0 returned 0% blocks executed 0%
+    #####:   45:void interface::filter(std::istringstream* in) {
+        -:   46:
+    #####:   47:    std::string input, out;
+    %%%%%:   47-block  0
+call    0 never executed
+call    1 never executed
+        -:   48:    std::cout<<"1 for type filter,\n"
+        -:   49:               "2 for area filter\n"
+    #####:   50:               "Input:";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   51:
+    #####:   52:    if(in == nullptr)
+    %%%%%:   52-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   53:        std::getline(std::cin, input);
+    %%%%%:   53-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   54:    else
+    #####:   55:        std::getline(*in, input);
+    %%%%%:   55-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   56:
+        -:   57:    try {
+    #####:   58:        if (input == "1") {
+    %%%%%:   58-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   59:            std::cout<<"Type:";
+    %%%%%:   59-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   60:            std::string filter;
+    %%%%%:   60-block  0
+call    0 never executed
+    #####:   61:            if(in == nullptr)
+branch  0 never executed
+branch  1 never executed
+    #####:   62:                std::getline(std::cin, filter);
+    %%%%%:   62-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   63:            else
+    #####:   64:                std::getline(*in, filter);
+    %%%%%:   64-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   65:            out = srv.filter_type(filter);
+    %%%%%:   65-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   65-block  1
+call    3 never executed
+call    4 never executed
+        -:   66:
+    #####:   67:        } else if (input == "2") {
+call    0 never executed
+    %%%%%:   67-block  0
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    $$$$$:   67-block  1
+call    4 never executed
+    #####:   68:            std::cout<<"Area:";
+    %%%%%:   68-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   69:            std::string filter;
+    %%%%%:   69-block  0
+call    0 never executed
+    #####:   70:            if(in == nullptr)
+branch  0 never executed
+branch  1 never executed
+    #####:   71:                std::getline(std::cin, filter);
+    %%%%%:   71-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   72:            else
+    #####:   73:                std::getline(*in, filter);
+    %%%%%:   73-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   74:            int temp =std::stoi(filter);
+    %%%%%:   74-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   75:            if(temp < 1)
+    %%%%%:   75-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:   76:                throw std::exception();
+    %%%%%:   76-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:   77:            out = srv.filter_area(temp);
+    %%%%%:   77-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   77-block  1
+call    3 never executed
+call    4 never executed
+        -:   78:
+    #####:   79:        } else {
+call    0 never executed
+    $$$$$:   79-block  0
+call    1 never executed
+    #####:   80:            throw std::exception();
+    %%%%%:   80-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:   81:        }
+        -:   82:    }
+    =====:   83:    catch(...){
+    $$$$$:   83-block  0
+    $$$$$:   83-block  1
+call    0 never executed
+    =====:   84:        std::cout<<"Argument is invalid";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    =====:   85:        std::cout<<std::endl;
+    $$$$$:   85-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    =====:   86:        return;
+    $$$$$:   86-block  0
+    =====:   87:    }
+    $$$$$:   87-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:   87-block  1
+call    3 never executed
+    #####:   88:    if(out.empty())
+    %%%%%:   88-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   89:        std::cout<<"No items were found.\n";
+    %%%%%:   89-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:   90:    else
+    #####:   91:        std::cout<<out;
+    %%%%%:   91-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   92:    std::cout<<std::endl;
+    %%%%%:   92-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   93:}
+    %%%%%:   93-block  0
+    %%%%%:   93-block  1
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:   93-block  2
+    %%%%%:   93-block  3
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:   93-block  4
+call    6 never executed
+    $$$$$:   93-block  5
+call    7 never executed
+        -:   94:
+function _ZN9interface3addEPNSt7__cxx1119basic_istringstreamIcSt11char_traitsIcESaIcEEE called 0 returned 0% blocks executed 0%
+    #####:   95:void interface::add(std::istringstream* in) {
+        -:   96:    int apartment, area;
+    #####:   97:    std::string owner, type;
+    %%%%%:   97-block  0
+call    0 never executed
+call    1 never executed
+        -:   98:
+        -:   99:    try {
+    #####:  100:        std::string input;
+call    0 never executed
+    #####:  101:        std::cout << "Apartment:";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  102:        if(in == nullptr)
+    %%%%%:  102-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  103:            std::getline(std::cin, input);
+    %%%%%:  103-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  104:        else
+    #####:  105:            std::getline(*in, input);
+    %%%%%:  105-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  106:        apartment = std::stoi(input);
+    %%%%%:  106-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  107:
+    #####:  108:        std::cout << "Owner:";
+    %%%%%:  108-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  109:        if(in == nullptr)
+    %%%%%:  109-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  110:            std::getline(std::cin, input);
+    %%%%%:  110-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  111:        else
+    #####:  112:            std::getline(*in, input);
+    %%%%%:  112-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  113:        owner = input;
+    %%%%%:  113-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  114:
+    #####:  115:        std::cout << "Type:";
+    %%%%%:  115-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  116:        if(in == nullptr)
+    %%%%%:  116-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  117:            std::getline(std::cin, input);
+    %%%%%:  117-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  118:        else
+    #####:  119:            std::getline(*in, input);
+    %%%%%:  119-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  120:        type = input;
+    %%%%%:  120-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  121:
+    #####:  122:        std::cout << "Area:";
+    %%%%%:  122-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  123:        if(in == nullptr)
+    %%%%%:  123-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  124:            std::getline(std::cin, input);
+    %%%%%:  124-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  125:        else
+    #####:  126:            std::getline(*in, input);
+    %%%%%:  126-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  127:        area = std::stoi(input);
+    %%%%%:  127-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  128:
+    #####:  129:        if (apartment < 1 || area < 1)
+    %%%%%:  129-block  0
+branch  0 never executed
+branch  1 never executed
+    %%%%%:  129-block  1
+branch  2 never executed
+branch  3 never executed
+    #####:  130:            throw std::exception();
+    %%%%%:  130-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:  131:    }
+    %%%%%:  131-block  0
+call    0 never executed
+    $$$$$:  131-block  1
+call    1 never executed
+    =====:  132:    catch (...) {
+    $$$$$:  132-block  0
+    $$$$$:  132-block  1
+call    0 never executed
+    =====:  133:        std::cout << "One or more arguments are invalid!\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    =====:  134:        std::cout<<std::endl;
+    $$$$$:  134-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    =====:  135:        return;
+    $$$$$:  135-block  0
+    =====:  136:    }
+    $$$$$:  136-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:  136-block  1
+call    3 never executed
+        -:  137:
+        -:  138:    try {
+    #####:  139:        srv.add(apartment, owner, type, area);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  140:    }
+    =====:  141:    catch (...) {
+    $$$$$:  141-block  0
+    $$$$$:  141-block  1
+call    0 never executed
+    =====:  142:        std::cout << "Tenant already exists!\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    =====:  143:        std::cout<<std::endl;
+    $$$$$:  143-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    =====:  144:        return;
+    $$$$$:  144-block  0
+    =====:  145:    }
+    $$$$$:  145-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:  145-block  1
+call    3 never executed
+    #####:  146:    std::cout << "Tenant added.\n";
+    %%%%%:  146-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  147:    std::cout<<std::endl;
+    %%%%%:  147-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  148:}
+    %%%%%:  148-block  0
+    %%%%%:  148-block  1
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  148-block  2
+    %%%%%:  148-block  3
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:  148-block  4
+call    6 never executed
+    $$$$$:  148-block  5
+call    7 never executed
+        -:  149:
+function _ZN9interface4showEv called 0 returned 0% blocks executed 0%
+    #####:  150:void interface::show() {
+        -:  151:
+    #####:  152:    auto out = srv.show();
+    %%%%%:  152-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  153:    if (out.empty())
+    %%%%%:  153-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  154:        std::cout << "No tenant was found.\n";
+    %%%%%:  154-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  155:    else
+    #####:  156:        std::cout << out;
+    %%%%%:  156-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  157:
+    #####:  158:    std::cout<<std::endl;
+    %%%%%:  158-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  159:
+        -:  160:
+    #####:  161:}
+    %%%%%:  161-block  0
+call    0 never executed
+    $$$$$:  161-block  1
+call    1 never executed
+        -:  162:
+function _ZN9interface3delEPNSt7__cxx1119basic_istringstreamIcSt11char_traitsIcESaIcEEE called 0 returned 0% blocks executed 0%
+    #####:  163:void interface::del(std::istringstream* in) {
+        -:  164:
+        -:  165:
+        -:  166:    int apartment;
+        -:  167:
+        -:  168:    try {
+    #####:  169:        std::string input;
+    %%%%%:  169-block  0
+call    0 never executed
+    #####:  170:        std::cout << "Apartment:";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  171:        if(in == nullptr)
+    %%%%%:  171-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  172:            std::getline(std::cin, input);
+    %%%%%:  172-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  173:        else
+    #####:  174:            std::getline(*in, input);
+    %%%%%:  174-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  175:        apartment = std::stoi(input);
+    %%%%%:  175-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  176:
+    #####:  177:        if (apartment < 1)
+    %%%%%:  177-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  178:            throw std::exception();
+    %%%%%:  178-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:  179:    }
+    %%%%%:  179-block  0
+call    0 never executed
+    $$$$$:  179-block  1
+call    1 never executed
+    =====:  180:    catch (...) {
+    $$$$$:  180-block  0
+    $$$$$:  180-block  1
+call    0 never executed
+    =====:  181:        std::cout << "One or more arguments are invalid!\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    =====:  182:        std::cout<<std::endl;
+    $$$$$:  182-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    =====:  183:        return;
+    $$$$$:  183-block  0
+    =====:  184:    }
+    $$$$$:  184-block  0
+call    0 never executed
+    $$$$$:  184-block  1
+call    1 never executed
+        -:  185:
+        -:  186:    try {
+    #####:  187:        srv.del(apartment);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  188:    }
+    =====:  189:    catch (...) {
+    $$$$$:  189-block  0
+    $$$$$:  189-block  1
+call    0 never executed
+    =====:  190:        std::cout << "Tenant doesn't exists!\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    =====:  191:        std::cout<<std::endl;
+    $$$$$:  191-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    =====:  192:        return;
+    $$$$$:  192-block  0
+    =====:  193:    }
+    $$$$$:  193-block  0
+call    0 never executed
+    $$$$$:  193-block  1
+call    1 never executed
+    #####:  194:    std::cout << "Tenant deleted.\n";
+    %%%%%:  194-block  0
+call    0 never executed
+    #####:  195:    std::cout<<std::endl;
+call    0 never executed
+        -:  196:}
+        -:  197:
+function _ZN9interface4findEPNSt7__cxx1119basic_istringstreamIcSt11char_traitsIcESaIcEEE called 0 returned 0% blocks executed 0%
+    #####:  198:void interface::find(std::istringstream* in) {
+        -:  199:
+        -:  200:    int apartment;
+        -:  201:
+        -:  202:    try {
+        -:  203:
+    #####:  204:        std::string input;
+    %%%%%:  204-block  0
+call    0 never executed
+    #####:  205:        std::cout << "Apartment:";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  206:        if(in == nullptr)
+    %%%%%:  206-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  207:            std::getline(std::cin, input);
+    %%%%%:  207-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  208:        else
+    #####:  209:            std::getline(*in, input);
+    %%%%%:  209-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  210:        apartment = std::stoi(input);
+    %%%%%:  210-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  211:
+    #####:  212:        if (apartment < 1)
+    %%%%%:  212-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  213:            throw std::exception();
+    %%%%%:  213-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:  214:    }
+    %%%%%:  214-block  0
+call    0 never executed
+    $$$$$:  214-block  1
+call    1 never executed
+    =====:  215:    catch (...) {
+    $$$$$:  215-block  0
+    $$$$$:  215-block  1
+call    0 never executed
+    =====:  216:        std::cout << "One or more arguments are invalid!\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    =====:  217:        std::cout<<std::endl;
+    $$$$$:  217-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    =====:  218:        return;
+    $$$$$:  218-block  0
+    =====:  219:    }
+    $$$$$:  219-block  0
+call    0 never executed
+    $$$$$:  219-block  1
+call    1 never executed
+        -:  220:
+        -:  221:    try {
+    #####:  222:        auto out = srv.find(apartment);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  223:
+    #####:  224:        if (out.empty())
+    %%%%%:  224-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  225:            std::cout << "No tenant was found.\n";
+    %%%%%:  225-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  226:        else
+    #####:  227:            std::cout << out;
+    %%%%%:  227-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  228:        std::cout<<std::endl;
+    %%%%%:  228-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  229:    }
+    %%%%%:  229-block  0
+call    0 never executed
+    $$$$$:  229-block  1
+call    1 never executed
+    =====:  230:    catch (...) {
+    $$$$$:  230-block  0
+    $$$$$:  230-block  1
+call    0 never executed
+    =====:  231:        std::cout << "No tenant was found!\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    =====:  232:        std::cout<<std::endl;
+    $$$$$:  232-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    =====:  233:        return;
+    $$$$$:  233-block  0
+    =====:  234:    }
+    $$$$$:  234-block  0
+call    0 never executed
+    $$$$$:  234-block  1
+call    1 never executed
+        -:  235:}
+        -:  236:
+function _ZN9interface6modifyEPNSt7__cxx1119basic_istringstreamIcSt11char_traitsIcESaIcEEE called 0 returned 0% blocks executed 0%
+    #####:  237:void interface::modify(std::istringstream* in) {
+        -:  238:
+        -:  239:    int apartment, new_apartment, new_area;
+    #####:  240:    std::string new_owner, new_type;
+    %%%%%:  240-block  0
+call    0 never executed
+call    1 never executed
+        -:  241:
+        -:  242:
+        -:  243:    try {
+    #####:  244:        std::string input;
+call    0 never executed
+    #####:  245:        std::cout << "Apartment:";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  246:        if(in == nullptr)
+    %%%%%:  246-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  247:            std::getline(std::cin, input);
+    %%%%%:  247-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  248:        else
+    #####:  249:            std::getline(*in, input);
+    %%%%%:  249-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  250:        apartment = std::stoi(input);
+    %%%%%:  250-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  251:
+    #####:  252:        std::cout << "New Apartment:";
+    %%%%%:  252-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  253:        if(in == nullptr)
+    %%%%%:  253-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  254:            std::getline(std::cin, input);
+    %%%%%:  254-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  255:        else
+    #####:  256:            std::getline(*in, input);
+    %%%%%:  256-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  257:        new_apartment = std::stoi(input);
+    %%%%%:  257-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  258:
+    #####:  259:        std::cout << "New Owner:";
+    %%%%%:  259-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  260:        if(in == nullptr)
+    %%%%%:  260-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  261:            std::getline(std::cin, input);
+    %%%%%:  261-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  262:        else
+    #####:  263:            std::getline(*in, input);
+    %%%%%:  263-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  264:        new_owner = input;
+    %%%%%:  264-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  265:
+    #####:  266:        std::cout << "New Type:";
+    %%%%%:  266-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  267:        if(in == nullptr)
+    %%%%%:  267-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  268:            std::getline(std::cin, input);
+    %%%%%:  268-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  269:        else
+    #####:  270:            std::getline(*in, input);
+    %%%%%:  270-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  271:        new_type = input;
+    %%%%%:  271-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  272:
+    #####:  273:        std::cout << "New Area:";
+    %%%%%:  273-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  274:        if(in == nullptr)
+    %%%%%:  274-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  275:            std::getline(std::cin, input);
+    %%%%%:  275-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  276:        else
+    #####:  277:            std::getline(*in, input);
+    %%%%%:  277-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  278:        new_area = std::stoi(input);
+    %%%%%:  278-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  279:
+    #####:  280:        if (apartment < 1 || new_apartment < 1 || new_area < 1)
+    %%%%%:  280-block  0
+branch  0 never executed
+branch  1 never executed
+    %%%%%:  280-block  1
+branch  2 never executed
+branch  3 never executed
+    %%%%%:  280-block  2
+branch  4 never executed
+branch  5 never executed
+    #####:  281:            throw std::exception();
+    %%%%%:  281-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:  282:    }
+    %%%%%:  282-block  0
+call    0 never executed
+    $$$$$:  282-block  1
+call    1 never executed
+    =====:  283:    catch (...) {
+    $$$$$:  283-block  0
+    $$$$$:  283-block  1
+call    0 never executed
+    =====:  284:        std::cout << "One or more arguments are invalid!\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    =====:  285:        std::cout<<std::endl;
+    $$$$$:  285-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    =====:  286:        return;
+    $$$$$:  286-block  0
+    =====:  287:    }
+    $$$$$:  287-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:  287-block  1
+call    3 never executed
+        -:  288:
+        -:  289:    try {
+    #####:  290:        srv.modify(apartment, new_apartment, new_owner, new_type, new_area);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  291:    }
+    =====:  292:    catch (...) {
+    $$$$$:  292-block  0
+    $$$$$:  292-block  1
+call    0 never executed
+    =====:  293:        std::cout << "Tenant doesn't exists!\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    =====:  294:        std::cout<<std::endl;
+    $$$$$:  294-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    =====:  295:        return;
+    $$$$$:  295-block  0
+    =====:  296:    }
+    $$$$$:  296-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:  296-block  1
+call    3 never executed
+    #####:  297:    std::cout << "Tenant modified.\n";
+    %%%%%:  297-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  298:    std::cout<<std::endl;
+    %%%%%:  298-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  299:}
+    %%%%%:  299-block  0
+    %%%%%:  299-block  1
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  299-block  2
+    %%%%%:  299-block  3
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:  299-block  4
+call    6 never executed
+    $$$$$:  299-block  5
+call    7 never executed
+        -:  300:
+function _ZN9interface4menuEv called 1 returned 100% blocks executed 100%
+        1:  301:void interface::menu() {
+        -:  302:    std::cout << "* Menu:\n"
+        -:  303:                 "  - add\n"
+        -:  304:                 "  - delete\n"
+        -:  305:                 "  - modify\n"
+        -:  306:                 "  - show\n"
+        -:  307:                 "  - find\n"
+        -:  308:                 "  - sort\n"
+        -:  309:                 "  - filter\n"
+        -:  310:                 "  - help\n"
+        1:  311:                 "  - exit\n\n";
+        1:  311-block  0
+call    0 returned 1
+        -:  312:
+        1:  313:}
+        -:  314:
+function _ZN9interface4sortEPNSt7__cxx1119basic_istringstreamIcSt11char_traitsIcESaIcEEE called 0 returned 0% blocks executed 0%
+    #####:  315:void interface::sort(std::istringstream* in){
+    #####:  316:    std::string input, out;
+    %%%%%:  316-block  0
+call    0 never executed
+call    1 never executed
+        -:  317:    std::cout<<"1 for owner sort,\n"
+        -:  318:               "2 for area sort,\n"
+        -:  319:               "3 for apartment + area sort\n"
+    #####:  320:               "Input:";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  321:    if(in == nullptr)
+    %%%%%:  321-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  322:        std::getline(std::cin, input);
+    %%%%%:  322-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  323:    else
+    #####:  324:        std::getline(*in, input);
+    %%%%%:  324-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  325:
+        -:  326:    try {
+    #####:  327:        if (input == "1") {
+    %%%%%:  327-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  328:            std::cout<<"Reverse(y/n):";
+    %%%%%:  328-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  329:            std::string sort;
+    %%%%%:  329-block  0
+call    0 never executed
+    #####:  330:            if(in == nullptr)
+branch  0 never executed
+branch  1 never executed
+    #####:  331:                std::getline(std::cin, sort);
+    %%%%%:  331-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  332:            else
+    #####:  333:                std::getline(*in, sort);
+    %%%%%:  333-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  334:            if(sort == "y")
+    %%%%%:  334-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  335:                out = srv.sort_owner(true);
+    %%%%%:  335-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  335-block  1
+call    3 never executed
+call    4 never executed
+    #####:  336:            else if(sort == "n")
+    %%%%%:  336-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  337:                out = srv.sort_owner(false);
+    %%%%%:  337-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  337-block  1
+call    3 never executed
+call    4 never executed
+        -:  338:            else
+    #####:  339:                throw std::exception();
+    %%%%%:  339-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:  340:
+    #####:  341:        } else if (input == "2") {
+    %%%%%:  341-block  0
+call    0 never executed
+    %%%%%:  341-block  1
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    $$$$$:  341-block  2
+call    4 never executed
+    #####:  342:            std::cout<<"Reverse(y/n):";
+    %%%%%:  342-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  343:            std::string sort;
+    %%%%%:  343-block  0
+call    0 never executed
+    #####:  344:            if(in == nullptr)
+branch  0 never executed
+branch  1 never executed
+    #####:  345:                std::getline(std::cin, sort);
+    %%%%%:  345-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  346:            else
+    #####:  347:                std::getline(*in, sort);
+    %%%%%:  347-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  348:            if(sort == "y")
+    %%%%%:  348-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  349:                out =srv.sort_area(true);
+    %%%%%:  349-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  349-block  1
+call    3 never executed
+call    4 never executed
+    #####:  350:            else if(sort == "n")
+    %%%%%:  350-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  351:                out =srv.sort_area(false);
+    %%%%%:  351-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  351-block  1
+call    3 never executed
+call    4 never executed
+        -:  352:            else
+    #####:  353:                throw std::exception();
+    %%%%%:  353-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:  354:
+    #####:  355:        } else if (input == "3") {
+    %%%%%:  355-block  0
+call    0 never executed
+    %%%%%:  355-block  1
+call    1 never executed
+branch  2 never executed
+branch  3 never executed
+    $$$$$:  355-block  2
+call    4 never executed
+    #####:  356:            std::cout<<"Reverse(y/n):";
+    %%%%%:  356-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  357:            std::string sort;
+    %%%%%:  357-block  0
+call    0 never executed
+    #####:  358:            if(in == nullptr)
+branch  0 never executed
+branch  1 never executed
+    #####:  359:                std::getline(std::cin, sort);
+    %%%%%:  359-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  360:            else
+    #####:  361:                std::getline(*in, sort);
+    %%%%%:  361-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  362:            if(sort == "y")
+    %%%%%:  362-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  363:                out = srv.sort_apartment_area(true);
+    %%%%%:  363-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  363-block  1
+call    3 never executed
+call    4 never executed
+    #####:  364:            else if(sort == "n")
+    %%%%%:  364-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  365:                out = srv.sort_apartment_area(false);
+    %%%%%:  365-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  365-block  1
+call    3 never executed
+call    4 never executed
+        -:  366:            else
+    #####:  367:                throw std::exception();
+    %%%%%:  367-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:  368:
+    #####:  369:        } else {
+    %%%%%:  369-block  0
+call    0 never executed
+    $$$$$:  369-block  1
+call    1 never executed
+    #####:  370:            throw std::exception();
+    %%%%%:  370-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+        -:  371:        }
+        -:  372:    }
+    =====:  373:    catch(...){
+    $$$$$:  373-block  0
+    $$$$$:  373-block  1
+call    0 never executed
+    =====:  374:        std::cout<<"Argument is invalid";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    =====:  375:        std::cout<<std::endl;
+    $$$$$:  375-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    =====:  376:        return;
+    $$$$$:  376-block  0
+    =====:  377:    }
+    $$$$$:  377-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:  377-block  1
+call    3 never executed
+    #####:  378:    if(out.empty())
+    %%%%%:  378-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  379:        std::cout<<"List is empty.\n";
+    %%%%%:  379-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  380:    else
+    #####:  381:        std::cout<<out;
+    %%%%%:  381-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  382:    std::cout<<std::endl;
+    %%%%%:  382-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  383:}
+    %%%%%:  383-block  0
+    %%%%%:  383-block  1
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  383-block  2
+    %%%%%:  383-block  3
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:  383-block  4
+call    6 never executed
+    $$$$$:  383-block  5
+call    7 never executed
+        -:  384:
+function _ZN9interface4cartEPNSt7__cxx1119basic_istringstreamIcSt11char_traitsIcESaIcEEE called 0 returned 0% blocks executed 0%
+    #####:  385:void interface::cart(std::istringstream* in) {
+    #####:  386:    menu_cart();
+    %%%%%:  386-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  387:
+    #####:  388:    std::string command;
+    %%%%%:  388-block  0
+call    0 never executed
+    #####:  389:    std::cout << "Command:";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  390:    if(in == nullptr)
+    %%%%%:  390-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  391:        std::getline(std::cin, command);
+    %%%%%:  391-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  392:    else
+    #####:  393:        std::getline(*in, command);
+    %%%%%:  393-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  394:
+    #####:  395:    if (command == "exit" || command.empty())
+    %%%%%:  395-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  395-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  395-block  2
+    %%%%%:  395-block  3
+    %%%%%:  395-block  4
+branch  6 never executed
+branch  7 never executed
+    #####:  396:        return;
+    %%%%%:  396-block  0
+    #####:  397:    else if (command == "add") {
+    %%%%%:  397-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  398:        add_cart(in);
+    %%%%%:  398-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  399:    } else if (command == "empty") {
+    %%%%%:  399-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  400:        empty_cart();
+    %%%%%:  400-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  401:    }
+    #####:  402:    else if (command == "export") {
+    %%%%%:  402-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  403:        export_cart(in);
+    %%%%%:  403-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  404:    }
+    #####:  405:    else if (command == "random") {
+    %%%%%:  405-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  406:        random_cart(in);
+    %%%%%:  406-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  407:    }
+        -:  408:    else {
+    #####:  409:        std::cout << "Invalid command!\n\n";
+    %%%%%:  409-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  410:    }
+    #####:  411:}
+    %%%%%:  411-block  0
+    %%%%%:  411-block  1
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:  411-block  2
+call    3 never executed
+        -:  412:
+function _ZN9interface8add_cartEPNSt7__cxx1119basic_istringstreamIcSt11char_traitsIcESaIcEEE called 0 returned 0% blocks executed 0%
+    #####:  413:void interface::add_cart(std::istringstream* in) {
+        -:  414:    int apartment;
+        -:  415:
+        -:  416:    try {
+    #####:  417:        std::string input;
+    %%%%%:  417-block  0
+call    0 never executed
+    #####:  418:        std::cout << "Apartment:";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  419:        if(in == nullptr)
+    %%%%%:  419-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  420:            std::getline(std::cin, input);
+    %%%%%:  420-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  421:        else
+    #####:  422:            std::getline(*in, input);
+    %%%%%:  422-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  423:        apartment = std::stoi(input);
+    %%%%%:  423-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  424:
+        -:  425:
+    #####:  426:        if (apartment < 1)
+    %%%%%:  426-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  427:            throw std::exception();
+    %%%%%:  427-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:  428:    }
+    %%%%%:  428-block  0
+call    0 never executed
+    $$$$$:  428-block  1
+call    1 never executed
+    =====:  429:    catch (...) {
+    $$$$$:  429-block  0
+    $$$$$:  429-block  1
+call    0 never executed
+    =====:  430:        std::cout << "One or more arguments are invalid!\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    =====:  431:        std::cout<<std::endl;
+    $$$$$:  431-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    =====:  432:        return;
+    $$$$$:  432-block  0
+    =====:  433:    }
+    $$$$$:  433-block  0
+call    0 never executed
+    $$$$$:  433-block  1
+call    1 never executed
+        -:  434:
+        -:  435:    try {
+    #####:  436:        srv.add_cart(apartment);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  437:    }
+    =====:  438:    catch (my_exception& e) {
+    $$$$$:  438-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:  438-block  1
+call    2 never executed
+    =====:  439:        if(e.get_error() == "Not found"){
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:  439-block  0
+call    3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    =====:  440:            std::cout << "Tenant not found!\n";
+    $$$$$:  440-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    =====:  441:            std::cout << std::endl;
+    $$$$$:  441-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    =====:  442:            return;
+    $$$$$:  442-block  0
+        -:  443:        }
+        -:  444:        else {
+    =====:  445:            std::cout << "Tenant already exists!\n";
+    $$$$$:  445-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    =====:  446:            std::cout << std::endl;
+    $$$$$:  446-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    =====:  447:            return;
+    $$$$$:  447-block  0
+        -:  448:        }
+    =====:  449:    }
+    $$$$$:  449-block  0
+call    0 never executed
+    $$$$$:  449-block  1
+call    1 never executed
+    #####:  450:    std::cout << "Tenant added.\n";
+    %%%%%:  450-block  0
+call    0 never executed
+    #####:  451:    std::cout<<std::endl;
+call    0 never executed
+        -:  452:}
+        -:  453:
+function _ZN9interface10empty_cartEv called 0 returned 0% blocks executed 0%
+    #####:  454:void interface::empty_cart() {
+    #####:  455:    srv.empty_cart();
+    %%%%%:  455-block  0
+call    0 never executed
+    #####:  456:    std::cout<<"Cart emptied.\n";
+call    0 never executed
+    #####:  457:}
+        -:  458:
+function _ZN9interface11random_cartEPNSt7__cxx1119basic_istringstreamIcSt11char_traitsIcESaIcEEE called 0 returned 0% blocks executed 0%
+    #####:  459:void interface::random_cart(std::istringstream* in) {
+        -:  460:
+        -:  461:    int num;
+        -:  462:
+        -:  463:    try {
+    #####:  464:        std::string input;
+    %%%%%:  464-block  0
+call    0 never executed
+    #####:  465:        std::cout << "Number of apartments:";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  466:        if(in == nullptr)
+    %%%%%:  466-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  467:            std::getline(std::cin, input);
+    %%%%%:  467-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  468:        else
+    #####:  469:            std::getline(*in, input);
+    %%%%%:  469-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  470:        num = std::stoi(input);
+    %%%%%:  470-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  471:
+        -:  472:
+    #####:  473:        if (num < 1)
+    %%%%%:  473-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  474:            throw std::exception();
+    %%%%%:  474-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+    #####:  475:    }
+    %%%%%:  475-block  0
+call    0 never executed
+    $$$$$:  475-block  1
+call    1 never executed
+    =====:  476:    catch (...) {
+    $$$$$:  476-block  0
+    $$$$$:  476-block  1
+call    0 never executed
+    =====:  477:        std::cout << "One or more arguments are invalid!\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    =====:  478:        std::cout<<std::endl;
+    $$$$$:  478-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    =====:  479:        return;
+    $$$$$:  479-block  0
+    =====:  480:    }
+    $$$$$:  480-block  0
+call    0 never executed
+    $$$$$:  480-block  1
+call    1 never executed
+        -:  481:
+        -:  482:    try {
+    #####:  483:        srv.random_cart(num);
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  484:    }
+    =====:  485:    catch (my_exception& e) {
+    $$$$$:  485-block  0
+branch  0 never executed
+branch  1 never executed
+    $$$$$:  485-block  1
+call    2 never executed
+    =====:  486:        if(e.get_error() == "No tenants"){
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:  486-block  0
+call    3 never executed
+call    4 never executed
+branch  5 never executed
+branch  6 never executed
+    =====:  487:            std::cout << "No tenants were found!\n";
+    $$$$$:  487-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    =====:  488:            std::cout << std::endl;
+    $$$$$:  488-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    =====:  489:            return;
+    $$$$$:  489-block  0
+        -:  490:        }
+        -:  491:        else {
+    =====:  492:            std::cout << "Not enough tenants! Maximum number was added\n";
+    $$$$$:  492-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    =====:  493:            std::cout << std::endl;
+    $$$$$:  493-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    =====:  494:            return;
+    $$$$$:  494-block  0
+        -:  495:        }
+    =====:  496:    }
+    $$$$$:  496-block  0
+call    0 never executed
+    $$$$$:  496-block  1
+call    1 never executed
+    #####:  497:    std::cout << "Tenant added.\n";
+    %%%%%:  497-block  0
+call    0 never executed
+    #####:  498:    std::cout<<std::endl;
+call    0 never executed
+        -:  499:}
+        -:  500:
+function _ZN9interface11export_cartEPNSt7__cxx1119basic_istringstreamIcSt11char_traitsIcESaIcEEE called 0 returned 0% blocks executed 0%
+    #####:  501:void interface::export_cart(std::istringstream* in) {
+    #####:  502:    std::string file;
+    %%%%%:  502-block  0
+call    0 never executed
+        -:  503:
+        -:  504:    try {
+    #####:  505:        std::cout << "File name:";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  506:        if(in == nullptr)
+    %%%%%:  506-block  0
+branch  0 never executed
+branch  1 never executed
+    #####:  507:            std::getline(std::cin, file);
+    %%%%%:  507-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  508:        else
+    #####:  509:            std::getline(*in, file);
+    %%%%%:  509-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  510:    }
+    =====:  511:    catch (...) {
+    $$$$$:  511-block  0
+    $$$$$:  511-block  1
+call    0 never executed
+    =====:  512:        std::cout << "One or more arguments are invalid!\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    =====:  513:        std::cout<<std::endl;
+    $$$$$:  513-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    =====:  514:        return;
+    $$$$$:  514-block  0
+    =====:  515:    }
+    $$$$$:  515-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:  515-block  1
+call    3 never executed
+        -:  516:
+        -:  517://    try {
+    #####:  518:        srv.export_cart(file);
+    %%%%%:  518-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  519://    }
+        -:  520://    catch (my_exception& e) {
+        -:  521://        if(e.get_error() == "No tenants"){
+        -:  522://            std::cout << "No tenants were found!\n";
+        -:  523://            std::cout << std::endl;
+        -:  524://            return;
+        -:  525://        }
+        -:  526://        else {
+        -:  527://            std::cout << "Not enough tenants! Maximum number was added\n";
+        -:  528://            std::cout << std::endl;
+        -:  529://            return;
+        -:  530://        }
+        -:  531://    }
+    #####:  532:    std::cout << "File exported.\n";
+    %%%%%:  532-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  533:    std::cout<<std::endl;
+    %%%%%:  533-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  534:}
+    %%%%%:  534-block  0
+    %%%%%:  534-block  1
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    $$$$$:  534-block  2
+call    3 never executed
+        -:  535:
+function _ZN9interface9menu_cartEv called 0 returned 0% blocks executed 0%
+    #####:  536:void interface::menu_cart() {
+        -:  537:    std::cout << "* Menu cart:\n"
+        -:  538:                 "  - add\n"
+        -:  539:                 "  - random\n"
+        -:  540:                 "  - empty\n"
+        -:  541:                 "  - export\n"
+        -:  542:                 "  - help\n"
+    #####:  543:                 "  - exit\n\n";
+    %%%%%:  543-block  0
+call    0 never executed
+    #####:  544:}
+        -:  545:
+function _ZN9interface4bashEv called 0 returned 0% blocks executed 0%
+    #####:  546:void interface::bash() {
+    #####:  547:    std::fstream fin;
+    %%%%%:  547-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  548:
+    #####:  549:    std::string command, filename, temp, temp2;
+    %%%%%:  549-block  0
+call    0 never executed
+call    1 never executed
+call    2 never executed
+call    3 never executed
+    #####:  550:    std::cout<<"Filename: ";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  551:    std::getline(std::cin, filename);
+    %%%%%:  551-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  552:    std::cout<<std::endl;
+    %%%%%:  552-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  553:    fin.open(filename, std::ios_base::in);
+    %%%%%:  553-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  554:    if(!fin.good()){
+    %%%%%:  554-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  554-block  1
+branch  3 never executed
+branch  4 never executed
+    #####:  555:        std::cout<<"File doesn't exist!\n";
+    %%%%%:  555-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  556:        return;
+    %%%%%:  556-block  0
+        -:  557:    }
+        -:  558:
+    #####:  559:    while (!fin.eof()) {
+    %%%%%:  559-block  0
+    %%%%%:  559-block  1
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  559-block  2
+branch  3 never executed
+branch  4 never executed
+        -:  560:
+    #####:  561:        command.clear();
+    %%%%%:  561-block  0
+call    0 never executed
+    #####:  562:        temp2.clear();
+call    0 never executed
+        -:  563:
+    #####:  564:        std::getline(fin, command, ';');
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  565:        std::getline(fin, temp );
+    %%%%%:  565-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  566:        std::istringstream ss(temp);
+    %%%%%:  566-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  567:        while(std::getline(ss, temp, ';')){
+    %%%%%:  567-block  0
+    %%%%%:  567-block  1
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  567-block  2
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  567-block  3
+branch  6 never executed
+branch  7 never executed
+    #####:  568:            temp2+=temp+'\n';
+    %%%%%:  568-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  568-block  1
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  568-block  2
+call    6 never executed
+    $$$$$:  568-block  3
+call    7 never executed
+    $$$$$:  568-block  4
+        -:  569:        }
+    #####:  570:        std::istringstream f_in(temp2);
+    %%%%%:  570-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  571:
+    #####:  572:        if (command == "exit")
+    %%%%%:  572-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  573:            break;
+    %%%%%:  573-block  0
+    #####:  574:        else if (command == "add") {
+    %%%%%:  574-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  575:            add(&f_in);
+    %%%%%:  575-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  576:        } else if (command == "delete") {
+    %%%%%:  576-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  577:            del(&f_in);
+    %%%%%:  577-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  578:        } else if (command == "find") {
+    %%%%%:  578-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  579:            find(&f_in);
+    %%%%%:  579-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  580:        } else if (command == "show") {
+    %%%%%:  580-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  581:            show();
+    %%%%%:  581-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  582:        } else if (command == "modify") {
+    %%%%%:  582-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  583:            modify(&f_in);
+    %%%%%:  583-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  584:        } else if (command == "filter") {
+    %%%%%:  584-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  585:            filter(&f_in);
+    %%%%%:  585-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  586:        } else if (command == "sort") {
+    %%%%%:  586-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  587:            sort(&f_in);
+    %%%%%:  587-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  588:        } else if (command == "help") {
+    %%%%%:  588-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  589:            menu();
+    %%%%%:  589-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  590:        } else if (command == "cart") {
+    %%%%%:  590-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  591:            cart(&f_in);
+    %%%%%:  591-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  592:        } else
+    #####:  593:            std::cout << "Invalid command!\n\n";
+    %%%%%:  593-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:  594:    }
+    %%%%%:  594-block  0
+    %%%%%:  594-block  1
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  594-block  2
+    %%%%%:  594-block  3
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    $$$$$:  594-block  4
+call    6 never executed
+    $$$$$:  594-block  5
+call    7 never executed
+    #####:  595:}
+    %%%%%:  595-block  0
+    %%%%%:  595-block  1
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    %%%%%:  595-block  2
+    %%%%%:  595-block  3
+call    3 never executed
+branch  4 never executed
+branch  5 never executed
+    %%%%%:  595-block  4
+    %%%%%:  595-block  5
+call    6 never executed
+branch  7 never executed
+branch  8 never executed
+    %%%%%:  595-block  6
+    %%%%%:  595-block  7
+call    9 never executed
+branch 10 never executed
+branch 11 never executed
+    %%%%%:  595-block  8
+    %%%%%:  595-block  9
+call   12 never executed
+branch 13 never executed
+branch 14 never executed
+    $$$$$:  595-block 10
+call   15 never executed
+    $$$$$:  595-block 11
+call   16 never executed
+    $$$$$:  595-block 12
+call   17 never executed
+    $$$$$:  595-block 13
+call   18 never executed
+    $$$$$:  595-block 14
+call   19 never executed
+        -:  596:
+function _ZN9interface4undoEv called 0 returned 0% blocks executed 0%
+    #####:  597:void interface::undo() {
+        -:  598:    try{
+    #####:  599:        srv.undo();
+    %%%%%:  599-block  0
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+        -:  600:    }
+    =====:  601:    catch(...){
+    $$$$$:  601-block  0
+    $$$$$:  601-block  1
+call    0 never executed
+    =====:  602:        std::cout<<"No actions to undo\n";
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    =====:  603:        return;
+    $$$$$:  603-block  0
+    =====:  604:    }
+    $$$$$:  604-block  0
+call    0 never executed
+    $$$$$:  604-block  1
+call    1 never executed
+        -:  605:
+    #####:  606:    std::cout<<"Undo successful\n\n";
+    %%%%%:  606-block  0
+call    0 never executed
+        -:  607:}

@@ -8,7 +8,6 @@ tenant::tenant(int apartment, std::string owner, std::string type, int area)
 }
 
 tenant::tenant(const tenant& other){
-    std::cout<<"copi\n";
     owner = other.owner;
     type = other.type;
     area = other.area;

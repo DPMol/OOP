@@ -1,0 +1,70 @@
+        -:    0:Source:D:/Programming n shit/UBB/Anul 1/OOP/Lab8-9/Service/service.h
+        -:    0:Graph:D:\Programming n shit\UBB\Anul 1\OOP\Lab8-9\cmake-build-debug-coverage\CMakeFiles\Lab8_9.dir\test\test.cpp.gcno
+        -:    0:Data:D:\Programming n shit\UBB\Anul 1\OOP\Lab8-9\cmake-build-debug-coverage\CMakeFiles\Lab8_9.dir\test\test.cpp.gcda
+        -:    0:Runs:1
+        -:    0:Source is newer than graph
+        -:    1:#pragma once
+        -:    2:#include "../Repository/repository.h"
+        -:    3:#include "../Domain/tenant.h"
+        -:    4:#include "../Cart/cart.h"
+        -:    5:#include "string"
+        -:    6:#include <fstream>
+        -:    7:#include <memory>
+        -:    8:#include <vector>
+        -:    9:#include <../Exception/my_exception.h>
+        -:   10:#include <iostream>
+        -:   11:#include <random>
+        -:   12:#include <algorithm>
+        -:   13:#include <chrono>
+        -:   14:#include "../Undo/UndoClass.h"
+        -:   15:#include "../AbstractRepo/AbstractRepo.h"
+        -:   16:
+        -:   17:
+        -:   18:class service {
+        -:   19:private:
+        -:   20:    std::string extension = ".html";
+        -:   21:    AbstractRepo& repo;
+        -:   22:    cart temp_cart;
+        -:   23:
+        -:   24:    std::vector<std::unique_ptr<doUndo>> undo_list;
+        -:   25:
+        -:   26:public:
+        -:   27:    explicit service(AbstractRepo& repo);
+function _ZN7serviceD1Ev called 2 returned 100% blocks executed 100%
+        2:   28:
+        2:   28-block  0
+call    0 returned 2
+call    1 returned 2
+call    2 returned 2
+        -:   29:    ~service() = default;
+        -:   30:
+        -:   31:    void add(int apartment, std::string& owner, std::string& type, int area);
+        -:   32:
+        -:   33:    void del(int apartment);
+        -:   34:
+        -:   35:    void modify(int apartment, int new_apartment, std::string& new_owner, std::string& new_type, int new_area);
+        -:   36:
+        -:   37:    std::string show();
+        -:   38:
+        -:   39:    std::string find(int apartment);
+        -:   40:
+        -:   41:    std::string filter_type(std::string& type);
+        -:   42:
+        -:   43:    std::string filter_area(int area);
+        -:   44:
+        -:   45:    std::string sort_owner(bool reverse);
+        -:   46:
+        -:   47:    std::string sort_area(bool reverse);
+        -:   48:
+        -:   49:    std::string sort_apartment_area(bool reverse);
+        -:   50:
+        -:   51:    void add_cart(int apartment);
+        -:   52:
+        -:   53:    void empty_cart();
+        -:   54:
+        -:   55:    void random_cart(int num);
+        -:   56:
+        -:   57:    void export_cart(const std::string& file);
+        -:   58:
+        -:   59:    void undo();
+        -:   60:};

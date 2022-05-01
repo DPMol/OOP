@@ -1,7 +1,6 @@
-#include <fstream>
 #include "service.h"
 
-service::service(repository& repo):repo(repo) {}
+service::service(AbstractRepo& repo): repo(repo) {}
 
 void service::add(int apartment, std::string& owner, std::string& type, int area){
 
@@ -11,6 +10,8 @@ void service::add(int apartment, std::string& owner, std::string& type, int area
     }
     tenant t(apartment, owner, type, area);
     repo.add(t);
+
+    undo_list.push_back(std::make_unique<UndoAdd>(repo, apartment));
 }
 
 void service::del(int apartment){
@@ -19,6 +20,7 @@ void service::del(int apartment){
         throw std::exception();
     }
 
+    undo_list.push_back(std::make_unique<UndoDel>(repo, element.value()->second));
     repo.del(element.value());
 }
 
@@ -30,7 +32,7 @@ std::string service::show() {
 //        out += (list[i].str() + "\n");
 
     for(auto& t : list){
-        out += (t.str() + "\n");
+        out += (t.second.str() + "\n");
     }
 
     return out;
@@ -46,8 +48,11 @@ void service::modify(int apartment, int new_apartment,
 
     tenant t(new_apartment, new_owner, new_type, new_area);
 
+
+    undo_list.push_back(std::make_unique<UndoMod>(repo, new_apartment, element.value()->second));
     repo.del(element.value());
     repo.add(t);
+
 }
 
 std::string service::find(int apartment){
@@ -55,91 +60,91 @@ std::string service::find(int apartment){
     auto& list = repo.get_list();
 
     for(auto& t : list){
-        if(t.get_apartment() == apartment){
-            out += (t.str() + "\n");
+        if(t.second.get_apartment() == apartment){
+            out += (t.second.str() + "\n");
         }
     }
 
     return out;
 }
 
-std::string service::filter_type(std::string& type){
-    const auto& list = repo.get_list();
-
-    std::string out;
-    for(auto& t : list){
-        if(t.get_type() == type)
-            out += (t.str() + "\n");
-    }
-    return out;
-}
-
-std::string service::filter_area(int area){
-
-    const auto& list = repo.get_list();
-
-    std::string out;
-    for(auto& t : list){
-        if(t.get_area() == area)
-            out += (t.str() + "\n");
-    }
-    return out;
-}
-
-std::string service::sort_owner(bool reverse) {
-    auto list = repo.get_list();
-    if(reverse){
-        std::sort(list.rbegin(), list.rend(),
-                  [](const tenant &a, const tenant &b) { return a.get_owner() < b.get_owner(); });
-
-    }
-    else {
-        std::sort(list.begin(), list.end(),
-                  [](const tenant &a, const tenant &b) { return a.get_owner() < b.get_owner(); });
-    }
-    std::string out;
-    for(auto& t : list){
-        out += (t.str() + "\n");
-    }
-    return out;
-}
-
-std::string service::sort_area(bool reverse) {
-
-    auto list = repo.get_list();
-    if(reverse){
-        std::sort(list.rbegin(), list.rend(),
-                  [](const tenant &a, const tenant &b) { return a.get_area() < b.get_area(); });
-
-    }
-    else {
-        std::sort(list.begin(), list.end(),
-                  [](const tenant &a, const tenant &b) { return a.get_area() < b.get_area(); });
-    }
-    std::string out;
-    for(auto& t : list){
-        out += (t.str() + "\n");
-    }
-    return out;
-}
-
-std::string service::sort_apartment_area(bool reverse) {
-
-    auto list = repo.get_list();
-    if(reverse){
-        std::sort(list.rbegin(), list.rend(),
-                  [](const tenant& a, const tenant&b){if(a.get_apartment() == b.get_apartment()){return a.get_area() < b.get_area();}else {return a.get_apartment() < b.get_apartment();}});
-    }
-    else {
-        std::sort(list.begin(), list.end(),
-                  [](const tenant &a, const tenant &b) { return a.get_owner() < b.get_owner(); });
-    }
-    std::string out;
-    for(auto& t : list){
-        out += (t.str() + "\n");
-    }
-    return out;
-}
+//std::string service::filter_type(std::string& type){
+//    const auto& list = repo.get_list();
+//
+//    std::string out;
+//    for(auto& t : list){
+//        if(t.second.get_type() == type)
+//            out += (t.second.str() + "\n");
+//    }
+//    return out;
+//}
+//
+//std::string service::filter_area(int area){
+//
+//    const auto& list = repo.get_list();
+//
+//    std::string out;
+//    for(auto& t : list){
+//        if(t.second.get_area() == area)
+//            out += (t.second.str() + "\n");
+//    }
+//    return out;
+//}
+//
+//std::string service::sort_owner(bool reverse) {
+//    auto list = repo.get_list();
+//    if(reverse){
+//        std::sort(list.rbegin(), list.rend(),
+//                  [](std::pair<int, tenant> &a, std::pair<int, tenant> &b) { return a.second.get_owner() < b.second.get_owner(); });
+//
+//    }
+//    else {
+//        std::sort(list.begin(), list.end(),
+//                  [](std::pair<int, tenant> &a, std::pair<int, tenant> &b) { return a.second.get_owner() < b.second.get_owner(); });
+//    }
+//    std::string out;
+//    for(auto& t : list){
+//        out += (t.second.str() + "\n");
+//    }
+//    return out;
+//}
+//
+//std::string service::sort_area(bool reverse) {
+//
+//    auto list = repo.get_list();
+//    if(reverse){
+//        std::sort(list.rbegin(), list.rend(),
+//                  [](std::pair<int, tenant> &a, std::pair<int, tenant> &b) { return a.second.get_area() < b.second.get_area(); });
+//
+//    }
+//    else {
+//        std::sort(list.begin(), list.end(),
+//                  [](std::pair<int, tenant> &a, std::pair<int, tenant> &b) { return a.second.get_area() < b.second.get_area(); });
+//    }
+//    std::string out;
+//    for(auto& t : list){
+//        out += (t.second.str() + "\n");
+//    }
+//    return out;
+//}
+//
+//std::string service::sort_apartment_area(bool reverse) {
+//
+//    auto list = repo.get_list();
+//    if(reverse){
+//        std::sort(list.rbegin(), list.rend(),
+//                  [](const tenant& a, const tenant&b){if(a.get_apartment() == b.get_apartment()){return a.get_area() < b.get_area();}else {return a.get_apartment() < b.get_apartment();}});
+//    }
+//    else {
+//        std::sort(list.begin(), list.end(),
+//                  [](const tenant &a, const tenant &b) { return a.get_owner() < b.get_owner(); });
+//    }
+//    std::string out;
+//    for(auto& t : list){
+//        out += (t.second.str() + "\n");
+//    }
+//    return out;
+//}
 
 void service::add_cart(int apartment) {
 
@@ -151,13 +156,13 @@ void service::add_cart(int apartment) {
 
     const auto& temp_list = temp_cart.get_list();
 
-    auto temp = std::find(temp_list.begin(), temp_list.end(), *el.value());
+    auto temp = std::find(temp_list.begin(), temp_list.end(), el.value()->second);
 
     if(temp != temp_list.end()){
         throw my_exception("Already exists");
     }
 
-    temp_cart.add(*el.value());
+    temp_cart.add(el.value()->second);
 }
 
 void service::empty_cart() {
@@ -172,8 +177,8 @@ void service::random_cart(int num) {
     std::vector<tenant> temp_list;
 
     for(const auto& el: list){
-        if(std::find(cart_list.begin(), cart_list.end(), el) == cart_list.end()){
-            temp_list.push_back(el);
+        if(std::find(cart_list.begin(), cart_list.end(), el.second) == cart_list.end()){
+            temp_list.push_back(el.second);
         }
     }
 
@@ -208,4 +213,13 @@ void service::export_cart(const std::string& file) {
     }
 
     out.close();
+}
+
+void service::undo() {
+    if(undo_list.empty()){
+        throw my_exception("Kinda empty bro");
+    }
+
+    undo_list.back()->undo();
+    undo_list.pop_back();
 }

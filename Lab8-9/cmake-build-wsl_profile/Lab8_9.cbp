@@ -94,6 +94,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/mnt/d/Programming n shit/UBB/Anul 1/OOP/Lab8-9/AbstractRepo/AbstractRepo.cpp">
+			<Option target="Lab8_9"/>
+		</Unit>
+		<Unit filename="/mnt/d/Programming n shit/UBB/Anul 1/OOP/Lab8-9/AbstractRepo/AbstractRepo.h">
+			<Option target="Lab8_9"/>
+		</Unit>
 		<Unit filename="/mnt/d/Programming n shit/UBB/Anul 1/OOP/Lab8-9/Cart/cart.cpp">
 			<Option target="Lab8_9"/>
 		</Unit>
@@ -118,6 +124,12 @@
 		<Unit filename="/mnt/d/Programming n shit/UBB/Anul 1/OOP/Lab8-9/Interface/interface.h">
 			<Option target="Lab8_9"/>
 		</Unit>
+		<Unit filename="/mnt/d/Programming n shit/UBB/Anul 1/OOP/Lab8-9/NewRepository/newrepository.cpp">
+			<Option target="Lab8_9"/>
+		</Unit>
+		<Unit filename="/mnt/d/Programming n shit/UBB/Anul 1/OOP/Lab8-9/NewRepository/newrepository.h">
+			<Option target="Lab8_9"/>
+		</Unit>
 		<Unit filename="/mnt/d/Programming n shit/UBB/Anul 1/OOP/Lab8-9/Repository/repository.cpp">
 			<Option target="Lab8_9"/>
 		</Unit>
@@ -128,6 +140,12 @@
 			<Option target="Lab8_9"/>
 		</Unit>
 		<Unit filename="/mnt/d/Programming n shit/UBB/Anul 1/OOP/Lab8-9/Service/service.h">
+			<Option target="Lab8_9"/>
+		</Unit>
+		<Unit filename="/mnt/d/Programming n shit/UBB/Anul 1/OOP/Lab8-9/Undo/UndoClass.cpp">
+			<Option target="Lab8_9"/>
+		</Unit>
+		<Unit filename="/mnt/d/Programming n shit/UBB/Anul 1/OOP/Lab8-9/Undo/UndoClass.h">
 			<Option target="Lab8_9"/>
 		</Unit>
 		<Unit filename="/mnt/d/Programming n shit/UBB/Anul 1/OOP/Lab8-9/dynamic_array.h">

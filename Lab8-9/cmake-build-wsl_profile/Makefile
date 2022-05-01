@@ -129,6 +129,30 @@ Lab8_9/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab8_9.dir/build.make CMakeFiles/Lab8_9.dir/build
 .PHONY : Lab8_9/fast
 
+AbstractRepo/AbstractRepo.o: AbstractRepo/AbstractRepo.cpp.o
+.PHONY : AbstractRepo/AbstractRepo.o
+
+# target to build an object file
+AbstractRepo/AbstractRepo.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab8_9.dir/build.make CMakeFiles/Lab8_9.dir/AbstractRepo/AbstractRepo.cpp.o
+.PHONY : AbstractRepo/AbstractRepo.cpp.o
+
+AbstractRepo/AbstractRepo.i: AbstractRepo/AbstractRepo.cpp.i
+.PHONY : AbstractRepo/AbstractRepo.i
+
+# target to preprocess a source file
+AbstractRepo/AbstractRepo.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab8_9.dir/build.make CMakeFiles/Lab8_9.dir/AbstractRepo/AbstractRepo.cpp.i
+.PHONY : AbstractRepo/AbstractRepo.cpp.i
+
+AbstractRepo/AbstractRepo.s: AbstractRepo/AbstractRepo.cpp.s
+.PHONY : AbstractRepo/AbstractRepo.s
+
+# target to generate assembly for a file
+AbstractRepo/AbstractRepo.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab8_9.dir/build.make CMakeFiles/Lab8_9.dir/AbstractRepo/AbstractRepo.cpp.s
+.PHONY : AbstractRepo/AbstractRepo.cpp.s
+
 Cart/cart.o: Cart/cart.cpp.o
 .PHONY : Cart/cart.o
 
@@ -225,6 +249,30 @@ Interface/interface.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab8_9.dir/build.make CMakeFiles/Lab8_9.dir/Interface/interface.cpp.s
 .PHONY : Interface/interface.cpp.s
 
+NewRepository/newrepository.o: NewRepository/newrepository.cpp.o
+.PHONY : NewRepository/newrepository.o
+
+# target to build an object file
+NewRepository/newrepository.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab8_9.dir/build.make CMakeFiles/Lab8_9.dir/NewRepository/newrepository.cpp.o
+.PHONY : NewRepository/newrepository.cpp.o
+
+NewRepository/newrepository.i: NewRepository/newrepository.cpp.i
+.PHONY : NewRepository/newrepository.i
+
+# target to preprocess a source file
+NewRepository/newrepository.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab8_9.dir/build.make CMakeFiles/Lab8_9.dir/NewRepository/newrepository.cpp.i
+.PHONY : NewRepository/newrepository.cpp.i
+
+NewRepository/newrepository.s: NewRepository/newrepository.cpp.s
+.PHONY : NewRepository/newrepository.s
+
+# target to generate assembly for a file
+NewRepository/newrepository.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab8_9.dir/build.make CMakeFiles/Lab8_9.dir/NewRepository/newrepository.cpp.s
+.PHONY : NewRepository/newrepository.cpp.s
+
 Repository/repository.o: Repository/repository.cpp.o
 .PHONY : Repository/repository.o
 
@@ -272,6 +320,30 @@ Service/service.s: Service/service.cpp.s
 Service/service.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab8_9.dir/build.make CMakeFiles/Lab8_9.dir/Service/service.cpp.s
 .PHONY : Service/service.cpp.s
+
+Undo/UndoClass.o: Undo/UndoClass.cpp.o
+.PHONY : Undo/UndoClass.o
+
+# target to build an object file
+Undo/UndoClass.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab8_9.dir/build.make CMakeFiles/Lab8_9.dir/Undo/UndoClass.cpp.o
+.PHONY : Undo/UndoClass.cpp.o
+
+Undo/UndoClass.i: Undo/UndoClass.cpp.i
+.PHONY : Undo/UndoClass.i
+
+# target to preprocess a source file
+Undo/UndoClass.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab8_9.dir/build.make CMakeFiles/Lab8_9.dir/Undo/UndoClass.cpp.i
+.PHONY : Undo/UndoClass.cpp.i
+
+Undo/UndoClass.s: Undo/UndoClass.cpp.s
+.PHONY : Undo/UndoClass.s
+
+# target to generate assembly for a file
+Undo/UndoClass.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab8_9.dir/build.make CMakeFiles/Lab8_9.dir/Undo/UndoClass.cpp.s
+.PHONY : Undo/UndoClass.cpp.s
 
 main.o: main.cpp.o
 .PHONY : main.o
@@ -330,6 +402,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Lab8_9"
+	@echo "... AbstractRepo/AbstractRepo.o"
+	@echo "... AbstractRepo/AbstractRepo.i"
+	@echo "... AbstractRepo/AbstractRepo.s"
 	@echo "... Cart/cart.o"
 	@echo "... Cart/cart.i"
 	@echo "... Cart/cart.s"
@@ -342,12 +417,18 @@ help:
 	@echo "... Interface/interface.o"
 	@echo "... Interface/interface.i"
 	@echo "... Interface/interface.s"
+	@echo "... NewRepository/newrepository.o"
+	@echo "... NewRepository/newrepository.i"
+	@echo "... NewRepository/newrepository.s"
 	@echo "... Repository/repository.o"
 	@echo "... Repository/repository.i"
 	@echo "... Repository/repository.s"
 	@echo "... Service/service.o"
 	@echo "... Service/service.i"
 	@echo "... Service/service.s"
+	@echo "... Undo/UndoClass.o"
+	@echo "... Undo/UndoClass.i"
+	@echo "... Undo/UndoClass.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

@@ -1,0 +1,57 @@
+        -:    0:Source:D:/Programming n shit/UBB/Anul 1/OOP/Lab8-9/Repository/repository.cpp
+        -:    0:Graph:D:\Programming n shit\UBB\Anul 1\OOP\Lab8-9\cmake-build-debug-coverage\CMakeFiles\Lab8_9.dir\Repository\repository.cpp.gcno
+        -:    0:Data:D:\Programming n shit\UBB\Anul 1\OOP\Lab8-9\cmake-build-debug-coverage\CMakeFiles\Lab8_9.dir\Repository\repository.cpp.gcda
+        -:    0:Runs:1
+        -:    0:Source is newer than graph
+        -:    1:#include "repository.h"
+        -:    2:
+        -:    3:
+function _ZN10repository3addERK6tenant called 8 returned 100% blocks executed 100%
+        8:    4:void AbstractRepo::add(const tenant& t){
+        8:    5:    list.push_back(t);
+        8:    5-block  0
+call    0 returned 8
+        8:    6:}
+        -:    7:
+function _ZNK10repository4findEi called 12 returned 100% blocks executed 100%
+       12:    8:std::optional<std::vector<tenant>::const_iterator> AbstractRepo::find(const int apartment) const{
+function _ZZNK10repository4findEiENKUlRK6tenantE_clES2_ called 9 returned 100% blocks executed 100%
+       21:    9:    auto out = std::find_if(list.begin(), list.end(), [&apartment](const tenant& a){return a.get_apartment() == apartment;});
+       12:    9-block  0
+call    0 returned 12
+call    1 returned 12
+call    2 returned 12
+branch  3 taken 12 (fallthrough)
+branch  4 taken 0 (throw)
+        9:    9-block  1
+call    5 returned 9
+        -:   10:
+       12:   11:    if(out == list.end()){
+       12:   11-block  0
+call    0 returned 12
+call    1 returned 12
+branch  2 taken 4 (fallthrough)
+branch  3 taken 8
+        4:   12:        return {};
+        4:   12-block  0
+call    0 returned 4
+        -:   13:    }
+        8:   14:    return out;
+        8:   14-block  0
+call    0 returned 8
+        -:   15:}
+        -:   16:
+function _ZNK10repository8get_listEv called 3 returned 100% blocks executed 100%
+        3:   17:const std::vector<tenant>& AbstractRepo::get_list() const{
+        3:   18:    return list;
+        3:   18-block  0
+        -:   19:}
+        -:   20:
+function _ZN10repository3delEN9__gnu_cxx17__normal_iteratorIPK6tenantSt6vectorIS2_SaIS2_EEEE called 6 returned 100% blocks executed 100%
+        6:   21:void AbstractRepo::del(const std::vector<tenant>::const_iterator poz) {
+        6:   22:    list.erase(poz);
+        6:   22-block  0
+call    0 returned 6
+        6:   23:}
+        -:   24:
+        -:   25:
