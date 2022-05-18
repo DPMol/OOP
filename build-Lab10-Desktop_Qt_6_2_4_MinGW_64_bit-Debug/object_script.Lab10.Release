@@ -1,0 +1,10 @@
+release/filter.o
+release/main.o
+release/gui.o
+release/my_exception.o
+release/repository.o
+release/service.o
+release/tenant.o
+release/undoclass.o
+release/validator.o
+release/moc_gui.o

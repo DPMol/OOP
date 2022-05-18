@@ -54,10 +54,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "/mnt/d/Programming n shit/UBB/Anul 1/OOP/Lab6-7"
+CMAKE_SOURCE_DIR = "/mnt/d/Programming/UBB/Anul 1/OOP/Lab6-7"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/mnt/d/Programming n shit/UBB/Anul 1/OOP/Lab6-7/cmake-build-wsl_profile"
+CMAKE_BINARY_DIR = "/mnt/d/Programming/UBB/Anul 1/OOP/Lab6-7/cmake-build-wsl_profile"
 
 #=============================================================================
 # Directory level rules for the build root directory
@@ -81,14 +81,14 @@ clean: CMakeFiles/Lab6_7.dir/clean
 CMakeFiles/Lab6_7.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab6_7.dir/build.make CMakeFiles/Lab6_7.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lab6_7.dir/build.make CMakeFiles/Lab6_7.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/mnt/d/Programming n shit/UBB/Anul 1/OOP/Lab6-7/cmake-build-wsl_profile/CMakeFiles" --progress-num=1,2,3,4,5,6,7 "Built target Lab6_7"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/mnt/d/Programming/UBB/Anul 1/OOP/Lab6-7/cmake-build-wsl_profile/CMakeFiles" --progress-num=1,2,3,4,5,6,7 "Built target Lab6_7"
 .PHONY : CMakeFiles/Lab6_7.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Lab6_7.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/d/Programming n shit/UBB/Anul 1/OOP/Lab6-7/cmake-build-wsl_profile/CMakeFiles" 7
+	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/d/Programming/UBB/Anul 1/OOP/Lab6-7/cmake-build-wsl_profile/CMakeFiles" 7
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Lab6_7.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/d/Programming n shit/UBB/Anul 1/OOP/Lab6-7/cmake-build-wsl_profile/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/mnt/d/Programming/UBB/Anul 1/OOP/Lab6-7/cmake-build-wsl_profile/CMakeFiles" 0
 .PHONY : CMakeFiles/Lab6_7.dir/rule
 
 # Convenience name for target.

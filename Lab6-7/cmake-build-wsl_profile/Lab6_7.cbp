@@ -8,18 +8,18 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/mnt/d/Programming n shit/UBB/Anul 1/OOP/Lab6-7/cmake-build-wsl_profile"/>
+				<Option working_dir="/mnt/d/Programming/UBB/Anul 1/OOP/Lab6-7/cmake-build-wsl_profile"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/mnt/d/Programming\ n\ shit/UBB/Anul\ 1/OOP/Lab6-7/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/mnt/d/Programming\ n\ shit/UBB/Anul\ 1/OOP/Lab6-7/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/mnt/d/Programming\ n\ shit/UBB/Anul\ 1/OOP/Lab6-7/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/mnt/d/Programming\ n\ shit/UBB/Anul\ 1/OOP/Lab6-7/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/mnt/d/Programming/UBB/Anul\ 1/OOP/Lab6-7/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/mnt/d/Programming/UBB/Anul\ 1/OOP/Lab6-7/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/mnt/d/Programming/UBB/Anul\ 1/OOP/Lab6-7/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/mnt/d/Programming/UBB/Anul\ 1/OOP/Lab6-7/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Lab6_7">
-				<Option output="/mnt/d/Programming n shit/UBB/Anul 1/OOP/Lab6-7/cmake-build-wsl_profile/Lab6_7" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/mnt/d/Programming n shit/UBB/Anul 1/OOP/Lab6-7/cmake-build-wsl_profile"/>
+				<Option output="/mnt/d/Programming/UBB/Anul 1/OOP/Lab6-7/cmake-build-wsl_profile/Lab6_7" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/d/Programming/UBB/Anul 1/OOP/Lab6-7/cmake-build-wsl_profile"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -33,15 +33,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/mnt/d/Programming\ n\ shit/UBB/Anul\ 1/OOP/Lab6-7/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 Lab6_7"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/mnt/d/Programming\ n\ shit/UBB/Anul\ 1/OOP/Lab6-7/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/mnt/d/Programming\ n\ shit/UBB/Anul\ 1/OOP/Lab6-7/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/mnt/d/Programming\ n\ shit/UBB/Anul\ 1/OOP/Lab6-7/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/mnt/d/Programming/UBB/Anul\ 1/OOP/Lab6-7/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 Lab6_7"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/mnt/d/Programming/UBB/Anul\ 1/OOP/Lab6-7/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/mnt/d/Programming/UBB/Anul\ 1/OOP/Lab6-7/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/mnt/d/Programming/UBB/Anul\ 1/OOP/Lab6-7/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Lab6_7/fast">
-				<Option output="/mnt/d/Programming n shit/UBB/Anul 1/OOP/Lab6-7/cmake-build-wsl_profile/Lab6_7" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/mnt/d/Programming n shit/UBB/Anul 1/OOP/Lab6-7/cmake-build-wsl_profile"/>
+				<Option output="/mnt/d/Programming/UBB/Anul 1/OOP/Lab6-7/cmake-build-wsl_profile/Lab6_7" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/mnt/d/Programming/UBB/Anul 1/OOP/Lab6-7/cmake-build-wsl_profile"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -55,67 +55,67 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/mnt/d/Programming\ n\ shit/UBB/Anul\ 1/OOP/Lab6-7/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 Lab6_7/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/mnt/d/Programming\ n\ shit/UBB/Anul\ 1/OOP/Lab6-7/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/mnt/d/Programming\ n\ shit/UBB/Anul\ 1/OOP/Lab6-7/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/mnt/d/Programming\ n\ shit/UBB/Anul\ 1/OOP/Lab6-7/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/mnt/d/Programming/UBB/Anul\ 1/OOP/Lab6-7/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 Lab6_7/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/mnt/d/Programming/UBB/Anul\ 1/OOP/Lab6-7/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/mnt/d/Programming/UBB/Anul\ 1/OOP/Lab6-7/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/mnt/d/Programming/UBB/Anul\ 1/OOP/Lab6-7/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/mnt/d/Programming n shit/UBB/Anul 1/OOP/Lab6-7/cmake-build-wsl_profile"/>
+				<Option working_dir="/mnt/d/Programming/UBB/Anul 1/OOP/Lab6-7/cmake-build-wsl_profile"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/mnt/d/Programming\ n\ shit/UBB/Anul\ 1/OOP/Lab6-7/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/mnt/d/Programming\ n\ shit/UBB/Anul\ 1/OOP/Lab6-7/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/mnt/d/Programming\ n\ shit/UBB/Anul\ 1/OOP/Lab6-7/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/mnt/d/Programming\ n\ shit/UBB/Anul\ 1/OOP/Lab6-7/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/mnt/d/Programming/UBB/Anul\ 1/OOP/Lab6-7/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/mnt/d/Programming/UBB/Anul\ 1/OOP/Lab6-7/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/mnt/d/Programming/UBB/Anul\ 1/OOP/Lab6-7/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/mnt/d/Programming/UBB/Anul\ 1/OOP/Lab6-7/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/mnt/d/Programming n shit/UBB/Anul 1/OOP/Lab6-7/cmake-build-wsl_profile"/>
+				<Option working_dir="/mnt/d/Programming/UBB/Anul 1/OOP/Lab6-7/cmake-build-wsl_profile"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/mnt/d/Programming\ n\ shit/UBB/Anul\ 1/OOP/Lab6-7/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/mnt/d/Programming\ n\ shit/UBB/Anul\ 1/OOP/Lab6-7/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/mnt/d/Programming\ n\ shit/UBB/Anul\ 1/OOP/Lab6-7/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/mnt/d/Programming\ n\ shit/UBB/Anul\ 1/OOP/Lab6-7/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j8 -f &quot;/mnt/d/Programming/UBB/Anul\ 1/OOP/Lab6-7/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/mnt/d/Programming/UBB/Anul\ 1/OOP/Lab6-7/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/mnt/d/Programming/UBB/Anul\ 1/OOP/Lab6-7/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/mnt/d/Programming/UBB/Anul\ 1/OOP/Lab6-7/cmake-build-wsl_profile/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/mnt/d/Programming n shit/UBB/Anul 1/OOP/Lab6-7/Domain/tenant.cpp">
+		<Unit filename="/mnt/d/Programming/UBB/Anul 1/OOP/Lab6-7/Domain/tenant.cpp">
 			<Option target="Lab6_7"/>
 		</Unit>
-		<Unit filename="/mnt/d/Programming n shit/UBB/Anul 1/OOP/Lab6-7/Domain/tenant.h">
+		<Unit filename="/mnt/d/Programming/UBB/Anul 1/OOP/Lab6-7/Domain/tenant.h">
 			<Option target="Lab6_7"/>
 		</Unit>
-		<Unit filename="/mnt/d/Programming n shit/UBB/Anul 1/OOP/Lab6-7/Interface/interface.cpp">
+		<Unit filename="/mnt/d/Programming/UBB/Anul 1/OOP/Lab6-7/Interface/interface.cpp">
 			<Option target="Lab6_7"/>
 		</Unit>
-		<Unit filename="/mnt/d/Programming n shit/UBB/Anul 1/OOP/Lab6-7/Interface/interface.h">
+		<Unit filename="/mnt/d/Programming/UBB/Anul 1/OOP/Lab6-7/Interface/interface.h">
 			<Option target="Lab6_7"/>
 		</Unit>
-		<Unit filename="/mnt/d/Programming n shit/UBB/Anul 1/OOP/Lab6-7/Repository/repository.cpp">
+		<Unit filename="/mnt/d/Programming/UBB/Anul 1/OOP/Lab6-7/Repository/repository.cpp">
 			<Option target="Lab6_7"/>
 		</Unit>
-		<Unit filename="/mnt/d/Programming n shit/UBB/Anul 1/OOP/Lab6-7/Repository/repository.h">
+		<Unit filename="/mnt/d/Programming/UBB/Anul 1/OOP/Lab6-7/Repository/repository.h">
 			<Option target="Lab6_7"/>
 		</Unit>
-		<Unit filename="/mnt/d/Programming n shit/UBB/Anul 1/OOP/Lab6-7/Service/service.cpp">
+		<Unit filename="/mnt/d/Programming/UBB/Anul 1/OOP/Lab6-7/Service/service.cpp">
 			<Option target="Lab6_7"/>
 		</Unit>
-		<Unit filename="/mnt/d/Programming n shit/UBB/Anul 1/OOP/Lab6-7/Service/service.h">
+		<Unit filename="/mnt/d/Programming/UBB/Anul 1/OOP/Lab6-7/Service/service.h">
 			<Option target="Lab6_7"/>
 		</Unit>
-		<Unit filename="/mnt/d/Programming n shit/UBB/Anul 1/OOP/Lab6-7/main.cpp">
+		<Unit filename="/mnt/d/Programming/UBB/Anul 1/OOP/Lab6-7/main.cpp">
 			<Option target="Lab6_7"/>
 		</Unit>
-		<Unit filename="/mnt/d/Programming n shit/UBB/Anul 1/OOP/Lab6-7/test/test.cpp">
+		<Unit filename="/mnt/d/Programming/UBB/Anul 1/OOP/Lab6-7/test/test.cpp">
 			<Option target="Lab6_7"/>
 		</Unit>
-		<Unit filename="/mnt/d/Programming n shit/UBB/Anul 1/OOP/Lab6-7/test/test.h">
+		<Unit filename="/mnt/d/Programming/UBB/Anul 1/OOP/Lab6-7/test/test.h">
 			<Option target="Lab6_7"/>
 		</Unit>
-		<Unit filename="/mnt/d/Programming n shit/UBB/Anul 1/OOP/Lab6-7/CMakeLists.txt">
+		<Unit filename="/mnt/d/Programming/UBB/Anul 1/OOP/Lab6-7/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

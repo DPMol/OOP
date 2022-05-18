@@ -1,0 +1,10 @@
+debug/filter.o
+debug/main.o
+debug/gui.o
+debug/my_exception.o
+debug/repository.o
+debug/service.o
+debug/tenant.o
+debug/undoclass.o
+debug/validator.o
+debug/moc_gui.o
